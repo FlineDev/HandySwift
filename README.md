@@ -14,7 +14,7 @@ github "Flinesoft/HandySwift"   ~> 0.1
 
 And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
 
-TODO: Installation instructions are missing. Cocoapods and Swift Package Manager support are planned.
+TODO: Installation instructions for CocoaPods and Swift Package Manager are missing.
 
 ## Usage
 
