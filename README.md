@@ -14,9 +14,14 @@ Please have a look at the UsageExamples.playground for a complete list of featur
 
 #### .times
 
-``` Swift
-3.times{ array.append("Hello World!") } // => ["Hello World!", "Hello World!", "Hello World!"]
-3.times{ array.append("Hello World #\($0)!") } // => ["Hello World #1!", "Hello World #2!", "Hello World #3!"]
+```
+3.times{ array.append("Hello World!") }
+// => ["Hello World!", "Hello World!", "Hello World!"]
+```
+
+```
+3.times{ array.append("Hello World #\($0)!") }
+// => ["Hello World #1!", "Hello World #2!", "Hello World #3!"]
 ```
 
 ## Contributing
