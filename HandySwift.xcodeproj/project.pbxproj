@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		823B2B351C24AAB7007B3CDD /* HandySwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 823B2B341C24AAB7007B3CDD /* HandySwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		823B2B3C1C24AAB7007B3CDD /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B2B311C24AAB6007B3CDD /* HandySwift.framework */; };
-		823B2B411C24AAB7007B3CDD /* HandySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B401C24AAB7007B3CDD /* HandySwiftTests.swift */; };
+		823B2B4D1C24ABA4007B3CDD /* IntegerTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4C1C24ABA4007B3CDD /* IntegerTypeExtension.swift */; };
+		823B2B501C24AC00007B3CDD /* IntegerTypeExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4F1C24AC00007B3CDD /* IntegerTypeExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +28,9 @@
 		823B2B341C24AAB7007B3CDD /* HandySwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HandySwift.h; sourceTree = "<group>"; };
 		823B2B361C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823B2B3B1C24AAB7007B3CDD /* HandySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		823B2B401C24AAB7007B3CDD /* HandySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandySwiftTests.swift; sourceTree = "<group>"; };
 		823B2B421C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		823B2B4C1C24ABA4007B3CDD /* IntegerTypeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegerTypeExtension.swift; path = Extensions/IntegerTypeExtension.swift; sourceTree = "<group>"; };
+		823B2B4F1C24AC00007B3CDD /* IntegerTypeExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegerTypeExtensionTests.swift; path = Extensions/IntegerTypeExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		823B2B331C24AAB7007B3CDD /* HandySwift */ = {
 			isa = PBXGroup;
 			children = (
+				823B2B4B1C24AB7F007B3CDD /* Extensions */,
 				823B2B341C24AAB7007B3CDD /* HandySwift.h */,
 				823B2B361C24AAB7007B3CDD /* Info.plist */,
 			);
@@ -80,10 +83,26 @@
 		823B2B3F1C24AAB7007B3CDD /* HandySwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				823B2B401C24AAB7007B3CDD /* HandySwiftTests.swift */,
+				823B2B4E1C24ABD8007B3CDD /* Extensions */,
 				823B2B421C24AAB7007B3CDD /* Info.plist */,
 			);
 			path = HandySwiftTests;
+			sourceTree = "<group>";
+		};
+		823B2B4B1C24AB7F007B3CDD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				823B2B4C1C24ABA4007B3CDD /* IntegerTypeExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		823B2B4E1C24ABD8007B3CDD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				823B2B4F1C24AC00007B3CDD /* IntegerTypeExtensionTests.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				823B2B4D1C24ABA4007B3CDD /* IntegerTypeExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823B2B411C24AAB7007B3CDD /* HandySwiftTests.swift in Sources */,
+				823B2B501C24AC00007B3CDD /* IntegerTypeExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +328,7 @@
 		823B2B461C24AAB7007B3CDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +339,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		823B2B471C24AAB7007B3CDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +399,7 @@
 				823B2B471C24AAB7007B3CDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		823B2B481C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "HandySwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +408,7 @@
 				823B2B4A1C24AAB7007B3CDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
