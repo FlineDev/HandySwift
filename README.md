@@ -4,7 +4,17 @@ The goal of this library is to provide handy features that didn't make it to the
 
 ## Installation
 
-TODO: Installation instructions are missing. Carthage, Cocoapods and Swift Package Manager support are planned.
+### Carthage
+
+Simply add this line to you Cartfile:
+
+```
+github "Flinesoft/HandySwift"   ~> 0.1
+```
+
+And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
+
+TODO: Installation instructions are missing. Cocoapods and Swift Package Manager support are planned.
 
 ## Usage
 
