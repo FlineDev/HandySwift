@@ -1,6 +1,6 @@
 # HandySwift
 
-The goal of this library is to provide handy features that didn't make it to the Swift standard library (yet) due to many different reasons like the Swift community wanting to keep the standard library clean and manageable or simply hasn't finished discussion yet.
+The goal of this library is to provide handy features that didn't make it to the Swift standard library (yet) due to many different reasons. Those could be that the Swift community wants to keep the standard library clean and manageable or simply hasn't finished discussion on a specific feature yet.
 
 ## Installation
 
@@ -29,9 +29,9 @@ Please have a look at the UsageExamples.playground for a complete list of featur
 Contributions are welcome. Please just open an Issue on GitHub to discuss a point or request a feature or send a Pull Request with your suggestion. If there's a related discussion on the Swift Evolution mailing list, please also post the thread name with a link.
 
 Pull requests with new features will only be accepted when the following are given:
-- The feature is handy but not (yet) part of the Swift standard library.
-- Tests for the new feature exist and all tests pass successfully.
-- Usage examples of the new feature are given in the Playgrounds.
+- The feature is **handy** but not (yet) part of the Swift standard library.
+- **Tests** for the new feature exist and all tests pass successfully.
+- **Usage examples** of the new feature are given in the Playgrounds.
 
 ## License
 This library is released under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.
