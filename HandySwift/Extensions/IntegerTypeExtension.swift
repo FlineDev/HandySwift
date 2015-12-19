@@ -18,12 +18,4 @@ public extension IntegerType {
         }
     }
     
-    public func times(closure: (Self) -> ()) {
-        guard self > 0 else { return }
-        
-        for i in 1...self {
-            closure(i)
-        }
-    }
-    
 }

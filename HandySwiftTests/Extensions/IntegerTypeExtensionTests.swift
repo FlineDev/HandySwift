@@ -12,7 +12,7 @@ import XCTest
 
 class IntegerTypeExtensionTests: XCTestCase {
         
-    func testTimesClosureWithoutArgument() {
+    func testTimesMethod() {
         var testString = ""
         
         0.times {
@@ -27,22 +27,5 @@ class IntegerTypeExtensionTests: XCTestCase {
         
         XCTAssertEqual(testString, "...")
     }
-    
-    func testTimesClosureWithArgument() {
-        var testString = ""
-        
-        0.times { i in
-            testString += "\(i)"
-        }
-        
-        XCTAssertEqual(testString, "")
-        
-        3.times { i in
-            testString += "\(i)"
-        }
-        
-        XCTAssertEqual(testString, "123")
-    }
-    
     
 }
