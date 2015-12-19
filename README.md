@@ -4,7 +4,17 @@ The goal of this library is to provide handy features that didn't make it to the
 
 ## Installation
 
-TODO: Installation instructions are missing. Carthage, Cocoapods and Swift Package Manager support are planned.
+### Carthage
+
+Simply add this line to you Cartfile:
+
+```
+github "Flinesoft/HandySwift"   ~> 0.1
+```
+
+And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
+
+TODO: Installation instructions for CocoaPods and Swift Package Manager are missing.
 
 ## Usage
 
@@ -14,12 +24,12 @@ Please have a look at the UsageExamples.playground for a complete list of featur
 
 #### .times
 
-```
+``` Swift
 3.times{ array.append("Hello World!") }
 // => ["Hello World!", "Hello World!", "Hello World!"]
 ```
 
-```
+``` Swift
 3.times{ array.append("Hello World #\($0)!") }
 // => ["Hello World #1!", "Hello World #2!", "Hello World #3!"]
 ```
