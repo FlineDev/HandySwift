@@ -12,9 +12,5 @@ var array: [String] = []
 3.times{ array.append("Hello World!") }
 array
 
-array = []
-3.times{ array.append("Hello World #\($0)!") }
-array
-
 
 

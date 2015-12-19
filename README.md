@@ -29,11 +29,6 @@ Please have a look at the UsageExamples.playground for a complete list of featur
 // => ["Hello World!", "Hello World!", "Hello World!"]
 ```
 
-``` Swift
-3.times{ array.append("Hello World #\($0)!") }
-// => ["Hello World #1!", "Hello World #2!", "Hello World #3!"]
-```
-
 ## Contributing
 
 Contributions are welcome. Please just open an Issue on GitHub to discuss a point or request a feature or send a Pull Request with your suggestion. If there's a related discussion on the Swift Evolution mailing list, please also post the thread name with a link.
