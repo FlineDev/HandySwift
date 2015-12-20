@@ -10,18 +10,16 @@ import XCTest
 
 @testable import HandySwift
 
-class IntegerTypeExtensionTests: XCTestCase {
+class IntExtensionTests: XCTestCase {
         
     func testTimesMethod() {
         var testString = ""
         
-        0.times {
-            testString += "."
-        }
+        0.times{ testString += "." }
         
         XCTAssertEqual(testString, "")
         
-        3.times {
+        3.times() {
             testString += "."
         }
         

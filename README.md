@@ -20,13 +20,19 @@ TODO: Installation instructions for CocoaPods and Swift Package Manager are miss
 
 Please have a look at the UsageExamples.playground for a complete list of features provided.
 
-### IntegerTypeExtension
+### IntExtension
 
 #### .times
 
 ``` Swift
 3.times{ array.append("Hello World!") }
 // => ["Hello World!", "Hello World!", "Hello World!"]
+
+5.times() {
+  let randomInt = Int(arc4random_uniform(1000))
+  intArray.append(randomInt)
+}
+// => [481, 16, 680, 87, 912]
 ```
 
 ## Contributing

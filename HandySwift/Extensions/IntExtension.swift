@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension IntegerType {
+public extension Int {
 
-    public func times(closure: () -> ()) {
+    public func times(closure: () -> Void) {
         guard self > 0 else { return }
         
         for _ in 1...self {

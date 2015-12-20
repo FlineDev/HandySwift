@@ -7,10 +7,14 @@ import HandySwift
 //
 // `n.times{ someCode }` – Calls someCode n times.
 //
-var array: [String] = []
+var stringArray: [String] = []
 
-3.times{ array.append("Hello World!") }
-array
+3.times{ stringArray.append("Hello World!") }
+stringArray
 
-
-
+var intArray: [Int] = []
+5.times() {
+    let randomInt = Int(arc4random_uniform(1000))
+    intArray.append(randomInt)
+}
+intArray
