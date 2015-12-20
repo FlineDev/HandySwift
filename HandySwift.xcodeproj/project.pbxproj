@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		823B2B351C24AAB7007B3CDD /* HandySwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 823B2B341C24AAB7007B3CDD /* HandySwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		823B2B3C1C24AAB7007B3CDD /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B2B311C24AAB6007B3CDD /* HandySwift.framework */; };
-		823B2B4D1C24ABA4007B3CDD /* IntegerTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4C1C24ABA4007B3CDD /* IntegerTypeExtension.swift */; };
-		823B2B501C24AC00007B3CDD /* IntegerTypeExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4F1C24AC00007B3CDD /* IntegerTypeExtensionTests.swift */; };
+		823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */; };
+		823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +29,8 @@
 		823B2B361C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823B2B3B1C24AAB7007B3CDD /* HandySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		823B2B421C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		823B2B4C1C24ABA4007B3CDD /* IntegerTypeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegerTypeExtension.swift; path = Extensions/IntegerTypeExtension.swift; sourceTree = "<group>"; };
-		823B2B4F1C24AC00007B3CDD /* IntegerTypeExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegerTypeExtensionTests.swift; path = Extensions/IntegerTypeExtensionTests.swift; sourceTree = "<group>"; };
+		823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntExtension.swift; path = Extensions/IntExtension.swift; sourceTree = "<group>"; };
+		823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntExtensionTests.swift; path = Extensions/IntExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 		823B2B4B1C24AB7F007B3CDD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				823B2B4C1C24ABA4007B3CDD /* IntegerTypeExtension.swift */,
+				823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -100,7 +100,7 @@
 		823B2B4E1C24ABD8007B3CDD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				823B2B4F1C24AC00007B3CDD /* IntegerTypeExtensionTests.swift */,
+				823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823B2B4D1C24ABA4007B3CDD /* IntegerTypeExtension.swift in Sources */,
+				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823B2B501C24AC00007B3CDD /* IntegerTypeExtensionTests.swift in Sources */,
+				823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
