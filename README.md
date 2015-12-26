@@ -6,10 +6,10 @@ The goal of this library is to provide handy features that didn't make it to the
 
 ### Carthage
 
-Simply add this line to you Cartfile:
+Simply add this line to your Cartfile:
 
 ```
-github "Flinesoft/HandySwift"   ~> 0.2
+github "Flinesoft/HandySwift" ~> 0.2
 ```
 
 And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
@@ -19,11 +19,13 @@ TODO: Installation instructions for CocoaPods and Swift Package Manager are miss
 ## Usage
 
 Please have a look at the UsageExamples.playground for a complete list of features provided.
-Open the `.xcworkspace` file in order for the Playground to work.
+Open the Playground from within the `.xcworkspace` in order for it to work.
 
 ### IntExtension
 
 #### .times
+
+Repeat some code block a given number of times.
 
 ``` Swift
 3.times{ array.append("Hello World!") }
@@ -37,6 +39,8 @@ Open the `.xcworkspace` file in order for the Playground to work.
 ```
 
 ### SortedArray
+
+The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.
 
 #### init(array:) & .array
 
