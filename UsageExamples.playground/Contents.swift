@@ -47,4 +47,4 @@ nonMatchingSubArray.array
 // `sortedArray.subArray(fromIndex: index) – Returns ending part as sorted subarray.
 //
 let matchingSubArray = sortedArray.subArray(fromIndex: index!)
-matchingSubArray.arrays
+matchingSubArray.array
