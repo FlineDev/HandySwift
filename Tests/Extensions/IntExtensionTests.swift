@@ -19,7 +19,7 @@ class IntExtensionTests: XCTestCase {
         
         XCTAssertEqual(testString, "")
         
-        3.times() {
+        3.times {
             testString += "."
         }
         

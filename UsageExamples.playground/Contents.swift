@@ -11,7 +11,7 @@ var stringArray: [String] = []
 stringArray
 
 var intArray: [Int] = []
-5.times() {
+5.times {
     let randomInt = Int(arc4random_uniform(1000))
     intArray.append(randomInt)
 }

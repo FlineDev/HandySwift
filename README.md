@@ -15,7 +15,7 @@ You can of course also just include this framework manually into your project by
 Simply add this line to your Cartfile:
 
 ```
-github "Flinesoft/HandySwift" ~> 0.2
+github "Flinesoft/HandySwift"
 ```
 
 And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
@@ -35,7 +35,7 @@ Repeat some code block a given number of times.
 3.times{ array.append("Hello World!") }
 // => ["Hello World!", "Hello World!", "Hello World!"]
 
-5.times() {
+5.times {
   let randomInt = Int(arc4random_uniform(1000))
   intArray.append(randomInt)
 }
@@ -93,7 +93,7 @@ SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
 #### .subArray(fromIndex:)
 
 ``` Swift
-SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
+SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(fromIndex: Array<Int>.Index(2))
 // => [2, 3, 4, 5]
 ```
 
