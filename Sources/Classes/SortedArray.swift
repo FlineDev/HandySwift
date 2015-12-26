@@ -24,7 +24,16 @@ public struct SortedArray<Element: Comparable> {
     // MARK: - Initializers
     
     public init(array: [Element]) {
-        self.internalArray = array.sort()
+        self.init(array: array, preSorted: false)
+    }
+    
+    private init(array: [Element], preSorted: Bool) {
+        if preSorted {
+            self.internalArray = array
+        } else {
+            self.internalArray = array.sort()
+        }
+        
     }
     
     
@@ -77,7 +86,7 @@ public struct SortedArray<Element: Comparable> {
         let range = Range<Int>(start: self.array.startIndex, end: endIndex)
         let subArray = Array(self.array[range])
         
-        return SortedArray(array: subArray)
+        return SortedArray(array: subArray, preSorted: true)
         
     }
     
@@ -86,7 +95,7 @@ public struct SortedArray<Element: Comparable> {
         let range = Range<Int>(start: startIndex, end: self.array.endIndex)
         let subArray = Array(self.array[range])
         
-        return SortedArray(array: subArray)
+        return SortedArray(array: subArray, preSorted: true)
         
     }
     
