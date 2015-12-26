@@ -11,6 +11,8 @@
 		823B2B3C1C24AAB7007B3CDD /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B2B311C24AAB6007B3CDD /* HandySwift.framework */; };
 		823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */; };
 		823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */; };
+		8258E4561C2E0C140031CBFF /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258E4551C2E0C140031CBFF /* SortedArray.swift */; };
+		8258E4591C2E1ACE0031CBFF /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +31,10 @@
 		823B2B361C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = SOURCE_ROOT; };
 		823B2B3B1C24AAB7007B3CDD /* HandySwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HandySwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		823B2B421C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = SOURCE_ROOT; };
-		823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntExtension.swift; path = Sources/IntExtension.swift; sourceTree = SOURCE_ROOT; };
-		823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntExtensionTests.swift; path = Tests/IntExtensionTests.swift; sourceTree = SOURCE_ROOT; };
+		823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntExtension.swift; path = Sources/Extensions/IntExtension.swift; sourceTree = SOURCE_ROOT; };
+		823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntExtensionTests.swift; path = Tests/Extensions/IntExtensionTests.swift; sourceTree = SOURCE_ROOT; };
+		8258E4551C2E0C140031CBFF /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArray.swift; path = Sources/Classes/SortedArray.swift; sourceTree = SOURCE_ROOT; };
+		8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArrayTests.swift; path = Tests/Classes/SortedArrayTests.swift; sourceTree = SOURCE_ROOT; };
 		82F22E551C26434900E784A2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -75,6 +79,7 @@
 		823B2B331C24AAB7007B3CDD /* HandySwift */ = {
 			isa = PBXGroup;
 			children = (
+				8258E4541C2E0BAF0031CBFF /* Classes */,
 				823B2B4B1C24AB7F007B3CDD /* Extensions */,
 				823B2B341C24AAB7007B3CDD /* HandySwift.h */,
 				823B2B361C24AAB7007B3CDD /* Info.plist */,
@@ -85,6 +90,7 @@
 		823B2B3F1C24AAB7007B3CDD /* HandySwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				8258E4571C2E196B0031CBFF /* Classes */,
 				823B2B4E1C24ABD8007B3CDD /* Extensions */,
 				823B2B421C24AAB7007B3CDD /* Info.plist */,
 			);
@@ -105,6 +111,22 @@
 				823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		8258E4541C2E0BAF0031CBFF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8258E4551C2E0C140031CBFF /* SortedArray.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8258E4571C2E196B0031CBFF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8258E4561C2E0C140031CBFF /* SortedArray.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8258E4591C2E1ACE0031CBFF /* SortedArrayTests.swift in Sources */,
 				823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
