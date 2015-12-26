@@ -9,7 +9,7 @@ The goal of this library is to provide handy features that didn't make it to the
 Simply add this line to you Cartfile:
 
 ```
-github "Flinesoft/HandySwift"   ~> 0.1
+github "Flinesoft/HandySwift"   ~> 0.2
 ```
 
 And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
@@ -19,6 +19,7 @@ TODO: Installation instructions for CocoaPods and Swift Package Manager are miss
 ## Usage
 
 Please have a look at the UsageExamples.playground for a complete list of features provided.
+Open the `.xcworkspace` file in order for the Playground to work.
 
 ### IntExtension
 
@@ -34,6 +35,40 @@ Please have a look at the UsageExamples.playground for a complete list of featur
 }
 // => [481, 16, 680, 87, 912]
 ```
+
+### SortedArray
+
+#### init(array:) & .array
+
+``` Swift
+let unsortedArray = [5, 2, 1, 3, 0, 4]
+let sortedArray = SortedArray(array: unsortedArray)
+sortedArray.array   // => [0, 1, 2, 3, 4, 5]
+```
+
+#### .firstMatchingIndex
+
+Finds the lowest index matching the given predicate using binary search for an improved performance (`O(log n)`).
+
+``` Swift
+SortedArray(array: [5, 2, 1, 3, 0, 4]).firstMatchingIndex{ $0 > 1 }
+// => 2
+```
+
+#### .subArray(toIndex:)
+
+``` Swift
+SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
+// => [0, 1]
+```
+
+#### .subArray(fromIndex:)
+
+``` Swift
+SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
+// => [2, 3, 4, 5]
+```
+
 
 ## Contributing
 
