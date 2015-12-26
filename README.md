@@ -42,6 +42,26 @@ Repeat some code block a given number of times.
 // => [481, 16, 680, 87, 912]
 ```
 
+### StringExtension
+
+#### .strip
+
+Returns string with whitespace characters stripped from start and end.
+
+``` Swift
+" \t BB-8 likes Rey \t ".strip
+// => "BB-8 likes Rey"
+```
+
+#### .isBlank
+
+Checks if String contains any characters other than whitespace characters.
+
+``` Swift
+"  \t  ".isBlank
+// => true
+```
+
 ### SortedArray
 
 The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.
