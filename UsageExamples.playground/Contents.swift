@@ -24,20 +24,35 @@ intArray
 // `string.strip` – Returns string with whitespace characters stripped from start and end.
 //
 
-let whitespaceString = " \t BB-8 likes Rey \t "
-whitespaceString.strip
+" \t BB-8 likes Rey \t ".strip
 
 //
 // `string.isBlank` – Checks if String contains any characters other than whitespace characters.
 //
 
-let emptyString = ""
-emptyString.isEmpty
-emptyString.isBlank
+"".isEmpty
+"".isBlank
 
-let blankString = "  \t  "
-blankString.isEmpty
-blankString.isBlank
+"  \t  ".isEmpty
+"  \t  ".isBlank
+
+
+// MARK: - ArrayExtension
+
+//
+// `.sample` – Returns a random element within the array or nil if array empty.
+//
+
+[1, 2, 3, 4, 5].sample
+([] as [Int]).sample
+
+//
+// `.sample(size:)` – Returns an array with `size` random elements or nil if array empty.
+//
+
+[1, 2, 3, 4, 5].sample(size: 3)
+[1, 2, 3, 4, 5].sample(size: 12)
+([] as [Int]).sample(size: 3)
 
 
 // MARK: - SortedArray
@@ -45,8 +60,7 @@ blankString.isBlank
 //
 // `SortedArray(array: unsortedArray)` – Initializes with unsorted array.
 //
-let unsortedArray = [5, 2, 1, 3, 0, 4]
-let sortedArray = SortedArray(array: unsortedArray)
+let sortedArray = SortedArray(array: [5, 2, 1, 3, 0, 4])
 
 //
 // `sortedArray.array` – Gives access to internal sorted array.
