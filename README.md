@@ -35,7 +35,7 @@ Repeat some code block a given number of times.
 3.times{ array.append("Hello World!") }
 // => ["Hello World!", "Hello World!", "Hello World!"]
 
-5.times() {
+5.times {
   let randomInt = Int(arc4random_uniform(1000))
   intArray.append(randomInt)
 }
