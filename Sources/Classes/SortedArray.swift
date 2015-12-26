@@ -12,13 +12,19 @@ public struct SortedArray<Element: Comparable> {
     
     // MARK: - Stored Instance Properties
     
-    private var array: Array<Element> = []
+    private var internalArray: Array<Element> = []
+    
+    public var array: Array<Element> {
+        get {
+            return self.internalArray
+        }
+    }
     
     
     // MARK: - Initializers
     
     public init(array: [Element]) {
-        self.array = array.sort()
+        self.internalArray = array.sort()
     }
     
     
