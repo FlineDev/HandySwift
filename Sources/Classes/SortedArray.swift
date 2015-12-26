@@ -99,4 +99,8 @@ public struct SortedArray<Element: Comparable> {
         
     }
     
+    public mutating func remove(atIndex index: Array<Element>.Index) {
+        self.internalArray.removeAtIndex(index)
+    }
+    
 }
