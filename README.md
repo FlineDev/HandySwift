@@ -4,25 +4,32 @@ The goal of this library is to provide handy features that didn't make it to the
 
 ## Installation
 
+Currently the recommended way of installing this library is via [Carthage](https://github.com/Carthage/Carthage).
+[Cocoapods](https://github.com/CocoaPods/CocoaPods) isn't supported yet (contributions welcome!).
+[Swift Package Manager](https://github.com/apple/swift-package-manager) was targeted but didn't work in my tests.
+
+You can of course also just include this framework manually into your project by downloading it or by using git submodules.
+
 ### Carthage
 
-Simply add this line to you Cartfile:
+Simply add this line to your Cartfile:
 
 ```
-github "Flinesoft/HandySwift"   ~> 0.1
+github "Flinesoft/HandySwift" ~> 0.2
 ```
 
 And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
 
-TODO: Installation instructions for CocoaPods and Swift Package Manager are missing.
-
 ## Usage
 
 Please have a look at the UsageExamples.playground for a complete list of features provided.
+Open the Playground from within the `.xcworkspace` in order for it to work.
 
 ### IntExtension
 
 #### .times
+
+Repeat some code block a given number of times.
 
 ``` Swift
 3.times{ array.append("Hello World!") }
@@ -34,6 +41,62 @@ Please have a look at the UsageExamples.playground for a complete list of featur
 }
 // => [481, 16, 680, 87, 912]
 ```
+
+### StringExtension
+
+#### .strip
+
+Returns string with whitespace characters stripped from start and end.
+
+``` Swift
+" \t BB-8 likes Rey \t ".strip
+// => "BB-8 likes Rey"
+```
+
+#### .isBlank
+
+Checks if String contains any characters other than whitespace characters.
+
+``` Swift
+"  \t  ".isBlank
+// => true
+```
+
+### SortedArray
+
+The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.
+
+#### init(array:) & .array
+
+``` Swift
+let unsortedArray = [5, 2, 1, 3, 0, 4]
+let sortedArray = SortedArray(array: unsortedArray)
+sortedArray.array   // => [0, 1, 2, 3, 4, 5]
+```
+
+#### .firstMatchingIndex
+
+Finds the lowest index matching the given predicate using binary search for an improved performance (`O(log n)`).
+
+``` Swift
+SortedArray(array: [5, 2, 1, 3, 0, 4]).firstMatchingIndex{ $0 > 1 }
+// => 2
+```
+
+#### .subArray(toIndex:)
+
+``` Swift
+SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
+// => [0, 1]
+```
+
+#### .subArray(fromIndex:)
+
+``` Swift
+SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
+// => [2, 3, 4, 5]
+```
+
 
 ## Contributing
 
