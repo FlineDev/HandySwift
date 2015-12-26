@@ -15,7 +15,7 @@ You can of course also just include this framework manually into your project by
 Simply add this line to your Cartfile:
 
 ```
-github "Flinesoft/HandySwift" ~> 0.2
+github "Flinesoft/HandySwift"
 ```
 
 And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
