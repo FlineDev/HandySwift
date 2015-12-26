@@ -73,15 +73,21 @@ public struct SortedArray<Element: Comparable> {
     }
     
     public func subArray(toIndex endIndex: Array<Element>.Index) -> SortedArray {
+        
         let range = Range<Int>(start: self.array.startIndex, end: endIndex)
         let subArray = Array(self.array[range])
+        
         return SortedArray(array: subArray)
+        
     }
     
     public func subArray(fromIndex startIndex: Array<Element>.Index) -> SortedArray {
+        
         let range = Range<Int>(start: startIndex, end: self.array.endIndex)
         let subArray = Array(self.array[range])
+        
         return SortedArray(array: subArray)
+        
     }
     
 }
