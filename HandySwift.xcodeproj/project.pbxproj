@@ -15,6 +15,8 @@
 		8258E4591C2E1ACE0031CBFF /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */; };
 		82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2911C2ED1A200F934A7 /* StringExtension.swift */; };
 		82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */; };
+		82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */; };
+		82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArrayTests.swift; path = Tests/Classes/SortedArrayTests.swift; sourceTree = SOURCE_ROOT; };
 		82CAE2911C2ED1A200F934A7 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Sources/Extensions/StringExtension.swift; sourceTree = SOURCE_ROOT; };
 		82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensionTests.swift; path = Tests/Extensions/StringExtensionTests.swift; sourceTree = SOURCE_ROOT; };
+		82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtension.swift; path = Sources/Extensions/ArrayExtension.swift; sourceTree = SOURCE_ROOT; };
+		82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensionTests.swift; path = Tests/Extensions/ArrayExtensionTests.swift; sourceTree = SOURCE_ROOT; };
 		82F22E551C26434900E784A2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -106,6 +110,7 @@
 			children = (
 				823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */,
 				82CAE2911C2ED1A200F934A7 /* StringExtension.swift */,
+				82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */,
 				82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */,
+				82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 				8258E4561C2E0C140031CBFF /* SortedArray.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */,
+				82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +263,7 @@
 				8258E4591C2E1ACE0031CBFF /* SortedArrayTests.swift in Sources */,
 				823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */,
 				82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */,
+				82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
