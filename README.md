@@ -93,7 +93,7 @@ SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
 #### .subArray(fromIndex:)
 
 ``` Swift
-SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
+SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(fromIndex: Array<Int>.Index(2))
 // => [2, 3, 4, 5]
 ```
 
