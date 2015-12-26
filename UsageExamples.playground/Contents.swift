@@ -18,6 +18,28 @@ var intArray: [Int] = []
 intArray
 
 
+// MARK: - StringExtension
+
+//
+// `string.strip` – Returns string with whitespace characters stripped from start and end.
+//
+
+let whitespaceString = " \t BB-8 likes Rey \t "
+whitespaceString.strip
+
+//
+// `string.isBlank` – Checks if String contains any characters other than whitespace characters.
+//
+
+let emptyString = ""
+emptyString.isEmpty
+emptyString.isBlank
+
+let blankString = "  \t  "
+blankString.isEmpty
+blankString.isBlank
+
+
 // MARK: - SortedArray
 
 //
