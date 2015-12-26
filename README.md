@@ -62,6 +62,28 @@ Checks if String contains any characters other than whitespace characters.
 // => true
 ```
 
+### ArrayExtension
+
+#### .sample
+
+Returns a random element within the array or nil if array empty.
+
+``` Swift
+[1, 2, 3, 4, 5].sample // => 4
+([] as [Int]).sample // => nil
+```
+
+
+#### .sample(size:)
+
+Returns an array with `size` random elements or nil if array empty.
+
+``` Swift
+[1, 2, 3, 4, 5].sample(size: 3) // => [2, 1, 4]
+[1, 2, 3, 4, 5].sample(size: 8) // => [1, 4, 2, 4, 3, 4, 1, 5]
+([] as [Int]).sample(size: 3) // => nil
+```
+
 ### SortedArray
 
 The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.
