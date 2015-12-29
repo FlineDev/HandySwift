@@ -27,6 +27,17 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
 
 ### IntExtension
 
+### init(randomBelow:)
+
+Initialize random Int value below given positive value.
+
+``` Swift
+Int(randomBelow: 50) // => 26
+Int(randomBelow: 1_000_000) // => 208041
+```
+
+### IntegerTypeExtension
+
 #### .times
 
 Repeat some code block a given number of times.
@@ -36,7 +47,7 @@ Repeat some code block a given number of times.
 // => ["Hello World!", "Hello World!", "Hello World!"]
 
 5.times {
-  let randomInt = Int(arc4random_uniform(1000))
+  let randomInt = Int(randomBelow: 1_000)
   intArray.append(randomInt)
 }
 // => [481, 16, 680, 87, 912]
@@ -62,6 +73,18 @@ Checks if String contains any characters other than whitespace characters.
 // => true
 ```
 
+#### init(randomWithLength:allowedCharactersType:)
+
+Get random numeric/alphabetic/alphanumeric String of given length.
+
+``` Swift
+String(randomWithLength: 4, allowedCharactersType: .Numeric) // => "8503"
+String(randomWithLength: 6, allowedCharactersType: .Alphabetic) // => "ysTUzU"
+String(randomWithLength: 8, allowedCharactersType: .AlphaNumeric) // => "2TgM5sUG"
+String(randomWithLength: 10, allowedCharactersType: .AllCharactersIn("?!🐲🍏✈️🎎🍜"))
+// => "!🍏🐲✈️🎎🐲🍜??🍜"
+```
+
 ### ArrayExtension
 
 #### .sample
@@ -72,7 +95,6 @@ Returns a random element within the array or nil if array empty.
 [1, 2, 3, 4, 5].sample // => 4
 ([] as [Int]).sample // => nil
 ```
-
 
 #### .sample(size:)
 

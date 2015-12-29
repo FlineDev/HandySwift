@@ -8,6 +8,7 @@ import HandySwift
 Int(randomBelow: 50)
 Int(randomBelow: 1_000_000)
 
+
 // MARK: -  IntegerTypeExtension
 
 //
@@ -20,7 +21,7 @@ stringArray
 
 var intArray: [Int] = []
 5.times {
-    let randomInt = Int(arc4random_uniform(1000))
+    let randomInt = Int(randomBelow: 1_000)
     intArray.append(randomInt)
 }
 intArray
