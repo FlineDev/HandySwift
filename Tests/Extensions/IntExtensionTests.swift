@@ -12,18 +12,15 @@ import XCTest
 
 class IntExtensionTests: XCTestCase {
         
-    func testTimesMethod() {
-        var testString = ""
+    func testInitRandomBelow() {
         
-        0.times{ testString += "." }
-        
-        XCTAssertEqual(testString, "")
-        
-        3.times {
-            testString += "."
+        10.times {
+            XCTAssertTrue(Int(randomBelow: 15) < 15)
+            XCTAssertTrue(Int(randomBelow: 15) >= 0)
+            XCTAssertTrue(Int(randomBelow: 0) == 0)
+            XCTAssertTrue(Int(randomBelow: -1) == 0)
         }
         
-        XCTAssertEqual(testString, "...")
     }
     
 }
