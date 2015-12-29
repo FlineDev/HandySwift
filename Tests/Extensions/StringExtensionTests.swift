@@ -32,4 +32,18 @@ class StringExtensionTests: XCTestCase {
         
     }
     
+    func testInitRandomWithLengthAllowedCharactersType() {
+        
+        10.times {
+            
+            XCTAssertEqual(String(randomWithLength: 5, allowedCharactersType: .Numeric).characters.count, 5)
+            XCTAssertFalse(String(randomWithLength: 5, allowedCharactersType: .Numeric).characters.contains("a"))
+            
+            XCTAssertEqual(String(randomWithLength: 8, allowedCharactersType: .AlphaNumeric).characters.count, 8)
+            XCTAssertFalse(String(randomWithLength: 8, allowedCharactersType: .Numeric).characters.contains("."))
+            
+        }
+        
+    }
+    
 }

@@ -9,13 +9,15 @@
 import Foundation
 
 public extension Int {
-
-    public func times(closure: () -> Void) {
-        guard self > 0 else { return }
-        
-        for _ in 1...self {
-            closure()
+    
+    public init(randomBelow upperLimit: Int) {
+        guard upperLimit > 0 else {
+            self.init(0)
+            return
         }
+        
+        let randomUInt32 = arc4random_uniform(UInt32(upperLimit))
+        self.init(randomUInt32)
     }
     
 }

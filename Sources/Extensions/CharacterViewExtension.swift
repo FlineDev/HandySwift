@@ -1,16 +1,16 @@
 //
-//  ArrayExtension.swift
+//  CharacterViewExtension.swift
 //  HandySwift
 //
-//  Created by Cihat Gündüz on 26.12.15.
+//  Created by Cihat Gündüz on 29.12.15.
 //  Copyright © 2015 Flinesoft. All rights reserved.
 //
 
 import UIKit
 
-public extension Array {
-    
-    public var sample: Element? {
+public extension String.CharacterView {
+
+    public var sample: Character? {
         get {
             if self.count > 0 {
                 let randomIndex = self.startIndex.advancedBy(Int(randomBelow: self.count))
@@ -21,10 +21,10 @@ public extension Array {
         }
     }
     
-    public func sample(size size: Int) -> [Element]? {
+    public func sample(size size: Int) -> String.CharacterView? {
         
         if self.count > 0 {
-            var sampleElements: [Element] = []
+            var sampleElements: String.CharacterView = String.CharacterView()
             
             size.times {
                 sampleElements.append(self.sample!)
@@ -33,7 +33,8 @@ public extension Array {
             return sampleElements
         }
         
-        return nil
+        return String.CharacterView()
     }
+
     
 }

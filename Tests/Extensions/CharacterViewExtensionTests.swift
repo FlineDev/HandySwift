@@ -1,8 +1,8 @@
 //
-//  ArrayExtensionTests.swift
+//  CharacterViewExtensionTests.swift
 //  HandySwift
 //
-//  Created by Cihat Gündüz on 26.12.15.
+//  Created by Cihat Gündüz on 29.12.15.
 //  Copyright © 2015 Flinesoft. All rights reserved.
 //
 
@@ -10,13 +10,13 @@ import XCTest
 
 @testable import HandySwift
 
-class ArrayExtensionTests: XCTestCase {
+class CharacterViewExtensionTests: XCTestCase {
     
     func testSample() {
         
-        XCTAssertNil([].sample)
-        XCTAssertNotNil([1,2,3].sample)
-        XCTAssertTrue([1,2,3].contains([1,2,3].sample!))
+        XCTAssertNil("".characters.sample)
+        XCTAssertNotNil("abc".characters.sample)
+        XCTAssertTrue("abc".characters.contains("abc".characters.sample!))
         
     }
     

@@ -1,6 +1,14 @@
 import HandySwift
 
-// MARK: -  IntExtension
+// MARK: - IntExtension
+
+//
+// `init(randomBelow:)` – Initialize random Int value below given positive value.
+//
+Int(randomBelow: 50)
+Int(randomBelow: 1_000_000)
+
+// MARK: -  IntegerTypeExtension
 
 //
 // `n.times{ someCode }` – Calls someCode n times.
@@ -35,6 +43,15 @@ intArray
 
 "  \t  ".isEmpty
 "  \t  ".isBlank
+
+//
+// `init(randomWithLength:allowedCharactersType:)` – Get random numeric/alphabetic/alphanumeric String of given length.
+//
+
+String(randomWithLength: 4, allowedCharactersType: .Numeric)
+String(randomWithLength: 6, allowedCharactersType: .Alphabetic)
+String(randomWithLength: 8, allowedCharactersType: .AlphaNumeric)
+String(randomWithLength: 10, allowedCharactersType: .AllCharactersIn("?!🐲🍏✈️🎎🍜"))
 
 
 // MARK: - ArrayExtension

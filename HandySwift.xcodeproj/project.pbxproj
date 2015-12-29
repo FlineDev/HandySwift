@@ -13,6 +13,10 @@
 		823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */; };
 		8258E4561C2E0C140031CBFF /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258E4551C2E0C140031CBFF /* SortedArray.swift */; };
 		8258E4591C2E1ACE0031CBFF /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */; };
+		825EFDBD1C331EF000558497 /* IntegerTypeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EFDBC1C331EF000558497 /* IntegerTypeExtension.swift */; };
+		825EFDBF1C3321B300558497 /* CharacterViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EFDBE1C3321B300558497 /* CharacterViewExtension.swift */; };
+		825EFDC11C332ABB00558497 /* IntegerTypeExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EFDC01C332ABB00558497 /* IntegerTypeExtensionTests.swift */; };
+		825EFDC31C332AD200558497 /* CharacterViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EFDC21C332AD200558497 /* CharacterViewExtensionTests.swift */; };
 		82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2911C2ED1A200F934A7 /* StringExtension.swift */; };
 		82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */; };
 		82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */; };
@@ -39,6 +43,10 @@
 		823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntExtensionTests.swift; path = Tests/Extensions/IntExtensionTests.swift; sourceTree = SOURCE_ROOT; };
 		8258E4551C2E0C140031CBFF /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArray.swift; path = Sources/Classes/SortedArray.swift; sourceTree = SOURCE_ROOT; };
 		8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArrayTests.swift; path = Tests/Classes/SortedArrayTests.swift; sourceTree = SOURCE_ROOT; };
+		825EFDBC1C331EF000558497 /* IntegerTypeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegerTypeExtension.swift; path = Sources/Extensions/IntegerTypeExtension.swift; sourceTree = SOURCE_ROOT; };
+		825EFDBE1C3321B300558497 /* CharacterViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterViewExtension.swift; path = Sources/Extensions/CharacterViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		825EFDC01C332ABB00558497 /* IntegerTypeExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IntegerTypeExtensionTests.swift; path = Tests/Extensions/IntegerTypeExtensionTests.swift; sourceTree = SOURCE_ROOT; };
+		825EFDC21C332AD200558497 /* CharacterViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharacterViewExtensionTests.swift; path = Tests/Extensions/CharacterViewExtensionTests.swift; sourceTree = SOURCE_ROOT; };
 		82CAE2911C2ED1A200F934A7 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = Sources/Extensions/StringExtension.swift; sourceTree = SOURCE_ROOT; };
 		82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensionTests.swift; path = Tests/Extensions/StringExtensionTests.swift; sourceTree = SOURCE_ROOT; };
 		82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtension.swift; path = Sources/Extensions/ArrayExtension.swift; sourceTree = SOURCE_ROOT; };
@@ -109,8 +117,10 @@
 			isa = PBXGroup;
 			children = (
 				823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */,
+				825EFDBC1C331EF000558497 /* IntegerTypeExtension.swift */,
 				82CAE2911C2ED1A200F934A7 /* StringExtension.swift */,
 				82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */,
+				825EFDBE1C3321B300558497 /* CharacterViewExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -119,8 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */,
+				825EFDC01C332ABB00558497 /* IntegerTypeExtensionTests.swift */,
 				82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */,
 				82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */,
+				825EFDC21C332AD200558497 /* CharacterViewExtensionTests.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8258E4561C2E0C140031CBFF /* SortedArray.swift in Sources */,
+				825EFDBD1C331EF000558497 /* IntegerTypeExtension.swift in Sources */,
+				825EFDBF1C3321B300558497 /* CharacterViewExtension.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */,
 				82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */,
@@ -260,7 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				825EFDC31C332AD200558497 /* CharacterViewExtensionTests.swift in Sources */,
 				8258E4591C2E1ACE0031CBFF /* SortedArrayTests.swift in Sources */,
+				825EFDC11C332ABB00558497 /* IntegerTypeExtensionTests.swift in Sources */,
 				823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */,
 				82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */,
 				82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */,
