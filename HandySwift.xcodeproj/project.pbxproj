@@ -740,7 +740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -762,7 +762,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -913,6 +913,7 @@
 				825EFDDD1C3333B000558497 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		825EFDDE1C3333B000558497 /* Build configuration list for PBXNativeTarget "HandySwift OSX Tests" */ = {
 			isa = XCConfigurationList;
@@ -921,6 +922,7 @@
 				825EFDE01C3333B000558497 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		825EFDFA1C33351300558497 /* Build configuration list for PBXNativeTarget "HandySwift tvOS" */ = {
 			isa = XCConfigurationList;
@@ -929,6 +931,7 @@
 				825EFDFC1C33351300558497 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		825EFDFD1C33351300558497 /* Build configuration list for PBXNativeTarget "HandySwift tvOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -937,6 +940,7 @@
 				825EFDFF1C33351300558497 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
