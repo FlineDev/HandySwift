@@ -6,7 +6,7 @@
 //  Copyright © 2015 Flinesoft. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public extension String {
     
