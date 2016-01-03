@@ -159,6 +159,7 @@ let wordFrequencies = [
 ]
 
 let frequencyTable = FrequencyTable(values: wordFrequencies){ $0.frequency }
+// => HandySwift.FrequencyTable<WordFrequency>
 ```
 
 
