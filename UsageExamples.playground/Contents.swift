@@ -102,3 +102,39 @@ nonMatchingSubArray.array
 //
 let matchingSubArray = sortedArray.subArray(fromIndex: index!)
 matchingSubArray.array
+
+
+// MARK: - FrequencyTable
+
+//
+// `FrequencyTable(values: valuesArray){ /* frequencyClosure */ }` – Initialize with values and closure.
+//
+struct WordFrequency {
+    let word: String; let frequency: Int
+    init(word: String, frequency: Int) { self.word = word; self.frequency = frequency }
+}
+let wordFrequencies = [
+    WordFrequency(word: "Harry", frequency: 10),
+    WordFrequency(word: "Hermione", frequency: 4),
+    WordFrequency(word: "Ronald", frequency: 1)
+]
+
+let frequencyTable = FrequencyTable(values: wordFrequencies){ $0.frequency }
+frequencyTable
+
+//
+// `.sample` – Returns a random element with frequency-based probability within the array or nil if array empty.
+//
+
+frequencyTable.sample
+let randomWord = frequencyTable.sample.map{ $0.word }
+randomWord
+
+//
+// `.sample(size:)` – Returns an array with `size` frequency-based random elements or nil if array empty.
+//
+
+frequencyTable.sample(size: 6)
+let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
+randomWords
+
