@@ -5,6 +5,6 @@
       location = "group:HandySwift.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:UsageExamples.playground">
+      location = "container:UsageExamples.playground">
    </FileRef>
 </Workspace>
