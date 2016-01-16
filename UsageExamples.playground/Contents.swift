@@ -58,7 +58,12 @@ String(randomWithLength: 10, allowedCharactersType: .AllCharactersIn("?!🐲🍏
 
 let structure = ["firstName", "lastName"]
 let dataEntries = [["Harry", "Potter"], ["Hermione", "Granger"], ["Ron", "Weasley"]]
-[String: String](keys: structure, values: dataEntries[0])
+Dictionary(keys: structure, values: dataEntries[0])
+
+let structuredEntries = dataEntries.map{ Dictionary(keys: structure, values: $0) }
+structuredEntries
+
+Dictionary(keys: [1,2,3], values: [1,2,3,4,5])
 
 
 //: ## ArrayExtension
