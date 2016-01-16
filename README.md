@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="Logo.png" width=360 height=100>
+</p>
+
 # HandySwift
 
 The goal of this library is to provide handy features that didn't make it to the Swift standard library (yet) due to many different reasons. Those could be that the Swift community wants to keep the standard library clean and manageable or simply hasn't finished discussion on a specific feature yet.
