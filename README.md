@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="Logo.png" width=360 height=100>
+    <img src="Logo.png" width=900 height=250>
 </p>
 
 # HandySwift
