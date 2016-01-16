@@ -106,6 +106,22 @@ Returns an array with `size` random elements or nil if array empty.
 ([] as [Int]).sample(size: 3) // => nil
 ```
 
+### DictionaryExtension
+#### init?(keys:values:)
+
+Initializes a new `Dictionary` and fills it with keys and values arrays or returns nil if count of arrays differ.
+
+``` Swift
+let structure = ["firstName", "lastName"]
+let dataEntries = [["Harry", "Potter"], ["Hermione", "Granger"], ["Ron", "Weasley"]]
+Dictionary(keys: structure, values: dataEntries[0]) // => ["firstName": "Harry", "lastName": "Potter"]
+
+dataEntries.map{ Dictionary(keys: structure, values: $0) }
+// => [["firstName": "Harry", "lastName": "Potter"], ["firstName": "Hermione", "lastName": "Grange"], ...]
+
+Dictionary(keys: [1,2,3], values: [1,2,3,4,5]) // => nil
+```
+
 ### SortedArray
 
 The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.

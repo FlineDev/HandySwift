@@ -52,7 +52,7 @@ String(randomWithLength: 8, allowedCharactersType: .AlphaNumeric)
 String(randomWithLength: 10, allowedCharactersType: .AllCharactersIn("?!🐲🍏✈️🎎🍜"))
 
 
-//: DictionaryExtension
+//: ## DictionaryExtension
 //: ### init?(keys:values:)
 //: Initializes a new `Dictionary` and fills it with keys and values arrays or returns nil if count of arrays differ.
 
