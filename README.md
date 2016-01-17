@@ -3,14 +3,18 @@
 </p>
 
 <p align="center">
+    <a href="#">
     <img src="https://img.shields.io/badge/Swift-2.1-DD563C.svg"
-         alt="Swift: 2.1">
-    <a href="https://github.com/Carthage/Carthage">
-      <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"
-           alt="Carthage: compatible">
+       alt="Swift: 2.1">
     </a>
+    <a href="https://github.com/Carthage/Carthage">
+    <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"
+       alt="Carthage: compatible">
+    </a>
+    <a href="#">
     <img src="https://img.shields.io/badge/platforms-iOS%7CtvOS%7COSX-lightgrey.svg"
-         alt="platforms: iOS|tvOS|OSX">
+       alt="platforms: iOS|tvOS|OSX">
+    </a>
     <a href="https://github.com/Flinesoft/HandySwift/blob/develop/LICENSE.md">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg"
              alt="license: MIT">
