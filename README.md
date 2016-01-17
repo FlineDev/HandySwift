@@ -1,6 +1,12 @@
 <p align="center">
     <img src="Logo.png" width=600 height=167>
 </p>
+<p align="center">
+  ![Swift 2.1](https://img.shields.io/badge/Swift-2.1-DD563C.svg)
+  [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
+  ![platforms iOS|tvOS|OSX](https://img.shields.io/badge/platforms-iOS%7CtvOS%7COSX-lightgrey.svg)
+  [![license MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Flinesoft/HandySwift/blob/develop/LICENSE.md)
+</p>
 
 # HandySwift
 
