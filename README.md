@@ -12,8 +12,8 @@
        alt="Carthage: compatible">
     </a>
     <a href="#">
-    <img src="https://img.shields.io/badge/platforms-iOS%7CtvOS%7COSX-lightgrey.svg"
-       alt="platforms: iOS|tvOS|OSX">
+    <img src="https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20OSX-lightgrey.svg"
+       alt="platforms: iOS | tvOS | OSX">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/blob/develop/LICENSE.md">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg"
