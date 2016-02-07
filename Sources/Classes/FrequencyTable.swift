@@ -20,9 +20,9 @@ public struct FrequencyTable<T> {
     
     public init(values: [T], frequencyClosure: (T) -> Int) {
         
-        self.valuesWithFrequencies = values.map{ ($0, frequencyClosure($0)) }
+        self.valuesWithFrequencies = values.map { ($0, frequencyClosure($0)) }
         self.frequentValues = Array(self.valuesWithFrequencies.map { (value, frequency) -> [T] in
-            return (0..<frequency).map{ _ in value }
+            return (0..<frequency).map { _ in value }
         }.flatten())
         
     }
@@ -38,7 +38,7 @@ public struct FrequencyTable<T> {
     
     public func sample(size size: Int) -> [T]? {
         
-        if self.frequentValues.count > 0 {
+        if !self.frequentValues.isEmpty {
             var sampleElements: [T] = []
             
             size.times {

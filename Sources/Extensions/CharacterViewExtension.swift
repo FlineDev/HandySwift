@@ -12,7 +12,7 @@ public extension String.CharacterView {
 
     public var sample: Character? {
         get {
-            if self.count > 0 {
+            if !self.isEmpty {
                 let randomIndex = self.startIndex.advancedBy(Int(randomBelow: self.count))
                 return self[randomIndex]
             }
@@ -23,7 +23,7 @@ public extension String.CharacterView {
     
     public func sample(size size: Int) -> String.CharacterView? {
         
-        if self.count > 0 {
+        if !self.isEmpty {
             var sampleElements: String.CharacterView = String.CharacterView()
             
             size.times {

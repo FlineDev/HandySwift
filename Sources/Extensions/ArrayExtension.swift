@@ -12,7 +12,7 @@ public extension Array {
     
     public var sample: Element? {
         get {
-            if self.count > 0 {
+            if !self.isEmpty {
                 let randomIndex = self.startIndex.advancedBy(Int(randomBelow: self.count))
                 return self[randomIndex]
             }
@@ -23,7 +23,7 @@ public extension Array {
     
     public func sample(size size: Int) -> [Element]? {
         
-        if self.count > 0 {
+        if !self.isEmpty {
             var sampleElements: [Element] = []
             
             size.times {
