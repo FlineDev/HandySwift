@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Data structure to retrieve random values with their frequency taken into account.
 public struct FrequencyTable<T> {
 
     // MARK: - Stored Instance Properties
@@ -18,6 +19,13 @@ public struct FrequencyTable<T> {
     
     // MARK: - Initializers
     
+    /// Creates a new FrequencyTable instance with values and their frequencies provided.
+    /// 
+    /// - Parameters:
+    ///     - values:             An array full of values to be saved into the frequency table.
+    ///     - frequencyClosure:   The closure to specify the frequency for a specific value.
+    ///
+    /// - Returns: The new FrequencyTable instance.
     public init(values: [T], frequencyClosure: (T) -> Int) {
         
         self.valuesWithFrequencies = values.map { ($0, frequencyClosure($0)) }
@@ -30,12 +38,19 @@ public struct FrequencyTable<T> {
     
     // MARK: - Instance Methods
     
+    /// Returns a random value taking frequencies into account or nil if values empty.
     public var sample: T? {
         get {
             return frequentValues.sample
         }
     }
     
+    /// Returns an array of random values taking frequencies into account or nil if values empty.
+    /// 
+    /// - Parameters:
+    ///     - size: The size of the resulting array of random values.
+    ///
+    /// - Returns: An array of random values or nil if values empty.
     public func sample(size size: Int) -> [T]? {
         
         if !self.frequentValues.isEmpty {
