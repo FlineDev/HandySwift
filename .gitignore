@@ -58,3 +58,5 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 HandySwift.framework.zip
+doc/
+.yardoc/
