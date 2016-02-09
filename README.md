@@ -1,5 +1,6 @@
 <p align="center">
-    <img src="Logo.png" width=600 height=167>
+    <img src="https://raw.githubusercontent.com/Flinesoft/HandySwift/develop/Logo.png"
+      width=600 height=167>
 </p>
 
 <p align="center">
