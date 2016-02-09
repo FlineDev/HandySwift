@@ -10,6 +10,10 @@ import Foundation
 
 extension IntegerType {
 
+    /// Runs the code passed as a closure the specified number of times.
+    /// 
+    /// - Parameters:
+    ///   - closure: The code to be run multiple times.
     public func times(closure: () -> Void) {
         guard self > 0 else { return }
         

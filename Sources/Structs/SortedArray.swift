@@ -8,21 +8,28 @@
 
 import Foundation
 
+/// Data structure to keep a sorted array of elements for fast access.
 public struct SortedArray<Element: Comparable> {
     
     // MARK: - Stored Instance Properties
     
     private var internalArray: Array<Element> = []
     
+    /// Returns the sorted array of elements.
     public var array: Array<Element> {
-        get {
-            return self.internalArray
-        }
+        return self.internalArray
     }
     
     
     // MARK: - Initializers
     
+    /// Creates a new SortedArray with a given array of elements and sorts the elements.
+    ///
+    /// - Complexity: Probably O(n * log(n)) -- complexity of `sort()` on an Array.
+    ///
+    /// - Parameters:
+    ///     - array: The array to be initially sorted and saved.
+    /// - Returns: The new SortedArray isntance.
     public init(array: [Element]) {
         self.init(array: array, preSorted: false)
     }
@@ -33,12 +40,18 @@ public struct SortedArray<Element: Comparable> {
         } else {
             self.internalArray = array.sort()
         }
-        
     }
     
     
     // MARK: - Instance Methods
     
+    /// Returns the index of the left most matching element. Matching is done via binary search.
+    /// 
+    /// - Complexity: O(log(n))
+    ///
+    /// - Parameters:
+    ///   - predicate: The boolean predicate to match the elements with.
+    /// - Returns: The index of the left most matching element.
     public func firstMatchingIndex(predicate: Element -> Bool) -> Array<Element>.Index? {
         
         // check if all elements match
@@ -81,6 +94,13 @@ public struct SortedArray<Element: Comparable> {
         return lowerIndex
     }
     
+    /// Returns a sub array of a SortedArray to a given index without resorting.
+    ///
+    /// - Complexity: O(1)
+    ///
+    /// - Parameters:
+    ///   - toIndex: The upper bound index until which to include elements.
+    /// - Returns: A new SortedArray instance including all elements until the specified index.
     public func subArray(toIndex endIndex: Array<Element>.Index) -> SortedArray {
         
         let range = Range<Int>(start: self.array.startIndex, end: endIndex)
@@ -90,6 +110,13 @@ public struct SortedArray<Element: Comparable> {
         
     }
     
+    /// Returns a sub array of a SortedArray starting at a given index without resorting.
+    ///
+    /// - Complexity: O(1)
+    ///
+    /// - Parameters:
+    ///   - toIndex: The lower bound index from which to start including elements.
+    /// - Returns: A new SortedArray instance including all elements starting at the specified index.
     public func subArray(fromIndex startIndex: Array<Element>.Index) -> SortedArray {
         
         let range = Range<Int>(start: startIndex, end: self.array.endIndex)
@@ -99,6 +126,12 @@ public struct SortedArray<Element: Comparable> {
         
     }
     
+    /// Removes an item from the sorted array.
+    /// 
+    /// - Complexity: O(1)
+    ///
+    /// - Parameters:
+    ///   - atIndex: The index of the element to remove from the sorted array.
     public mutating func remove(atIndex index: Array<Element>.Index) {
         self.internalArray.removeAtIndex(index)
     }

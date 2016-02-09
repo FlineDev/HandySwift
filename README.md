@@ -1,3 +1,26 @@
+<p align="center">
+    <img src="Logo.png" width=600 height=167>
+</p>
+
+<p align="center">
+    <a href="#">
+    <img src="https://img.shields.io/badge/Swift-2.1-DD563C.svg"
+       alt="Swift: 2.1">
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+    <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"
+       alt="Carthage: compatible">
+    </a>
+    <a href="#">
+    <img src="https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-lightgrey.svg"
+        alt="platforms: iOS | tvOS | OS X">
+    </a>
+    <a href="https://github.com/Flinesoft/HandySwift/blob/develop/LICENSE.md">
+        <img src="https://img.shields.io/badge/license-MIT-blue.svg"
+             alt="license: MIT">
+    </a>
+</p>
+
 # HandySwift
 
 The goal of this library is to provide handy features that didn't make it to the Swift standard library (yet) due to many different reasons. Those could be that the Swift community wants to keep the standard library clean and manageable or simply hasn't finished discussion on a specific feature yet.
@@ -18,7 +41,7 @@ Simply add this line to your Cartfile:
 github "Flinesoft/HandySwift"
 ```
 
-And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features.
+And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
 
 ## Usage
 
