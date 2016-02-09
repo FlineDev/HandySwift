@@ -40,9 +40,7 @@ public struct FrequencyTable<T> {
     
     /// Returns a random value taking frequencies into account or nil if values empty.
     public var sample: T? {
-        get {
-            return frequentValues.sample
-        }
+        return frequentValues.sample
     }
     
     /// Returns an array of random values taking frequencies into account or nil if values empty.

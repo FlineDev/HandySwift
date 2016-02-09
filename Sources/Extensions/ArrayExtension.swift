@@ -10,17 +10,23 @@ import Foundation
 
 public extension Array {
     
+    /// Returns a random element from the `Array`.
+    /// 
+    /// - Returns: A random element from the array or `nil` if empty.
     public var sample: Element? {
-        get {
-            if !self.isEmpty {
-                let randomIndex = self.startIndex.advancedBy(Int(randomBelow: self.count))
-                return self[randomIndex]
-            }
-            
-            return nil
+        if !self.isEmpty {
+            let randomIndex = self.startIndex.advancedBy(Int(randomBelow: self.count))
+            return self[randomIndex]
         }
+        
+        return nil
     }
     
+    /// Returns a given number of random elements from the `Array`.
+    ///
+    /// - Parameters:
+    ///   - size: The number of random elements wanted.
+    /// - Returns: An array with the given number of random elements or `nil` if empty.
     public func sample(size size: Int) -> [Element]? {
         
         if !self.isEmpty {

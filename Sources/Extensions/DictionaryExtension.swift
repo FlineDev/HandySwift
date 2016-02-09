@@ -10,6 +10,12 @@ import Foundation
 
 extension Dictionary {
 
+    /// Initializes a new `Dictionary` and fills it with keys and values arrays.
+    /// 
+    /// - Parameters:
+    ///   - keys:       The `Array` of keys.
+    ///   - values:     The `Array` of values.
+    /// - Returns: A new `Dictionary` instance with prefilled keys and values or `nil` if size of `Array`s different.
     public init?(keys: [Key], values: [Value]) {
         
         guard keys.count == values.count else {
