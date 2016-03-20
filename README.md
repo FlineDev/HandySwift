@@ -5,8 +5,8 @@
 
 <p align="center">
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-0.8-blue.svg"
-             alt="Version: 0.8">
+        <img src="https://img.shields.io/badge/Version-0.8.1-blue.svg"
+             alt="Version: 0.8.1">
     </a>
     <img src="https://img.shields.io/badge/Swift-2.1-DD563C.svg"
          alt="Swift: 2.1">
