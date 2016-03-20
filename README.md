@@ -25,7 +25,7 @@ The goal of this library is to provide handy features that didn't make it to the
 ## Installation
 
 Currently the recommended way of installing this library is via [Carthage](https://github.com/Carthage/Carthage).
-[Cocoapods](https://github.com/CocoaPods/CocoaPods) isn't supported yet (contributions welcome!).
+[Cocoapods](https://github.com/CocoaPods/CocoaPods) is supported, too.
 [Swift Package Manager](https://github.com/apple/swift-package-manager) was targeted but didn't work in my tests.
 
 You can of course also just include this framework manually into your project by downloading it or by using git submodules.
@@ -34,11 +34,29 @@ You can of course also just include this framework manually into your project by
 
 Simply add this line to your Cartfile:
 
-```
+``` Swift
 github "Flinesoft/HandySwift"
 ```
 
 And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
+
+### CocoaPods
+
+Add the line `pod 'HandySwift'` to your target in your `Podfile` and make sure to include `use_frameworks!`
+at the top. The result might look similar to this:
+
+``` Ruby
+platform :ios, '8.0'
+use_frameworks!
+
+target 'MyAppTarget' do
+    pod 'HandySwift', '~> 0.8'
+end
+```
+
+Now close your project and run `pod install` from the command line. Then open the `.xcworkspace` from within your project folder.
+Build your project once (with `Cmd+B`) to update the frameworks known to Xcode. Now you can `import HandySwift` in each class you want to use its features.
+Refer to [CocoaPods.org](https://cocoapods.org) for detailed / updates instructions.
 
 ## Usage
 
