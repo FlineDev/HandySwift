@@ -14,7 +14,6 @@ public extension Int {
     ///
     /// - Parameters:
     ///   - randomBelow: The upper bound value to create a random value with.
-    /// - Returns: An instance with a random `Int` value below the specified value.
     public init(randomBelow upperLimit: Int) {
         guard upperLimit > 0 else {
             self.init(0)

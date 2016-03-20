@@ -24,8 +24,6 @@ public struct FrequencyTable<T> {
     /// - Parameters:
     ///     - values:             An array full of values to be saved into the frequency table.
     ///     - frequencyClosure:   The closure to specify the frequency for a specific value.
-    ///
-    /// - Returns: The new FrequencyTable instance.
     public init(values: [T], frequencyClosure: (T) -> Int) {
         
         self.valuesWithFrequencies = values.map { ($0, frequencyClosure($0)) }
