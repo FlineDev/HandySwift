@@ -170,6 +170,15 @@ dict.merge(["B": "New B value", "C": "C value"])
 dict // => ["A": "A value", "B": "New B value", "C": "C value"]
 ```
 
+### .mergedWith(Dictionary)
+Create new merged `Dictionary` with the given `Dictionary` merged into a `Dictionary` overriding existing values for matching keys.
+
+``` Swift
+let immutableDict = ["A": "A value", "B": "Old B value"]
+immutableDict.mergedWith(["B": "New B value", "C": "C value"])
+// => ["A": "A value", "B": "New B value", "C": "C value"]
+```
+
 ### SortedArray
 
 The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.

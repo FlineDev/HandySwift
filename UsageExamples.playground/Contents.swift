@@ -71,6 +71,13 @@ Dictionary(keys: [1,2,3], values: [1,2,3,4,5])
 var dict = ["A": "A value", "B": "Old B value"]
 dict.merge(["B": "New B value", "C": "C value"])
 
+//: ### .mergedWith(Dictionary)
+//: Create new merged `Dictionary` with the given `Dictionary` merged into a `Dictionary` overriding existing values for matching keys.
+
+let immutableDict = ["A": "A value", "B": "Old B value"]
+let mergedDict = immutableDict.mergedWith(["B": "New B value", "C": "C value"])
+mergedDict
+
 //: ## ArrayExtension
 //: ### .sample
 //: Returns a random element within the array or nil if array empty.
