@@ -30,4 +30,14 @@ extension Dictionary {
         
     }
     
+    /// Merge given `Dictionary` into this `Dictionary` overriding existing values for matching keys.
+    ///
+    /// - Parameters:
+    ///   - otherDictionary:    The other `Dictionary` to merge into this `Dictionary`.
+    public mutating func merge(otherDictionary: [Key: Value]) {
+        for (key, value) in otherDictionary {
+            self[key] = value
+        }
+    }
+    
 }
