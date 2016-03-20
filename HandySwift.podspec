@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.9"
   s.tvos.deployment_target = "9.0"
 
-  s.source       = { :git => "git@github.com:Flinesoft/HandySwift.git", :tag => "0.8" }
+  s.source       = { :git => "https://github.com/Flinesoft/HandySwift.git", :tag => "0.8" }
   s.source_files  = "Sources", "Sources/**/*.swift"
   s.framework  = "Foundation"
 
