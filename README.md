@@ -1,24 +1,20 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Flinesoft/HandySwift/develop/Logo.png"
+    <img src="https://raw.githubusercontent.com/Flinesoft/HandySwift/stable/Logo.png"
       width=600 height=167>
 </p>
 
 <p align="center">
-    <a href="#">
+    <a href="https://github.com/Flinesoft/HandySwift/releases">
+        <img src="https://img.shields.io/badge/Version-0.7.1-blue.svg"
+             alt="Version: 0.7.1">
+    </a>
     <img src="https://img.shields.io/badge/Swift-2.1-DD563C.svg"
-       alt="Swift: 2.1">
-    </a>
-    <a href="https://github.com/Carthage/Carthage">
-    <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"
-       alt="Carthage: compatible">
-    </a>
-    <a href="#">
-    <img src="https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-lightgrey.svg"
+         alt="Swift: 2.1">
+    <img src="https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-orange.svg"
         alt="platforms: iOS | tvOS | OS X">
-    </a>
-    <a href="https://github.com/Flinesoft/HandySwift/blob/develop/LICENSE.md">
-        <img src="https://img.shields.io/badge/license-MIT-blue.svg"
-             alt="license: MIT">
+    <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
+        <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
+              alt="License: MIT">
     </a>
 </p>
 
