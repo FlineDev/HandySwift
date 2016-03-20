@@ -142,6 +142,16 @@ dataEntries.map{ Dictionary(keys: structure, values: $0) }
 Dictionary(keys: [1,2,3], values: [1,2,3,4,5]) // => nil
 ```
 
+#### .merge(Dictionary)
+
+Merges a given `Dictionary` into an existing `Dictionary` overriding existing values for matching keys.
+
+``` Swift
+var dict = ["A": "A value", "B": "Old B value"]
+dict.merge(["B": "New B value", "C": "C value"])
+dict // => ["A": "A value", "B": "New B value", "C": "C value"]
+```
+
 ### SortedArray
 
 The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.
