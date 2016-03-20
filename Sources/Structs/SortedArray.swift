@@ -29,7 +29,6 @@ public struct SortedArray<Element: Comparable> {
     ///
     /// - Parameters:
     ///     - array: The array to be initially sorted and saved.
-    /// - Returns: The new SortedArray isntance.
     public init(array: [Element]) {
         self.init(array: array, preSorted: false)
     }
