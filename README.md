@@ -10,8 +10,8 @@
     </a>
     <img src="https://img.shields.io/badge/Swift-2.1-DD563C.svg"
          alt="Swift: 2.1">
-    <img src="https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-orange.svg"
-        alt="platforms: iOS | tvOS | OS X">
+    <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-orange.svg"
+        alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
         <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
               alt="License: MIT">
