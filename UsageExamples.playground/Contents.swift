@@ -65,6 +65,11 @@ structuredEntries
 
 Dictionary(keys: [1,2,3], values: [1,2,3,4,5])
 
+//: ### .merge(Dictionary)
+//: Merges a given `Dictionary` into an existing `Dictionary` overriding existing values for matching keys.
+
+var dict = ["A": "A value", "B": "Old B value"]
+dict.merge(["B": "New B value", "C": "C value"])
 
 //: ## ArrayExtension
 //: ### .sample

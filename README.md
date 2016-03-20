@@ -1,23 +1,20 @@
 <p align="center">
-    <img src="Logo.png" width=600 height=167>
+    <img src="https://raw.githubusercontent.com/Flinesoft/HandySwift/stable/Logo.png"
+      width=600 height=167>
 </p>
 
 <p align="center">
-    <a href="#">
+    <a href="https://github.com/Flinesoft/HandySwift/releases">
+        <img src="https://img.shields.io/badge/Version-0.8-blue.svg"
+             alt="Version: 0.8">
+    </a>
     <img src="https://img.shields.io/badge/Swift-2.1-DD563C.svg"
-       alt="Swift: 2.1">
-    </a>
-    <a href="https://github.com/Carthage/Carthage">
-    <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg"
-       alt="Carthage: compatible">
-    </a>
-    <a href="#">
-    <img src="https://img.shields.io/badge/platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-lightgrey.svg"
-        alt="platforms: iOS | tvOS | OS X">
-    </a>
-    <a href="https://github.com/Flinesoft/HandySwift/blob/develop/LICENSE.md">
-        <img src="https://img.shields.io/badge/license-MIT-blue.svg"
-             alt="license: MIT">
+         alt="Swift: 2.1">
+    <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-orange.svg"
+        alt="Platforms: iOS | tvOS | OS X">
+    <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
+        <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
+              alt="License: MIT">
     </a>
 </p>
 
@@ -143,6 +140,16 @@ dataEntries.map{ Dictionary(keys: structure, values: $0) }
 // => [["firstName": "Harry", "lastName": "Potter"], ["firstName": "Hermione", "lastName": "Grange"], ...]
 
 Dictionary(keys: [1,2,3], values: [1,2,3,4,5]) // => nil
+```
+
+#### .merge(Dictionary)
+
+Merges a given `Dictionary` into an existing `Dictionary` overriding existing values for matching keys.
+
+``` Swift
+var dict = ["A": "A value", "B": "Old B value"]
+dict.merge(["B": "New B value", "C": "C value"])
+dict // => ["A": "A value", "B": "New B value", "C": "C value"]
 ```
 
 ### SortedArray

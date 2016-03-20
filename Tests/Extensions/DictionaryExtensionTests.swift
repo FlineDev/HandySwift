@@ -39,4 +39,21 @@ class DictionaryExtensionTests: XCTestCase {
         
     }
     
+    func testMergeOtherDictionary() {
+        
+        var dict = ["A": "A value", "B": "Old B value", "C": "C value"]
+        let otherDict = ["B": "New B value", "D": "D value"]
+        
+        XCTAssertEqual(dict.count, 3)
+        XCTAssertEqual(dict["B"], "Old B value")
+        XCTAssertNil(dict["D"])
+        
+        dict.merge(otherDict)
+        
+        XCTAssertEqual(dict.count, 4)
+        XCTAssertEqual(dict["B"], "New B value")
+        XCTAssertEqual(dict["D"], "D value")
+        
+    }
+    
 }
