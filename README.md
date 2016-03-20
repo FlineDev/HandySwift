@@ -170,7 +170,7 @@ dict.merge(["B": "New B value", "C": "C value"])
 dict // => ["A": "A value", "B": "New B value", "C": "C value"]
 ```
 
-### .mergedWith(Dictionary)
+#### .mergedWith(Dictionary)
 Create new merged `Dictionary` with the given `Dictionary` merged into a `Dictionary` overriding existing values for matching keys.
 
 ``` Swift
