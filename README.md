@@ -5,11 +5,11 @@
 
 <p align="center">
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-0.8.1-blue.svg"
-             alt="Version: 0.8.1">
+        <img src="https://img.shields.io/badge/Version-0.8.2-blue.svg"
+             alt="Version: 0.8.2">
     </a>
-    <img src="https://img.shields.io/badge/Swift-2.1-DD563C.svg"
-         alt="Swift: 2.1">
+    <img src="https://img.shields.io/badge/Swift-2.2-DD563C.svg"
+         alt="Swift: 2.2">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-orange.svg"
         alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
