@@ -102,7 +102,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Returns: A new SortedArray instance including all elements until the specified index.
     public func subArray(toIndex endIndex: Array<Element>.Index) -> SortedArray {
         
-        let range = Range<Int>(start: self.array.startIndex, end: endIndex)
+        let range = self.array.startIndex..<endIndex
         let subArray = Array(self.array[range])
         
         return SortedArray(array: subArray, preSorted: true)
@@ -118,7 +118,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Returns: A new SortedArray instance including all elements starting at the specified index.
     public func subArray(fromIndex startIndex: Array<Element>.Index) -> SortedArray {
         
-        let range = Range<Int>(start: startIndex, end: self.array.endIndex)
+        let range = startIndex..<self.array.endIndex
         let subArray = Array(self.array[range])
         
         return SortedArray(array: subArray, preSorted: true)
