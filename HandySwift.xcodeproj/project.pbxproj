@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		821F8D641CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */; };
+		821F8D651CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */; };
+		821F8D661CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */; };
 		823B2B351C24AAB7007B3CDD /* HandySwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 823B2B341C24AAB7007B3CDD /* HandySwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		823B2B3C1C24AAB7007B3CDD /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B2B311C24AAB6007B3CDD /* HandySwift.framework */; };
 		823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */; };
@@ -88,6 +91,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		823B2B311C24AAB6007B3CDD /* HandySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HandySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		823B2B341C24AAB7007B3CDD /* HandySwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HandySwift.h; sourceTree = "<group>"; };
 		823B2B361C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */,
 				825EFDBE1C3321B300558497 /* CharacterViewExtension.swift */,
 				8280D7DB1C4A6EC9001172EF /* DictionaryExtension.swift */,
+				821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				8258E4561C2E0C140031CBFF /* SortedArray.swift in Sources */,
 				826F69AC1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				825EFDBD1C331EF000558497 /* IntegerTypeExtension.swift in Sources */,
+				821F8D641CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */,
 				825EFDBF1C3321B300558497 /* CharacterViewExtension.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */,
@@ -592,6 +598,7 @@
 				825EFE061C33358400558497 /* ArrayExtension.swift in Sources */,
 				826F69AD1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				825EFE051C33358400558497 /* StringExtension.swift in Sources */,
+				821F8D651CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */,
 				825EFE071C33358400558497 /* CharacterViewExtension.swift in Sources */,
 				825EFE041C33358400558497 /* IntegerTypeExtension.swift in Sources */,
 				825EFE021C33358400558497 /* SortedArray.swift in Sources */,
@@ -622,6 +629,7 @@
 				825EFE0C1C33358500558497 /* ArrayExtension.swift in Sources */,
 				826F69AE1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				825EFE0B1C33358500558497 /* StringExtension.swift in Sources */,
+				821F8D661CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */,
 				825EFE0D1C33358500558497 /* CharacterViewExtension.swift in Sources */,
 				825EFE0A1C33358500558497 /* IntegerTypeExtension.swift in Sources */,
 				825EFE081C33358500558497 /* SortedArray.swift in Sources */,
@@ -771,6 +779,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SKIP_INSTALL = YES;
@@ -792,6 +801,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SKIP_INSTALL = YES;
@@ -834,6 +844,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_SWIFT_FLAGS = "-D APPKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = macosx;
@@ -855,6 +866,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_SWIFT_FLAGS = "-D APPKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = macosx;
@@ -903,6 +915,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = appletvos;
@@ -923,6 +936,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = appletvos;
