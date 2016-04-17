@@ -10,6 +10,9 @@
 		821F8D641CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */; };
 		821F8D651CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */; };
 		821F8D661CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */; };
+		821F8D6C1CC4222B00F9BCD0 /* ColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D6B1CC4222B00F9BCD0 /* ColorExtensionTests.swift */; };
+		821F8D6D1CC4222B00F9BCD0 /* ColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D6B1CC4222B00F9BCD0 /* ColorExtensionTests.swift */; };
+		821F8D6E1CC4222B00F9BCD0 /* ColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F8D6B1CC4222B00F9BCD0 /* ColorExtensionTests.swift */; };
 		823B2B351C24AAB7007B3CDD /* HandySwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 823B2B341C24AAB7007B3CDD /* HandySwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		823B2B3C1C24AAB7007B3CDD /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B2B311C24AAB6007B3CDD /* HandySwift.framework */; };
 		823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */; };
@@ -92,6 +95,7 @@
 
 /* Begin PBXFileReference section */
 		821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		821F8D6B1CC4222B00F9BCD0 /* ColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensionTests.swift; sourceTree = "<group>"; };
 		823B2B311C24AAB6007B3CDD /* HandySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HandySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		823B2B341C24AAB7007B3CDD /* HandySwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HandySwift.h; sourceTree = "<group>"; };
 		823B2B361C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 				82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */,
 				825EFDC21C332AD200558497 /* CharacterViewExtensionTests.swift */,
 				8280D7DF1C4A6FF3001172EF /* DictionaryExtensionTests.swift */,
+				821F8D6B1CC4222B00F9BCD0 /* ColorExtensionTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -580,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821F8D6C1CC4222B00F9BCD0 /* ColorExtensionTests.swift in Sources */,
 				826F69B01C389DB800B2CC6B /* FrequencyTableTests.swift in Sources */,
 				825EFDC31C332AD200558497 /* CharacterViewExtensionTests.swift in Sources */,
 				8258E4591C2E1ACE0031CBFF /* SortedArrayTests.swift in Sources */,
@@ -611,6 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821F8D6D1CC4222B00F9BCD0 /* ColorExtensionTests.swift in Sources */,
 				826F69B11C389DB800B2CC6B /* FrequencyTableTests.swift in Sources */,
 				825EFE131C3335A400558497 /* CharacterViewExtensionTests.swift in Sources */,
 				825EFE111C3335A400558497 /* StringExtensionTests.swift in Sources */,
@@ -642,6 +649,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821F8D6E1CC4222B00F9BCD0 /* ColorExtensionTests.swift in Sources */,
 				826F69B21C389DB800B2CC6B /* FrequencyTableTests.swift in Sources */,
 				825EFE191C3335A500558497 /* CharacterViewExtensionTests.swift in Sources */,
 				825EFE171C3335A500558497 /* StringExtensionTests.swift in Sources */,
@@ -813,6 +821,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_iOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -824,6 +833,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_iOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -882,6 +892,7 @@
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_SWIFT_FLAGS = "-D APPKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-OSX-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_OSX_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -897,6 +908,7 @@
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_SWIFT_FLAGS = "-D APPKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-OSX-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_OSX_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -951,6 +963,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-tvOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_tvOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -964,6 +977,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-tvOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_tvOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
