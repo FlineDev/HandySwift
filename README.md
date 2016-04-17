@@ -179,6 +179,48 @@ immutableDict.mergedWith(["B": "New B value", "C": "C value"])
 // => ["A": "A value", "B": "New B value", "C": "C value"]
 ```
 
+### ColorExtension (iOS & tvOS only)
+
+#### .rgba
+Returns a tuple with named RGBA parameters for easy access.
+
+``` Swift
+let rgbaColor = UIColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 0.4)
+rgbaColor.rgba.red // => 0.1
+rgbaColor.rgba.green // => 0.2
+rgbaColor.rgba.blue // => 0.3
+rgbaColor.rgba.alpha // => 0.4
+```
+
+#### .hsba
+Returns a tuple with named HSBA parameters for easy access.
+
+``` Swift
+let hsbaColor = UIColor(hue: 0.1, saturation: 0.2, brightness: 0.3, alpha: 0.4)
+hsbaColor.hsba.hue // => 0.1
+hsbaColor.hsba.saturation // => 0.2
+hsbaColor.hsba.brightness // => 0.3
+hsbaColor.hsba.alpha // => 0.4
+```
+
+#### .change(ChangeableAttribute, by:)
+Creates a new `UIColor` object with a single attribute changed by a given difference using addition.
+
+``` Swift
+rgbaColor.rgba.blue // => 0.3
+let newRgbaColor = rgbaColor.change(.Blue, by: 0.2)
+newRgbaColor.rgba.blue // => 0.5
+```
+
+#### .change(ChangeableAttribute, to:)
+Creates a new `UIColor` object with the value of a single attribute set to a given value.
+
+``` Swift
+hsbaColor.hsba.brightness // => 0.3
+let newHsbaColor = hsbaColor.change(.Brightness, to: 0.8)
+newHsbaColor.hsba.brightness // => 0.8
+```
+
 ### SortedArray
 
 The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.
