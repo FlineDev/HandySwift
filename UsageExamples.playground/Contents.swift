@@ -1,3 +1,4 @@
+import UIKit
 import HandySwift
 
 //: # Extensions
@@ -91,6 +92,41 @@ mergedDict
 [1, 2, 3, 4, 5].sample(size: 3)
 [1, 2, 3, 4, 5].sample(size: 12)
 ([] as [Int]).sample(size: 3)
+
+
+//: ## ColorExtension (iOS & tvOS only)
+//: ### .rgba
+//: Returns a tuple with named RGBA parameters for easy access.
+
+let rgbaColor = UIColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 0.4)
+rgbaColor.rgba.red
+rgbaColor.rgba.green
+rgbaColor.rgba.blue
+rgbaColor.rgba.alpha
+
+
+//: ### .hsba
+//: Returns a tuple with named HSBA parameters for easy access.
+
+let hsbaColor = UIColor(hue: 0.1, saturation: 0.2, brightness: 0.3, alpha: 0.4)
+hsbaColor.hsba.hue
+hsbaColor.hsba.saturation
+hsbaColor.hsba.brightness
+hsbaColor.hsba.alpha
+
+//: ### .change(ChangeableAttribute, by:)
+//: Creates a new `UIColor` object with a single attribute changed by a given difference using addition.
+
+rgbaColor.rgba.blue
+let newRgbaColor = rgbaColor.change(.Blue, by: 0.2)
+newRgbaColor.rgba.blue
+
+//: ### .change(ChangeableAttribute, to:)
+//: Creates a new `UIColor` object with the value of a single attribute set to a given value.
+
+hsbaColor.hsba.brightness
+let newHsbaColor = hsbaColor.change(.Brightness, to: 0.8)
+newHsbaColor.hsba.brightness
 
 
 //: # Added Structures
