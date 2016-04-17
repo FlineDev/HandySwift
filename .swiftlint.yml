@@ -2,7 +2,7 @@
 disabled_rules:
 - trailing_newline
 - trailing_whitespace
-- todo  # this is better solved via a build script
+- cyclomatic_complexity
 
 # some rules are only opt-in
 opt_in_rules:
@@ -18,4 +18,4 @@ excluded:
 - Carthage
 
 # configurable rules can be customized from this configuration file
-line_length: 128
+line_length: 150
