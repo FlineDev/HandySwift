@@ -5,8 +5,8 @@
 
 <p align="center">
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-0.8.2-blue.svg"
-             alt="Version: 0.8.2">
+        <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg"
+             alt="Version: 1.0.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-2.2-DD563C.svg"
          alt="Swift: 2.2">
@@ -50,7 +50,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'MyAppTarget' do
-    pod 'HandySwift', '~> 0.8'
+    pod 'HandySwift', '~> 1.0'
 end
 ```
 
