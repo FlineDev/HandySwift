@@ -21,7 +21,8 @@
 <p align="center">
     <a href="#installation">Installation</a>
   • <a href="#usage">Usage</a>
-  • <a href="https://github.com/Flinesoft/BartyCrouch/issues">Issues</a>
+  • <a href="https://github.com/Flinesoft/HandySwift/issues">Issues</a>
+  • <a href="#contributing">Contributing</a>
   • <a href="#license">License</a>
 </p>
 
