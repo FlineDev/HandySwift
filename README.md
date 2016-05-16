@@ -18,6 +18,14 @@
     </a>
 </p>
 
+<p align="center">
+    <a href="#installation">Installation</a>
+  • <a href="#usage">Usage</a>
+  • <a href="https://github.com/Flinesoft/BartyCrouch/issues">Issues</a>
+  • <a href="#license">License</a>
+</p>
+
+
 # HandySwift
 
 The goal of this library is to provide handy features that didn't make it to the Swift standard library (yet) due to many different reasons. Those could be that the Swift community wants to keep the standard library clean and manageable or simply hasn't finished discussion on a specific feature yet.
