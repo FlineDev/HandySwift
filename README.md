@@ -5,10 +5,10 @@
 
 <p align="center">
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-1.0.0-blue.svg"
-             alt="Version: 1.0.0">
+        <img src="https://img.shields.io/badge/Version-1.1.0-blue.svg"
+             alt="Version: 1.1.0">
     </a>
-    <img src="https://img.shields.io/badge/Swift-2.2-DD563C.svg"
+    <img src="https://img.shields.io/badge/Swift-2.2-FFAC45.svg"
          alt="Swift: 2.2">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-orange.svg"
         alt="Platforms: iOS | tvOS | OS X">
@@ -72,11 +72,10 @@ Refer to [CocoaPods.org](https://cocoapods.org) for detailed / updates instructi
 Please have a look at the UsageExamples.playground for a complete list of features provided.
 Open the Playground from within the `.xcworkspace` in order for it to work.
 
-# Globals
+### Globals
 Some global helpers.
 
-## Grand Central Dispatch
-### delay(bySeconds:) { ... }
+##### delay(bySeconds:) { ... }
 Runs a given closure after a delay given in seconds. Dispatch queue can be set optionally, defaults to Main thread.
 
 ``` Swift
@@ -91,7 +90,7 @@ delay(bySeconds: 5, dispatchLevel: .UserInteractive) {
 
 ### IntExtension
 
-### init(randomBelow:)
+#### init(randomBelow:)
 
 Initialize random Int value below given positive value.
 
