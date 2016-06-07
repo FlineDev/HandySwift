@@ -63,6 +63,12 @@
 		8280D7E01C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280D7DF1C4A6FF3001172EF /* DictionaryExtensionTests.swift */; };
 		8280D7E11C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280D7DF1C4A6FF3001172EF /* DictionaryExtensionTests.swift */; };
 		8280D7E21C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8280D7DF1C4A6FF3001172EF /* DictionaryExtensionTests.swift */; };
+		82812A9B1D06877B00CD5B6C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9A1D06877B00CD5B6C /* Globals.swift */; };
+		82812A9C1D06877B00CD5B6C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9A1D06877B00CD5B6C /* Globals.swift */; };
+		82812A9D1D06877B00CD5B6C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9A1D06877B00CD5B6C /* Globals.swift */; };
+		82812A9F1D06926800CD5B6C /* GlobalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9E1D06926800CD5B6C /* GlobalsTests.swift */; };
+		82812AA01D06926800CD5B6C /* GlobalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9E1D06926800CD5B6C /* GlobalsTests.swift */; };
+		82812AA11D06926800CD5B6C /* GlobalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9E1D06926800CD5B6C /* GlobalsTests.swift */; };
 		82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2911C2ED1A200F934A7 /* StringExtension.swift */; };
 		82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */; };
 		82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */; };
@@ -117,6 +123,8 @@
 		826F69AF1C389DB800B2CC6B /* FrequencyTableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableTests.swift; sourceTree = "<group>"; };
 		8280D7DB1C4A6EC9001172EF /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		8280D7DF1C4A6FF3001172EF /* DictionaryExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionTests.swift; sourceTree = "<group>"; };
+		82812A9A1D06877B00CD5B6C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		82812A9E1D06926800CD5B6C /* GlobalsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalsTests.swift; sourceTree = "<group>"; };
 		82CAE2911C2ED1A200F934A7 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -235,18 +243,19 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
-		8258E4571C2E196B0031CBFF /* Classes */ = {
+		8258E4571C2E196B0031CBFF /* Structs */ = {
 			isa = PBXGroup;
 			children = (
 				8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */,
 				826F69AF1C389DB800B2CC6B /* FrequencyTableTests.swift */,
 			);
-			path = Classes;
+			path = Structs;
 			sourceTree = "<group>";
 		};
 		825EFDE11C3333CE00558497 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				82812A9A1D06877B00CD5B6C /* Globals.swift */,
 				8258E4541C2E0BAF0031CBFF /* Structs */,
 				823B2B4B1C24AB7F007B3CDD /* Extensions */,
 				825EFDE31C3333F100558497 /* Supporting Files */,
@@ -257,7 +266,8 @@
 		825EFDE21C3333D200558497 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8258E4571C2E196B0031CBFF /* Classes */,
+				82812A9E1D06926800CD5B6C /* GlobalsTests.swift */,
+				8258E4571C2E196B0031CBFF /* Structs */,
 				823B2B4E1C24ABD8007B3CDD /* Extensions */,
 				82B6DD8D1C6A85B2006DA266 /* Supporting Files */,
 			);
@@ -577,6 +587,7 @@
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */,
 				82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */,
+				82812A9B1D06877B00CD5B6C /* Globals.swift in Sources */,
 				8280D7DC1C4A6EC9001172EF /* DictionaryExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +604,7 @@
 				823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */,
 				82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */,
 				82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */,
+				82812A9F1D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E01C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +621,7 @@
 				825EFE041C33358400558497 /* IntegerTypeExtension.swift in Sources */,
 				825EFE021C33358400558497 /* SortedArray.swift in Sources */,
 				825EFE031C33358400558497 /* IntExtension.swift in Sources */,
+				82812A9C1D06877B00CD5B6C /* Globals.swift in Sources */,
 				8280D7DD1C4A6EC9001172EF /* DictionaryExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +638,7 @@
 				825EFE101C3335A400558497 /* IntegerTypeExtensionTests.swift in Sources */,
 				825EFE121C3335A400558497 /* ArrayExtensionTests.swift in Sources */,
 				825EFE0F1C3335A400558497 /* IntExtensionTests.swift in Sources */,
+				82812AA01D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E11C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,6 +655,7 @@
 				825EFE0A1C33358500558497 /* IntegerTypeExtension.swift in Sources */,
 				825EFE081C33358500558497 /* SortedArray.swift in Sources */,
 				825EFE091C33358500558497 /* IntExtension.swift in Sources */,
+				82812A9D1D06877B00CD5B6C /* Globals.swift in Sources */,
 				8280D7DE1C4A6EC9001172EF /* DictionaryExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +672,7 @@
 				825EFE161C3335A500558497 /* IntegerTypeExtensionTests.swift in Sources */,
 				825EFE181C3335A500558497 /* ArrayExtensionTests.swift in Sources */,
 				825EFE151C3335A500558497 /* IntExtensionTests.swift in Sources */,
+				82812AA11D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E21C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -853,7 +869,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-D APPKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
@@ -875,7 +891,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-D APPKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
