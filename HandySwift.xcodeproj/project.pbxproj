@@ -66,6 +66,9 @@
 		82812A9B1D06877B00CD5B6C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9A1D06877B00CD5B6C /* Globals.swift */; };
 		82812A9C1D06877B00CD5B6C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9A1D06877B00CD5B6C /* Globals.swift */; };
 		82812A9D1D06877B00CD5B6C /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9A1D06877B00CD5B6C /* Globals.swift */; };
+		82812A9F1D06926800CD5B6C /* GlobalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9E1D06926800CD5B6C /* GlobalsTests.swift */; };
+		82812AA01D06926800CD5B6C /* GlobalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9E1D06926800CD5B6C /* GlobalsTests.swift */; };
+		82812AA11D06926800CD5B6C /* GlobalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82812A9E1D06926800CD5B6C /* GlobalsTests.swift */; };
 		82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2911C2ED1A200F934A7 /* StringExtension.swift */; };
 		82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */; };
 		82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */; };
@@ -121,6 +124,7 @@
 		8280D7DB1C4A6EC9001172EF /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		8280D7DF1C4A6FF3001172EF /* DictionaryExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionTests.swift; sourceTree = "<group>"; };
 		82812A9A1D06877B00CD5B6C /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		82812A9E1D06926800CD5B6C /* GlobalsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalsTests.swift; sourceTree = "<group>"; };
 		82CAE2911C2ED1A200F934A7 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 		825EFDE21C3333D200558497 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				82812A9E1D06926800CD5B6C /* GlobalsTests.swift */,
 				8258E4571C2E196B0031CBFF /* Structs */,
 				823B2B4E1C24ABD8007B3CDD /* Extensions */,
 				82B6DD8D1C6A85B2006DA266 /* Supporting Files */,
@@ -599,6 +604,7 @@
 				823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */,
 				82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */,
 				82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */,
+				82812A9F1D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E01C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +638,7 @@
 				825EFE101C3335A400558497 /* IntegerTypeExtensionTests.swift in Sources */,
 				825EFE121C3335A400558497 /* ArrayExtensionTests.swift in Sources */,
 				825EFE0F1C3335A400558497 /* IntExtensionTests.swift in Sources */,
+				82812AA01D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E11C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +672,7 @@
 				825EFE161C3335A500558497 /* IntegerTypeExtensionTests.swift in Sources */,
 				825EFE181C3335A500558497 /* ArrayExtensionTests.swift in Sources */,
 				825EFE151C3335A500558497 /* IntExtensionTests.swift in Sources */,
+				82812AA11D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E21C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
