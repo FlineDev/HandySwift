@@ -13,10 +13,13 @@ XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 //: Runs a given closure after a delay given in seconds. Dispatch queue can be set optionally.
 
 var date = NSDate()
+print("Without delay: \(date)")
+
 delay(bySeconds: 1.5) {
     date = NSDate()
     print("Delayed by 1.5 seconds: \(date)")
 }
+
 delay(bySeconds: 5, dispatchLevel: .UserInteractive) {
     date = NSDate()
     print("Delayed by 5 seconds: \(date)")
