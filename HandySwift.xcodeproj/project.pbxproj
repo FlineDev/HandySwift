@@ -239,13 +239,13 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
-		8258E4571C2E196B0031CBFF /* Classes */ = {
+		8258E4571C2E196B0031CBFF /* Structs */ = {
 			isa = PBXGroup;
 			children = (
 				8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */,
 				826F69AF1C389DB800B2CC6B /* FrequencyTableTests.swift */,
 			);
-			path = Classes;
+			path = Structs;
 			sourceTree = "<group>";
 		};
 		825EFDE11C3333CE00558497 /* Sources */ = {
@@ -262,7 +262,7 @@
 		825EFDE21C3333D200558497 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8258E4571C2E196B0031CBFF /* Classes */,
+				8258E4571C2E196B0031CBFF /* Structs */,
 				823B2B4E1C24ABD8007B3CDD /* Extensions */,
 				82B6DD8D1C6A85B2006DA266 /* Supporting Files */,
 			);
