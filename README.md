@@ -72,6 +72,23 @@ Refer to [CocoaPods.org](https://cocoapods.org) for detailed / updates instructi
 Please have a look at the UsageExamples.playground for a complete list of features provided.
 Open the Playground from within the `.xcworkspace` in order for it to work.
 
+# Globals
+Some global helpers.
+
+## Grand Central Dispatch
+### delay(bySeconds:) { ... }
+Runs a given closure after a delay given in seconds. Dispatch queue can be set optionally, defaults to Main thread.
+
+``` Swift
+var date = NSDate() // Without delay: 2016-06-07 05:38:03 +0000
+delay(bySeconds: 1.5) { // Runs in Main thread by default
+    date = NSDate() // Delayed by 1.5 seconds: 2016-06-07 05:38:05 +0000
+}
+delay(bySeconds: 5, dispatchLevel: .UserInteractive) {
+    date = NSDate() // Delayed by 5 seconds: 2016-06-07 05:38:08 +0000
+}
+```
+
 ### IntExtension
 
 ### init(randomBelow:)
