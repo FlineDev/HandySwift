@@ -8,7 +8,6 @@ XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
 //: # Globals
 //: Some global helpers.
 
-//: ## Grand Central Dispatch
 //: ### delay(bySeconds:) { ... }
 //: Runs a given closure after a delay given in seconds. Dispatch queue can be set optionally.
 
