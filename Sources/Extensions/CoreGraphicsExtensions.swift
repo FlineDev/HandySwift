@@ -149,7 +149,7 @@ import Foundation
 
 extension CGRect {
     
-    /// Creates a new CGSize object from origin zero with given size.
+    /// Creates a new CGRect object from origin zero with given size.
     ///
     /// - Parameters:
     ///   - size: The size of the new rect.
@@ -157,7 +157,7 @@ extension CGRect {
         self.init(origin: CGPoint.zero, size: size)
     }
     
-    /// Creates a new CGSize object from origin zero with given size.
+    /// Creates a new CGRect object from origin zero with given size.
     ///
     /// - Parameters:
     ///   - width: The width of the new rect.

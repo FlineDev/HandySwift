@@ -154,6 +154,35 @@ hsbaColor.hsba.brightness
 let newHsbaColor = hsbaColor.change(.Brightness, to: 0.8)
 newHsbaColor.hsba.brightness
 
+//: ## CoreGraphicsExtensions
+//: ### CGSize.inPixels / CGSize.inPixels(screen:)
+//: Returns a new CGSize object with the width and height converted to true pixels on screen.
+
+let size = CGSize(width: 100, height: 50)
+size.inPixels // test this with a Retina screen target
+size.inPixels(UIScreen.screens().last!) // pass a different screen
+
+//: ### CGPoint.inPixels / CGPoint.inPixels(screen:)
+//: Returns a new CGPoint object with the x and y converted to true pixels on screen.
+
+let point = CGPoint(x: 100, y: 50)
+point.inPixels // test this with a Retina screen target
+point.inPixels(UIScreen.screens().last!) // pass a different screen
+
+//: ### CGRect.inPixels / CGRect.inPixels(screen:)
+//: Returns a new CGRect object with the origin and size converted to true pixels on screen.
+
+let rect = CGRect(x: 10, y: 20, width: 100, height: 50)
+rect.inPixels // test this with a Retina screen target
+rect.inPixels(UIScreen.screens().last!) // pass a different screen
+
+//: ### CGRect.init(size:) / CGRect.init(width:height:)
+//: Creates a new CGRect object from origin zero with given size.
+
+let someSize = CGSize(width: 100, height: 50)
+
+let originZeroRect1 = CGRect(size: someSize)
+let originZeroRect2 = CGRect(width: 100, height: 50)
 
 //: # Added Structures
 //: New structures added to extend the Swift standard library.
