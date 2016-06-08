@@ -79,7 +79,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
 ### Globals
 Some global helpers.
 
-##### delay(bySeconds:) { ... }
+#### delay(bySeconds:) { ... }
 Runs a given closure after a delay given in seconds. Dispatch queue can be set optionally, defaults to Main thread.
 
 ``` Swift
@@ -248,6 +248,53 @@ Creates a new `UIColor` object with the value of a single attribute set to a giv
 hsbaColor.hsba.brightness // => 0.3
 let newHsbaColor = hsbaColor.change(.Brightness, to: 0.8)
 newHsbaColor.hsba.brightness // => 0.8
+```
+
+### CoreGraphicsExtensions
+
+#### CGSize.inPixels / CGSize.inPixels(screen:)
+Returns a new CGSize object with the width and height converted to true pixels on screen.
+
+``` Swift
+let size = CGSize(width: 100, height: 50)
+size.inPixels // test this with a Retina screen target
+// => {w 50 h 25}
+size.inPixels(UIScreen.screens().last!) // pass a different screen
+// => {w 100 h 50}
+```
+
+#### CGPoint.inPixels / CGPoint.inPixels(screen:)
+Returns a new CGPoint object with the x and y converted to true pixels on screen.
+
+``` Swift
+let point = CGPoint(x: 100, y: 50)
+point.inPixels // test this with a Retina screen target
+// => {x 50 y 25}
+let someScreen = UIScreen.screens().last!
+point.inPixels(someScreen) // pass a different screen
+// => {x 100 y 50}
+```
+
+#### CGRect.inPixels / CGRect.inPixels(screen:)
+Returns a new CGRect object with the origin and size converted to true pixels on screen.
+
+``` Swift
+let rect = CGRect(x: 10, y: 20, width: 100, height: 50)
+rect.inPixels // test this with a Retina screen target
+// => {x 5 y 10 w 50 h 25}
+let someScreen = UIScreen.screens().last!
+rect.inPixels(someScreen) // pass a different screen
+// => {x 10 y 20 w 100 h 50}
+```
+
+#### CGRect.init(size:) / CGRect.init(width:height:)
+Creates a new CGRect object from origin zero with given size.
+
+``` Swift
+let someSize = CGSize(width: 100, height: 50)
+
+let originZeroRect1 = CGRect(size: someSize)
+let originZeroRect2 = CGRect(width: 100, height: 50)
 ```
 
 ### SortedArray
