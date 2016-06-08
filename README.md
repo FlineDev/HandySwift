@@ -9,8 +9,8 @@
              alt="Build Status">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-1.1.0-blue.svg"
-             alt="Version: 1.1.0">
+        <img src="https://img.shields.io/badge/Version-1.2.0-blue.svg"
+             alt="Version: 1.2.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-2.2-FFAC45.svg"
          alt="Swift: 2.2">
@@ -383,6 +383,9 @@ Pull requests with new features will only be accepted when the following are giv
 - The feature is **handy** but not (yet) part of the Swift standard library.
 - **Tests** for the new feature exist and all tests pass successfully.
 - **Usage examples** of the new feature are given in the Playgrounds.
+
+Please also try to follow the same syntax and semantic in your **commit messages** (see rationale [here](http://chris.beams.io/posts/git-commit/)).
+
 
 ## License
 This library is released under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.
