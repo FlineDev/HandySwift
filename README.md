@@ -4,13 +4,17 @@
 </p>
 
 <p align="center">
+    <a href="https://www.bitrise.io/app/810d996d77fb0abf">
+        <img src="https://www.bitrise.io/app/810d996d77fb0abf.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
+             alt="Build Status">
+    </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
         <img src="https://img.shields.io/badge/Version-1.1.0-blue.svg"
              alt="Version: 1.1.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-2.2-FFAC45.svg"
          alt="Swift: 2.2">
-    <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-orange.svg"
+    <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-FF69B4.svg"
         alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
         <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
