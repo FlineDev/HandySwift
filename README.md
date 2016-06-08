@@ -4,13 +4,17 @@
 </p>
 
 <p align="center">
+    <a href="https://www.bitrise.io/app/810d996d77fb0abf">
+        <img src="https://www.bitrise.io/app/810d996d77fb0abf.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
+             alt="Build Status">
+    </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-1.1.0-blue.svg"
-             alt="Version: 1.1.0">
+        <img src="https://img.shields.io/badge/Version-1.2.0-blue.svg"
+             alt="Version: 1.2.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-2.2-FFAC45.svg"
          alt="Swift: 2.2">
-    <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-orange.svg"
+    <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-FF69B4.svg"
         alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
         <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
@@ -75,7 +79,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
 ### Globals
 Some global helpers.
 
-##### delay(bySeconds:) { ... }
+#### delay(bySeconds:) { ... }
 Runs a given closure after a delay given in seconds. Dispatch queue can be set optionally, defaults to Main thread.
 
 ``` Swift
@@ -246,6 +250,53 @@ let newHsbaColor = hsbaColor.change(.Brightness, to: 0.8)
 newHsbaColor.hsba.brightness // => 0.8
 ```
 
+### CoreGraphicsExtensions
+
+#### CGSize.inPixels / CGSize.inPixels(screen:)
+Returns a new CGSize object with the width and height converted to true pixels on screen.
+
+``` Swift
+let size = CGSize(width: 100, height: 50)
+size.inPixels // test this with a Retina screen target
+// => {w 50 h 25}
+size.inPixels(UIScreen.screens().last!) // pass a different screen
+// => {w 100 h 50}
+```
+
+#### CGPoint.inPixels / CGPoint.inPixels(screen:)
+Returns a new CGPoint object with the x and y converted to true pixels on screen.
+
+``` Swift
+let point = CGPoint(x: 100, y: 50)
+point.inPixels // test this with a Retina screen target
+// => {x 50 y 25}
+let someScreen = UIScreen.screens().last!
+point.inPixels(someScreen) // pass a different screen
+// => {x 100 y 50}
+```
+
+#### CGRect.inPixels / CGRect.inPixels(screen:)
+Returns a new CGRect object with the origin and size converted to true pixels on screen.
+
+``` Swift
+let rect = CGRect(x: 10, y: 20, width: 100, height: 50)
+rect.inPixels // test this with a Retina screen target
+// => {x 5 y 10 w 50 h 25}
+let someScreen = UIScreen.screens().last!
+rect.inPixels(someScreen) // pass a different screen
+// => {x 10 y 20 w 100 h 50}
+```
+
+#### CGRect.init(size:) / CGRect.init(width:height:)
+Creates a new CGRect object from origin zero with given size.
+
+``` Swift
+let someSize = CGSize(width: 100, height: 50)
+
+let originZeroRect1 = CGRect(size: someSize)
+let originZeroRect2 = CGRect(width: 100, height: 50)
+```
+
 ### SortedArray
 
 The main purpose of this wrapper is to provide speed improvements for specific actions on sorted arrays.
@@ -332,6 +383,9 @@ Pull requests with new features will only be accepted when the following are giv
 - The feature is **handy** but not (yet) part of the Swift standard library.
 - **Tests** for the new feature exist and all tests pass successfully.
 - **Usage examples** of the new feature are given in the Playgrounds.
+
+Please also try to follow the same syntax and semantic in your **commit messages** (see rationale [here](http://chris.beams.io/posts/git-commit/)).
+
 
 ## License
 This library is released under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.

@@ -19,7 +19,7 @@ class GlobalsTests: XCTestCase {
         let callDate = NSDate()
         let delaySeconds = 1.5
         delay(bySeconds: delaySeconds) {
-            XCTAssertEqualWithAccuracy(callDate.timeIntervalSince1970 + delaySeconds, NSDate().timeIntervalSince1970, accuracy: 0.1)
+            XCTAssertEqualWithAccuracy(callDate.timeIntervalSince1970 + delaySeconds, NSDate().timeIntervalSince1970, accuracy: 0.25)
             expectation.fulfill()
         }
         
