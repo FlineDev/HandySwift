@@ -384,5 +384,8 @@ Pull requests with new features will only be accepted when the following are giv
 - **Tests** for the new feature exist and all tests pass successfully.
 - **Usage examples** of the new feature are given in the Playgrounds.
 
+Please also try to follow the same syntax and semantic in your **commit messages** (see rationale [here](http://chris.beams.io/posts/git-commit/)).
+
+
 ## License
 This library is released under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.
