@@ -9,21 +9,21 @@
 import Foundation
 
 public extension String {
-    
+
     /// Strips all whitespace characters from beginning and end.
     ///
     /// - Returns: The string stripped by whitespace characters from beginning and end.
     public var strip: String {
         return self.stringByTrimmingCharactersInSet(.whitespaceCharacterSet())
     }
-    
+
     /// Checks if contains any characters other than whitespace characters.
     ///
     /// - Returns: `true` if contains any cahracters other than whitespace characters.
     public var isBlank: Bool {
         return self.strip.isEmpty
     }
-    
+
     /// The type of allowed characters.
     ///
     /// - Numeric:          Allow all numbers from 0 to 9.
@@ -36,14 +36,14 @@ public extension String {
         case AlphaNumeric
         case AllCharactersIn(String)
     }
-    
+
     /// Create new instance with random numeric/alphabetic/alphanumeric String of given length.
-    /// 
+    ///
     /// - Parameters:
     ///   - randommWithLength:      The length of the random String to create.
     ///   - allowedCharactersType:  The allowed characters type, see enum `AllowedCharacters`.
     public init(randomWithLength length: Int, allowedCharactersType: AllowedCharacters) {
-        
+
         let allowedCharsString: String = {
             switch allowedCharactersType {
             case .Numeric:
@@ -56,9 +56,9 @@ public extension String {
                 return allowedCharactersString
             }
         }()
-        
+
         self.init(allowedCharsString.characters.sample(size: length)!)
-        
+
     }
-    
+
 }
