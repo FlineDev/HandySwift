@@ -8,6 +8,10 @@
         <img src="https://www.bitrise.io/app/810d996d77fb0abf.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
              alt="Build Status">
     </a>
+    <a href="https://codebeat.co/projects/github-com-flinesoft-handyswift">
+        <img src="https://codebeat.co/badges/283e545d-02e9-4fcf-aabc-40cacfbfe26c"
+             alt="codebeat badge">
+    </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
         <img src="https://img.shields.io/badge/Version-1.2.0-blue.svg"
              alt="Version: 1.2.0">
