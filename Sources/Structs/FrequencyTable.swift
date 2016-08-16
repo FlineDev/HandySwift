@@ -47,7 +47,7 @@ public struct FrequencyTable<T> {
     ///     - size: The size of the resulting array of random values.
     ///
     /// - Returns: An array of random values or nil if values empty.
-    public func sample(size size: Int) -> [T]? {
+    public func sample(size: Int) -> [T]? {
 
         if !self.frequentValues.isEmpty {
             var sampleElements: [T] = []

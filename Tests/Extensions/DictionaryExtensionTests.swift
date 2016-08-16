@@ -15,7 +15,7 @@ class DictionaryExtensionTests: XCTestCase {
     func testInitWithSameCountKeysAndValues() {
         
         let keys = Array(0..<100)
-        let values = Array(0.stride(to: 10*100, by: 10))
+        let values = Array(stride(from: 0, to: 10*100, by: 10))
         
         let dict = Dictionary<Int, Int>(keys: keys, values: values)
         XCTAssertNotNil(dict)
@@ -32,7 +32,7 @@ class DictionaryExtensionTests: XCTestCase {
     func testInitWithDifferentCountKeysAndValues() {
         
         let keys = Array(0..<50)
-        let values = Array(10.stride(to: 10*100, by: 10))
+        let values = Array(stride(from: 10, to: 10*100, by: 10))
         
         let dict = Dictionary<Int, Int>(keys: keys, values: values)
         XCTAssertNil(dict)

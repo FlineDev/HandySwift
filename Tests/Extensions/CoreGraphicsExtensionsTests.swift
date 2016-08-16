@@ -20,9 +20,9 @@ class CoreGraphicsExtensionsTests: XCTestCase {
         let testSize = CGSize(width: size, height: size)
         
         #if UIKIT
-            let expectedPixelSize = size / UIScreen.mainScreen().scale
+            let expectedPixelSize = size / UIScreen.main.scale
         #else
-            let expectedPixelSize = size / NSScreen.mainScreen()!.backingScaleFactor
+            let expectedPixelSize = size / NSScreen.main.backingScaleFactor
         #endif
         
         let testSizeInPixels = testSize.inPixels
@@ -52,7 +52,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
         let testPoint = CGPoint(x: size, y: size)
         
         #if UIKIT
-            let expectedPixelPointSizes = size / UIScreen.mainScreen().scale
+            let expectedPixelPointSizes = size / UIScreen.main.scale
         #else
             let expectedPixelPointSizes = size / NSScreen.mainScreen()!.backingScaleFactor
         #endif
@@ -84,7 +84,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
         let testRect = CGRect(x: size, y: size, width: size, height: size)
         
         #if UIKIT
-            let expectedPixelRectSizes = size / UIScreen.mainScreen().scale
+            let expectedPixelRectSizes = size / UIScreen.main.scale
             let testRectInPixels = testRect.inPixels
         #else
             let expectedPixelRectSizes = size / NSScreen.mainScreen()!.backingScaleFactor

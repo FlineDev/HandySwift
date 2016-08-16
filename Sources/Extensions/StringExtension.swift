@@ -14,7 +14,7 @@ public extension String {
     ///
     /// - Returns: The string stripped by whitespace characters from beginning and end.
     public var strip: String {
-        return self.stringByTrimmingCharactersInSet(.whitespaceCharacterSet())
+        return self.trimmingCharacters(in: CharacterSet.whitespaces)
     }
 
     /// Checks if contains any characters other than whitespace characters.
@@ -31,10 +31,10 @@ public extension String {
     /// - AlphaNumeric:     Allow both numbers and alphabetic characters ignoring case.
     /// - AllCharactersIn:  Allow all characters appearing within the specified String.
     public enum AllowedCharacters {
-        case Numeric
-        case Alphabetic
-        case AlphaNumeric
-        case AllCharactersIn(String)
+        case numeric
+        case alphabetic
+        case alphaNumeric
+        case allCharactersIn(String)
     }
 
     /// Create new instance with random numeric/alphabetic/alphanumeric String of given length.
@@ -46,13 +46,13 @@ public extension String {
 
         let allowedCharsString: String = {
             switch allowedCharactersType {
-            case .Numeric:
+            case .numeric:
                 return "0123456789"
-            case .Alphabetic:
+            case .alphabetic:
                 return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            case .AlphaNumeric:
+            case .alphaNumeric:
                 return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            case .AllCharactersIn(let allowedCharactersString):
+            case .allCharactersIn(let allowedCharactersString):
                 return allowedCharactersString
             }
         }()

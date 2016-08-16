@@ -37,7 +37,7 @@ public struct SortedArray<Element: Comparable> {
         if preSorted {
             self.internalArray = array
         } else {
-            self.internalArray = array.sort()
+            self.internalArray = array.sorted()
         }
     }
 
@@ -51,7 +51,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - predicate: The boolean predicate to match the elements with.
     /// - Returns: The index of the left most matching element.
-    public func firstMatchingIndex(predicate: Element -> Bool) -> Array<Element>.Index? {
+    public func firstMatchingIndex(_ predicate: (Element) -> Bool) -> Array<Element>.Index? {
 
         // check if all elements match
         if let firstElement = self.array.first {
@@ -75,13 +75,13 @@ public struct SortedArray<Element: Comparable> {
 
         while lowerIndex != upperIndex {
 
-            let middleIndex = lowerIndex.advancedBy(lowerIndex.distanceTo(upperIndex) / 2)
+            let middleIndex = lowerIndex.advanced(by: lowerIndex.distance(to: upperIndex) / 2)
 
             if predicate(self.array[middleIndex]) {
                 upperIndex = middleIndex
                 predicateMatched = true
             } else {
-                lowerIndex = middleIndex.advancedBy(1)
+                lowerIndex = middleIndex.advanced(by: 1)
             }
 
         }
@@ -118,7 +118,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Returns: A new SortedArray instance including all elements starting at the specified index.
     public func subArray(fromIndex startIndex: Array<Element>.Index) -> SortedArray {
 
-        let range = startIndex..<self.array.endIndex
+        let range = self.array.indices.suffix(from: startIndex)
         let subArray = Array(self.array[range])
 
         return SortedArray(array: subArray, preSorted: true)
@@ -132,7 +132,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - atIndex: The index of the element to remove from the sorted array.
     public mutating func remove(atIndex index: Array<Element>.Index) {
-        self.internalArray.removeAtIndex(index)
+        self.internalArray.remove(at: index)
     }
 
 }

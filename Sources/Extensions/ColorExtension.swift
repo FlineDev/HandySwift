@@ -23,7 +23,7 @@
         /// - Brightness:   The brightness color part of HSB & alpha.
         ///
         public enum ChangeableAttribute {
-            case Red, Green, Blue, Hue, Saturation, Brightness, Alpha
+            case red, green, blue, hue, saturation, brightness, alpha
         }
 
         // MARK: - Computed Properties
@@ -53,28 +53,28 @@
         ///   - attribute: The attribute to change.
         ///   - by: The addition to be added to the current value of the attribute.
         /// - Returns: The resulting new `UIColor` with the specified change applied.
-        public func change(attribute: ChangeableAttribute, by addition: CGFloat) -> UIColor {
+        public func change(_ attribute: ChangeableAttribute, by addition: CGFloat) -> UIColor {
 
             switch attribute {
-            case .Red:
+            case .red:
                 return self.change(attribute, to: self.rgba.red + addition)
 
-            case .Green:
+            case .green:
                 return self.change(attribute, to: self.rgba.green + addition)
 
-            case .Blue:
+            case .blue:
                 return self.change(attribute, to: self.rgba.blue + addition)
 
-            case .Alpha:
+            case .alpha:
                 return self.change(attribute, to: self.rgba.alpha + addition)
 
-            case .Hue:
+            case .hue:
                 return self.change(attribute, to: self.hsba.hue + addition)
 
-            case .Saturation:
+            case .saturation:
                 return self.change(attribute, to: self.hsba.saturation + addition)
 
-            case .Brightness:
+            case .brightness:
                 return self.change(attribute, to: self.hsba.brightness + addition)
             }
 
@@ -86,23 +86,23 @@
         ///   - attribute: The attribute to change.
         ///   - to: The new value to be set for the attribute.
         /// - Returns: The resulting new `UIColor` with the specified change applied.
-        public func change(attribute: ChangeableAttribute, to newValue: CGFloat) -> UIColor { // swiftlint:disable:this cyclomatic_complexity
+        public func change(_ attribute: ChangeableAttribute, to newValue: CGFloat) -> UIColor { // swiftlint:disable:this cyclomatic_complexity
 
             switch attribute {
-            case .Red, .Green, .Blue, .Alpha:
+            case .red, .green, .blue, .alpha:
                 var newRgba = self.rgba
 
                 switch attribute {
-                case .Red:
+                case .red:
                     newRgba.red = newValue
 
-                case .Green:
+                case .green:
                     newRgba.green = newValue
 
-                case .Blue:
+                case .blue:
                     newRgba.blue = newValue
 
-                case .Alpha:
+                case .alpha:
                     newRgba.alpha = newValue
 
                 default: break
@@ -110,17 +110,17 @@
 
                 return UIColor(red: newRgba.red, green: newRgba.green, blue: newRgba.blue, alpha: newRgba.alpha)
 
-            case .Hue, .Saturation, .Brightness:
+            case .hue, .saturation, .brightness:
                 var newHsba = self.hsba
 
                 switch attribute {
-                case .Hue:
+                case .hue:
                     newHsba.hue = newValue
 
-                case .Saturation:
+                case .saturation:
                     newHsba.saturation = newValue
 
-                case .Brightness:
+                case .brightness:
                     newHsba.brightness = newValue
 
                 default: break
