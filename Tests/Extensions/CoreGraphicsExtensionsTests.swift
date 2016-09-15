@@ -127,7 +127,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
     }
     
     func testCGRectInitWidthHeight() {
-        let testRect = CGRect(width: size, height: size)
+        let testRect = CGRect(origin: size, size: size)
         
         XCTAssertEqualWithAccuracy(testRect.origin.x, 0, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(testRect.origin.y, 0, accuracy: 0.001)
