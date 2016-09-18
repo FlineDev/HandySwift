@@ -13,8 +13,8 @@ public struct FrequencyTable<T> {
 
     // MARK: - Stored Instance Properties
 
-    private let valuesWithFrequencies: [(T, Int)]
-    private let frequentValues: [T]
+    fileprivate let valuesWithFrequencies: [(T, Int)]
+    fileprivate let frequentValues: [T]
 
 
     // MARK: - Initializers
@@ -29,16 +29,16 @@ public struct FrequencyTable<T> {
         self.valuesWithFrequencies = values.map { ($0, frequencyClosure($0)) }
         self.frequentValues = Array(self.valuesWithFrequencies.map { (value, frequency) -> [T] in
             return (0..<frequency).map { _ in value }
-        }.flatten())
+        }.joined())
 
     }
 
 
     // MARK: - Instance Methods
 
-    /// Returns a random value taking frequencies into account or nil if values empty.
-    public var sample: T? {
-        return frequentValues.sample
+    /// - Returns: A random value taking frequencies into account or nil if values empty.
+    public func sample() -> T? {
+        return frequentValues.sample()
     }
 
     /// Returns an array of random values taking frequencies into account or nil if values empty.
@@ -47,13 +47,13 @@ public struct FrequencyTable<T> {
     ///     - size: The size of the resulting array of random values.
     ///
     /// - Returns: An array of random values or nil if values empty.
-    public func sample(size size: Int) -> [T]? {
+    public func sample(size: Int) -> [T]? {
 
         if !self.frequentValues.isEmpty {
             var sampleElements: [T] = []
 
             size.times {
-                sampleElements.append(self.sample!)
+                sampleElements.append(self.sample()!)
             }
 
             return sampleElements

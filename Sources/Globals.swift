@@ -10,28 +10,28 @@ import Foundation
 
 /// The Main thread level or QOS classes as an enum.
 public enum DispatchLevel {
-    case Main
-    case UserInteractive
-    case UserInitiated
-    case Utility
-    case Background
+    case main
+    case userInteractive
+    case userInitiated
+    case utility
+    case background
 
-    var dispatchQueue: OS_dispatch_queue {
+    var dispatchQueue: DispatchQueue {
         switch self {
-        case .Main:
-            return dispatch_get_main_queue()
+        case .main:
+            return DispatchQueue.main
 
-        case .UserInteractive:
-            return dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
+        case .userInteractive:
+            return DispatchQueue.global(qos: .userInteractive)
 
-        case .UserInitiated:
-            return dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
+        case .userInitiated:
+            return DispatchQueue.global(qos: .userInitiated)
 
-        case .Utility:
-            return dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
+        case .utility:
+            return DispatchQueue.global(qos: .utility)
 
-        case .Background:
-            return dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+        case .background:
+            return DispatchQueue.global(qos: .background)
         }
     }
 }
@@ -42,7 +42,7 @@ public enum DispatchLevel {
 ///   - bySeconds: The delay in seconds.
 ///   - dispatchLevel: The level that defines the thread type.
 ///   - closure: The closure to run with delay.
-public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .Main, closure: () -> Void) {
-    let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
-    dispatch_after(dispatchTime, dispatchLevel.dispatchQueue, closure)
+public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: @escaping () -> Void) {
+    let dispatchTime = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    dispatchLevel.dispatchQueue.asyncAfter(deadline: dispatchTime, execute: closure)
 }

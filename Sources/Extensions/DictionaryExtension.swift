@@ -23,7 +23,7 @@ extension Dictionary {
 
         self.init()
 
-        for (index, key) in keys.enumerate() {
+        for (index, key) in keys.enumerated() {
             self[key] = values[index]
         }
 
@@ -33,7 +33,7 @@ extension Dictionary {
     ///
     /// - Parameters:
     ///   - otherDictionary:    The other `Dictionary` to merge into this `Dictionary`.
-    public mutating func merge(otherDictionary: [Key: Value]) {
+    public mutating func merge(_ otherDictionary: [Key: Value]) {
         for (key, value) in otherDictionary {
             self[key] = value
         }
@@ -45,7 +45,7 @@ extension Dictionary {
     /// - Parameters:
     ///   - otherDictionary:    The other `Dictionary` to merge into this `Dictionary`.
     /// - Returns: The new Dictionary with merged keys and values from this and the other `Dictionary`.
-    public func mergedWith(otherDictionary: [Key: Value]) -> [Key: Value] {
+    public func mergedWith(_ otherDictionary: [Key: Value]) -> [Key: Value] {
 
         var mergedDict: [Key: Value] = [:]
 
