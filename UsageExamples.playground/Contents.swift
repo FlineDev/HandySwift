@@ -19,10 +19,10 @@ delay(bySeconds: 1.5) {
     print("Delayed by 1.5 seconds: \(date)")
 }
 
-delay(bySeconds: 5, dispatchLevel: .UserInteractive) {
+delay(bySeconds: 5, dispatchLevel: .userInteractive) {
     date = NSDate()
     print("Delayed by 5 seconds: \(date)")
-    
+
     // Finish up the run of the Playground
     XCPlaygroundPage.currentPage.finishExecution()
 }
@@ -73,10 +73,10 @@ intArray
 //: ### init(randomWithLength:allowedCharactersType:)
 //: Get random numeric/alphabetic/alphanumeric String of given length.
 
-String(randomWithLength: 4, allowedCharactersType: .Numeric)
-String(randomWithLength: 6, allowedCharactersType: .Alphabetic)
-String(randomWithLength: 8, allowedCharactersType: .AlphaNumeric)
-String(randomWithLength: 10, allowedCharactersType: .AllCharactersIn("?!🐲🍏✈️🎎🍜"))
+String(randomWithLength: 4, allowedCharactersType: .numeric)
+String(randomWithLength: 6, allowedCharactersType: .alphabetic)
+String(randomWithLength: 8, allowedCharactersType: .alphaNumeric)
+String(randomWithLength: 10, allowedCharactersType: .allCharactersIn("?!🐲🍏✈️🎎🍜"))
 
 
 //: ## DictionaryExtension
@@ -109,8 +109,8 @@ mergedDict
 //: ### .sample
 //: Returns a random element within the array or nil if array empty.
 
-[1, 2, 3, 4, 5].sample
-([] as [Int]).sample
+[1, 2, 3, 4, 5].sample()
+([] as [Int]).sample()
 
 //: ### .sample(size:)
 //: Returns an array with `size` random elements or nil if array empty.
@@ -144,14 +144,14 @@ hsbaColor.hsba.alpha
 //: Creates a new `UIColor` object with a single attribute changed by a given difference using addition.
 
 rgbaColor.rgba.blue
-let newRgbaColor = rgbaColor.change(.Blue, by: 0.2)
+let newRgbaColor = rgbaColor.change(.blue, by: 0.2)
 newRgbaColor.rgba.blue
 
 //: ### .change(ChangeableAttribute, to:)
 //: Creates a new `UIColor` object with the value of a single attribute set to a given value.
 
 hsbaColor.hsba.brightness
-let newHsbaColor = hsbaColor.change(.Brightness, to: 0.8)
+let newHsbaColor = hsbaColor.change(.brightness, to: 0.8)
 newHsbaColor.hsba.brightness
 
 //: ## CoreGraphicsExtensions
@@ -160,21 +160,21 @@ newHsbaColor.hsba.brightness
 
 let size = CGSize(width: 100, height: 50)
 size.inPixels // test this with a Retina screen target
-size.inPixels(UIScreen.screens().last!) // pass a different screen
+size.inPixels(UIScreen.screens.last!) // pass a different screen
 
 //: ### CGPoint.inPixels / CGPoint.inPixels(screen:)
 //: Returns a new CGPoint object with the x and y converted to true pixels on screen.
 
 let point = CGPoint(x: 100, y: 50)
 point.inPixels // test this with a Retina screen target
-point.inPixels(UIScreen.screens().last!) // pass a different screen
+point.inPixels(UIScreen.screens.last!) // pass a different screen
 
 //: ### CGRect.inPixels / CGRect.inPixels(screen:)
 //: Returns a new CGRect object with the origin and size converted to true pixels on screen.
 
 let rect = CGRect(x: 10, y: 20, width: 100, height: 50)
 rect.inPixels // test this with a Retina screen target
-rect.inPixels(UIScreen.screens().last!) // pass a different screen
+rect.inPixels(UIScreen.screens.last!) // pass a different screen
 
 //: ### CGRect.init(size:) / CGRect.init(width:height:)
 //: Creates a new CGRect object from origin zero with given size.
@@ -236,8 +236,8 @@ frequencyTable
 //: ### .sample
 //: Returns a random element with frequency-based probability within the array or nil if array empty.
 
-frequencyTable.sample
-let randomWord = frequencyTable.sample.map{ $0.word }
+frequencyTable.sample()
+let randomWord = frequencyTable.sample().map{ $0.word }
 randomWord
 
 //: ### .sample(size:)

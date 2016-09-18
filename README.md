@@ -8,12 +8,16 @@
         <img src="https://www.bitrise.io/app/810d996d77fb0abf.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
              alt="Build Status">
     </a>
-    <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-1.2.0-blue.svg"
-             alt="Version: 1.2.0">
+    <a href="https://codebeat.co/projects/github-com-flinesoft-handyswift">
+        <img src="https://codebeat.co/badges/283e545d-02e9-4fcf-aabc-40cacfbfe26c"
+             alt="codebeat badge">
     </a>
-    <img src="https://img.shields.io/badge/Swift-2.2-FFAC45.svg"
-         alt="Swift: 2.2">
+    <a href="https://github.com/Flinesoft/HandySwift/releases">
+        <img src="https://img.shields.io/badge/Version-1.3.0-blue.svg"
+             alt="Version: 1.3.0">
+    </a>
+    <img src="https://img.shields.io/badge/Swift-3-FFAC45.svg"
+         alt="Swift: 3">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-FF69B4.svg"
         alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
@@ -87,7 +91,7 @@ var date = NSDate() // Without delay: 2016-06-07 05:38:03 +0000
 delay(bySeconds: 1.5) { // Runs in Main thread by default
     date = NSDate() // Delayed by 1.5 seconds: 2016-06-07 05:38:05 +0000
 }
-delay(bySeconds: 5, dispatchLevel: .UserInteractive) {
+delay(bySeconds: 5, dispatchLevel: .userInteractive) {
     date = NSDate() // Delayed by 5 seconds: 2016-06-07 05:38:08 +0000
 }
 ```
@@ -145,10 +149,10 @@ Checks if String contains any characters other than whitespace characters.
 Get random numeric/alphabetic/alphanumeric String of given length.
 
 ``` Swift
-String(randomWithLength: 4, allowedCharactersType: .Numeric) // => "8503"
-String(randomWithLength: 6, allowedCharactersType: .Alphabetic) // => "ysTUzU"
-String(randomWithLength: 8, allowedCharactersType: .AlphaNumeric) // => "2TgM5sUG"
-String(randomWithLength: 10, allowedCharactersType: .AllCharactersIn("?!🐲🍏✈️🎎🍜"))
+String(randomWithLength: 4, allowedCharactersType: .numeric) // => "8503"
+String(randomWithLength: 6, allowedCharactersType: .alphabetic) // => "ysTUzU"
+String(randomWithLength: 8, allowedCharactersType: .alphaNumeric) // => "2TgM5sUG"
+String(randomWithLength: 10, allowedCharactersType: .allCharactersIn("?!🐲🍏✈️🎎🍜"))
 // => "!🍏🐲✈️🎎🐲🍜??🍜"
 ```
 
@@ -159,8 +163,8 @@ String(randomWithLength: 10, allowedCharactersType: .AllCharactersIn("?!🐲🍏
 Returns a random element within the array or nil if array empty.
 
 ``` Swift
-[1, 2, 3, 4, 5].sample // => 4
-([] as [Int]).sample // => nil
+[1, 2, 3, 4, 5].sample() // => 4
+([] as [Int]).sample() // => nil
 ```
 
 #### .sample(size:)
@@ -237,7 +241,7 @@ Creates a new `UIColor` object with a single attribute changed by a given differ
 
 ``` Swift
 rgbaColor.rgba.blue // => 0.3
-let newRgbaColor = rgbaColor.change(.Blue, by: 0.2)
+let newRgbaColor = rgbaColor.change(.blue, by: 0.2)
 newRgbaColor.rgba.blue // => 0.5
 ```
 
@@ -246,11 +250,11 @@ Creates a new `UIColor` object with the value of a single attribute set to a giv
 
 ``` Swift
 hsbaColor.hsba.brightness // => 0.3
-let newHsbaColor = hsbaColor.change(.Brightness, to: 0.8)
+let newHsbaColor = hsbaColor.change(.brightness, to: 0.8)
 newHsbaColor.hsba.brightness // => 0.8
 ```
 
-### CoreGraphicsExtensions
+### CoreGraphicsExtensions (partly iOS & tvOS only)
 
 #### CGSize.inPixels / CGSize.inPixels(screen:)
 Returns a new CGSize object with the width and height converted to true pixels on screen.
@@ -259,7 +263,7 @@ Returns a new CGSize object with the width and height converted to true pixels o
 let size = CGSize(width: 100, height: 50)
 size.inPixels // test this with a Retina screen target
 // => {w 50 h 25}
-size.inPixels(UIScreen.screens().last!) // pass a different screen
+size.inPixels(UIScreen.screens.last!) // pass a different screen
 // => {w 100 h 50}
 ```
 
@@ -270,7 +274,7 @@ Returns a new CGPoint object with the x and y converted to true pixels on screen
 let point = CGPoint(x: 100, y: 50)
 point.inPixels // test this with a Retina screen target
 // => {x 50 y 25}
-let someScreen = UIScreen.screens().last!
+let someScreen = UIScreen.screens.last!
 point.inPixels(someScreen) // pass a different screen
 // => {x 100 y 50}
 ```
@@ -282,7 +286,7 @@ Returns a new CGRect object with the origin and size converted to true pixels on
 let rect = CGRect(x: 10, y: 20, width: 100, height: 50)
 rect.inPixels // test this with a Retina screen target
 // => {x 5 y 10 w 50 h 25}
-let someScreen = UIScreen.screens().last!
+let someScreen = UIScreen.screens.last!
 rect.inPixels(someScreen) // pass a different screen
 // => {x 10 y 20 w 100 h 50}
 ```
@@ -359,8 +363,8 @@ let frequencyTable = FrequencyTable(values: wordFrequencies){ $0.frequency }
 Returns a random element with frequency-based probability within the array or nil if array empty.
 
 ``` Swift
-frequencyTable.sample
-let randomWord = frequencyTable.sample.map{ $0.word }
+frequencyTable.sample()
+let randomWord = frequencyTable.sample().map{ $0.word }
 // => "Harry"
 ```
 
