@@ -13,8 +13,8 @@
              alt="codebeat badge">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-1.2.0-blue.svg"
-             alt="Version: 1.2.0">
+        <img src="https://img.shields.io/badge/Version-1.3.0-blue.svg"
+             alt="Version: 1.3.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-3-FFAC45.svg"
          alt="Swift: 3">
