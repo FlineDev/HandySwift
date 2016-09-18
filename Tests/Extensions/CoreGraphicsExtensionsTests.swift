@@ -15,14 +15,16 @@ import XCTest
 class CoreGraphicsExtensionsTests: XCTestCase {
     
     let size: CGFloat = 22
-    
+
+#if UIKIT
+
     func testCGSizeInPixels() {
         let testSize = CGSize(width: size, height: size)
         
         #if UIKIT
             let expectedPixelSize = size / UIScreen.main.scale
         #else
-            let expectedPixelSize = size / NSScreen.main.backingScaleFactor
+            let expectedPixelSize = size / (NSScreen.main()?.backingScaleFactor)!
         #endif
         
         let testSizeInPixels = testSize.inPixels
@@ -54,7 +56,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
         #if UIKIT
             let expectedPixelPointSizes = size / UIScreen.main.scale
         #else
-            let expectedPixelPointSizes = size / NSScreen.mainScreen()!.backingScaleFactor
+            let expectedPixelPointSizes = size / NSScreen.main()!.backingScaleFactor
         #endif
         
         let testPointInPixels = testPoint.inPixels
@@ -87,7 +89,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
             let expectedPixelRectSizes = size / UIScreen.main.scale
             let testRectInPixels = testRect.inPixels
         #else
-            let expectedPixelRectSizes = size / NSScreen.mainScreen()!.backingScaleFactor
+            let expectedPixelRectSizes = size / NSScreen.main()!.backingScaleFactor
             let testRectInPixels = testRect.inPixels!
         #endif
         
@@ -115,13 +117,15 @@ class CoreGraphicsExtensionsTests: XCTestCase {
         XCTAssertEqualWithAccuracy(testRectInPixels.size.width, expectedPixelRectSizes, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(testRectInPixels.size.height, expectedPixelRectSizes, accuracy: 0.001)
     }
-    
+
+#endif
+
     func testCGRectInitSize() {
         let testSize = CGSize(width: size, height: size)
         let testRect = CGRect(size: testSize)
-        
-        XCTAssertEqualWithAccuracy(testRect.origin.x, 0, accuracy: 0.001)
-        XCTAssertEqualWithAccuracy(testRect.origin.y, 0, accuracy: 0.001)
+
+        XCTAssertEqualWithAccuracy(testRect.origin.x, 0.0, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(testRect.origin.y, 0.0, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(testRect.size.width, testSize.width, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(testRect.size.height, testSize.height, accuracy: 0.001)
     }
@@ -129,8 +133,8 @@ class CoreGraphicsExtensionsTests: XCTestCase {
     func testCGRectInitWidthHeight() {
         let testRect = CGRect(width: size, height: size)
         
-        XCTAssertEqualWithAccuracy(testRect.origin.x, 0, accuracy: 0.001)
-        XCTAssertEqualWithAccuracy(testRect.origin.y, 0, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(testRect.origin.x, 0.0, accuracy: 0.001)
+        XCTAssertEqualWithAccuracy(testRect.origin.y, 0.0, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(testRect.size.width, size, accuracy: 0.001)
         XCTAssertEqualWithAccuracy(testRect.size.height, size, accuracy: 0.001)
     }

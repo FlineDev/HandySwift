@@ -22,16 +22,16 @@ public enum DispatchLevel {
             return DispatchQueue.main
 
         case .userInteractive:
-            return DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive)
+            return DispatchQueue.global(qos: .userInteractive)
 
         case .userInitiated:
-            return DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
+            return DispatchQueue.global(qos: .userInitiated)
 
         case .utility:
-            return DispatchQueue.global(qos: DispatchQoS.QoSClass.utility)
+            return DispatchQueue.global(qos: .utility)
 
         case .background:
-            return DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
+            return DispatchQueue.global(qos: .background)
         }
     }
 }
@@ -42,7 +42,7 @@ public enum DispatchLevel {
 ///   - bySeconds: The delay in seconds.
 ///   - dispatchLevel: The level that defines the thread type.
 ///   - closure: The closure to run with delay.
-public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: () -> Void) {
+public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: @escaping () -> Void) {
     let dispatchTime = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
     dispatchLevel.dispatchQueue.asyncAfter(deadline: dispatchTime, execute: closure)
 }

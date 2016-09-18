@@ -32,7 +32,7 @@
         public var hsba: (hue: CGFloat, saturation: CGFloat, brightness: CGFloat, alpha: CGFloat) {
 
             var hsba: (hue: CGFloat, saturation: CGFloat, brightness: CGFloat, alpha: CGFloat) = (0, 0, 0, 0)
-            self.getHue(&(hsba.hue), saturation: &(hsba.saturation), brightness: &(hsba.brightness), alpha: &(hsba.alpha))
+            getHue(&(hsba.hue), saturation: &(hsba.saturation), brightness: &(hsba.brightness), alpha: &(hsba.alpha))
             return hsba
         }
 
@@ -40,7 +40,7 @@
         public var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
 
             var rgba: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) = (0, 0, 0, 0)
-            self.getRed(&rgba.red, green: &rgba.green, blue: &rgba.blue, alpha: &rgba.alpha)
+            getRed(&rgba.red, green: &rgba.green, blue: &rgba.blue, alpha: &rgba.alpha)
             return rgba
         }
 
@@ -57,25 +57,25 @@
 
             switch attribute {
             case .red:
-                return self.change(attribute, to: self.rgba.red + addition)
+                return change(attribute, to: rgba.red + addition)
 
             case .green:
-                return self.change(attribute, to: self.rgba.green + addition)
+                return change(attribute, to: rgba.green + addition)
 
             case .blue:
-                return self.change(attribute, to: self.rgba.blue + addition)
+                return change(attribute, to: rgba.blue + addition)
 
             case .alpha:
-                return self.change(attribute, to: self.rgba.alpha + addition)
+                return change(attribute, to: rgba.alpha + addition)
 
             case .hue:
-                return self.change(attribute, to: self.hsba.hue + addition)
+                return change(attribute, to: hsba.hue + addition)
 
             case .saturation:
-                return self.change(attribute, to: self.hsba.saturation + addition)
+                return change(attribute, to: hsba.saturation + addition)
 
             case .brightness:
-                return self.change(attribute, to: self.hsba.brightness + addition)
+                return change(attribute, to: hsba.brightness + addition)
             }
 
         }

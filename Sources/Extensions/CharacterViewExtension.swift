@@ -13,9 +13,9 @@ public extension String.CharacterView {
     /// Returns a random character from the `ChracterView`.
     ///
     /// - Returns: A random character from the `CharacterView` or `nil` if empty.
-    public var sample: Character? {
+    public func sample() -> Character? {
         if !self.isEmpty {
-            let randomIndex = self.index(self.startIndex, offsetBy: Int(randomBelow: self.count))
+            let randomIndex = index(startIndex, offsetBy: Int(randomBelow: count))
             return self[randomIndex]
         }
 
@@ -29,11 +29,11 @@ public extension String.CharacterView {
     /// - Returns: A `CharacterView` with the given number of random characters or `nil` if empty.
     public func sample(size: Int) -> String.CharacterView? {
 
-        if !self.isEmpty {
-            var sampleElements: String.CharacterView = String.CharacterView()
+        if !isEmpty {
+            var sampleElements = String.CharacterView()
 
             size.times {
-                sampleElements.append(self.sample!)
+                sampleElements.append(sample()!)
             }
 
             return sampleElements

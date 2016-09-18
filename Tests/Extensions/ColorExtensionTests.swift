@@ -75,7 +75,7 @@ import XCTest
             
             let changedHsbaColor = hsbaColor.change(.hue, to: 1.0).change(.saturation, to: 0.9).change(.brightness, to: 0.8).change(.alpha, to: 0.7)
             
-            XCTAssertEqualWithAccuracy(changedHsbaColor.hsba.hue, 1.0, accuracy: 0.001)
+            XCTAssertEqualWithAccuracy(changedHsbaColor.hsba.hue, 0.0, accuracy: 0.001)
             XCTAssertEqualWithAccuracy(changedHsbaColor.hsba.saturation, 0.9, accuracy: 0.001)
             XCTAssertEqualWithAccuracy(changedHsbaColor.hsba.brightness, 0.8, accuracy: 0.001)
             XCTAssertEqualWithAccuracy(changedHsbaColor.hsba.alpha, 0.7, accuracy: 0.001)

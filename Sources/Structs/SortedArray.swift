@@ -13,7 +13,7 @@ public struct SortedArray<Element: Comparable> {
 
     // MARK: - Stored Instance Properties
 
-    private var internalArray: Array<Element> = []
+    fileprivate var internalArray: Array<Element> = []
 
     /// Returns the sorted array of elements.
     public var array: Array<Element> {
@@ -33,7 +33,7 @@ public struct SortedArray<Element: Comparable> {
         self.init(array: array, preSorted: false)
     }
 
-    private init(array: [Element], preSorted: Bool) {
+    fileprivate init(array: [Element], preSorted: Bool) {
         if preSorted {
             self.internalArray = array
         } else {

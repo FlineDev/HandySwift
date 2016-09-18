@@ -14,14 +14,14 @@ public extension String {
     ///
     /// - Returns: The string stripped by whitespace characters from beginning and end.
     public var strip: String {
-        return self.trimmingCharacters(in: CharacterSet.whitespaces)
+        return trimmingCharacters(in: CharacterSet.whitespaces)
     }
 
     /// Checks if contains any characters other than whitespace characters.
     ///
     /// - Returns: `true` if contains any cahracters other than whitespace characters.
     public var isBlank: Bool {
-        return self.strip.isEmpty
+        return strip.isEmpty
     }
 
     /// The type of allowed characters.
