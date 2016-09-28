@@ -13,11 +13,11 @@
              alt="codebeat badge">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-1.3.0-blue.svg"
-             alt="Version: 1.3.0">
+        <img src="https://img.shields.io/badge/Version-1.3.0%20|%201.2.0-blue.svg"
+             alt="Version: 1.3.0 | 1.2.0">
     </a>
-    <img src="https://img.shields.io/badge/Swift-3-FFAC45.svg"
-         alt="Swift: 3">
+    <img src="https://img.shields.io/badge/Swift-3.0%20|%202.3%20|%202.2-FFAC45.svg"
+         alt="Swift: 3.0 | 2.3 | 2.2">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-FF69B4.svg"
         alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
@@ -49,13 +49,27 @@ You can of course also just include this framework manually into your project by
 
 ### Carthage
 
-Simply add this line to your Cartfile:
+Depending on the Swift version of your project, place one of the following lines to your Cartfile:
+
+**Swift 3:**
 
 ``` Swift
 github "Flinesoft/HandySwift"
 ```
 
-And run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
+**Swift 2.3:**
+
+``` Swift
+github "Flinesoft/HandySwift" "support/swift2.3"
+```
+
+**Swift 2.2:**
+
+``` Swift
+github "Flinesoft/HandySwift" == 1.2.0
+```
+
+Now run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
 
 ### CocoaPods
 
