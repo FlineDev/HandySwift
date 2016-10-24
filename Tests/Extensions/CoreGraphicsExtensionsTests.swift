@@ -16,13 +16,13 @@ class CoreGraphicsExtensionsTests: XCTestCase {
     
     let size: CGFloat = 22
 
-#if UIKIT
+#if !os(OSX)
 
     func testCGSizeInPixels() {
         let testSize = CGSize(width: size, height: size)
         
-        #if UIKIT
-            let expectedPixelSize = size / UIScreen.main.scale
+		#if !os(OSX)
+			let expectedPixelSize = size / UIScreen.main.scale
         #else
             let expectedPixelSize = size / (NSScreen.main()?.backingScaleFactor)!
         #endif
@@ -36,8 +36,8 @@ class CoreGraphicsExtensionsTests: XCTestCase {
     func testCGSizeInPixelsScreen() {
         let testSize = CGSize(width: size, height: size)
         
-        #if UIKIT
-            let testScreen = UIScreen()
+		#if !os(OSX)
+			let testScreen = UIScreen()
             let expectedPixelSize = size / testScreen.scale
         #else
             let testScreen = NSScreen()
@@ -53,7 +53,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
     func testCGPointInPixels() {
         let testPoint = CGPoint(x: size, y: size)
         
-        #if UIKIT
+		#if !os(OSX)
             let expectedPixelPointSizes = size / UIScreen.main.scale
         #else
             let expectedPixelPointSizes = size / NSScreen.main()!.backingScaleFactor
@@ -68,7 +68,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
     func testCGPointInPixelsScreen() {
         let testPoint = CGPoint(x: size, y: size)
         
-        #if UIKIT
+		#if !os(OSX)
             let testScreen = UIScreen()
             let expectedPixelPointSizes = size / testScreen.scale
         #else
@@ -85,7 +85,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
     func testCGRectInPixels() {
         let testRect = CGRect(x: size, y: size, width: size, height: size)
         
-        #if UIKIT
+		#if !os(OSX)
             let expectedPixelRectSizes = size / UIScreen.main.scale
             let testRectInPixels = testRect.inPixels
         #else
@@ -102,7 +102,7 @@ class CoreGraphicsExtensionsTests: XCTestCase {
     func testCGRectInPixelsScreen() {
         let testRect = CGRect(x: size, y: size, width: size, height: size)
         
-        #if UIKIT
+		#if !os(OSX)
             let testScreen = UIScreen()
             let expectedPixelRectSizes = size / testScreen.scale
         #else

@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if UIKIT
+#if !os(OSX)
     import UIKit
 
     // MARK: - iOS/tvOS CGSize Extension
