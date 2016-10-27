@@ -10,7 +10,7 @@ import XCTest
 
 @testable import HandySwift
 
-#if UIKIT
+#if !os(OSX)
 
     class ColorExtensionTests: XCTestCase {
         

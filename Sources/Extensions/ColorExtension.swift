@@ -6,7 +6,7 @@
 //  Copyright © 2016 Flinesoft. All rights reserved.
 //
 
-#if UIKIT
+#if !os(OSX)
 
     import UIKit
 

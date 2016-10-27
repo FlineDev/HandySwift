@@ -833,7 +833,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SKIP_INSTALL = YES;
@@ -857,7 +856,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SKIP_INSTALL = YES;
@@ -870,7 +868,6 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_iOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -883,7 +880,6 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_iOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -983,7 +979,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = appletvos;
@@ -1006,7 +1001,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = appletvos;
@@ -1022,7 +1016,6 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-tvOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_tvOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1037,7 +1030,6 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-tvOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_tvOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
