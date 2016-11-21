@@ -43,6 +43,6 @@ public enum DispatchLevel {
 ///   - dispatchLevel: The level that defines the thread type.
 ///   - closure: The closure to run with delay.
 public func delay(bySeconds seconds: Double, dispatchLevel: DispatchLevel = .main, closure: @escaping () -> Void) {
-    let dispatchTime = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    let dispatchTime = DispatchTime.now() + seconds
     dispatchLevel.dispatchQueue.asyncAfter(deadline: dispatchTime, execute: closure)
 }
