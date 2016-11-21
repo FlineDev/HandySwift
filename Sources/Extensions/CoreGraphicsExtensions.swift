@@ -25,7 +25,7 @@ import Foundation
         /// - Parameters:
         ///   - screen: The target screen to convert to pixels for.
         public func inPixels(_ screen: UIScreen) -> CGSize {
-            return CGSize(width: width / screen.scale, height: height / screen.scale)
+            return CGSize(width: width * screen.scale, height: height * screen.scale)
         }
 
     }
@@ -46,7 +46,7 @@ import Foundation
         /// - Parameters:
         ///   - screen: The target screen to convert to pixels for.
         public func inPixels(_ screen: UIScreen) -> CGPoint {
-            return CGPoint(x: x / screen.scale, y: y / screen.scale)
+            return CGPoint(x: x * screen.scale, y: y * screen.scale)
         }
 
     }

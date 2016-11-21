@@ -276,9 +276,9 @@ Returns a new CGSize object with the width and height converted to true pixels o
 ``` Swift
 let size = CGSize(width: 100, height: 50)
 size.inPixels // test this with a Retina screen target
-// => {w 50 h 25}
+// => {w 200 h 100}
 size.inPixels(UIScreen.screens.last!) // pass a different screen
-// => {w 100 h 50}
+// => {w 50 h 25}
 ```
 
 #### CGPoint.inPixels / CGPoint.inPixels(screen:)
@@ -287,10 +287,10 @@ Returns a new CGPoint object with the x and y converted to true pixels on screen
 ``` Swift
 let point = CGPoint(x: 100, y: 50)
 point.inPixels // test this with a Retina screen target
-// => {x 50 y 25}
+// => {x 200 y 100}
 let someScreen = UIScreen.screens.last!
 point.inPixels(someScreen) // pass a different screen
-// => {x 100 y 50}
+// => {x 50 y 25}
 ```
 
 #### CGRect.inPixels / CGRect.inPixels(screen:)
@@ -299,10 +299,10 @@ Returns a new CGRect object with the origin and size converted to true pixels on
 ``` Swift
 let rect = CGRect(x: 10, y: 20, width: 100, height: 50)
 rect.inPixels // test this with a Retina screen target
-// => {x 5 y 10 w 50 h 25}
+// => {x 20 y 40 w 200 h 100}
 let someScreen = UIScreen.screens.last!
 rect.inPixels(someScreen) // pass a different screen
-// => {x 10 y 20 w 100 h 50}
+// => {x 5 y 10 w 50 h 25}
 ```
 
 #### CGRect.init(size:) / CGRect.init(width:height:)
