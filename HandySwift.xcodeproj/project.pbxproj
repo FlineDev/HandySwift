@@ -140,6 +140,7 @@
 		82F22E551C26434900E784A2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		82F967F31C67A65E0003F12A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A16B85EB1D8EA9A200B39055 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A19DD6921DE2B70F00C66584 /* HandySwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HandySwift.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +198,7 @@
 				A16B85EB1D8EA9A200B39055 /* README.md */,
 				82F967F31C67A65E0003F12A /* .swiftlint.yml */,
 				82F22E551C26434900E784A2 /* Package.swift */,
+				A19DD6921DE2B70F00C66584 /* HandySwift.podspec */,
 				825EFDE11C3333CE00558497 /* Sources */,
 				825EFDE21C3333D200558497 /* Tests */,
 				823B2B321C24AAB6007B3CDD /* Products */,
@@ -833,7 +835,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SKIP_INSTALL = YES;
@@ -857,7 +858,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SKIP_INSTALL = YES;
@@ -870,7 +870,6 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_iOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -883,7 +882,6 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_iOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -983,7 +981,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = appletvos;
@@ -1006,7 +1003,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = appletvos;
@@ -1022,7 +1018,6 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-tvOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_tvOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1037,7 +1032,6 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Tests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "-D UIKIT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-tvOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_tvOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
