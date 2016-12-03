@@ -13,10 +13,10 @@ public struct SortedArray<Element: Comparable> {
 
     // MARK: - Stored Instance Properties
 
-    fileprivate var internalArray: Array<Element> = []
+    fileprivate var internalArray: [Element] = []
 
     /// Returns the sorted array of elements.
-    public var array: Array<Element> {
+    public var array: [Element] {
         return self.internalArray
     }
 
@@ -51,7 +51,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - predicate: The boolean predicate to match the elements with.
     /// - Returns: The index of the left most matching element.
-    public func firstMatchingIndex(_ predicate: (Element) -> Bool) -> Array<Element>.Index? {
+    public func firstMatchingIndex(_ predicate: (Element) -> Bool) -> Int? {
 
         // check if all elements match
         if let firstElement = self.array.first {
@@ -100,7 +100,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - toIndex: The upper bound index until which to include elements.
     /// - Returns: A new SortedArray instance including all elements until the specified index.
-    public func subArray(toIndex endIndex: Array<Element>.Index) -> SortedArray {
+    public func subArray(toIndex endIndex: Int) -> SortedArray {
 
         let range = self.array.startIndex..<endIndex
         let subArray = Array(self.array[range])
@@ -116,7 +116,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - toIndex: The lower bound index from which to start including elements.
     /// - Returns: A new SortedArray instance including all elements starting at the specified index.
-    public func subArray(fromIndex startIndex: Array<Element>.Index) -> SortedArray {
+    public func subArray(fromIndex startIndex: Int) -> SortedArray {
 
         let range = self.array.indices.suffix(from: startIndex)
         let subArray = Array(self.array[range])
@@ -131,7 +131,7 @@ public struct SortedArray<Element: Comparable> {
     ///
     /// - Parameters:
     ///   - atIndex: The index of the element to remove from the sorted array.
-    public mutating func remove(atIndex index: Array<Element>.Index) {
+    public mutating func remove(atIndex index: Int) {
         self.internalArray.remove(at: index)
     }
 
