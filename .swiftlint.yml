@@ -1,18 +1,14 @@
-# some rules are only opt-in
 opt_in_rules:
 - empty_count
-- missing_docs
+# - missing_docs
 
 disabled_rules:
-- vertical_whitespace # Turn off until configurable to 2 newlines
+- vertical_whitespace
 
-# paths to include during linting. `--path` is ignored if present.
 included:
 - Sources
 
-# paths to ignore during linting. Takes precedence over `included`.
 excluded:
 - Carthage
 
-# configurable rules can be customized from this configuration file
 line_length: 150
