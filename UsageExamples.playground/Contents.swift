@@ -1,9 +1,9 @@
 import UIKit
 import HandySwift
-import XCPlayground
+import PlaygroundSupport
 
 // Wait for all async calls
-XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 //: # Globals
 //: Some global helpers.
@@ -24,7 +24,7 @@ delay(bySeconds: 5, dispatchLevel: .userInteractive) {
     print("Delayed by 5 seconds: \(date)")
 
     // Finish up the run of the Playground
-    XCPlaygroundPage.currentPage.finishExecution()
+    PlaygroundPage.current.finishExecution()
 }
 
 //: # Extensions
@@ -39,7 +39,7 @@ Int(randomBelow: 1_000_000)
 
 
 //: ## IntegerTypeExtension
-//: ### n.times{ someCode }
+//: ### n.times { someCode }
 //: Calls someCode n times.
 
 var stringArray: [String] = []

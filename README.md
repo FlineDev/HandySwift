@@ -128,7 +128,7 @@ Int(randomBelow: 1_000_000) // => 208041
 Repeat some code block a given number of times.
 
 ``` Swift
-3.times{ array.append("Hello World!") }
+3.times { array.append("Hello World!") }
 // => ["Hello World!", "Hello World!", "Hello World!"]
 
 5.times {
@@ -352,7 +352,7 @@ SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(fromIndex: Array<Int>.Index(2))
 
 ### FrequencyTable
 
-#### FrequencyTable(values: valuesArray){ valueToFrequencyClosure }
+#### FrequencyTable(values: valuesArray) { valueToFrequencyClosure }
 
 Initialize with values and closure.
 
@@ -367,7 +367,7 @@ let wordFrequencies = [
     WordFrequency(word: "Ronald", frequency: 1)
 ]
 
-let frequencyTable = FrequencyTable(values: wordFrequencies){ $0.frequency }
+let frequencyTable = FrequencyTable(values: wordFrequencies) { $0.frequency }
 // => HandySwift.FrequencyTable<WordFrequency>
 ```
 
