@@ -9,7 +9,6 @@
 import Foundation
 
 public extension String {
-
     /// Strips all whitespace characters from beginning and end.
     ///
     /// - Returns: The string stripped by whitespace characters from beginning and end.
@@ -43,7 +42,6 @@ public extension String {
     ///   - randommWithLength:      The length of the random String to create.
     ///   - allowedCharactersType:  The allowed characters type, see enum `AllowedCharacters`.
     public init(randomWithLength length: Int, allowedCharactersType: AllowedCharacters) {
-
         let allowedCharsString: String = {
             switch allowedCharactersType {
             case .numeric:
@@ -58,7 +56,5 @@ public extension String {
         }()
 
         self.init(allowedCharsString.characters.sample(size: length)!)
-
     }
-
 }
