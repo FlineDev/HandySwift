@@ -119,6 +119,10 @@ mergedDict
 [1, 2, 3, 4, 5].sample(size: 12)
 ([] as [Int]).sample(size: 3)
 
+//: ### .combinations(with:)
+//: Combines each element with each element of a given other array.
+[1, 2, 3].combinations(with: ["A", "B"])
+
 
 //: ## ColorExtension (iOS & tvOS only)
 //: ### .rgba

@@ -34,4 +34,20 @@ public extension Array {
         return nil
     }
 
+    /// Combines each element with each element of a given array.
+    ///
+    /// Also known as: Cartesian product.
+    ///
+    /// - Parameters:
+    ///   - other: Other array to combine the elements with.
+    /// - Returns: An array of tuples with the elements of both arrays combined.
+    public func combinations<T>(with other: [T]) -> [(Element, T)] {
+        var combinations = [(Element, T)]()
+        self.forEach { elem in
+            other.forEach { otherElem in
+                combinations.append((elem, otherElem))
+            }
+        }
+        return combinations
+    }
 }

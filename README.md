@@ -191,6 +191,16 @@ Returns an array with `size` random elements or nil if array empty.
 ([] as [Int]).sample(size: 3) // => nil
 ```
 
+
+#### .combinations(with:)
+
+Combines each element with each element of a given other array.
+
+``` Swift
+[1, 2, 3].combinations(with: ["A", "B"])
+// => [(1, "A"), (1, "B"), (2, "A"), (2, "B"), (3, "A"), (3, "B")]
+```
+
 ### DictionaryExtension
 #### init?(keys:values:)
 
