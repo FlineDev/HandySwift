@@ -13,7 +13,7 @@ public extension String {
     ///
     /// - Returns: The string stripped by whitespace characters from beginning and end.
     public var strip: String {
-        return trimmingCharacters(in: CharacterSet.whitespaces)
+        return trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
     /// Checks if contains any characters other than whitespace characters.
