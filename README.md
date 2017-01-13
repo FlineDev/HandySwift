@@ -145,7 +145,7 @@ Repeat some code block a given number of times.
 Returns string with whitespace characters stripped from start and end.
 
 ``` Swift
-" \t BB-8 likes Rey \t ".strip
+" \n\t BB-8 likes Rey \t\n ".strip
 // => "BB-8 likes Rey"
 ```
 

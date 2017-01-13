@@ -59,7 +59,7 @@ intArray
 //: ### string.strip
 //: Returns string with whitespace characters stripped from start and end.
 
-" \t BB-8 likes Rey \t ".strip
+" \n\t BB-8 likes Rey \t\n ".strip
 
 //: ### string.isBlank
 //: Checks if String contains any characters other than whitespace characters.
