@@ -13,8 +13,8 @@
              alt="codebeat badge">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-1.3.1%20|%201.2.0-blue.svg"
-             alt="Version: 1.3.1 | 1.2.0">
+        <img src="https://img.shields.io/badge/Version-1.4.1%20|%201.2.0-blue.svg"
+             alt="Version: 1.4.1 | 1.2.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-3.0%20|%202.3%20|%202.2-FFAC45.svg"
          alt="Swift: 3.0 | 2.3 | 2.2">
@@ -145,7 +145,7 @@ Repeat some code block a given number of times.
 Returns string with whitespace characters stripped from start and end.
 
 ``` Swift
-" \t BB-8 likes Rey \t ".strip
+" \n\t BB-8 likes Rey \t\n ".strip
 // => "BB-8 likes Rey"
 ```
 
