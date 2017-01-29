@@ -13,11 +13,11 @@
              alt="codebeat badge">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-1.4.1%20|%201.2.0-blue.svg"
-             alt="Version: 1.4.1 | 1.2.0">
+        <img src="https://img.shields.io/badge/Version-2.0.0-blue.svg"
+             alt="Version: 2.0.0">
     </a>
-    <img src="https://img.shields.io/badge/Swift-3.0%20|%202.3%20|%202.2-FFAC45.svg"
-         alt="Swift: 3.0 | 2.3 | 2.2">
+    <img src="https://img.shields.io/badge/Swift-3.0-FFAC45.svg"
+         alt="Swift: 3.0">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-FF69B4.svg"
         alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
@@ -117,8 +117,8 @@ delay(bySeconds: 5, dispatchLevel: .userInteractive) {
 Initialize random Int value below given positive value.
 
 ``` Swift
-Int(randomBelow: 50) // => 26
-Int(randomBelow: 1_000_000) // => 208041
+Int(randomBelow: 50)! // => 26
+Int(randomBelow: 1_000_000)! // => 208041
 ```
 
 ### IntegerTypeExtension
@@ -132,7 +132,7 @@ Repeat some code block a given number of times.
 // => ["Hello World!", "Hello World!", "Hello World!"]
 
 5.times {
-  let randomInt = Int(randomBelow: 1_000)
+  let randomInt = Int(randomBelow: 1_000)!
   intArray.append(randomInt)
 }
 // => [481, 16, 680, 87, 912]
@@ -140,12 +140,12 @@ Repeat some code block a given number of times.
 
 ### StringExtension
 
-#### .strip
+#### .stripped()
 
 Returns string with whitespace characters stripped from start and end.
 
 ``` Swift
-" \n\t BB-8 likes Rey \t\n ".strip
+" \n\t BB-8 likes Rey \t\n ".stripped()
 // => "BB-8 likes Rey"
 ```
 
@@ -177,8 +177,8 @@ String(randomWithLength: 10, allowedCharactersType: .allCharactersIn("?!🐲🍏
 Returns a random element within the array or nil if array empty.
 
 ``` Swift
-[1, 2, 3, 4, 5].sample() // => 4
-([] as [Int]).sample() // => nil
+[1, 2, 3, 4, 5].sample // => 4
+([] as [Int]).sample // => nil
 ```
 
 #### .sample(size:)
@@ -227,102 +227,13 @@ dict.merge(["B": "New B value", "C": "C value"])
 dict // => ["A": "A value", "B": "New B value", "C": "C value"]
 ```
 
-#### .mergedWith(Dictionary)
+#### .merged(with: Dictionary)
 Create new merged `Dictionary` with the given `Dictionary` merged into a `Dictionary` overriding existing values for matching keys.
 
 ``` Swift
 let immutableDict = ["A": "A value", "B": "Old B value"]
-immutableDict.mergedWith(["B": "New B value", "C": "C value"])
+immutableDict.merged(with: ["B": "New B value", "C": "C value"])
 // => ["A": "A value", "B": "New B value", "C": "C value"]
-```
-
-### ColorExtension (iOS & tvOS only)
-
-#### .rgba
-Returns a tuple with named RGBA parameters for easy access.
-
-``` Swift
-let rgbaColor = UIColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 0.4)
-rgbaColor.rgba.red // => 0.1
-rgbaColor.rgba.green // => 0.2
-rgbaColor.rgba.blue // => 0.3
-rgbaColor.rgba.alpha // => 0.4
-```
-
-#### .hsba
-Returns a tuple with named HSBA parameters for easy access.
-
-``` Swift
-let hsbaColor = UIColor(hue: 0.1, saturation: 0.2, brightness: 0.3, alpha: 0.4)
-hsbaColor.hsba.hue // => 0.1
-hsbaColor.hsba.saturation // => 0.2
-hsbaColor.hsba.brightness // => 0.3
-hsbaColor.hsba.alpha // => 0.4
-```
-
-#### .change(ChangeableAttribute, by:)
-Creates a new `UIColor` object with a single attribute changed by a given difference using addition.
-
-``` Swift
-rgbaColor.rgba.blue // => 0.3
-let newRgbaColor = rgbaColor.change(.blue, by: 0.2)
-newRgbaColor.rgba.blue // => 0.5
-```
-
-#### .change(ChangeableAttribute, to:)
-Creates a new `UIColor` object with the value of a single attribute set to a given value.
-
-``` Swift
-hsbaColor.hsba.brightness // => 0.3
-let newHsbaColor = hsbaColor.change(.brightness, to: 0.8)
-newHsbaColor.hsba.brightness // => 0.8
-```
-
-### CoreGraphicsExtensions (partly iOS & tvOS only)
-
-#### CGSize.inPixels / CGSize.inPixels(screen:)
-Returns a new CGSize object with the width and height converted to true pixels on screen.
-
-``` Swift
-let size = CGSize(width: 100, height: 50)
-size.inPixels // test this with a Retina screen target
-// => {w 200 h 100}
-size.inPixels(UIScreen.screens.last!) // pass a different screen
-// => {w 50 h 25}
-```
-
-#### CGPoint.inPixels / CGPoint.inPixels(screen:)
-Returns a new CGPoint object with the x and y converted to true pixels on screen.
-
-``` Swift
-let point = CGPoint(x: 100, y: 50)
-point.inPixels // test this with a Retina screen target
-// => {x 200 y 100}
-let someScreen = UIScreen.screens.last!
-point.inPixels(someScreen) // pass a different screen
-// => {x 50 y 25}
-```
-
-#### CGRect.inPixels / CGRect.inPixels(screen:)
-Returns a new CGRect object with the origin and size converted to true pixels on screen.
-
-``` Swift
-let rect = CGRect(x: 10, y: 20, width: 100, height: 50)
-rect.inPixels // test this with a Retina screen target
-// => {x 20 y 40 w 200 h 100}
-let someScreen = UIScreen.screens.last!
-rect.inPixels(someScreen) // pass a different screen
-// => {x 5 y 10 w 50 h 25}
-```
-
-#### CGRect.init(size:) / CGRect.init(width:height:)
-Creates a new CGRect object from origin zero with given size.
-
-``` Swift
-let someSize = CGSize(width: 100, height: 50)
-
-let originZeroRect1 = CGRect(size: someSize)
-let originZeroRect2 = CGRect(width: 100, height: 50)
 ```
 
 ### SortedArray
@@ -333,30 +244,30 @@ The main purpose of this wrapper is to provide speed improvements for specific a
 
 ``` Swift
 let unsortedArray = [5, 2, 1, 3, 0, 4]
-let sortedArray = SortedArray(array: unsortedArray)
+let sortedArray = SortedArray(unsortedArray)
 sortedArray.array   // => [0, 1, 2, 3, 4, 5]
 ```
 
-#### .firstMatchingIndex
+#### .index
 
 Finds the lowest index matching the given predicate using binary search for an improved performance (`O(log n)`).
 
 ``` Swift
-SortedArray(array: [5, 2, 1, 3, 0, 4]).firstMatchingIndex{ $0 > 1 }
+SortedArray([5, 2, 1, 3, 0, 4]).index { $0 > 1 }
 // => 2
 ```
 
-#### .subArray(toIndex:)
+#### .prefix(upTo:) / .prefix(through:)
 
 ``` Swift
-SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(toIndex: Array<Int>.Index(2))
+SortedArray([5, 2, 1, 3, 0, 4]).prefix(upTo: 2)
 // => [0, 1]
 ```
 
-#### .subArray(fromIndex:)
+#### .suffix(from:)
 
 ``` Swift
-SortedArray(array: [5, 2, 1, 3, 0, 4]).subArray(fromIndex: Array<Int>.Index(2))
+SortedArray([5, 2, 1, 3, 0, 4]).suffix(from: 2)
 // => [2, 3, 4, 5]
 ```
 
@@ -381,14 +292,13 @@ let frequencyTable = FrequencyTable(values: wordFrequencies) { $0.frequency }
 // => HandySwift.FrequencyTable<WordFrequency>
 ```
 
-
 #### .sample
 
 Returns a random element with frequency-based probability within the array or nil if array empty.
 
 ``` Swift
-frequencyTable.sample()
-let randomWord = frequencyTable.sample().map{ $0.word }
+frequencyTable.sample
+let randomWord = frequencyTable.sample.map{ $0.word }
 // => "Harry"
 ```
 
