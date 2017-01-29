@@ -18,17 +18,6 @@ public struct SortedArray<Element: Comparable> {
     public var array: [Element] { return self.internalArray }
 
 
-    // MARK: - Computed Instance Properties
-
-    /// Accesses a contiguous subrange of the SortedArray's elements.
-    ///
-    /// - Parameter
-    ///   - bounds: A range of the SortedArray's indices. The bounds of the range must be valid indices.
-    public subscript(bounds: Range<Int>) -> SortedArray {
-        return SortedArray(sequence: array[bounds], preSorted: true)
-    }
-
-
     // MARK: - Initializers
 
     /// Creates a new, empty array.
@@ -123,6 +112,17 @@ public struct SortedArray<Element: Comparable> {
         let subarray = Array(array[array.indices.suffix(from: index)])
         return SortedArray(sequence: subarray, preSorted: true)
     }
+
+    /// Accesses a contiguous subrange of the SortedArray's elements.
+    ///
+    /// - Parameter
+    ///   - bounds: A range of the SortedArray's indices. The bounds of the range must be valid indices.
+    public subscript(bounds: Range<Int>) -> SortedArray {
+        return SortedArray(sequence: array[bounds], preSorted: true)
+    }
+
+
+    // MARK: - Mutating Methods
 
     /// Adds a new item to the sorted array.
     ///

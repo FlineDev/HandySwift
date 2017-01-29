@@ -17,7 +17,7 @@ class FrequencyTableTests: XCTestCase {
 
         var allSamples: [String] = []
 
-        16_000.times { allSamples.append(frequencyTable.sample()!) }
+        16_000.times { allSamples.append(frequencyTable.sample!) }
 
         let harryCount = allSamples.filter { $0 == "Harry" }.count
         XCTAssertGreaterThan(harryCount, 4_000)

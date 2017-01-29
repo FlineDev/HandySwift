@@ -79,6 +79,9 @@
 		82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */; };
 		82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */; };
 		82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */; };
+		A1F221641E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F221631E3CC05100419B06 /* DispatchTimeIntervalExtension.swift */; };
+		A1F221651E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F221631E3CC05100419B06 /* DispatchTimeIntervalExtension.swift */; };
+		A1F221661E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F221631E3CC05100419B06 /* DispatchTimeIntervalExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +144,7 @@
 		82F967F31C67A65E0003F12A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		A16B85EB1D8EA9A200B39055 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A19DD6921DE2B70F00C66584 /* HandySwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HandySwift.podspec; sourceTree = "<group>"; };
+		A1F221631E3CC05100419B06 /* DispatchTimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTimeIntervalExtension.swift; sourceTree = "<group>"; };
 		A1F5AEEB1E05702E003D6949 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +231,7 @@
 				8280D7DB1C4A6EC9001172EF /* DictionaryExtension.swift */,
 				821F8D631CC40E6E00F9BCD0 /* ColorExtension.swift */,
 				827CE9921D07CDE2007A62A8 /* CoreGraphicsExtensions.swift */,
+				A1F221631E3CC05100419B06 /* DispatchTimeIntervalExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -613,6 +618,7 @@
 				826F69AC1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				825EFDBD1C331EF000558497 /* IntegerTypeExtension.swift in Sources */,
 				821F8D641CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */,
+				A1F221641E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
 				825EFDBF1C3321B300558497 /* CharacterViewExtension.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */,
@@ -649,6 +655,7 @@
 				826F69AD1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				825EFE051C33358400558497 /* StringExtension.swift in Sources */,
 				821F8D651CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */,
+				A1F221651E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
 				825EFE071C33358400558497 /* CharacterViewExtension.swift in Sources */,
 				825EFE041C33358400558497 /* IntegerTypeExtension.swift in Sources */,
 				825EFE021C33358400558497 /* SortedArray.swift in Sources */,
@@ -685,6 +692,7 @@
 				826F69AE1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				825EFE0B1C33358500558497 /* StringExtension.swift in Sources */,
 				821F8D661CC40E6E00F9BCD0 /* ColorExtension.swift in Sources */,
+				A1F221661E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
 				825EFE0D1C33358500558497 /* CharacterViewExtension.swift in Sources */,
 				825EFE0A1C33358500558497 /* IntegerTypeExtension.swift in Sources */,
 				825EFE081C33358500558497 /* SortedArray.swift in Sources */,
