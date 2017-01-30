@@ -84,6 +84,22 @@ Refer to [CocoaPods.org](https://cocoapods.org) for detailed / updates instructi
 Please have a look at the UsageExamples.playground for a complete list of features provided.
 Open the Playground from within the `.xcworkspace` in order for it to work.
 
+---
+#### Feature Overview
+
+- [Globals](#globals)
+- Extensions
+  - [IntExtension](#intextension)
+  - [IntegerTypeExtension](#integertypeextension)
+  - [StringExtension](#stringextension)
+  - [ArrayExtension](#arrayextension)
+  - [DictionaryExtension](#dictionaryextension)
+- New types
+  - [SortedArray](#sortedarray)
+  - [FrequencyTable](#frequencytable)
+
+---
+
 ### Globals
 Some global helpers.
 
