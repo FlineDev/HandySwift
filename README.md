@@ -41,7 +41,7 @@ The goal of this library is to **provide handy features** that didn't make it to
 
 If you like this, please also checkout [HandyUIKit](https://github.com/Flinesoft/HandyUIKit) for handy UI features that we feel should have been part of the UIKit frameworks in the first place.
 
-> If you are upgrading from a previous major version of HandySwift (e.g. 1.x to 2.x) then checkout the Release Notes section of the last major releas(es) on GitHub (e.g. 2.0.0) for an overview of the changes made. It'll save you time as hints are on how best to migrate are included there.
+> If you are **upgrading from a previous major version** of HandySwift (e.g. 1.x to 2.x) then checkout the [releases section on GitHub](https://github.com/Flinesoft/HandySwift/releases) and look out for the release notes of the last major releas(es) (e.g. 2.0.0) for an overview of the changes made. It'll save you time as hints are on how best to migrate are included there.
 
 ## Installation
 
