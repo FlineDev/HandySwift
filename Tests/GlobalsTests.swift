@@ -15,12 +15,12 @@ class GlobalsTests: XCTestCase {
         let expectation = self.expectation(description: "Wait for delay.")
 
         let callDate = Date()
-        let delaySeconds = 1.5
-        delay(bySeconds: delaySeconds) {
-            XCTAssertEqualWithAccuracy(callDate.timeIntervalSince1970 + delaySeconds, NSDate().timeIntervalSince1970, accuracy: 0.25)
+        let delayTime = Timespan.milliseconds(1_500)
+        delay(by: .milliseconds(1_500)) {
+            XCTAssertEqualWithAccuracy(callDate.timeIntervalSince1970 + delayTime.timeInterval, NSDate().timeIntervalSince1970, accuracy: 0.25)
             expectation.fulfill()
         }
 
-        waitForExpectations(timeout: delaySeconds + 1.0, handler: nil)
+        waitForExpectations(timeout: delayTime.timeInterval + 1.0, handler: nil)
     }
 }

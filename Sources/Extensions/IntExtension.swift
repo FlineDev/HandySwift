@@ -13,13 +13,8 @@ public extension Int {
     ///
     /// - Parameters:
     ///   - randomBelow: The upper bound value to create a random value with.
-    public init(randomBelow upperLimit: Int) {
-        guard upperLimit > 0 else {
-            self.init(0)
-            return
-        }
-
-        let randomUInt32 = arc4random_uniform(UInt32(upperLimit))
-        self.init(randomUInt32)
+    public init?(randomBelow upperLimit: Int) {
+        guard upperLimit > 0 else { return nil }
+        self.init(arc4random_uniform(UInt32(upperLimit)))
     }
 }
