@@ -53,7 +53,7 @@ class DictionaryExtensionTests: XCTestCase {
         let immutableDict = ["A": "A value", "B": "Old B value", "C": "C value"]
         let otherDict = ["B": "New B value", "D": "D value"]
 
-        let mergedDict = immutableDict.mergedWith(otherDict)
+        let mergedDict = immutableDict.merged(with: otherDict)
 
         XCTAssertEqual(mergedDict.count, 4)
         XCTAssertEqual(mergedDict["B"], "New B value")
