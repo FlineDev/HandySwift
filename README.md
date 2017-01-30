@@ -41,6 +41,8 @@ The goal of this library is to **provide handy features** that didn't make it to
 
 If you like this, please also checkout [HandyUIKit](https://github.com/Flinesoft/HandyUIKit) for handy UI features that we feel should have been part of the UIKit frameworks in the first place.
 
+> If you are upgrading from a previous major version of HandySwift (e.g. 1.x to 2.x) then checkout the Release Notes section of the last major releas(es) on GitHub (e.g. 2.0.0) for an overview of the changes made. It'll save you time as hints are on how best to migrate are included there.
+
 ## Installation
 
 Currently the recommended way of installing this library is via [Carthage](https://github.com/Carthage/Carthage).
@@ -51,24 +53,10 @@ You can of course also just include this framework manually into your project by
 
 ### Carthage
 
-Depending on the Swift version of your project, place one of the following lines to your Cartfile:
-
-**Swift 3:**
+Place one of the following lines to your Cartfile:
 
 ``` Swift
 github "Flinesoft/HandySwift"
-```
-
-**Swift 2.3:**
-
-``` Swift
-github "Flinesoft/HandySwift" "support/swift2.3"
-```
-
-**Swift 2.2:**
-
-``` Swift
-github "Flinesoft/HandySwift" == 1.2.0
 ```
 
 Now run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
