@@ -12,9 +12,9 @@ import XCTest
 
 class CharacterViewExtensionTests: XCTestCase {
     func testSample() {
-        XCTAssertNil("".characters.sample())
-        XCTAssertNotNil("abc".characters.sample())
-        XCTAssertTrue("abc".characters.contains("abc".characters.sample()!))
+        XCTAssertNil("".characters.sample)
+        XCTAssertNotNil("abc".characters.sample)
+        XCTAssertTrue("abc".characters.contains("abc".characters.sample!))
     }
 
     func testSampleWithSize() {

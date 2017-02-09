@@ -12,17 +12,17 @@ import XCTest
 
 class StringExtensionTests: XCTestCase {
     func testStrip() {
-        let whitespaceString = " \t BB-8 likes Rey \t "
-        XCTAssertEqual(whitespaceString.strip, "BB-8 likes Rey")
+        let whitespaceString = " \n\t BB-8 likes Rey \t\n "
+        XCTAssertEqual(whitespaceString.stripped(), "BB-8 likes Rey")
 
         let nonWhitespaceString = "Luke Skywalker lives."
-        XCTAssertEqual(nonWhitespaceString.strip, nonWhitespaceString)
+        XCTAssertEqual(nonWhitespaceString.stripped(), nonWhitespaceString)
     }
 
     func testIsBlank() {
         XCTAssertTrue("".isBlank)
         XCTAssertTrue("  \t  ".isBlank)
-        XCTAssertFalse("\n".isBlank)
+        XCTAssertTrue("\n".isBlank)
         XCTAssertFalse("   .    ".isBlank)
         XCTAssertFalse("BB-8".isBlank)
     }

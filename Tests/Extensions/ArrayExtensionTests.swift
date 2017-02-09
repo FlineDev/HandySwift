@@ -12,9 +12,9 @@ import XCTest
 
 class ArrayExtensionTests: XCTestCase {
     func testSample() {
-        XCTAssertNil([].sample())
-        XCTAssertNotNil([1, 2, 3].sample())
-        XCTAssertTrue([1, 2, 3].contains([1, 2, 3].sample()!))
+        XCTAssertNil([].sample)
+        XCTAssertNotNil([1, 2, 3].sample)
+        XCTAssertTrue([1, 2, 3].contains([1, 2, 3].sample!))
     }
 
     func testSampleWithSize() {
