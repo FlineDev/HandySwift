@@ -13,8 +13,8 @@
              alt="codebeat badge">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-2.0.1-blue.svg"
-             alt="Version: 2.0.1">
+        <img src="https://img.shields.io/badge/Version-2.1.0-blue.svg"
+             alt="Version: 2.1.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-3.0-FFAC45.svg"
          alt="Swift: 3.0">
@@ -56,7 +56,7 @@ You can of course also just include this framework manually into your project by
 Place the following line to your Cartfile:
 
 ``` Swift
-github "Flinesoft/HandySwift"
+github "Flinesoft/HandySwift" ~> 2.1
 ```
 
 Now run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
@@ -71,7 +71,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'MyAppTarget' do
-    pod 'HandySwift', '~> 1.0'
+    pod 'HandySwift', '~> 2.1'
 end
 ```
 
