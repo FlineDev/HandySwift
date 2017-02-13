@@ -12,7 +12,7 @@ public typealias Timespan = DispatchTimeInterval
 
 extension Timespan {
     /// - Returns: The time in seconds using the`TimeInterval` type.
-    var timeInterval: TimeInterval {
+    public var timeInterval: TimeInterval {
         switch self {
         case .seconds(let seconds):
             return Double(seconds)

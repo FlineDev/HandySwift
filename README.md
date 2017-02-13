@@ -13,8 +13,8 @@
              alt="codebeat badge">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-2.0.1-blue.svg"
-             alt="Version: 2.0.1">
+        <img src="https://img.shields.io/badge/Version-2.1.0-blue.svg"
+             alt="Version: 2.1.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-3.0-FFAC45.svg"
          alt="Swift: 3.0">
@@ -56,7 +56,7 @@ You can of course also just include this framework manually into your project by
 Place the following line to your Cartfile:
 
 ``` Swift
-github "Flinesoft/HandySwift"
+github "Flinesoft/HandySwift" ~> 2.1
 ```
 
 Now run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
@@ -71,7 +71,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'MyAppTarget' do
-    pod 'HandySwift', '~> 1.0'
+    pod 'HandySwift', '~> 2.1'
 end
 ```
 
@@ -94,6 +94,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
   - [StringExtension](#stringextension)
   - [ArrayExtension](#arrayextension)
   - [DictionaryExtension](#dictionaryextension)
+  - [DispatchTimeIntervalExtension](#dispatchtimeintervalextension)
 - New types
   - [SortedArray](#sortedarray)
   - [FrequencyTable](#frequencytable)
@@ -197,7 +198,6 @@ Returns an array with `size` random elements or nil if array empty.
 ([] as [Int]).sample(size: 3) // => nil
 ```
 
-
 #### .combinations(with:)
 
 Combines each element with each element of a given other array.
@@ -206,6 +206,7 @@ Combines each element with each element of a given other array.
 [1, 2, 3].combinations(with: ["A", "B"])
 // => [(1, "A"), (1, "B"), (2, "A"), (2, "B"), (3, "A"), (3, "B")]
 ```
+
 
 ### DictionaryExtension
 #### init?(keys:values:)
@@ -241,6 +242,16 @@ let immutableDict = ["A": "A value", "B": "Old B value"]
 immutableDict.merged(with: ["B": "New B value", "C": "C value"])
 // => ["A": "A value", "B": "New B value", "C": "C value"]
 ```
+
+### DispatchTimeIntervalExtension
+#### .timeInterval
+
+Returns a `TimeInterval` object from a `DispatchTimeInterval`.
+
+``` Swift
+DispatchTimeInterval.milliseconds(500).timeInterval // => 0.5
+```
+
 
 ### SortedArray
 
