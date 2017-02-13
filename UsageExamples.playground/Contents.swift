@@ -123,6 +123,12 @@ mergedDict
 //: Combines each element with each element of a given other array.
 [1, 2, 3].combinations(with: ["A", "B"])
 
+//: ## DispatchTimeIntervalExtension
+//: ### .timeInterval
+//: Returns a `TimeInterval` object from a `DispatchTimeInterval`.
+
+DispatchTimeInterval.milliseconds(500).timeInterval
+
 //: # Added Structures
 //: New structures added to extend the Swift standard library.
 //: ## SortedArray
