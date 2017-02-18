@@ -13,8 +13,8 @@
              alt="codebeat badge">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-2.1.1-blue.svg"
-             alt="Version: 2.1.1">
+        <img src="https://img.shields.io/badge/Version-2.2.0-blue.svg"
+             alt="Version: 2.2.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-3.0-FFAC45.svg"
          alt="Swift: 3.0">
@@ -250,6 +250,35 @@ Returns a `TimeInterval` object from a `DispatchTimeInterval`.
 
 ``` Swift
 DispatchTimeInterval.milliseconds(500).timeInterval // => 0.5
+```
+
+### TimeIntervalExtension
+#### Unit based pseudo-initializers
+Returns a `TimeInterval` object with a given value in a the specified unit.
+
+``` Swift
+TimeInterval.days(1.5) // => 129600
+TimeInterval.hours(1.5) // => 5400
+TimeInterval.minutes(1.5) // => 90
+TimeInterval.seconds(1.5) // => 1.5
+TimeInterval.milliseconds(1.5) // => 0.0015
+TimeInterval.microseconds(1.5) // => 1.5e-06
+TimeInterval.nanoseconds(1.5) // => 1.5e-09
+```
+
+#### Unit based getters
+Returns a double value with the time interval converted to the specified unit.
+
+``` Swift
+let timeInterval: TimeInterval = 60 * 60 * 6
+
+timeInterval.days // => 0.25
+timeInterval.hours // => 6
+timeInterval.minutes // => 360
+timeInterval.seconds // => 21600
+timeInterval.milliseconds // => 21600000
+timeInterval.microseconds // => 21600000000
+timeInterval.nanoseconds // => 21600000000000
 ```
 
 

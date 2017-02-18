@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HandySwift"
-  s.version      = "2.1.1"
+  s.version      = "2.2.0"
   s.summary      = "Handy Swift features that didn't make it into the Swift standard library"
 
   s.description  = <<-DESC

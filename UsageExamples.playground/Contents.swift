@@ -129,6 +129,32 @@ mergedDict
 
 DispatchTimeInterval.milliseconds(500).timeInterval
 
+//: ## TimeIntervalExtension
+//: ### Unit based pseudo-initializers
+//: Returns a `TimeInterval` object with a given value in a the specified unit.
+
+TimeInterval.days(1.5)
+TimeInterval.hours(1.5)
+TimeInterval.minutes(1.5)
+TimeInterval.seconds(1.5)
+TimeInterval.milliseconds(1.5)
+TimeInterval.microseconds(1.5)
+TimeInterval.nanoseconds(1.5)
+
+//: ### Unit based getters
+//: Returns a double value with the time interval converted to the specified unit.
+
+let timeInterval: TimeInterval = 60 * 60 * 6
+
+timeInterval.days
+timeInterval.hours
+timeInterval.minutes
+timeInterval.seconds
+timeInterval.milliseconds
+timeInterval.microseconds
+timeInterval.nanoseconds
+
+
 //: # Added Structures
 //: New structures added to extend the Swift standard library.
 //: ## SortedArray
