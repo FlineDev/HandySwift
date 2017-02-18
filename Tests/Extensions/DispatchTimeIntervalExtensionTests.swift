@@ -17,4 +17,11 @@ class DispatchTimeIntervalTests: XCTestCase {
 
         XCTAssertEqualWithAccuracy(timeInterval, 0.5, accuracy: 0.001)
     }
+
+    func testMultiplyInfix() {
+        let timespan = Timespan.milliseconds(500)
+        let multipledTimespan = timespan * 3
+
+        XCTAssertEqualWithAccuracy(multipledTimespan.timeInterval, 1.5, accuracy: 0.001)
+    }
 }
