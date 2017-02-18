@@ -25,3 +25,8 @@ extension Timespan {
         }
     }
 }
+
+public func * (timespan: Timespan, factor: Double) -> Timespan {
+    let resultingNanoseconds = Int(timespan.timeInterval * factor * 1_000_000_000)
+    return Timespan.nanoseconds(resultingNanoseconds)
+}
