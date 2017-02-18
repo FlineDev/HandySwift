@@ -252,6 +252,35 @@ Returns a `TimeInterval` object from a `DispatchTimeInterval`.
 DispatchTimeInterval.milliseconds(500).timeInterval // => 0.5
 ```
 
+### TimeIntervalExtension
+#### Unit based pseudo-initializers
+Returns a `TimeInterval` object with a given value in a the specified unit.
+
+``` Swift
+TimeInterval.days(1.5) // => 129600
+TimeInterval.hours(1.5) // => 5400
+TimeInterval.minutes(1.5) // => 90
+TimeInterval.seconds(1.5) // => 1.5
+TimeInterval.milliseconds(1.5) // => 0.0015
+TimeInterval.microseconds(1.5) // => 1.5e-06
+TimeInterval.nanoseconds(1.5) // => 1.5e-09
+```
+
+#### Unit based getters
+Returns a double value with the time interval converted to the specified unit.
+
+``` Swift
+let timeInterval: TimeInterval = 60 * 60 * 6
+
+timeInterval.days // => 0.25
+timeInterval.hours // => 6
+timeInterval.minutes // => 360
+timeInterval.seconds // => 21600
+timeInterval.milliseconds // => 21600000
+timeInterval.microseconds // => 21600000000
+timeInterval.nanoseconds // => 21600000000000
+```
+
 
 ### SortedArray
 
