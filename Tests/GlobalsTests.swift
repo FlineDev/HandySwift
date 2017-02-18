@@ -17,10 +17,10 @@ class GlobalsTests: XCTestCase {
         let callDate = Date()
         let delayTime = Timespan.milliseconds(1_500)
         delay(by: .milliseconds(1_500)) {
-            XCTAssertEqualWithAccuracy(callDate.timeIntervalSince1970 + delayTime.timeInterval, NSDate().timeIntervalSince1970, accuracy: 0.25)
+            XCTAssertEqualWithAccuracy(callDate.timeIntervalSince1970 + delayTime, NSDate().timeIntervalSince1970, accuracy: 0.25)
             expectation.fulfill()
         }
 
-        waitForExpectations(timeout: delayTime.timeInterval + 1.0, handler: nil)
+        waitForExpectations(timeout: delayTime + 1.0, handler: nil)
     }
 }

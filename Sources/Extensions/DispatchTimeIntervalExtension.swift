@@ -8,25 +8,18 @@
 
 import Foundation
 
-public typealias Timespan = DispatchTimeInterval
-
-extension Timespan {
+extension DispatchTimeInterval {
     /// - Returns: The time in seconds using the`TimeInterval` type.
     public var timeInterval: TimeInterval {
         switch self {
         case .seconds(let seconds):
             return Double(seconds)
         case .milliseconds(let milliseconds):
-            return Double(milliseconds) / 1_000
+            return Double(milliseconds) / Timespan.millisecondsPerSecond
         case .microseconds(let microseconds):
-            return Double(microseconds) / 1_000_000
+            return Double(microseconds) / Timespan.microsecondsPerSecond
         case .nanoseconds(let nanoseconds):
-            return Double(nanoseconds) / 1_000_000_000
+            return Double(nanoseconds) / Timespan.nanosecondsPerSecond
         }
     }
-}
-
-public func * (timespan: Timespan, factor: Double) -> Timespan {
-    let resultingNanoseconds = Int(timespan.timeInterval * factor * 1_000_000_000)
-    return Timespan.nanoseconds(resultingNanoseconds)
 }
