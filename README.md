@@ -108,11 +108,10 @@ Some global helpers.
 Runs a given closure after a delay given in seconds. Dispatch queue can be set optionally, defaults to Main thread.
 
 ``` Swift
-var date = NSDate() // Without delay: 2016-06-07 05:38:03 +0000
-delay(bySeconds: 1.5) { // Runs in Main thread by default
+delay(by: .milliseconds(1_500)) { // Runs in Main thread by default
     date = NSDate() // Delayed by 1.5 seconds: 2016-06-07 05:38:05 +0000
 }
-delay(bySeconds: 5, dispatchLevel: .userInteractive) {
+delay(by: .seconds(5), dispatchLevel: .userInteractive) {
     date = NSDate() // Delayed by 5 seconds: 2016-06-07 05:38:08 +0000
 }
 ```
