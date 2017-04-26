@@ -123,6 +123,28 @@ mergedDict
 //: Combines each element with each element of a given other array.
 [1, 2, 3].combinations(with: ["A", "B"])
 
+//: ### .sort(stable:) / .sorted(stable:) / .sort(by:stable:) / .sorted(by:stable:)
+//: Stable sorting methods to sort arrays without destroying pre-existing ordering for equal cases.
+
+// Build an example class to demo two factors of ordering (a and b).
+struct T: Equatable {
+    let a: Int, b: Int
+
+    static func == (lhs: T, rhs: T) -> Bool {
+        return lhs.a == rhs.a && lhs.b == rhs.b
+    }
+}
+
+var unsortedArray = [T(a: 0, b: 2), T(a: 1, b: 2), T(a: 2, b: 2), T(a: 3, b: 1), T(a: 4, b: 1), T(a: 5, b: 0)]
+
+//: Get sorted copy of array (not touching the original array).
+unsortedArray.sorted(by: { lhs, rhs in lhs.b < rhs.b }, stable: true)
+unsortedArray
+
+//: Sort in place (mutating).
+unsortedArray.sort(by: { lhs, rhs in lhs.b < rhs.b }, stable: true)
+unsortedArray // now sorted
+
 //: ## DispatchTimeIntervalExtension
 //: ### .timeInterval
 //: Returns a `TimeInterval` object from a `DispatchTimeInterval`.
