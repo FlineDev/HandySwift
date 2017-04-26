@@ -42,4 +42,89 @@ public extension Array {
         forEach { elem in other.forEach { otherElem in combinations.append((elem, otherElem)) } }
         return combinations
     }
+
+    /// Sorts the collection in place by the order specified in the closure.
+    ///
+    /// NOTE: The default `sort` method is not stable, this one allows to explicitly specify it to be stable.
+    ///
+    /// - Parameters:
+    ///   - stable: Speifies if the sorting algorithm should be stable.
+    ///   - areInIncreasingOrder: The closure to specify the order of the elements to be sorted by.
+    public mutating func sort(by areInIncreasingOrder: @escaping (Element, Element) -> Bool, stable: Bool) {
+        guard stable else { sort(by: areInIncreasingOrder); return }
+        stableMergeSort(by: areInIncreasingOrder)
+    }
+
+    /// Returns the elements of the sequence, sorted.
+    ///
+    /// NOTE: The default `sorted` method is not stable, this one allows to explicitly specify it to be stable.
+    ///
+    /// - Parameters:
+    ///   - stable: Speifies if the sorting algorithm should be stable.
+    ///   - areInIncreasingOrder: The closure to specify the order of the elements to be sorted by.
+    public func sorted(by areInIncreasingOrder: @escaping (Element, Element) -> Bool, stable: Bool) -> [Element] {
+        guard stable else { return sorted(by: areInIncreasingOrder) }
+
+        var copy = [Element](self)
+        copy.stableMergeSort(by: areInIncreasingOrder)
+        return copy
+    }
+
+    /// Sorts the array in-place using a stable merge sort algorithm.
+    mutating func stableMergeSort(by areInIncreasingOrder: @escaping (Element, Element) -> Bool) {
+        var tmp = [Element]()
+        tmp.reserveCapacity(numericCast(count))
+
+        func merge(low: Int, mid: Int, high: Int) {
+            tmp.removeAll(keepingCapacity: true)
+            tmp.append(contentsOf: self[low..<high])
+
+            var i = 0, j = mid - low
+            let iMax = j, jMax = tmp.count
+
+            for k in low..<high {
+                let tmpPosIsJ = i == iMax || (j != jMax && areInIncreasingOrder(tmp[j], tmp[i]))
+                self[k] = tmp[tmpPosIsJ ? j : i]
+
+                if tmpPosIsJ {
+                    j += 1
+                } else {
+                    i += 1
+                }
+            }
+        }
+
+        let n = count
+        var size = 1
+        while size < n {
+            var low = 0
+            while low < n - size {
+                merge(low: low, mid: low + size, high: Swift.min(low + size * 2, n))
+                low += size * 2
+            }
+            size *= 2
+        }
+    }
+}
+
+public extension Array where Element: Comparable {
+    /// Sorts the collection in place by the order specified in the closure.
+    ///
+    /// NOTE: The default `sort` method is not stable, this one allows to explicitly specify it to be stable.
+    ///
+    /// - Parameters:
+    ///   - stable: Speifies if the sorting algorithm should be stable.
+    public mutating func sort(stable: Bool) {
+        sort(by: { lhs, rhs in  lhs < rhs }, stable: stable)
+    }
+
+    /// Returns the elements of the sequence, sorted.
+    ///
+    /// NOTE: The default `sorted` method is not stable, this one allows to explicitly specify it to be stable.
+    ///
+    /// - Parameters:
+    ///   - stable: Speifies if the sorting algorithm should be stable.
+    public func sorted(stable: Bool) -> [Element] {
+        return sorted(by: { lhs, rhs in lhs < rhs }, stable: stable)
+    }
 }
