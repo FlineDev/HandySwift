@@ -101,6 +101,7 @@ extension Array {
         var size = 1
         while size < n {
             var low = 0
+
             while low < n - size {
                 merge(low: low, mid: low + size, high: Swift.min(low + size * 2, n))
                 low += size * 2

@@ -26,6 +26,8 @@ included:
 
 excluded:
 - Carthage
+- Sources/Constants
+- Sources/Code/Record.swift
 
 line_length: 180
 
