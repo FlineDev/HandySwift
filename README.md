@@ -51,6 +51,8 @@ Currently the recommended way of installing this library is via [Carthage](https
 
 You can of course also just include this framework manually into your project by downloading it or by using git submodules.
 
+*Note: This project is ready for Swift 4. Until Xcode 9 is officially released though, you need to use the branch "work/swift4".*
+
 ### Carthage
 
 Place the following line to your Cartfile:
