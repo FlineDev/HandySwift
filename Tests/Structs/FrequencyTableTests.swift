@@ -30,7 +30,6 @@ class FrequencyTableTests: XCTestCase {
         let ronaldCount = allSamples.filter { $0 == "Ronald" }.count
         XCTAssertGreaterThan(ronaldCount, 0)
         XCTAssertLessThan(ronaldCount, 2_000)
-
     }
 
     func testSampleWithSize() {

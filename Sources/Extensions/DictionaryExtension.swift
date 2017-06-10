@@ -37,6 +37,7 @@ extension Dictionary {
     public func merged(with other: [Key: Value]) -> [Key: Value] {
         var newDict: [Key: Value] = [:]
         [self, other].forEach { dict in for (key, value) in dict { newDict[key] = value } }
+
         return newDict
     }
 }

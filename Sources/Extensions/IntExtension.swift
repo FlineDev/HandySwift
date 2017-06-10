@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Int {
+extension Int {
     /// Initializes a new `Int ` instance with a random value below a given `Int`.
     ///
     /// - Parameters:

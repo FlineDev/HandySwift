@@ -13,17 +13,13 @@ public struct FrequencyTable<T> {
     // MARK: - Sub Types
     typealias Entry = (value: T, frequency: Int)
 
-
     // MARK: - Stored Instance Properties
-
     private let valuesWithFrequencies: [Entry]
 
     /// Contains all values the amount of time of their frequencies.
     private let frequentValues: [T]
 
-
     // MARK: - Initializers
-
     /// Creates a new FrequencyTable instance with values and their frequencies provided.
     ///
     /// - Parameters:
@@ -31,20 +27,16 @@ public struct FrequencyTable<T> {
     ///   - frequencyClosure: The closure to specify the frequency for a specific value.
     public init(values: [T], frequencyClosure: (T) -> Int) {
         valuesWithFrequencies = values.map { ($0, frequencyClosure($0)) }
-        frequentValues = valuesWithFrequencies.reduce([]) { (memo, entry) in
+        frequentValues = valuesWithFrequencies.reduce([]) { memo, entry in
             return memo + Array(repeating: entry.value, count: entry.frequency)
         }
     }
 
-
     // MARK: - Computed Instance Properties
-
     /// - Returns: A random value taking frequencies into account or nil if values empty.
     public var sample: T? { return frequentValues.sample }
 
-
     // MARK: - Instance Methods
-
     /// Returns an array of random values taking frequencies into account or nil if values empty.
     ///
     /// - Parameters:
