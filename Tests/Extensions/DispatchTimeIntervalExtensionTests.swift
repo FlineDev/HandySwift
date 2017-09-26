@@ -6,15 +6,14 @@
 //  Copyright © 2017 Flinesoft. All rights reserved.
 //
 
-import XCTest
-
 @testable import HandySwift
+import XCTest
 
 class DispatchTimeIntervalTests: XCTestCase {
     func testTimeInterval() {
         let dispatchTimeInterval = DispatchTimeInterval.milliseconds(500)
         let timeInterval = dispatchTimeInterval.timeInterval
 
-        XCTAssertEqualWithAccuracy(timeInterval, 0.5, accuracy: 0.001)
+        XCTAssertEqual(timeInterval, 0.5, accuracy: 0.001)
     }
 }

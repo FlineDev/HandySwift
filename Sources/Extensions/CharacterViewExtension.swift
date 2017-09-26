@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension String.CharacterView {
+extension String.CharacterView {
     /// Returns a random character from the `ChracterView`.
     ///
     /// - Returns: A random character from the `CharacterView` or `nil` if empty.
@@ -26,6 +26,7 @@ public extension String.CharacterView {
 
         var sampleElements = String.CharacterView()
         size.times { sampleElements.append(sample!) }
+
         return sampleElements
     }
 }

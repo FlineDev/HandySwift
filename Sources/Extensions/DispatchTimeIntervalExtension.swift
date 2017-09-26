@@ -14,12 +14,18 @@ extension DispatchTimeInterval {
         switch self {
         case .seconds(let seconds):
             return Double(seconds)
+
         case .milliseconds(let milliseconds):
             return Double(milliseconds) / Timespan.millisecondsPerSecond
+
         case .microseconds(let microseconds):
             return Double(microseconds) / Timespan.microsecondsPerSecond
+
         case .nanoseconds(let nanoseconds):
             return Double(nanoseconds) / Timespan.nanosecondsPerSecond
+
+        case .never:
+            return TimeInterval.infinity
         }
     }
 }

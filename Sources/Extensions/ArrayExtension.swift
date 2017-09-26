@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Array {
+extension Array {
     /// Returns a random element from the `Array`.
     ///
     /// - Returns: A random element from the array or `nil` if empty.
@@ -27,6 +27,7 @@ public extension Array {
 
         var sampleElements: [Element] = []
         size.times { sampleElements.append(sample!) }
+
         return sampleElements
     }
 
@@ -40,6 +41,7 @@ public extension Array {
     public func combinations<T>(with other: [T]) -> [(Element, T)] {
         var combinations = [(Element, T)]()
         forEach { elem in other.forEach { otherElem in combinations.append((elem, otherElem)) } }
+
         return combinations
     }
 
@@ -67,6 +69,7 @@ public extension Array {
 
         var copy = [Element](self)
         copy.stableMergeSort(by: areInIncreasingOrder)
+
         return copy
     }
 
@@ -98,16 +101,18 @@ public extension Array {
         var size = 1
         while size < n {
             var low = 0
+
             while low < n - size {
                 merge(low: low, mid: low + size, high: Swift.min(low + size * 2, n))
                 low += size * 2
             }
+
             size *= 2
         }
     }
 }
 
-public extension Array where Element: Comparable {
+extension Array where Element: Comparable {
     /// Sorts the collection in place by the order specified in the closure.
     ///
     /// NOTE: The default `sort` method is not stable, this one allows to explicitly specify it to be stable.

@@ -8,11 +8,11 @@
 
 import Foundation
 
-public typealias Timespan = TimeInterval // Note: Keeps backwards compatibility with version 2.0.x and 2.1.x.
+/// A typealias to keep backwards compatibility with version 2.0.x and 2.1.x.
+public typealias Timespan = TimeInterval
 
 extension TimeInterval {
     // MARK: - Computed Type Properties
-
     internal static var secondsPerDay: Double { return 24 * 60 * 60 }
     internal static var secondsPerHour: Double { return 60 * 60 }
     internal static var secondsPerMinute: Double { return 60 }
@@ -20,9 +20,7 @@ extension TimeInterval {
     internal static var microsecondsPerSecond: Double { return 1_000 * 1_000 }
     internal static var nanosecondsPerSecond: Double { return 1_000 * 1_000 * 1_000 }
 
-
     // MARK: - Computed Instance Properties
-
     /// - Returns: The `TimeInterval` in days.
     public var days: Double {
         return self / TimeInterval.secondsPerDay
@@ -58,9 +56,7 @@ extension TimeInterval {
         return self * TimeInterval.nanosecondsPerSecond
     }
 
-
     // MARK: - Type Methods
-
     /// - Returns: The time in days using the `TimeInterval` type.
     public static func days(_ value: Double) -> TimeInterval {
         return value * secondsPerDay

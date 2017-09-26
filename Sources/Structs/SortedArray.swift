@@ -11,15 +11,12 @@ import Foundation
 /// Data structure to keep a sorted array of elements for fast access.
 public struct SortedArray<Element: Comparable> {
     // MARK: - Stored Instance Properties
-
     private var internalArray: [Element]
 
     /// Returns the sorted array of elements.
     public var array: [Element] { return self.internalArray }
 
-
     // MARK: - Initializers
-
     /// Creates a new, empty array.
     ///
     /// For example:
@@ -43,9 +40,7 @@ public struct SortedArray<Element: Comparable> {
         internalArray = preSorted ? Array(sequence) : Array(sequence).sorted()
     }
 
-
     // MARK: - Instance Methods
-
     /// Returns the first index in which an element of the array satisfies the given predicate.
     /// Matching is done using binary search to minimize complexity.
     ///
@@ -121,9 +116,7 @@ public struct SortedArray<Element: Comparable> {
         return SortedArray(sequence: array[bounds], preSorted: true)
     }
 
-
     // MARK: - Mutating Methods
-
     /// Adds a new item to the sorted array.
     ///
     /// - Complexity: O(log(n))
@@ -131,7 +124,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - newElement: The new element to be inserted into the array.
     public mutating func insert(newElement: Element) {
-        let insertIndex = internalArray.index(where: { $0 >= newElement }) ?? internalArray.endIndex
+        let insertIndex = internalArray.index { $0 >= newElement } ?? internalArray.endIndex
         internalArray.insert(newElement, at: insertIndex)
     }
 

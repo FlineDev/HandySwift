@@ -17,10 +17,17 @@ extension String {
     public init(randomWithLength length: Int, allowedCharactersType: AllowedCharacters) {
         let allowedCharsString: String = {
             switch allowedCharactersType {
-            case .numeric:      return "0123456789"
-            case .alphabetic:   return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-            case .alphaNumeric: return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            case .allCharactersIn(let allowedCharactersString): return allowedCharactersString
+            case .numeric:
+                return "0123456789"
+
+            case .alphabetic:
+                return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+            case .alphaNumeric:
+                return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+            case .allCharactersIn(let allowedCharactersString):
+                return allowedCharactersString
             }
         }()
 
