@@ -6,9 +6,8 @@
 //  Copyright © 2015 Flinesoft. All rights reserved.
 //
 
-import XCTest
-
 @testable import HandySwift
+import XCTest
 
 class ArrayExtensionTests: XCTestCase {
     func testSample() {

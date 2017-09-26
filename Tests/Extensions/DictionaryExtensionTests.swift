@@ -6,9 +6,8 @@
 //  Copyright © 2016 Flinesoft. All rights reserved.
 //
 
-import XCTest
-
 @testable import HandySwift
+import XCTest
 
 class DictionaryExtensionTests: XCTestCase {
     func testInitWithSameCountKeysAndValues() {

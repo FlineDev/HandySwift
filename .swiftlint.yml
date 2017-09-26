@@ -4,20 +4,26 @@ opt_in_rules:
 - closure_spacing
 - empty_count
 - explicit_init
-- fatal_error_message
 - file_header
 - first_where
-- implicit_return
-- implicitly_unwrapped_optional
+- let_var_whitespace
 - nimble_operator
 - no_extension_access_modifier
 - number_separator
+- object_literal
 - operator_usage_whitespace
 - overridden_super_call
 - private_outlet
 - prohibited_super_call
 - redundant_nil_coalescing
+- sorted_imports
 - switch_case_on_newline
+- trailing_closure
+- unneeded_parentheses_in_closure_argument
+- vertical_parameter_alignment_on_call
+
+disabled_rules:
+- todo
 
 included:
 - Sources
@@ -25,6 +31,8 @@ included:
 
 excluded:
 - Carthage
+- Package.swift
+- UsageExamples.playground
 
 line_length: 160
 
@@ -34,10 +42,9 @@ file_header:
                     \/\/  .*?\.swift
                     \/\/  HandySwift
                     \/\/
-                    \/\/  Created by [\S ]+ on \d{1,2}\.\d{1,2}\.\d{2}\.
+                    \/\/  Created by .*? on \S{8,10}\.
                     \/\/  Copyright © \d{4} Flinesoft\. All rights reserved\.
                     \/\/
-
 custom_rules:
   closing_brace_whitespace:
     included: ".*.swift"
@@ -51,12 +58,6 @@ custom_rules:
     name: "Unnecessary Closure Params Parantheses"
     message: "Don't use parantheses around non-typed parameters in a closure."
     severity: warning
-  ending_closure:
-    included: ".*.swift"
-    regex: '(?:\(|, | *\S+ *: *)\{[^\}]+\}\) *\n'
-    name: "Ending Closure"
-    message: "Don't use '(' and ')' on the last closure of a method – remove them instead."
-    severity: warning
   if_as_guard:
     included: ".*.swift"
     regex: '\n *if [^\{]+\{\s*return[^\n]*\n *\}(?! *else)'
@@ -69,15 +70,9 @@ custom_rules:
     name: "Late Force Unwrapping"
     message: "Don't use ? first to force unwrap later – directly unwrap within the parantheses."
     severity: warning
-  long_switch_case:
-    included: ".*.swift"
-    regex: 'case (?:let )?\.[^\n]+\n((?!\s*switch)[^\n\}]+\n){5,}?\s*(case|\})'
-    name: "Long Switch Cases"
-    message: "Use a maximum of 3 lines within each case."
-    severity: warning
   missing_docs:
     included: ".*.swift"
-    regex: '\n *(?!\/\/\/)(\/\/)?[^\n\/]*\n *(?:@\S+ )?(?:public|open)'
+    regex: '\n *(?!\/\/\/)(\/\/)?[^\n\/]*\n *(?:@\S+ )*(?:public |open )'
     name: "Missing Docs"
     message: "Types, properties and methods with public or open access level should be documented."
     severity: warning
@@ -87,23 +82,11 @@ custom_rules:
     name: "Multiple Closure Params"
     message: "Don't use multiple in-line closures – save one or more of them to variables instead."
     severity: warning
-  return_whitespace:
-    included: ".*.swift"
-    regex: '( {4}\S[^\n]+\n){2,} {4}return|( {8}\S[^\n]+\n){2,} {8}return|( {12}\S[^\n]+\n){2,} {12}return|( {16}\S[^\n]+\n){2,} {16}return|( {20}\S[^\n]+\n){2,} {20}return|( {24}\S[^\n]+\n){2,} {24}return'
-    name: "Return Whitespace"
-    message: "Put an empty line before the return line if two or more other lines in closure."
-    severity: warning
   single_line_guard:
     included: ".*.swift"
-    regex: 'guard[^\{]{2,100}else\s*\{\s*\n\s*return.{2,60}\}'
+    regex: 'guard[^\{]{2,80}else\s*\{\s*\n\s*return.{2,40}\}'
     name: "Single Line Guard"
     message: "Use a single line guard for simple checks."
-    severity: warning
-  space_before_comment:
-    included: ".*.swift"
-    regex: '\n[ ]{0}[^\/ \n][^\n]*\n[ ]{0}\/\/|\n[ ]{4}[^\/ \n][^\n]*\n[ ]{4}\/\/|\n[ ]{8}[^\/ \n][^\n]*\n[ ]{8}\/\/|\n[ ]{16}[^\/ \n][^\n]*\n[ ]{16}\/\/|\n[ ]{20}[^\/ \n][^\n]*\n[ ]{20}\/\/|\n[ ]{24}[^\/ \n][^\n]*\n[ ]{24}\/\/'
-    name: "Space Before Comment"
-    message: "Always put a space line before a comment line and always comment code beforehand."
     severity: warning
   too_much_indentation:
     included: ".*.swift"
@@ -113,7 +96,7 @@ custom_rules:
     severity: warning
   too_much_unindentation:
     included: ".*.swift"
-    regex: ' {28}\S(.|[^\n]*[^\)][^\ ][^\}])\n+ {0,23}[^\s\/]| {24}\S(.|[^\n]*[^\)][^\ ][^\}])\n+ {0,19}[^\s\/]| {20}\S(.|[^\n]*[^\)][^\ ][^\}])\n+ {0,15}[^\s\/]| {16}\S(.|[^\n]*[^\)][^\ ][^\}])\n+ {0,11}[^\s\/]| {12}\S(.|[^\n]*[^\)][^\ ][^\}])\n+ {0,7}[^\s\/]| {8}\S(.|[^\n]*[^\)][^\ ][^\}])\n+ {0,3}[^\s\/]'
+    regex: ' {28}[^\s\.](.|[^\n]*[^\)][^\ ][^\}])\n+ {0,23}[^\s\/]| {24}[^\s\.](.|[^\n]*[^\)][^\ ][^\}])\n+ {0,19}[^\s\/]| {20}[^\s\.](.|[^\n]*[^\)][^\ ][^\}])\n+ {0,15}[^\s\/]| {16}[^\s\.](.|[^\n]*[^\)][^\ ][^\}])\n+ {0,11}[^\s\/]| {12}[^\s\.](.|[^\n]*[^\)][^\ ][^\}])\n+ {0,7}[^\s\/]| {8}[^\s\.](.|[^\n]*[^\)][^\ ][^\}])\n+ {0,3}[^\s\/]'
     name: "Too Much Unindentation"
     message: "Don't unindent code by more than 4 whitespaces."
     severity: warning

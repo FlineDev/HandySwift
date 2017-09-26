@@ -6,9 +6,8 @@
 //  Copyright © 2016 Flinesoft. All rights reserved.
 //
 
-import XCTest
-
 @testable import HandySwift
+import XCTest
 
 class GlobalsTests: XCTestCase {
     func testDelayed() {
@@ -17,7 +16,7 @@ class GlobalsTests: XCTestCase {
         let callDate = Date()
         let delayTime = Timespan.milliseconds(1_500)
         delay(by: .milliseconds(1_500)) {
-            XCTAssertEqualWithAccuracy(callDate.timeIntervalSince1970 + delayTime, NSDate().timeIntervalSince1970, accuracy: 0.25)
+            XCTAssertEqual(callDate.timeIntervalSince1970 + delayTime, NSDate().timeIntervalSince1970, accuracy: 0.25)
             expectation.fulfill()
         }
 
