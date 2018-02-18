@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/Flinesoft/HandySwift"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
 
-  s.author             = { "Cihat Gündüz" => "CihatGuenduez@posteo.de" }
+  s.author             = { "Cihat Gündüz" => "cocoapods@cihatguenduez.de" }
   s.social_media_url   = "https://twitter.com/Dschee"
 
   s.ios.deployment_target = "8.0"
