@@ -1,7 +1,4 @@
 //
-//  ArrayExtension.swift
-//  HandySwift
-//
 //  Created by Cihat Gündüz on 26.12.15.
 //  Copyright © 2015 Flinesoft. All rights reserved.
 //
@@ -23,7 +20,7 @@ extension Array {
     ///   - size: The number of random elements wanted.
     /// - Returns: An array with the given number of random elements or `nil` if empty.
     public func sample(size: Int) -> [Element]? {
-        if isEmpty { return nil }
+        guard !isEmpty else { return nil }
 
         var sampleElements: [Element] = []
         size.times { sampleElements.append(sample!) }
