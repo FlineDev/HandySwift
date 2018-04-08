@@ -118,6 +118,18 @@ delay(by: .seconds(5), dispatchLevel: .userInteractive) {
 }
 ```
 
+#### every(_ interval:) { ... }
+Runs a given closure every interval. Dispatch queue can be set optionally (as well as QoS and allowed leeway, see definition)
+``` Swift
+var counter = 0
+let timer = every(.milliseconds(10)) {
+    counter += 1
+    print("I've been executed \(counter) times")
+}
+sleep(3)
+timer.cancel() // you must stop the execution manually (otherwise you may end up with zombie processes when killing the app manually), note that this cannot be done inside a closure
+```
+
 ### IntExtension
 
 #### init(randomBelow:)

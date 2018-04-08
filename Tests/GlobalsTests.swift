@@ -19,4 +19,18 @@ class GlobalsTests: XCTestCase {
 
         waitForExpectations(timeout: delayTime + 1.0, handler: nil)
     }
+
+    func testEvery() {
+        let expectation = self.expectation(description: "Wait for three executions.")
+        var counter = 0
+        let timer = every(.milliseconds(10)) {
+            counter += 1
+            if counter >= 3 {
+                expectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 2) { error in
+            timer.cancel()
+        }
+    }
 }
