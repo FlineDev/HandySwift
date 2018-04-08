@@ -5,13 +5,15 @@
 //  Created by Frederick Pietschmann on 19.03.18.
 //  Copyright © 2018 Flinesoft. All rights reserved.
 //
-// Taken from https://github.com/sharplet/Regex, then modified to remove some weight.
+//  Originally from: https://github.com/sharplet/Regex (modified to remove some weight).
 
 // TODO: Document
 
+import Foundation
+
 public struct Regex {
     // MARK: - Properties
-    internal let regularExpression: NSRegularExpression
+    private let regularExpression: NSRegularExpression
 
     // MARK: - Initializers
     /// Create a `Regex` based on a pattern string.
@@ -39,7 +41,23 @@ public struct Regex {
     ///
     /// - returns: `true` if the regular expression matches, otherwise `false`.
     public func matches(_ string: String) -> Bool {
-        return !matches(in: string).isEmpty
+        return firstMatch(in: string) != nil
+    }
+
+    /// If the regex matches `string`, returns a `Match` describing the
+    /// first matched string and any captures. If there are no matches, returns
+    /// `nil`.
+    ///
+    /// - parameter string: The string to match against.
+    ///
+    /// - returns: An optional `Match` describing the first match, or `nil`.
+    ///
+    /// - note: If the match is successful, the result is also stored in `Regex.lastMatch`.
+    public func firstMatch(in string: String) -> Match? {
+        let match = regularExpression
+            .firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
+            .map { Match(result: $0, in: string) }
+        return match
     }
 
     /// If the regex matches `string`, returns an array of `Match`, describing
