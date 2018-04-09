@@ -11,8 +11,8 @@ extension String {
     /// - Parameters:
     ///   - randommWithLength:      The length of the random String to create.
     ///   - allowedCharactersType:  The allowed characters type, see enum `AllowedCharacters`.
-    public init(randomWithLength length: Int, allowedCharactersType: AllowedCharacters) {
-        let allowedCharsString: String = {
+    public init(randomWithLength length: Int, allowedCharactersType: AllowedCharacters, excludingCharacters: [Character] = []) {
+        var allowedCharsString: String = {
             switch allowedCharactersType {
             case .numeric:
                 return "0123456789"
@@ -27,6 +27,12 @@ extension String {
                 return allowedCharactersString
             }
         }()
+        
+        for characterToExclude in excludingCharacters {
+            if let indexOfCharacterToExclude = allowedCharsString.index(of: characterToExclude) {
+                    allowedCharsString.remove(at: indexOfCharacterToExclude)
+            }
+        }
 
         self.init(allowedCharsString.sample(size: length)!)
     }

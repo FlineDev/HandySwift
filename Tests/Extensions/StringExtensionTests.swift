@@ -44,4 +44,9 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual([1, 2, 3].sample(size: 2)!.count, 2)
         XCTAssertEqual([1, 2, 3].sample(size: 10)!.count, 10)
     }
+    
+    func testExlcudingCharacters() {
+        let charactersToExclude: [Character] = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        XCTAssertEqual(String(randomWithLength: 1, allowedCharactersType: .numeric, excludingCharacters: charactersToExclude), "0")
+    }
 }
