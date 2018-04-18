@@ -11,6 +11,8 @@
 
 import Foundation
 
+/// `Regex` is a swifty regex engine built on top of the NSRegularExpression api.
+/// To get started using it, first initialize a new Regex with the pattern string.
 public struct Regex {
     // MARK: - Properties
     private let regularExpression: NSRegularExpression
@@ -67,8 +69,6 @@ public struct Regex {
     /// - parameter string: The string to match against.
     ///
     /// - returns: An array of `Match` describing every match in `string`.
-    ///
-    /// - note: If there is at least one match, the first is stored in `Regex.lastMatch`.
     public func matches(in string: String) -> [Match] {
         let matches = regularExpression
             .matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
@@ -98,7 +98,7 @@ public struct Regex {
         let matches = self.matches(in: input)
         let rangedMatches = Array(matches[0..<min(matches.count, count ?? .max)])
         for match in rangedMatches.reversed() {
-            let replacement = match.string(applyingTemplate: template, withRegex: self)
+            let replacement = match.string(applyingTemplate: template)
             output.replaceSubrange(match.range, with: replacement)
         }
 
@@ -108,6 +108,11 @@ public struct Regex {
 
 // MARK: - ExpressibleByStringLiteral
 extension Regex: ExpressibleByStringLiteral {
+    /// Creates a new `Regex` based on a string literal.
+    /// If the internal initialization fails, the code will crash without any option to handle the error.
+    /// For safe `Regex` initialization, use the `init(_: String, options: Options) throws` overload instead.
+    ///
+    /// - parameter stringLiteral: The pattern string.
     public init(stringLiteral value: String) {
         do {
             try self.init(value)
@@ -119,20 +124,26 @@ extension Regex: ExpressibleByStringLiteral {
 
 // MARK: - CustomStringConvertible
 extension Regex: CustomStringConvertible {
+    /// Returns a string describing the regex using its pattern string.
     public var description: String {
-        return "Regex(\(regularExpression.pattern))"
+        return "Regex<\(regularExpression.pattern)>"
     }
 }
 
 // MARK: - Equatable
 extension Regex: Equatable {
+    /// Determines the equality of to `Regex`` instances.
+    /// Two `Regex` are considered equal, if both the pattern string and the options
+    /// passed on initialization are equal.
     public static func == (lhs: Regex, rhs: Regex) -> Bool {
-        return lhs.regularExpression == rhs.regularExpression
+        return lhs.regularExpression.pattern == rhs.regularExpression.pattern &&
+        lhs.regularExpression.options == rhs.regularExpression.options
     }
 }
 
 // MARK: - Hashable
 extension Regex: Hashable {
+    /// Returns a unique hash value for the `Regex` instance.
     public var hashValue: Int {
         return regularExpression.hashValue
     }
@@ -155,13 +166,15 @@ extension Regex {
         /// the beginning of each line, and "$" will match the end of each line.
         public static let anchorsMatchLines = Options(rawValue: 1 << 2)
 
-        /// Usually, "." matches all characters except newlines (\n). Using this
-        /// this options will allow "." to match newLines
+        /// Usually, "." matches all characters except newlines (\n). Using this,
+        /// options will allow "." to match newLines
         public static let dotMatchesLineSeparators = Options(rawValue: 1 << 3)
 
+        /// The raw value of the `OptionSet`
         public let rawValue: Int
 
         // MARK: Initializers
+        /// The raw value init for the `OptionSet`
         public init(rawValue: Int) {
             self.rawValue = rawValue
         }
@@ -213,10 +226,13 @@ extension Regex {
         ///     regex.matches(in: "ab")first?.captures // [Optional("a"), Optional("b")]
         ///     regex.matches(in: "b").first?.captures // [nil, Optional("b")]
         public lazy var captures: [String?] = {
-            let captureRanges = stride(from: 0, to: self.result.numberOfRanges, by: 1)
-                .map(self.result.range)
+            let captureRanges = stride(from: 0, to: result.numberOfRanges, by: 1)
+                .map(result.range)
                 .dropFirst()
-                .map { [unowned self] in Range($0, in: self.baseString) }
+                .map { [unowned self] in
+                    Range($0, in: self.baseString)
+                }
+
             return captureRanges.map { [unowned self] captureRange in
                 if let captureRange = captureRange {
                     return String(describing: self.baseString[captureRange])
@@ -226,18 +242,37 @@ extension Regex {
             }
         }()
 
-        public let result: NSTextCheckingResult
+        private let result: NSTextCheckingResult
+
         private let baseString: String
 
         // MARK: - Initializers
         internal init(result: NSTextCheckingResult, in string: String) {
+            precondition(
+                result.regularExpression != nil,
+                "NSTextCheckingResult must originate from regular expression parsing."
+            )
+
             self.result = result
             self.baseString = string
         }
 
         // MARK: - Methods
-        public func string(applyingTemplate template: String, withRegex regex: Regex) -> String {
-            let replacement = regex.regularExpression.replacementString(
+        /// Returns a new string where the matched string is replaced according to the `template`.
+        ///
+        /// The template string may be a literal string, or include template variables:
+        /// the variable `$0` will be replaced with the entire matched substring, `$1`
+        /// with the first capture group, etc.
+        ///
+        /// For example, to include the literal string "$1" in the replacement string,
+        /// you must escape the "$": `\$1`.
+        ///
+        /// - parameters:
+        ///     - template: The template string used to replace matches.
+        ///
+        /// - returns: A string with `template` applied to the matched string.
+        public func string(applyingTemplate template: String) -> String {
+            let replacement = result.regularExpression!.replacementString(
                 for: result,
                 in: baseString,
                 offset: 0,
