@@ -70,6 +70,9 @@
 		CC120CC2205FDB9300C37D7C /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC120CC1205FDB9300C37D7C /* Regex.swift */; };
 		CC120CC3205FDC4C00C37D7C /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC120CC1205FDB9300C37D7C /* Regex.swift */; };
 		CC120CC4205FDC4D00C37D7C /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC120CC1205FDB9300C37D7C /* Regex.swift */; };
+		CC4AE0CF2087D8A7009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
+		CC4AE0D02087D8A8009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
+		CC4AE0D12087D8A9009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,7 @@
 		A1F221851E3FEE7C00419B06 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		A1F5AEEB1E05702E003D6949 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		CC120CC1205FDB9300C37D7C /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		CC4AE0CD2087D895009931F6 /* RegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,7 @@
 			children = (
 				8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */,
 				826F69AF1C389DB800B2CC6B /* FrequencyTableTests.swift */,
+				CC4AE0CD2087D895009931F6 /* RegexTests.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -622,6 +627,7 @@
 				82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */,
 				82812A9F1D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E01C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
+				CC4AE0CF2087D8A7009931F6 /* RegexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +661,7 @@
 				825EFE0F1C3335A400558497 /* IntExtensionTests.swift in Sources */,
 				82812AA01D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E11C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
+				CC4AE0D02087D8A8009931F6 /* RegexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,6 +695,7 @@
 				825EFE151C3335A500558497 /* IntExtensionTests.swift in Sources */,
 				82812AA11D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8280D7E21C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
+				CC4AE0D12087D8A9009931F6 /* RegexTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

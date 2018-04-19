@@ -12,7 +12,6 @@
 import Foundation
 
 /// `Regex` is a swifty regex engine built on top of the NSRegularExpression api.
-/// To get started using it, first initialize a new Regex with the pattern string.
 public struct Regex {
     // MARK: - Properties
     private let regularExpression: NSRegularExpression
@@ -53,8 +52,6 @@ public struct Regex {
     /// - parameter string: The string to match against.
     ///
     /// - returns: An optional `Match` describing the first match, or `nil`.
-    ///
-    /// - note: If the match is successful, the result is also stored in `Regex.lastMatch`.
     public func firstMatch(in string: String) -> Match? {
         let match = regularExpression
             .firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
