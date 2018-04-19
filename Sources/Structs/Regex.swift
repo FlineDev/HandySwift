@@ -28,7 +28,7 @@ public struct Regex {
     ///       For details, see `Regex.Options`.
     ///
     /// - throws: A value of `ErrorType` describing the invalid regular expression.
-    public init(_  pattern: String, options: Options = []) throws {
+    public init(_ pattern: String, options: Options = []) throws {
         regularExpression = try NSRegularExpression(
             pattern: pattern,
             options: options.toNSRegularExpressionOptions()
@@ -123,7 +123,7 @@ extension Regex: ExpressibleByStringLiteral {
 extension Regex: CustomStringConvertible {
     /// Returns a string describing the regex using its pattern string.
     public var description: String {
-        return "Regex<\(regularExpression.pattern)>"
+        return "Regex<\"\(regularExpression.pattern)\">"
     }
 }
 
@@ -196,7 +196,7 @@ extension Regex {
     /// A `Match` encapsulates the result of a single match in a string,
     /// providing access to the matched string, as well as any capture groups within
     /// that string.
-    public class Match {
+    public class Match: CustomStringConvertible {
         // MARK: Properties
         /// The entire matched string.
         public lazy var string: String = {
@@ -277,6 +277,12 @@ extension Regex {
             )
 
             return replacement
+        }
+
+        // MARK: - CustomStringConvertible
+        /// Returns a string describing the match.
+        public var description: String {
+            return "Match<\"\(string)\">"
         }
     }
 }

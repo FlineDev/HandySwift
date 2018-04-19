@@ -165,8 +165,14 @@ class RegexTests: XCTestCase {
     }
 
     // MARK: - CustomStringConvertible
-    func testCustomStringConvertible() {
-        let regex: Regex = "abc"
-        XCTAssertEqual(regex.description, "Regex<abc>")
+    func testRegexCustomStringConvertible() {
+        let regex: Regex = "foo"
+        XCTAssertEqual(regex.description, "Regex<\"foo\">")
+    }
+
+    func testMatchCustomStringConvertible() {
+        let regex: Regex = "bar"
+        let match = regex.firstMatch(in: "bar")!
+        XCTAssertEqual(match.description, "Match<\"bar\">")
     }
 }
