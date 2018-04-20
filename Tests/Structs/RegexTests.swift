@@ -34,9 +34,9 @@ class RegexTests: XCTestCase {
         let regexOptions3: Regex.Options = []
         let nsRegexOptions3: NSRegularExpression.Options = []
 
-        XCTAssertEqual(regexOptions1.toNSRegularExpressionOptions(), nsRegexOptions1)
-        XCTAssertEqual(regexOptions2.toNSRegularExpressionOptions(), nsRegexOptions2)
-        XCTAssertEqual(regexOptions3.toNSRegularExpressionOptions(), nsRegexOptions3)
+        XCTAssertEqual(regexOptions1.toNSRegularExpressionOptions, nsRegexOptions1)
+        XCTAssertEqual(regexOptions2.toNSRegularExpressionOptions, nsRegexOptions2)
+        XCTAssertEqual(regexOptions3.toNSRegularExpressionOptions, nsRegexOptions3)
     }
 
     // MARK: - Matching

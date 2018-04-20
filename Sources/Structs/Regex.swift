@@ -31,7 +31,7 @@ public struct Regex {
     public init(_ pattern: String, options: Options = []) throws {
         regularExpression = try NSRegularExpression(
             pattern: pattern,
-            options: options.toNSRegularExpressionOptions()
+            options: options.toNSRegularExpressionOptions
         )
     }
 
@@ -53,10 +53,10 @@ public struct Regex {
     ///
     /// - returns: An optional `Match` describing the first match, or `nil`.
     public func firstMatch(in string: String) -> Match? {
-        let match = regularExpression
+        let firstMatch = regularExpression
             .firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
             .map { Match(result: $0, in: string) }
-        return match
+        return firstMatch
     }
 
     /// If the regex matches `string`, returns an array of `Match`, describing
@@ -150,7 +150,7 @@ extension Regex: Hashable {
 extension Regex {
     /// `Options` defines alternate behaviours of regular expressions when matching.
     public struct Options: OptionSet {
-        // MARK: Properties
+        // MARK: - Properties
         /// Ignores the case of letters when matching.
         public static let ignoreCase = Options(rawValue: 1)
 
@@ -170,23 +170,22 @@ extension Regex {
         /// The raw value of the `OptionSet`
         public let rawValue: Int
 
-        // MARK: Initializers
-        /// The raw value init for the `OptionSet`
-        public init(rawValue: Int) {
-            self.rawValue = rawValue
-        }
-
-        // MARK: Methods
         /// Transform an instance of `Regex.Options` into the equivalent `NSRegularExpression.Options`.
         ///
         /// - returns: The equivalent `NSRegularExpression.Options`.
-        func toNSRegularExpressionOptions() -> NSRegularExpression.Options {
+        var toNSRegularExpressionOptions: NSRegularExpression.Options {
             var options = NSRegularExpression.Options()
             if contains(.ignoreCase) { options.insert(.caseInsensitive) }
             if contains(.ignoreMetacharacters) { options.insert(.ignoreMetacharacters) }
             if contains(.anchorsMatchLines) { options.insert(.anchorsMatchLines) }
             if contains(.dotMatchesLineSeparators) { options.insert(.dotMatchesLineSeparators) }
             return options
+        }
+
+        // MARK: - Initializers
+        /// The raw value init for the `OptionSet`
+        public init(rawValue: Int) {
+            self.rawValue = rawValue
         }
     }
 }

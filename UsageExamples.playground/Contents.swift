@@ -238,17 +238,20 @@ randomWords
 
 
 //: ## Regex
+//: `Regex` is a swifty regex engine built on top of the `NSRegularExpression` api.
 //: ### Regex(_:options:)
-//: Initialize with pattern and options
+//: Initialize with pattern and options.
 
 do {
-    let _ = try Regex("(Phil|John), [d]{4}", options: [.ignoreCase])
+    let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
+    let regex = try Regex("(Phil|John), [d]{4}", options: options)
+    regex
 } catch {
     // Regex expression was invalid
 }
 
 //: ### StringLiteral Init
-//: Crashes on wrong pattern. Provides no interface to specify options.
+//: Crashes on invalid pattern. Provides no interface to specify options.
 let regex: Regex = "(Phil|John), (\\d{4})"
 
 //: ### regex.matches(_:)
@@ -271,8 +274,18 @@ firstMatch
 let replacedString = regex.replacingMatches(in: "Phil, 1991 and John, 1985", with: "$1 was born in $2", count: 2)
 replacedString
 
+//: ### match.string
+//: Returns the captured string
+let matchString = match.string
+matchString
+
+//: ### match.range
+//: Returns the range of the captured string within the base string
+let matchRange = match.range
+matchRange
+
 //: ### match.captures
-//: Returns the capture groups of a match
+//: Returns the capture groups of the match
 let captures = match.captures
 captures
 
