@@ -16,8 +16,8 @@
         <img src="https://img.shields.io/badge/Version-2.6.0-blue.svg"
              alt="Version: 2.6.0">
     </a>
-    <img src="https://img.shields.io/badge/Swift-4.0-FFAC45.svg"
-         alt="Swift: 4.0">
+    <img src="https://img.shields.io/badge/Swift-4.1-FFAC45.svg"
+         alt="Swift: 4.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-FF69B4.svg"
         alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
