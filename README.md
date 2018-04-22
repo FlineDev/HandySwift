@@ -361,6 +361,97 @@ let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
 ```
 
 
+## Regex
+
+`Regex` is a swifty regex engine built on top of the `NSRegularExpression` api.
+
+### Regex(_:options:)
+
+Initialize with pattern and options.
+
+``` swift
+do {
+`   let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
+    let regex = try Regex("(Phil|John), [d]{4}", options: options)
+} catch {
+    // Regex expression was invalid
+}
+```
+
+### StringLiteral Init
+
+Crashes on invalid pattern. Provides no interface to specify options.
+
+``` swift
+let regex: Regex = "(Phil|John), (\\d{4})"
+```
+
+### regex.matches(_:)
+
+Checks whether regex matches string
+
+``` swift
+let regexMatchesString = regex.matches("Phil, 1991")
+````
+
+### regex.matches(in:)
+
+Returns all matches
+
+``` swift
+let matches = regex.matches(in: "Phil, 1991 and John, 1985")
+```
+
+### regex.firstMatch(in:)
+
+Returns first match if any
+
+``` swift
+let firstMatch = regex.firstMatch(in: "Phil, 1991 and John, 1985")
+```
+
+### regex.replacingMatches(in:with:count:)
+
+Replaces all matches in a string with a template string, up to the a maximum of matches (count).
+
+``` swift
+let replacedString = regex.replacingMatches(in: "Phil, 1991 and John, 1985", with: "$1 was born in $2", count: 2)
+```
+
+### match.string
+
+Returns the captured string
+
+``` swift
+let matchString = match.string
+matchString
+```
+
+### match.range
+
+Returns the range of the captured string within the base string
+
+``` swift
+let matchRange = match.range
+matchRange
+```
+
+### match.captures
+
+Returns the capture groups of a match
+
+``` swift
+let captures = match.captures
+```
+
+### match.string(applyingTemplate:)
+
+Replaces the matched string with a template string
+
+``` swift
+let stringWithTemplateApplied = match.string(applyingTemplate: "$1 was born in $2")
+```
+
 ## Contributing
 
 Contributions are welcome. Please just open an Issue on GitHub to discuss a point or request a feature or send a Pull Request with your suggestion. If there's a related discussion on the Swift Evolution mailing list, please also post the thread name with a link.
