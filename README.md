@@ -449,7 +449,7 @@ Replaces the matched string with a template string
 
 ``` swift
 match.string(applyingTemplate: "$1 was born in $2")
-// => 
+// => "Phil was born in 1991"
 ```
 
 ## Contributing
