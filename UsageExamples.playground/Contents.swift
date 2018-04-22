@@ -252,7 +252,7 @@ do {
 
 //: ### StringLiteral Init
 //: Crashes on invalid pattern. Provides no interface to specify options.
-let regex: Regex = "(Phil|John), (\\d{4})"
+let regex = try Regex("(Phil|John), (\\d{4})")
 
 //: ### regex.matches(_:)
 //: Checks whether regex matches string

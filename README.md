@@ -100,6 +100,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
 - New types
   - [SortedArray](#sortedarray)
   - [FrequencyTable](#frequencytable)
+  - [Regex](#regex)
 
 ---
 
@@ -361,95 +362,94 @@ let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
 ```
 
 
-## Regex
+### Regex
 
-`Regex` is a swifty regex engine built on top of the `NSRegularExpression` api.
+`Regex` is a swifty regex engine built on top of the `NSRegularExpression` API.
 
-### Regex(_:options:)
+#### Regex(_:options:)
 
 Initialize with pattern and options.
 
 ``` swift
-do {
-`   let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
-    let regex = try Regex("(Phil|John), [d]{4}", options: options)
-} catch {
-    // Regex expression was invalid
-}
+let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
+let regex = try Regex("(Phil|John), [d]{4}", options: options)
 ```
 
-### StringLiteral Init
+#### StringLiteral Init
 
 Crashes on invalid pattern. Provides no interface to specify options.
 
 ``` swift
-let regex: Regex = "(Phil|John), (\\d{4})"
+let regex = try Regex("(Phil|John), (\\d{4})")
+// => Regex<"(Phil|John), (\d{4})">
 ```
 
-### regex.matches(_:)
+#### regex.matches(_:)
 
 Checks whether regex matches string
 
 ``` swift
-let regexMatchesString = regex.matches("Phil, 1991")
+regex.matches("Phil, 1991") // => true
 ````
 
-### regex.matches(in:)
+#### regex.matches(in:)
 
 Returns all matches
 
 ``` swift
-let matches = regex.matches(in: "Phil, 1991 and John, 1985")
+regex.matches(in: "Phil, 1991 and John, 1985")  
+// => [Match<"Phil, 1991">, Match<"John, 1985">]
 ```
 
-### regex.firstMatch(in:)
+#### regex.firstMatch(in:)
 
 Returns first match if any
 
 ``` swift
-let firstMatch = regex.firstMatch(in: "Phil, 1991 and John, 1985")
+regex.firstMatch(in: "Phil, 1991 and John, 1985")
+// => Match<"Phil, 1991">
 ```
 
-### regex.replacingMatches(in:with:count:)
+#### regex.replacingMatches(in:with:count:)
 
 Replaces all matches in a string with a template string, up to the a maximum of matches (count).
 
 ``` swift
-let replacedString = regex.replacingMatches(in: "Phil, 1991 and John, 1985", with: "$1 was born in $2", count: 2)
+regex.replacingMatches(in: "Phil, 1991 and John, 1985", with: "$1 was born in $2", count: 2)
+// => "Phil was born in 1991 and John was born in 1985"
 ```
 
-### match.string
+#### match.string
 
 Returns the captured string
 
 ``` swift
-let matchString = match.string
-matchString
+match.string // => "Phil, 1991"
 ```
 
-### match.range
+#### match.range
 
 Returns the range of the captured string within the base string
 
 ``` swift
-let matchRange = match.range
-matchRange
+match.range // => Range
 ```
 
-### match.captures
+#### match.captures
 
 Returns the capture groups of a match
 
 ``` swift
-let captures = match.captures
+match.captures // => ["Phil", "1991"]
 ```
 
-### match.string(applyingTemplate:)
+#### match.string(applyingTemplate:)
 
 Replaces the matched string with a template string
 
 ``` swift
-let stringWithTemplateApplied = match.string(applyingTemplate: "$1 was born in $2")
+match.string(applyingTemplate: "$1 was born in $2")
+// => 
 ```
 
 ## Contributing
