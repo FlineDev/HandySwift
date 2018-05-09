@@ -366,7 +366,7 @@ let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
 
 `Regex` is a swifty regex engine built on top of the `NSRegularExpression` API.
 
-#### Regex(_:options:)
+#### init(_:options:)
 
 Initialize with pattern and, optionally, options.
 

@@ -105,6 +105,7 @@ public struct Regex {
 
 // MARK: - ExpressibleByStringLiteral
 extension Regex: ExpressibleByStringLiteral {
+    @available(*, deprecated, message: "Use `init(_:options:) throws` instead.")
     /// Creates a new `Regex` based on a string literal.
     /// If the internal initialization fails, the code will crash without any option to handle the error.
     /// For safe `Regex` initialization, use the `init(_: String, options: Options) throws` overload instead.

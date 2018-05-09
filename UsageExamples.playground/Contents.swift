@@ -239,7 +239,7 @@ randomWords
 
 //: ## Regex
 //: `Regex` is a swifty regex engine built on top of the `NSRegularExpression` api.
-//: ### Regex(_:options:)
+//: ### init(_:options:)
 //: Initialize with pattern and, optionally, options.
 
 do {
