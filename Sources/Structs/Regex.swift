@@ -7,8 +7,6 @@
 //
 //  Originally from: https://github.com/sharplet/Regex (modified to remove some weight).
 
-// TODO: Document
-
 import Foundation
 
 /// `Regex` is a swifty regex engine built on top of the NSRegularExpression api.
