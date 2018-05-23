@@ -239,20 +239,19 @@ randomWords
 
 //: ## Regex
 //: `Regex` is a swifty regex engine built on top of the `NSRegularExpression` api.
-//: ### Regex(_:options:)
-//: Initialize with pattern and options.
+//: ### init(_:options:)
+//: Initialize with pattern and, optionally, options.
 
 do {
+    let regexWithoutOptions = try Regex("(Phil|John), [d]{4}")
+    regexWithoutOptions
+
     let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
-    let regex = try Regex("(Phil|John), [d]{4}", options: options)
-    regex
+    let regexWithOptions = try Regex("(Phil|John), [d]{4}", options: options)
+    regexWithOptions
 } catch {
     // Regex expression was invalid
 }
-
-//: ### StringLiteral Init
-//: Crashes on invalid pattern. Provides no interface to specify options.
-let regex = try Regex("(Phil|John), (\\d{4})")
 
 //: ### regex.matches(_:)
 //: Checks whether regex matches string

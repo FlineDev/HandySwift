@@ -366,22 +366,15 @@ let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
 
 `Regex` is a swifty regex engine built on top of the `NSRegularExpression` API.
 
-#### Regex(_:options:)
+#### init(_:options:)
 
-Initialize with pattern and options.
+Initialize with pattern and, optionally, options.
 
 ``` swift
+let regexWithoutOptions = try Regex("(Phil|John), [d]{4}")
+
 let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
-let regex = try Regex("(Phil|John), [d]{4}", options: options)
-```
-
-#### StringLiteral Init
-
-Crashes on invalid pattern. Provides no interface to specify options.
-
-``` swift
-let regex = try Regex("(Phil|John), (\\d{4})")
-// => Regex<"(Phil|John), (\d{4})">
+let regexWithOptions = try Regex("(Phil|John), [d]{4}", options: options)
 ```
 
 #### regex.matches(_:)
