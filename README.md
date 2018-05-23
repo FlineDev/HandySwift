@@ -101,6 +101,8 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
   - [SortedArray](#sortedarray)
   - [FrequencyTable](#frequencytable)
   - [Regex](#regex)
+  - [Weak](#weak)
+  - [Unowned](#unowned)
 
 ---
 
@@ -450,6 +452,52 @@ Replaces the matched string with a template string
 ``` swift
 match.string(applyingTemplate: "$1 was born in $2")
 // => "Phil was born in 1991"
+```
+
+### Weak
+
+`Weak` is a wrapper to store weak references to a `Wrapped` instance.
+
+#### Weak(_:)
+
+Initialize with an object reference.
+
+``` swift
+let text: NSString = "Hello World!"
+var weak = Weak(text)
+```
+
+#### Accessing inner Reference
+
+Access the inner wrapped reference with the `value` property.
+
+``` swift
+print(weak.value!)
+```
+
+#### NilLiteralExpressible Conformance
+
+Create a `Weak` wrapper by assigning nil to the value.
+``` swift
+var weakWrappedValue: Weak<AnyObject> = nil
+```
+
+### Unowned
+
+`Unowned` is a wrapper to store unowned references to a `Wrapped` instance.
+
+#### Unowned(_:)
+
+Initialize with an object reference.
+``` swift
+var unowned = Unowned(text)
+```
+
+#### Accessing inner Reference
+
+Access the inner wrapped reference with the `value` property.
+``` swift
+print(unowned.value)
 ```
 
 ## Contributing
