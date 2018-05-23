@@ -45,12 +45,6 @@ public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
     public init(nilLiteral: ()) {
         self.value = nil
     }
-
-    /// The wrapped value of this instance, unwrapped without checking whether
-    /// the instance is `nil`.
-    public var unsafelyUnwrapped: Wrapped {
-        return value.unsafelyUnwrapped
-    }
 }
 
 extension Weak: CustomDebugStringConvertible {
@@ -73,15 +67,6 @@ extension Weak: Decodable where Wrapped: Decodable {
 }
 
 extension Weak: Equatable where Wrapped: Equatable {
-    /// Returns a Boolean value indicating whether two instances are not equal.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-    public static func != (lhs: Weak<Wrapped>, rhs: Weak<Wrapped>) -> Bool {
-        return lhs.value != rhs.value
-    }
-
     /// Returns a Boolean value indicating whether two instances are equal.
     ///
     /// - Parameters:

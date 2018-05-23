@@ -39,15 +39,6 @@ extension Unowned: Decodable where Wrapped: Decodable {
 }
 
 extension Unowned: Equatable where Wrapped: Equatable {
-    /// Returns a Boolean value indicating whether two instances are not equal.
-    ///
-    /// - Parameters:
-    ///   - lhs: A value to compare.
-    ///   - rhs: Another value to compare.
-    public static func != (lhs: Unowned<Wrapped>, rhs: Unowned<Wrapped>) -> Bool {
-        return lhs.value != rhs.value
-    }
-
     /// Returns a Boolean value indicating whether two instances are equal.
     ///
     /// - Parameters:
