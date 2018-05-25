@@ -293,3 +293,32 @@ captures
 let stringWithTemplateApplied = match.string(applyingTemplate: "$1 was born in $2")
 stringWithTemplateApplied
 
+
+//: ## Weak
+//: `Weak` is a wrapper to store weak references to a `Wrapped` instance.
+//: ### Weak(_:)
+//: Initialize with an object reference.
+let text: NSString = "Hello World!"
+var weak = Weak(text)
+print(weak)
+
+//: ### Accessing inner Reference
+//: Access the inner wrapped reference with the `value` property.
+print(weak.value!)
+
+//: ### NilLiteralExpressible Conformance
+//: Create a `Weak` wrapper by assigning nil to the value.
+weak = nil
+print(weak)
+
+
+//: ## Unowned
+//: `Unowned` is a wrapper to store unowned references to a `Wrapped` instance.
+//: ### Unowned(_:)
+//: Initialize with an object reference.
+var unowned = Unowned(text)
+print(unowned)
+
+//: ### Accessing inner Reference
+//: Access the inner wrapped reference with the `value` property.
+print(unowned.value)
