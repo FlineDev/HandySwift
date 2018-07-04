@@ -70,6 +70,17 @@ class RegexTests: XCTestCase {
         XCTAssertEqual(stringAfterReplace5, "2 2 7")
     }
 
+    func testReplacingMatchesWithSpecialCharacters() {
+        let testString = "\n<string name=\"nav_menu_sim_info\">Simuliere, wie gut ein \\nE-Fahrzeug zu dir passt</string>\n"
+        let newValue = "Simuliere, wie gut ein \\nE-Fahrzeug zu dir passt2"
+        let expectedResult = "\n<string name=\"nav_menu_sim_info\">Simuliere, wie gut ein \\nE-Fahrzeug zu dir passt2</string>\n"
+
+        let regex = try? Regex("(<string[^>]* name=\"nav_menu_sim_info\"[^>]*>)(.*)(</string>)")
+        let stringAfterReplace1 = regex?.replacingMatches(in: testString, with: "$1\(newValue.addingRegexTemplateEncoding())$3")
+
+        XCTAssertEqual(stringAfterReplace1, expectedResult)
+    }
+
     // MARK: - Match
     func testMatchString() {
         let regex = try? Regex("[1-9]+")

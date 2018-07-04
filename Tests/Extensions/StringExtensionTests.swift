@@ -44,4 +44,8 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual([1, 2, 3].sample(size: 2)!.count, 2)
         XCTAssertEqual([1, 2, 3].sample(size: 10)!.count, 10)
     }
+
+    func testAddingRegexTemplateEncoding() {
+        XCTAssertEqual("\\n $0".addingRegexTemplateEncoding(), "\\\\n \\$0")
+    }
 }

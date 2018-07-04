@@ -57,6 +57,16 @@ extension String {
 
         return sampleElements
     }
+
+    /// Returns a new string object with '\' and '$' escaped so they are handled as is on template replacement.
+    ///
+    /// See the Apple Documentation on details here:
+    /// https://developer.apple.com/documentation/foundation/nsregularexpression#1661112
+    ///
+    /// - Returns: a new string object with '\' and '$' escaped so they are handled as is on template replacement
+    public func addingRegexTemplateEncoding() -> String {
+        return replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "$", with: "\\$")
+    }
 }
 
 extension String {
