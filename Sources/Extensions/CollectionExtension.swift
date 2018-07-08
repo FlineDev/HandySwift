@@ -9,12 +9,11 @@
 import Foundation
 
 extension Collection {
-    
-    /// Returns an element with the specified index or nil if the element does not exist
+    /// Returns an element with the specified index or nil if the element does not exist.
     ///
     /// - Parameters:
-    ///   - safe: The index of the element
-    public subscript (safe index: Index) -> Element? {
+    ///   - try: The index of the element.
+    public subscript(try index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }
 }

@@ -74,6 +74,12 @@ String(randomWithLength: 6, allowedCharactersType: .alphabetic)
 String(randomWithLength: 8, allowedCharactersType: .alphaNumeric)
 String(randomWithLength: 10, allowedCharactersType: .allCharactersIn("?!🐲🍏✈️🎎🍜"))
 
+//: ## Collection Extensions
+//: ### [try:]
+//: Returns an element with the specified index and nil if the array does not have that index.
+let arrayForTry = [0, 1, 2, 3, 20]
+arrayForTry[try: 4]
+arrayForTry[try: 20]
 
 //: ## DictionaryExtension
 //: ### init?(keys:values:)
@@ -140,12 +146,6 @@ unsortedArray
 //: Sort in place (mutating).
 unsortedArray.sort(by: { lhs, rhs in lhs.b < rhs.b }, stable: true)
 unsortedArray // now sorted
-
-//: ### .distinct()
-//: Get collection with unique elements only
-let arrayWithDuplicates = [0, 1, 2, 3, 3, 3, 7, 7, 7, 7, 7]
-let arrayWithNoDuplicates = arrayWithDuplicates.distinct()
-arrayWithNoDuplicates // all elements are unique
 
 //: ## DispatchTimeIntervalExtension
 //: ### .timeInterval
@@ -328,9 +328,3 @@ print(unowned)
 //: ### Accessing inner Reference
 //: Access the inner wrapped reference with the `value` property.
 print(unowned.value)
-
-//: ## Collection Extensions
-//: ### [safe:]
-let arrayForSafe = [0, 1, 2, 3, 20]
-arrayForSafe[safe: 4]
-arrayForSafe[safe: 20]
