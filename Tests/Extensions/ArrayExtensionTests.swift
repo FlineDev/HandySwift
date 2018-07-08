@@ -73,4 +73,11 @@ class ArrayExtensionTests: XCTestCase {
             XCTAssertEqual(testArray[index], sortedArray[index])
         }
     }
+    
+    func testDistinct() {
+        let testArray = [0, 1, 2, 2, 2, 3, 4, 5, 6, 6]
+        let resultArray = [0, 1, 2, 3, 4, 5, 6]
+        
+        XCTAssert(testArray.distinct() == resultArray)
+    }
 }

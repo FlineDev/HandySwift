@@ -109,6 +109,21 @@ extension Array {
     }
 }
 
+extension Array where Element : Equatable {
+    /// Returns collection without duplicate elements
+    public func distinct() -> [Element] {
+        var result: [Element] = []
+        
+        for item in self {
+            if !result.contains(item) {
+                result.append(item)
+            }
+        }
+        
+        return result
+    }
+}
+
 extension Array where Element: Comparable {
     /// Sorts the collection in place by the order specified in the closure.
     ///

@@ -141,6 +141,12 @@ unsortedArray
 unsortedArray.sort(by: { lhs, rhs in lhs.b < rhs.b }, stable: true)
 unsortedArray // now sorted
 
+//: ### .distinct()
+//: Get collection with unique elements only
+let arrayWithDuplicates = [0, 1, 2, 3, 3, 3, 7, 7, 7, 7, 7]
+let arrayWithNoDuplicates = arrayWithDuplicates.distinct()
+arrayWithNoDuplicates // all elements are unique
+
 //: ## DispatchTimeIntervalExtension
 //: ### .timeInterval
 //: Returns a `TimeInterval` object from a `DispatchTimeInterval`.
@@ -322,3 +328,9 @@ print(unowned)
 //: ### Accessing inner Reference
 //: Access the inner wrapped reference with the `value` property.
 print(unowned.value)
+
+//: ## Collection Extensions
+//: ### [safe:]
+let arrayForSafe = [0, 1, 2, 3, 20]
+arrayForSafe[safe: 4]
+arrayForSafe[safe: 20]

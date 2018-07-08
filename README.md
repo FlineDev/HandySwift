@@ -97,6 +97,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
   - [ArrayExtension](#arrayextension)
   - [DictionaryExtension](#dictionaryextension)
   - [DispatchTimeIntervalExtension](#dispatchtimeintervalextension)
+  - [CollectionExtension](#collectionextension)
 - New types
   - [SortedArray](#sortedarray)
   - [FrequencyTable](#frequencytable)
@@ -246,6 +247,15 @@ Create new merged `Dictionary` with the given `Dictionary` merged into a `Dictio
 let immutableDict = ["A": "A value", "B": "Old B value"]
 immutableDict.merged(with: ["B": "New B value", "C": "C value"])
 // => ["A": "A value", "B": "New B value", "C": "C value"]
+```
+
+#### .distinct()
+Get collection with unique elements only
+
+``` Swift 
+let arrayWithDuplicates = [0, 1, 2, 3, 3, 3, 7, 7, 7, 7, 7]
+let arrayWithNoDuplicates = arrayWithDuplicates.distinct()
+arrayWithNoDuplicates // => [0, 1, 2, 3, 7]
 ```
 
 ### DispatchTimeIntervalExtension
@@ -492,6 +502,19 @@ Access the inner wrapped reference with the `value` property.
 ``` swift
 print(unowned.value)
 ```
+
+### CollectionExtension
+
+#### [safe:]
+
+Returns an element with the specified index or nil if the element does not exist 
+
+```
+let testArray = [0, 1, 2, 3, 20]
+testArray[safe: 4]  // => Optional(20)
+testArray[safe: 20] // => nil
+```
+
 
 ## Contributing
 
