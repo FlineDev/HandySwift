@@ -213,6 +213,14 @@ Combines each element with each element of a given other array.
 // => [(1, "A"), (1, "B"), (2, "A"), (2, "B"), (3, "A"), (3, "B")]
 ```
 
+#### .distinct()
+Get collection with unique elements only
+
+``` Swift 
+let arrayWithDuplicates = [0, 1, 2, 3, 3, 3, 7, 7, 7, 7, 7]
+let arrayWithNoDuplicates = arrayWithDuplicates.distinct()
+arrayWithNoDuplicates // => [0, 1, 2, 3, 7]
+```
 
 ### DictionaryExtension
 #### init?(keys:values:)
@@ -247,15 +255,6 @@ Create new merged `Dictionary` with the given `Dictionary` merged into a `Dictio
 let immutableDict = ["A": "A value", "B": "Old B value"]
 immutableDict.merged(with: ["B": "New B value", "C": "C value"])
 // => ["A": "A value", "B": "New B value", "C": "C value"]
-```
-
-#### .distinct()
-Get collection with unique elements only
-
-``` Swift 
-let arrayWithDuplicates = [0, 1, 2, 3, 3, 3, 7, 7, 7, 7, 7]
-let arrayWithNoDuplicates = arrayWithDuplicates.distinct()
-arrayWithNoDuplicates // => [0, 1, 2, 3, 7]
 ```
 
 ### DispatchTimeIntervalExtension
