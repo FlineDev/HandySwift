@@ -248,16 +248,12 @@ randomWords
 //: ### init(_:options:)
 //: Initialize with pattern and, optionally, options.
 
-do {
-    let regexWithoutOptions = try Regex("(Phil|John), [d]{4}")
-    regexWithoutOptions
+let regex = try! Regex("(Phil|John), [\\d]{4}")
+regex
 
-    let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
-    let regexWithOptions = try Regex("(Phil|John), [d]{4}", options: options)
-    regexWithOptions
-} catch {
-    // Regex expression was invalid
-}
+let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
+let regexWithOptions = try! Regex("(Phil|John), [\\d]{4}", options: options)
+regexWithOptions
 
 //: ### regex.matches(_:)
 //: Checks whether regex matches string

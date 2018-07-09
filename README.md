@@ -373,10 +373,10 @@ let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
 Initialize with pattern and, optionally, options.
 
 ``` swift
-let regexWithoutOptions = try Regex("(Phil|John), [d]{4}")
+let regex = try Regex("(Phil|John), [\\d]{4}")
 
 let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
-let regexWithOptions = try Regex("(Phil|John), [d]{4}", options: options)
+let regexWithOptions = try Regex("(Phil|John), [\\d]{4}", options: options)
 ```
 
 #### regex.matches(_:)
