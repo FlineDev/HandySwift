@@ -94,6 +94,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
   - [IntExtension](#intextension)
   - [IntegerTypeExtension](#integertypeextension)
   - [StringExtension](#stringextension)
+  - [CollectionExtension](#collectionextension)
   - [ArrayExtension](#arrayextension)
   - [DictionaryExtension](#dictionaryextension)
   - [DispatchTimeIntervalExtension](#dispatchtimeintervalextension)
@@ -211,7 +212,6 @@ Combines each element with each element of a given other array.
 [1, 2, 3].combinations(with: ["A", "B"])
 // => [(1, "A"), (1, "B"), (2, "A"), (2, "B"), (3, "A"), (3, "B")]
 ```
-
 
 ### DictionaryExtension
 #### init?(keys:values:)
@@ -492,6 +492,18 @@ Access the inner wrapped reference with the `value` property.
 ``` swift
 print(unowned.value)
 ```
+
+### CollectionExtension
+
+#### [try:]
+
+Returns an element with the specified index or nil if the element does not exist .
+``` swift
+let testArray = [0, 1, 2, 3, 20]
+testArray[try: 4]  // => Optional(20)
+testArray[try: 20] // => nil
+```
+
 
 ## Contributing
 

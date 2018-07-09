@@ -74,6 +74,12 @@ String(randomWithLength: 6, allowedCharactersType: .alphabetic)
 String(randomWithLength: 8, allowedCharactersType: .alphaNumeric)
 String(randomWithLength: 10, allowedCharactersType: .allCharactersIn("?!🐲🍏✈️🎎🍜"))
 
+//: ## Collection Extensions
+//: ### [try:]
+//: Returns an element with the specified index and nil if the array does not have that index.
+let arrayForTry = [0, 1, 2, 3, 20]
+arrayForTry[try: 4]
+arrayForTry[try: 20]
 
 //: ## DictionaryExtension
 //: ### init?(keys:values:)
