@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
-    <a href="https://www.bitrise.io/app/810d996d77fb0abf">
-        <img src="https://www.bitrise.io/app/810d996d77fb0abf.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
+    <a href="https://app.bitrise.io/app/810d996d77fb0abf">
+        <img src="https://www.bitrise.io/app/810d996d77fb0abf/status.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
              alt="Build Status">
     </a>
     <a href="https://codebeat.co/projects/github-com-flinesoft-handyswift">
