@@ -145,3 +145,27 @@ public struct SortedArray<Element: Comparable> {
         internalArray.remove(at: index)
     }
 }
+
+extension SortedArray: Collection { // swiftlint:disable missing_docs
+    public typealias Index = Array<Element>.Index
+
+    public func index(after index: Int) -> Int {
+        return internalArray.index(after: index)
+    }
+
+    public subscript(position: Int) -> Element {
+        return internalArray[position]
+    }
+
+    public var startIndex: Int {
+        return internalArray.startIndex
+    }
+
+    public var endIndex: Int {
+        return internalArray.endIndex
+    }
+
+    public func sorted() -> [Element] {
+        return internalArray
+    }
+} // swiftlint:enable missing_docs

@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
-    <a href="https://www.bitrise.io/app/810d996d77fb0abf">
-        <img src="https://www.bitrise.io/app/810d996d77fb0abf.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
+    <a href="https://app.bitrise.io/app/810d996d77fb0abf">
+        <img src="https://app.bitrise.io/app/810d996d77fb0abf/status.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
              alt="Build Status">
     </a>
     <a href="https://codebeat.co/projects/github-com-flinesoft-handyswift">
@@ -16,8 +16,8 @@
         <img src="https://img.shields.io/badge/Version-2.6.0-blue.svg"
              alt="Version: 2.6.0">
     </a>
-    <img src="https://img.shields.io/badge/Swift-4.0-FFAC45.svg"
-         alt="Swift: 4.0">
+    <img src="https://img.shields.io/badge/Swift-4.1-FFAC45.svg"
+         alt="Swift: 4.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20OS%20X-FF69B4.svg"
         alt="Platforms: iOS | tvOS | OS X">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
@@ -94,6 +94,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
   - [IntExtension](#intextension)
   - [IntegerTypeExtension](#integertypeextension)
   - [StringExtension](#stringextension)
+  - [CollectionExtension](#collectionextension)
   - [ArrayExtension](#arrayextension)
   - [DictionaryExtension](#dictionaryextension)
   - [DispatchTimeIntervalExtension](#dispatchtimeintervalextension)
@@ -101,6 +102,8 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
   - [SortedArray](#sortedarray)
   - [FrequencyTable](#frequencytable)
   - [Regex](#regex)
+  - [Weak](#weak)
+  - [Unowned](#unowned)
 
 ---
 
@@ -209,7 +212,6 @@ Combines each element with each element of a given other array.
 [1, 2, 3].combinations(with: ["A", "B"])
 // => [(1, "A"), (1, "B"), (2, "A"), (2, "B"), (3, "A"), (3, "B")]
 ```
-
 
 ### DictionaryExtension
 #### init?(keys:values:)
@@ -366,22 +368,15 @@ let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
 
 `Regex` is a swifty regex engine built on top of the `NSRegularExpression` API.
 
-#### Regex(_:options:)
+#### init(_:options:)
 
-Initialize with pattern and options.
+Initialize with pattern and, optionally, options.
 
 ``` swift
+let regex = try Regex("(Phil|John), [\\d]{4}")
+
 let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
-let regex = try Regex("(Phil|John), [d]{4}", options: options)
-```
-
-#### StringLiteral Init
-
-Crashes on invalid pattern. Provides no interface to specify options.
-
-``` swift
-let regex = try Regex("(Phil|John), (\\d{4})")
-// => Regex<"(Phil|John), (\d{4})">
+let regexWithOptions = try Regex("(Phil|John), [\\d]{4}", options: options)
 ```
 
 #### regex.matches(_:)
@@ -449,8 +444,66 @@ Replaces the matched string with a template string
 
 ``` swift
 match.string(applyingTemplate: "$1 was born in $2")
-// => 
+// => "Phil was born in 1991"
 ```
+
+### Weak
+
+`Weak` is a wrapper to store weak references to a `Wrapped` instance.
+
+#### Weak(_:)
+
+Initialize with an object reference.
+
+``` swift
+let text: NSString = "Hello World!"
+var weak = Weak(text)
+```
+
+#### Accessing inner Reference
+
+Access the inner wrapped reference with the `value` property.
+
+``` swift
+print(weak.value!)
+```
+
+#### NilLiteralExpressible Conformance
+
+Create a `Weak` wrapper by assigning nil to the value.
+``` swift
+var weakWrappedValue: Weak<AnyObject> = nil
+```
+
+### Unowned
+
+`Unowned` is a wrapper to store unowned references to a `Wrapped` instance.
+
+#### Unowned(_:)
+
+Initialize with an object reference.
+``` swift
+var unowned = Unowned(text)
+```
+
+#### Accessing inner Reference
+
+Access the inner wrapped reference with the `value` property.
+``` swift
+print(unowned.value)
+```
+
+### CollectionExtension
+
+#### [try:]
+
+Returns an element with the specified index or nil if the element does not exist .
+``` swift
+let testArray = [0, 1, 2, 3, 20]
+testArray[try: 4]  // => Optional(20)
+testArray[try: 20] // => nil
+```
+
 
 ## Contributing
 
