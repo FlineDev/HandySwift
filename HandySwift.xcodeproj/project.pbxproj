@@ -62,6 +62,8 @@
 		82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */; };
 		82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */; };
 		82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */; };
+		82E21E8E211AF9960061EB1B /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D120F22A3C0045AFD0 /* CollectionExtension.swift */; };
+		82E21E8F211AF9970061EB1B /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D120F22A3C0045AFD0 /* CollectionExtension.swift */; };
 		A11830D31E589F6700CBE087 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11830D21E589F6700CBE087 /* TimeIntervalExtension.swift */; };
 		A11830D41E589F6700CBE087 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11830D21E589F6700CBE087 /* TimeIntervalExtension.swift */; };
 		A11830D51E589F6700CBE087 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11830D21E589F6700CBE087 /* TimeIntervalExtension.swift */; };
@@ -676,6 +678,7 @@
 				C5CFB6AD20B0A70300830511 /* Unowned.swift in Sources */,
 				826F69AD1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				825EFE051C33358400558497 /* StringExtension.swift in Sources */,
+				82E21E8E211AF9960061EB1B /* CollectionExtension.swift in Sources */,
 				C5CFB6AF20B0A78F00830511 /* Weak.swift in Sources */,
 				A1F221651E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
 				825EFE021C33358400558497 /* SortedArray.swift in Sources */,
@@ -713,6 +716,7 @@
 				C5CFB6AE20B0A70300830511 /* Unowned.swift in Sources */,
 				826F69AE1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				825EFE0B1C33358500558497 /* StringExtension.swift in Sources */,
+				82E21E8F211AF9970061EB1B /* CollectionExtension.swift in Sources */,
 				C5CFB6B020B0A79000830511 /* Weak.swift in Sources */,
 				A1F221661E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
 				825EFE081C33358500558497 /* SortedArray.swift in Sources */,
