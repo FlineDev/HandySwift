@@ -6,19 +6,14 @@
 import Foundation
 
 extension Int {
-    /// Initializes a new `Int ` instance with a random value below a given `Int`.
-    ///
-    /// - Parameters:
-    ///   - randomBelow: The upper bound value to create a random value with.
-    public init?(randomBelow upperLimit: Int) {
-        guard upperLimit > 0 else { return nil }
-        #if os(Linux)
-            self.init(random() % upperLimit)
-        #else
-            self.init(arc4random_uniform(UInt32(upperLimit)))
-        #endif
-    }
-
+  /// Initializes a new `Int ` instance with a random value below a given `Int`.
+  ///
+  /// - Parameters:
+  ///   - randomBelow: The upper bound value to create a random value with.
+  public init?(randomBelow upperLimit: Int) {
+    guard upperLimit > 0 else { return nil }
+    self = .random(in: 0 ..< upperLimit)
+  }
 
     /// Runs the code passed as a closure the specified number of times.
     ///
