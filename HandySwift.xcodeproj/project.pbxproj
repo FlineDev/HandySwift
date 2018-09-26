@@ -842,6 +842,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -895,6 +896,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
@@ -922,7 +924,6 @@
 				PRODUCT_NAME = HandySwift;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -944,7 +945,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
 				PRODUCT_NAME = HandySwift;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -956,7 +956,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_iOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -968,7 +967,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_iOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -991,7 +989,6 @@
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1014,7 +1011,6 @@
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1031,7 +1027,6 @@
 				PRODUCT_MODULE_NAME = HandySwift_OSX_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1048,7 +1043,6 @@
 				PRODUCT_MODULE_NAME = HandySwift_OSX_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1068,7 +1062,6 @@
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1090,7 +1083,6 @@
 				PRODUCT_NAME = HandySwift;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1105,7 +1097,6 @@
 				PRODUCT_MODULE_NAME = HandySwift_tvOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Debug;
@@ -1119,7 +1110,6 @@
 				PRODUCT_MODULE_NAME = HandySwift_tvOS_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
 				TVOS_DEPLOYMENT_TARGET = 9.1;
 			};
 			name = Release;
