@@ -5,31 +5,33 @@ shared_variables:
 rules:
   - xcode_build_phases:
       project_path: <:project_name:>.xcodeproj
-      target_name: Framework
+      target_name: iOS Framework
       run_scripts:
         SwiftLint: |
-          if which swiftlint > /dev/null; then
-              swiftlint
-          else
-              echo "warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint"
+          if [ "${CONFIGURATION}" = "Debug" ]; then
+              if which swiftlint > /dev/null; then
+                  swiftlint
+              else
+                  echo "warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint"
+              fi
           fi
 
         ProjLint: |
-          if which projlint > /dev/null; then
-              projlint lint --xcode --timeout 2 --ignore-network-errors
-          else
-              echo "warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint"
+          if [ "${CONFIGURATION}" = "Debug" ]; then
+              if which projlint > /dev/null; then
+                  projlint lint --xcode --timeout 2 --ignore-network-errors
+              else
+                  echo "warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint"
+              fi
           fi
 
   - xcode_project_navigator:
       project_path: <:project_name:>.xcodeproj
       sorted:
-        - Framework
-            - Sources
-            - SupportingFiles
-        - Tests
-            - Sources
-            - SupportingFiles
+        - Framework/Sources
+        - Framework/SupportingFiles
+        - Tests/Sources
+        - Tests/SupportingFiles
       inner_group_order:
         - assets
         - entitlements
@@ -69,9 +71,10 @@ rules:
         - .gitignore
         - .swiftlint.yml
         - README.md
-        - LICENSE.md
+        - LICENSE
+        - <:project_name:>.podspec
+        - Package.swift
         - beak.swift
         - <:project_name:>.xcodeproj/xcshareddata/IDETemplateMacros.plist
         - Framework/SupportingFiles/Info.plist
         - Tests/SupportingFiles/Info.plist
-        - UITests/SupportingFiles/Info.plist
