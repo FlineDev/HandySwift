@@ -272,3 +272,9 @@ public func sortCartfile() throws {
         try newCartfileContents.write(toFile: fileName, atomically: false, encoding: .utf8)
     }
 }
+
+/// Generates the LinuxMain.swift file by automatically searching the Tests path for tests.
+public func generateLinuxMain() {
+    run("sourcery --sources Tests --templates .sourcery/LinuxMain.stencil --output .sourcery --force-parse generated")
+    run("mv .sourcery/LinuxMain.generated.swift Tests/LinuxMain.swift")
+}
