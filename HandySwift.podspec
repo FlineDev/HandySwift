@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/Flinesoft/HandySwift"
-  s.license      = { :type => "MIT", :file => "LICENSE.md" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "Cihat Gündüz" => "cocoapods@cihatguenduez.de" }
   s.social_media_url   = "https://twitter.com/Dschee"
@@ -21,7 +21,8 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "9.0"
 
   s.source       = { :git => "https://github.com/Flinesoft/HandySwift.git", :tag => "#{s.version}" }
-  s.source_files = "Sources", "Sources/**/*.swift"
+  s.source_files = "Sources", "Framework/Sources/**/*.swift"
   s.framework    = "Foundation"
+  s.swift_version = "4.2"
 
 end
