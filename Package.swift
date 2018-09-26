@@ -20,7 +20,10 @@ let package = Package(
         .testTarget(
             name: "HandySwiftTests",
             dependencies: ["HandySwift"],
-            path: "Tests"
+            path: "Tests",
+            exclude: [
+                "Tests/SupportingFiles"
+            ]
         )
     ],
     swiftLanguageVersions: [4]
