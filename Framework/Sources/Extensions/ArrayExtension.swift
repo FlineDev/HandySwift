@@ -6,6 +6,8 @@
 import Foundation
 
 extension Array {
+    public typealias Combination<T> = (left: Element, right: T)
+
     /// Returns a random element from the `Array`.
     ///
     /// - Returns: A random element from the array or `nil` if empty.
@@ -35,7 +37,7 @@ extension Array {
     /// - Parameters:
     ///   - other: Other array to combine the elements with.
     /// - Returns: An array of tuples with the elements of both arrays combined.
-    public func combinations<T>(with other: [T]) -> [(Element, T)] {
+    public func combinations<T>(with other: [T]) -> [Combination<T>] {
         var combinations = [(Element, T)]()
         forEach { elem in other.forEach { otherElem in combinations.append((elem, otherElem)) } }
 

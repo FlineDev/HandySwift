@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "823B2B301C24AAB6007B3CDD"
+               BlueprintIdentifier = "825EFDC91C3333B000558497"
                BuildableName = "HandySwift.framework"
-               BlueprintName = "HandySwift iOS"
+               BlueprintName = "macOS Framework"
                ReferencedContainer = "container:HandySwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "823B2B3A1C24AAB7007B3CDD"
-               BuildableName = "HandySwift iOS Tests.xctest"
-               BlueprintName = "HandySwift iOS Tests"
+               BlueprintIdentifier = "825EFDD21C3333B000558497"
+               BuildableName = "macOS Framework Tests.xctest"
+               BlueprintName = "macOS Framework Tests"
                ReferencedContainer = "container:HandySwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "823B2B301C24AAB6007B3CDD"
+            BlueprintIdentifier = "825EFDC91C3333B000558497"
             BuildableName = "HandySwift.framework"
-            BlueprintName = "HandySwift iOS"
+            BlueprintName = "macOS Framework"
             ReferencedContainer = "container:HandySwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "823B2B301C24AAB6007B3CDD"
+            BlueprintIdentifier = "825EFDC91C3333B000558497"
             BuildableName = "HandySwift.framework"
-            BlueprintName = "HandySwift iOS"
+            BlueprintName = "macOS Framework"
             ReferencedContainer = "container:HandySwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "823B2B301C24AAB6007B3CDD"
+            BlueprintIdentifier = "825EFDC91C3333B000558497"
             BuildableName = "HandySwift.framework"
-            BlueprintName = "HandySwift iOS"
+            BlueprintName = "macOS Framework"
             ReferencedContainer = "container:HandySwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
