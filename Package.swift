@@ -12,9 +12,9 @@ let package = Package(
     targets: [
         .target(
             name: "HandySwift",
-            path: "Framework",
+            path: "Framework/Sources",
             exclude: [
-                "Sources/Supporting Files"
+                "Sources/SupportingFiles"
             ]
         )
     ],

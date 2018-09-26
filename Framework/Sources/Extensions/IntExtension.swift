@@ -12,11 +12,7 @@ extension Int {
     ///   - randomBelow: The upper bound value to create a random value with.
     public init?(randomBelow upperLimit: Int) {
         guard upperLimit > 0 else { return nil }
-        #if os(Linux)
-            self.init(random() % upperLimit)
-        #else
-            self.init(arc4random_uniform(UInt32(upperLimit)))
-        #endif
+        self.init(Int.random(in: 0..<upperLimit))
     }
 
 

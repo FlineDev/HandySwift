@@ -127,17 +127,16 @@ class RegexTests: XCTestCase {
             XCTAssertEqual(match2Capture0, "5")
             XCTAssertEqual(match2Capture1, "Needed")
             XCTAssertEqual(match2Capture2, "Optional")
-        } catch let error {
-            switch error as? CapturingError {
-            case .some(.indexTooHigh):
+        } catch let error as CapturingError {
+            switch error {
+            case .indexTooHigh:
                 XCTFail("Capturing group index is too high.")
 
-            case .some(.noMatch):
+            case .noMatch:
                 XCTFail("The match is nil.")
-
-            case .none:
-                XCTFail("An unexpected error occured.")
             }
+        } catch {
+            XCTFail("An unexpected error occured.")
         }
     }
 
