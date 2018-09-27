@@ -5,7 +5,7 @@ shared_variables:
 rules:
   - xcode_build_phases:
       project_path: <:project_name:>.xcodeproj
-      target_name: HandySwift iOS
+      target_name: <:project_name:> iOS
       run_scripts:
         SwiftLint: |
           if [ "${CONFIGURATION}" = "Debug" ]; then
@@ -28,9 +28,9 @@ rules:
   - xcode_project_navigator:
       project_path: <:project_name:>.xcodeproj
       sorted:
-        - Frameworks/HandySwift
+        - Frameworks/<:project_name:>
         - Frameworks/SupportingFiles
-        - Tests/HandySwiftTests
+        - Tests/<:project_name:>Tests
         - Tests/SupportingFiles
       inner_group_order:
         - assets
@@ -41,12 +41,12 @@ rules:
         - [code_files, interfaces]
         - folders
       structure:
-        - Framework:
-            - Sources
+        - Frameworks:
+            - <:project_name:>
             - SupportingFiles:
                 - Info.plist
         - Tests:
-            - Sources
+            - <:project_name:>Tests
             - SupportingFiles:
                 - Info.plist
         - RootFiles:
