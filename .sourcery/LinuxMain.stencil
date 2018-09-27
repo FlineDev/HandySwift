@@ -1,4 +1,4 @@
-@testable import HandySwift
+@testable import HandySwiftTests
 import XCTest
 
 // swiftlint:disable line_length file_length
