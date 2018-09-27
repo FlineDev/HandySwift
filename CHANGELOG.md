@@ -5,17 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 ### Added
-- None.
-### Changed
-- None.
-### Deprecated
-- None.
+- Official support for Linux & Swift Package Manager.
 ### Removed
-- None.
-### Fixed
-- None. [#0](https://github.com/Flinesoft/HandySwift/issues/0)
-### Security
-- None.
+- Support for Swift 4.1 and lower was dropped.
 
 ## [2.6.0] - 2018-04-22
 ### Added
