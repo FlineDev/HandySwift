@@ -70,8 +70,12 @@ rules:
       existing_paths:
         - .gitignore
         - .swiftlint.yml
-        - README.md
+        - .sourcery/LinuxMain.stencil
+        - CODE_OF_CONDUCT.md
+        - CONTRIBUTING.md
+        - CHANGELOG.md
         - LICENSE
+        - README.md
         - <:project_name:>.podspec
         - Package.swift
         - beak.swift
