@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 ### Added
+- None.
+### Changed
+- None.
+### Deprecated
+- None.
+### Removed
+- None.
+### Fixed
+- None.
+### Security
+- None.
+
+## [2.7.0] - 2018-09-27
+### Added
 - Official support for Linux & Swift Package Manager.
 ### Removed
 - Support for Swift 4.1 and lower was dropped.
