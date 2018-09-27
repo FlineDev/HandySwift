@@ -117,16 +117,16 @@
 		823B2B311C24AAB6007B3CDD /* HandySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HandySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		823B2B341C24AAB7007B3CDD /* HandySwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HandySwift.h; sourceTree = "<group>"; };
 		823B2B361C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		823B2B3B1C24AAB7007B3CDD /* iOS Framework Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Framework Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		823B2B3B1C24AAB7007B3CDD /* HandySwift iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HandySwift iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		823B2B421C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensionTests.swift; sourceTree = "<group>"; };
 		8258E4551C2E0C140031CBFF /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
 		8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArrayTests.swift; sourceTree = "<group>"; };
 		825EFDCA1C3333B000558497 /* HandySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HandySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		825EFDD31C3333B000558497 /* macOS Framework Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macOS Framework Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		825EFDD31C3333B000558497 /* HandySwift macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HandySwift macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		825EFDE91C33351200558497 /* HandySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HandySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		825EFDF21C33351300558497 /* tvOS Framework Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tvOS Framework Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		825EFDF21C33351300558497 /* HandySwift tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HandySwift tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		826F69AB1C3895A300B2CC6B /* FrequencyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTable.swift; sourceTree = "<group>"; };
 		826F69AF1C389DB800B2CC6B /* FrequencyTableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableTests.swift; sourceTree = "<group>"; };
 		827599631E520FB800787F99 /* DispatchTimeIntervalExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTimeIntervalExtensionTests.swift; sourceTree = "<group>"; };
@@ -203,30 +203,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8203930320F3A4DF0074974F /* Sources */ = {
+		8203930320F3A4DF0074974F /* HandySwift */ = {
 			isa = PBXGroup;
 			children = (
 				82812A9A1D06877B00CD5B6C /* Globals.swift */,
 				823B2B4B1C24AB7F007B3CDD /* Extensions */,
 				8258E4541C2E0BAF0031CBFF /* Structs */,
 			);
-			path = Sources;
+			path = HandySwift;
 			sourceTree = "<group>";
 		};
-		8203930420F3A63F0074974F /* Sources */ = {
+		8203930420F3A63F0074974F /* HandySwiftTests */ = {
 			isa = PBXGroup;
 			children = (
 				82812A9E1D06926800CD5B6C /* GlobalsTests.swift */,
 				823B2B4E1C24ABD8007B3CDD /* Extensions */,
 				8258E4571C2E196B0031CBFF /* Structs */,
 			);
-			path = Sources;
+			path = HandySwiftTests;
 			sourceTree = "<group>";
 		};
 		823B2B271C24AAB6007B3CDD = {
 			isa = PBXGroup;
 			children = (
-				825EFDE11C3333CE00558497 /* Framework */,
+				825EFDE11C3333CE00558497 /* Frameworks */,
 				825EFDE21C3333D200558497 /* Tests */,
 				A1F5AEEA1E05700F003D6949 /* RootFiles */,
 				823B2B321C24AAB6007B3CDD /* Products */,
@@ -237,11 +237,11 @@
 			isa = PBXGroup;
 			children = (
 				823B2B311C24AAB6007B3CDD /* HandySwift.framework */,
-				823B2B3B1C24AAB7007B3CDD /* iOS Framework Tests.xctest */,
+				823B2B3B1C24AAB7007B3CDD /* HandySwift iOS Tests.xctest */,
 				825EFDCA1C3333B000558497 /* HandySwift.framework */,
-				825EFDD31C3333B000558497 /* macOS Framework Tests.xctest */,
+				825EFDD31C3333B000558497 /* HandySwift macOS Tests.xctest */,
 				825EFDE91C33351200558497 /* HandySwift.framework */,
-				825EFDF21C33351300558497 /* tvOS Framework Tests.xctest */,
+				825EFDF21C33351300558497 /* HandySwift tvOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -296,19 +296,19 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
-		825EFDE11C3333CE00558497 /* Framework */ = {
+		825EFDE11C3333CE00558497 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8203930320F3A4DF0074974F /* Sources */,
+				8203930320F3A4DF0074974F /* HandySwift */,
 				825EFDE31C3333F100558497 /* SupportingFiles */,
 			);
-			path = Framework;
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		825EFDE21C3333D200558497 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8203930420F3A63F0074974F /* Sources */,
+				8203930420F3A63F0074974F /* HandySwiftTests */,
 				82B6DD8D1C6A85B2006DA266 /* SupportingFiles */,
 			);
 			path = Tests;
@@ -375,9 +375,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		823B2B301C24AAB6007B3CDD /* iOS Framework */ = {
+		823B2B301C24AAB6007B3CDD /* HandySwift iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 823B2B451C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "iOS Framework" */;
+			buildConfigurationList = 823B2B451C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "HandySwift iOS" */;
 			buildPhases = (
 				823B2B2C1C24AAB6007B3CDD /* Sources */,
 				823B2B2D1C24AAB6007B3CDD /* Frameworks */,
@@ -390,14 +390,14 @@
 			);
 			dependencies = (
 			);
-			name = "iOS Framework";
+			name = "HandySwift iOS";
 			productName = HandySwift;
 			productReference = 823B2B311C24AAB6007B3CDD /* HandySwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		823B2B3A1C24AAB7007B3CDD /* iOS Framework Tests */ = {
+		823B2B3A1C24AAB7007B3CDD /* HandySwift iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 823B2B481C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "iOS Framework Tests" */;
+			buildConfigurationList = 823B2B481C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "HandySwift iOS Tests" */;
 			buildPhases = (
 				823B2B371C24AAB7007B3CDD /* Sources */,
 				823B2B381C24AAB7007B3CDD /* Frameworks */,
@@ -408,14 +408,14 @@
 			dependencies = (
 				823B2B3E1C24AAB7007B3CDD /* PBXTargetDependency */,
 			);
-			name = "iOS Framework Tests";
+			name = "HandySwift iOS Tests";
 			productName = HandySwiftTests;
-			productReference = 823B2B3B1C24AAB7007B3CDD /* iOS Framework Tests.xctest */;
+			productReference = 823B2B3B1C24AAB7007B3CDD /* HandySwift iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		825EFDC91C3333B000558497 /* macOS Framework */ = {
+		825EFDC91C3333B000558497 /* HandySwift macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 825EFDDB1C3333B000558497 /* Build configuration list for PBXNativeTarget "macOS Framework" */;
+			buildConfigurationList = 825EFDDB1C3333B000558497 /* Build configuration list for PBXNativeTarget "HandySwift macOS" */;
 			buildPhases = (
 				825EFDC51C3333B000558497 /* Sources */,
 				825EFDC61C3333B000558497 /* Frameworks */,
@@ -428,14 +428,14 @@
 			);
 			dependencies = (
 			);
-			name = "macOS Framework";
+			name = "HandySwift macOS";
 			productName = "HandySwift OSX";
 			productReference = 825EFDCA1C3333B000558497 /* HandySwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		825EFDD21C3333B000558497 /* macOS Framework Tests */ = {
+		825EFDD21C3333B000558497 /* HandySwift macOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 825EFDDE1C3333B000558497 /* Build configuration list for PBXNativeTarget "macOS Framework Tests" */;
+			buildConfigurationList = 825EFDDE1C3333B000558497 /* Build configuration list for PBXNativeTarget "HandySwift macOS Tests" */;
 			buildPhases = (
 				825EFDCF1C3333B000558497 /* Sources */,
 				825EFDD01C3333B000558497 /* Frameworks */,
@@ -446,14 +446,14 @@
 			dependencies = (
 				825EFDD61C3333B000558497 /* PBXTargetDependency */,
 			);
-			name = "macOS Framework Tests";
+			name = "HandySwift macOS Tests";
 			productName = "HandySwift OSXTests";
-			productReference = 825EFDD31C3333B000558497 /* macOS Framework Tests.xctest */;
+			productReference = 825EFDD31C3333B000558497 /* HandySwift macOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		825EFDE81C33351200558497 /* tvOS Framework */ = {
+		825EFDE81C33351200558497 /* HandySwift tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 825EFDFA1C33351300558497 /* Build configuration list for PBXNativeTarget "tvOS Framework" */;
+			buildConfigurationList = 825EFDFA1C33351300558497 /* Build configuration list for PBXNativeTarget "HandySwift tvOS" */;
 			buildPhases = (
 				825EFDE41C33351200558497 /* Sources */,
 				825EFDE51C33351200558497 /* Frameworks */,
@@ -466,14 +466,14 @@
 			);
 			dependencies = (
 			);
-			name = "tvOS Framework";
+			name = "HandySwift tvOS";
 			productName = "HandySwift tvOS";
 			productReference = 825EFDE91C33351200558497 /* HandySwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		825EFDF11C33351300558497 /* tvOS Framework Tests */ = {
+		825EFDF11C33351300558497 /* HandySwift tvOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 825EFDFD1C33351300558497 /* Build configuration list for PBXNativeTarget "tvOS Framework Tests" */;
+			buildConfigurationList = 825EFDFD1C33351300558497 /* Build configuration list for PBXNativeTarget "HandySwift tvOS Tests" */;
 			buildPhases = (
 				825EFDEE1C33351300558497 /* Sources */,
 				825EFDEF1C33351300558497 /* Frameworks */,
@@ -484,9 +484,9 @@
 			dependencies = (
 				825EFDF51C33351300558497 /* PBXTargetDependency */,
 			);
-			name = "tvOS Framework Tests";
+			name = "HandySwift tvOS Tests";
 			productName = "HandySwift tvOSTests";
-			productReference = 825EFDF21C33351300558497 /* tvOS Framework Tests.xctest */;
+			productReference = 825EFDF21C33351300558497 /* HandySwift tvOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -537,12 +537,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				823B2B301C24AAB6007B3CDD /* iOS Framework */,
-				823B2B3A1C24AAB7007B3CDD /* iOS Framework Tests */,
-				825EFDC91C3333B000558497 /* macOS Framework */,
-				825EFDD21C3333B000558497 /* macOS Framework Tests */,
-				825EFDE81C33351200558497 /* tvOS Framework */,
-				825EFDF11C33351300558497 /* tvOS Framework Tests */,
+				823B2B301C24AAB6007B3CDD /* HandySwift iOS */,
+				823B2B3A1C24AAB7007B3CDD /* HandySwift iOS Tests */,
+				825EFDC91C3333B000558497 /* HandySwift macOS */,
+				825EFDD21C3333B000558497 /* HandySwift macOS Tests */,
+				825EFDE81C33351200558497 /* HandySwift tvOS */,
+				825EFDF11C33351300558497 /* HandySwift tvOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -811,17 +811,17 @@
 /* Begin PBXTargetDependency section */
 		823B2B3E1C24AAB7007B3CDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 823B2B301C24AAB6007B3CDD /* iOS Framework */;
+			target = 823B2B301C24AAB6007B3CDD /* HandySwift iOS */;
 			targetProxy = 823B2B3D1C24AAB7007B3CDD /* PBXContainerItemProxy */;
 		};
 		825EFDD61C3333B000558497 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 825EFDC91C3333B000558497 /* macOS Framework */;
+			target = 825EFDC91C3333B000558497 /* HandySwift macOS */;
 			targetProxy = 825EFDD51C3333B000558497 /* PBXContainerItemProxy */;
 		};
 		825EFDF51C33351300558497 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 825EFDE81C33351200558497 /* tvOS Framework */;
+			target = 825EFDE81C33351200558497 /* HandySwift tvOS */;
 			targetProxy = 825EFDF41C33351300558497 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -954,7 +954,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Framework/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -976,7 +976,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Framework/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1018,7 +1018,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Framework/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1040,7 +1040,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/Framework/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1061,7 +1061,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "-D APPKIT";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-OSX-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-macOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_OSX_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1077,7 +1077,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_SWIFT_FLAGS = "-D APPKIT";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-OSX-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-macOS-Tests";
 				PRODUCT_MODULE_NAME = HandySwift_OSX_Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1093,7 +1093,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Framework/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
@@ -1114,7 +1114,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Framework/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
@@ -1164,7 +1164,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		823B2B451C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "iOS Framework" */ = {
+		823B2B451C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "HandySwift iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				823B2B461C24AAB7007B3CDD /* Debug */,
@@ -1173,7 +1173,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		823B2B481C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "iOS Framework Tests" */ = {
+		823B2B481C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "HandySwift iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				823B2B491C24AAB7007B3CDD /* Debug */,
@@ -1182,7 +1182,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		825EFDDB1C3333B000558497 /* Build configuration list for PBXNativeTarget "macOS Framework" */ = {
+		825EFDDB1C3333B000558497 /* Build configuration list for PBXNativeTarget "HandySwift macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				825EFDDC1C3333B000558497 /* Debug */,
@@ -1191,7 +1191,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		825EFDDE1C3333B000558497 /* Build configuration list for PBXNativeTarget "macOS Framework Tests" */ = {
+		825EFDDE1C3333B000558497 /* Build configuration list for PBXNativeTarget "HandySwift macOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				825EFDDF1C3333B000558497 /* Debug */,
@@ -1200,7 +1200,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		825EFDFA1C33351300558497 /* Build configuration list for PBXNativeTarget "tvOS Framework" */ = {
+		825EFDFA1C33351300558497 /* Build configuration list for PBXNativeTarget "HandySwift tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				825EFDFB1C33351300558497 /* Debug */,
@@ -1209,7 +1209,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		825EFDFD1C33351300558497 /* Build configuration list for PBXNativeTarget "tvOS Framework Tests" */ = {
+		825EFDFD1C33351300558497 /* Build configuration list for PBXNativeTarget "HandySwift tvOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				825EFDFE1C33351300558497 /* Debug */,

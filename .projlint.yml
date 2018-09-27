@@ -5,7 +5,7 @@ shared_variables:
 rules:
   - xcode_build_phases:
       project_path: <:project_name:>.xcodeproj
-      target_name: iOS Framework
+      target_name: HandySwift iOS
       run_scripts:
         SwiftLint: |
           if [ "${CONFIGURATION}" = "Debug" ]; then
@@ -28,9 +28,9 @@ rules:
   - xcode_project_navigator:
       project_path: <:project_name:>.xcodeproj
       sorted:
-        - Framework/Sources
-        - Framework/SupportingFiles
-        - Tests/Sources
+        - Frameworks/HandySwift
+        - Frameworks/SupportingFiles
+        - Tests/HandySwiftTests
         - Tests/SupportingFiles
       inner_group_order:
         - assets
@@ -76,5 +76,5 @@ rules:
         - Package.swift
         - beak.swift
         - <:project_name:>.xcodeproj/xcshareddata/IDETemplateMacros.plist
-        - Framework/SupportingFiles/Info.plist
+        - Frameworks/SupportingFiles/Info.plist
         - Tests/SupportingFiles/Info.plist

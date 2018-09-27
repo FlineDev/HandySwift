@@ -1,4 +1,4 @@
-// Generated using Sourcery 0.13.1 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 0.15.0 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 @testable import HandySwift
@@ -31,8 +31,8 @@ extension DictionaryExtensionTests {
     ]
 }
 
-extension DispatchTimeIntervalTests {
-    static var allTests: [(String, (DispatchTimeIntervalTests) -> () throws -> Void)] = [
+extension DispatchTimeIntervalExtensionTests {
+    static var allTests: [(String, (DispatchTimeIntervalExtensionTests) -> () throws -> Void)] = [
         ("testTimeInterval", testTimeInterval)
     ]
 }
@@ -109,7 +109,7 @@ XCTMain([
     testCase(ArrayExtensionTests.allTests),
     testCase(CollectionExtensionTests.allTests),
     testCase(DictionaryExtensionTests.allTests),
-    testCase(DispatchTimeIntervalTests.allTests),
+    testCase(DispatchTimeIntervalExtensionTests.allTests),
     testCase(FrequencyTableTests.allTests),
     testCase(GlobalsTests.allTests),
     testCase(IntExtensionTests.allTests),
