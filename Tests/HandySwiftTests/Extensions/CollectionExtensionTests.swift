@@ -1,7 +1,4 @@
 //
-//  CollectionExtensionTests.swift
-//  HandySwift iOS
-//
 //  Created by Stepanov Pavel on 08/07/2018.
 //  Copyright © 2018 Flinesoft. All rights reserved.
 //

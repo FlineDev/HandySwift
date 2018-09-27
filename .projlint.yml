@@ -5,7 +5,7 @@ shared_variables:
 rules:
   - xcode_build_phases:
       project_path: <:project_name:>.xcodeproj
-      target_name: iOS Framework
+      target_name: <:project_name:> iOS
       run_scripts:
         SwiftLint: |
           if [ "${CONFIGURATION}" = "Debug" ]; then
@@ -28,9 +28,9 @@ rules:
   - xcode_project_navigator:
       project_path: <:project_name:>.xcodeproj
       sorted:
-        - Framework/Sources
-        - Framework/SupportingFiles
-        - Tests/Sources
+        - Frameworks/<:project_name:>
+        - Frameworks/SupportingFiles
+        - Tests/<:project_name:>Tests
         - Tests/SupportingFiles
       inner_group_order:
         - assets
@@ -41,12 +41,12 @@ rules:
         - [code_files, interfaces]
         - folders
       structure:
-        - Framework:
-            - Sources
+        - Frameworks:
+            - <:project_name:>
             - SupportingFiles:
                 - Info.plist
         - Tests:
-            - Sources
+            - <:project_name:>Tests
             - SupportingFiles:
                 - Info.plist
         - RootFiles:
@@ -70,11 +70,15 @@ rules:
       existing_paths:
         - .gitignore
         - .swiftlint.yml
-        - README.md
+        - .sourcery/LinuxMain.stencil
+        - CODE_OF_CONDUCT.md
+        - CONTRIBUTING.md
+        - CHANGELOG.md
         - LICENSE
+        - README.md
         - <:project_name:>.podspec
         - Package.swift
         - beak.swift
         - <:project_name:>.xcodeproj/xcshareddata/IDETemplateMacros.plist
-        - Framework/SupportingFiles/Info.plist
+        - Frameworks/SupportingFiles/Info.plist
         - Tests/SupportingFiles/Info.plist

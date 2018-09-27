@@ -74,6 +74,9 @@ included:
 - Sources
 - Tests
 
+excluded:
+- Tests/LinuxMain.swift
+
 # Rule Configurations
 conditional_returns_on_newline:
   if_only: true

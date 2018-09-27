@@ -12,9 +12,16 @@ let package = Package(
     targets: [
         .target(
             name: "HandySwift",
-            path: "Framework/Sources",
+            path: "Frameworks/HandySwift",
             exclude: [
-                "Sources/SupportingFiles"
+                "Frameworks/SupportingFiles"
+            ]
+        ),
+        .testTarget(
+            name: "HandySwiftTests",
+            dependencies: ["HandySwift"],
+            exclude: [
+                "Tests/SupportingFiles"
             ]
         )
     ],
