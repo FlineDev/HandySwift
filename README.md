@@ -10,7 +10,7 @@
     </a>
     <a href="https://codebeat.co/projects/github-com-flinesoft-handyswift">
         <img src="https://codebeat.co/badges/283e545d-02e9-4fcf-aabc-40cacfbfe26c"
-             alt="codebeat badge">
+             alt="Codebeat Status">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
         <img src="https://img.shields.io/badge/Version-2.6.3-blue.svg"
