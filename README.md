@@ -4,13 +4,13 @@
 </p>
 
 <p align="center">
-    <a href="https://app.bitrise.io/app/810d996d77fb0abf">
-        <img src="https://app.bitrise.io/app/810d996d77fb0abf/status.svg?token=kr27kfE1r8jE0qdtpXgIzw&branch=stable"
+    <a href="https://app.bitrise.io/app/cbc4cab821708298">
+        <img src="https://app.bitrise.io/app/cbc4cab821708298/status.svg?token=1fWFE7UCuTBoYTGf4StnFQ&branch=stable"
              alt="Build Status">
     </a>
     <a href="https://codebeat.co/projects/github-com-flinesoft-handyswift">
         <img src="https://codebeat.co/badges/283e545d-02e9-4fcf-aabc-40cacfbfe26c"
-             alt="codebeat badge">
+             alt="Codebeat Status">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
         <img src="https://img.shields.io/badge/Version-2.6.3-blue.svg"
@@ -51,14 +51,12 @@ Currently the recommended way of installing this library is via [Carthage](https
 
 You can of course also just include this framework manually into your project by downloading it or by using git submodules.
 
-*Note: This project is ready for Swift 4. Until Xcode 9 is officially released though, you need to use the branch "work/swift4".*
-
 ### Carthage
 
 Place the following line to your Cartfile:
 
 ``` Swift
-github "Flinesoft/HandySwift" ~> 2.4
+github "Flinesoft/HandySwift" ~> 2.6
 ```
 
 Now run `carthage update`. Then drag & drop the HandySwift.framework in the Carthage/build folder to your project. Now you can `import HandySwift` in each class you want to use its features. Refer to the [Carthage README](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) for detailed / updated instructions.
@@ -73,7 +71,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'MyAppTarget' do
-    pod 'HandySwift', '~> 2.4'
+    pod 'HandySwift', '~> 2.6'
 end
 ```
 
@@ -507,15 +505,9 @@ testArray[try: 20] // => nil
 
 ## Contributing
 
-Contributions are welcome. Please just open an Issue on GitHub to discuss a point or request a feature or send a Pull Request with your suggestion. If there's a related discussion on the Swift Evolution mailing list, please also post the thread name with a link.
-
-Pull requests with new features will only be accepted when the following are given:
-- The feature is **handy** but not (yet) part of the Swift standard library.
-- **Tests** for the new feature exist and all tests pass successfully.
-- **Usage examples** of the new feature are given in the Playgrounds.
-
-Please also try to follow the same syntax and semantic in your **commit messages** (see rationale [here](http://chris.beams.io/posts/git-commit/)).
+See the file [CONTRIBUTING.md](https://github.com/Flinesoft/HandySwift/blob/stable/CONTRIBUTING.md).
 
 
 ## License
+
 This library is released under the [MIT License](http://opensource.org/licenses/MIT). See LICENSE for details.
