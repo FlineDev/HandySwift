@@ -21,7 +21,7 @@ extension Int {
     ///   - closure: The code to be run multiple times.
     public func times(_ closure: () -> Void) {
         guard self > 0 else { return }
-        for _ in 0..<self { closure() }
+        for _ in 0 ..< self { closure() }
     }
 
     /// Runs the code passed as a closure the specified number of times
@@ -31,6 +31,6 @@ extension Int {
     ///   - closure: The code to deliver a return value multiple times.
     public func timesMake<ReturnType>(_ closure: () -> ReturnType) -> [ReturnType] {
         guard self > 0 else { return [] }
-        return (0..<self).map { _ in return closure() }
+        return (0 ..< self).map { _ in return closure() }
     }
 }

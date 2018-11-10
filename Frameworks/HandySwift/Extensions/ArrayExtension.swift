@@ -79,12 +79,12 @@ extension Array {
 
         func merge(low: Int, mid: Int, high: Int) {
             tmp.removeAll(keepingCapacity: true)
-            tmp.append(contentsOf: self[low..<high])
+            tmp.append(contentsOf: self[low ..< high])
 
             var i = 0, j = mid - low // swiftlint:disable:this identifier_name
             let iMax = j, jMax = tmp.count
 
-            for k in low..<high { // swiftlint:disable:this identifier_name
+            for k in low ..< high { // swiftlint:disable:this identifier_name
                 let tmpPosIsJ = i == iMax || (j != jMax && areInIncreasingOrder(tmp[j], tmp[i]))
                 self[k] = tmp[tmpPosIsJ ? j : i]
 

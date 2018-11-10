@@ -6,6 +6,16 @@
 import Foundation
 
 extension String {
+    /// - Returns: `true` if contains any cahracters other than whitespace or newline characters, else `no`.
+    public var isBlank: Bool { return stripped().isEmpty }
+
+    /// Returns a random character from the String.
+    ///
+    /// - Returns: A random character from the String or `nil` if empty.
+    public var sample: Character? {
+        return isEmpty ? nil : self[index(startIndex, offsetBy: Int(randomBelow: count)!)]
+    }
+
     /// Create new instance with random numeric/alphabetic/alphanumeric String of given length.
     ///
     /// - Parameters:
@@ -23,7 +33,7 @@ extension String {
             case .alphaNumeric:
                 return "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
-            case .allCharactersIn(let allowedCharactersString):
+            case let .allCharactersIn(allowedCharactersString):
                 return allowedCharactersString
             }
         }()
@@ -31,18 +41,8 @@ extension String {
         self.init(allowedCharsString.sample(size: length)!)
     }
 
-    /// - Returns: `true` if contains any cahracters other than whitespace or newline characters, else `no`.
-    public var isBlank: Bool { return stripped().isEmpty }
-
     /// - Returns: The string stripped by whitespace and newline characters from beginning and end.
     public func stripped() -> String { return trimmingCharacters(in: .whitespacesAndNewlines) }
-
-    /// Returns a random character from the String.
-    ///
-    /// - Returns: A random character from the String or `nil` if empty.
-    public var sample: Character? {
-        return isEmpty ? nil : self[index(startIndex, offsetBy: Int(randomBelow: count)!)]
-    }
 
     /// Returns a given number of random characters from the String.
     ///

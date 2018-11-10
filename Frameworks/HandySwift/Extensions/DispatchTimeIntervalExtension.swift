@@ -9,16 +9,16 @@ extension DispatchTimeInterval {
     /// - Returns: The time in seconds using the`TimeInterval` type.
     public var timeInterval: TimeInterval {
         switch self {
-        case .seconds(let seconds):
+        case let .seconds(seconds):
             return Double(seconds)
 
-        case .milliseconds(let milliseconds):
+        case let .milliseconds(milliseconds):
             return Double(milliseconds) / Timespan.millisecondsPerSecond
 
-        case .microseconds(let microseconds):
+        case let .microseconds(microseconds):
             return Double(microseconds) / Timespan.microsecondsPerSecond
 
-        case .nanoseconds(let nanoseconds):
+        case let .nanoseconds(nanoseconds):
             return Double(nanoseconds) / Timespan.nanosecondsPerSecond
 
         case .never:

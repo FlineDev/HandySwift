@@ -16,6 +16,10 @@ public struct FrequencyTable<T> {
     /// Contains all values the amount of time of their frequencies.
     private let frequentValues: [T]
 
+    // MARK: - Computed Instance Properties
+    /// - Returns: A random value taking frequencies into account or nil if values empty.
+    public var sample: T? { return frequentValues.sample }
+
     // MARK: - Initializers
     /// Creates a new FrequencyTable instance with values and their frequencies provided.
     ///
@@ -29,10 +33,6 @@ public struct FrequencyTable<T> {
         }
     }
 
-    // MARK: - Computed Instance Properties
-    /// - Returns: A random value taking frequencies into account or nil if values empty.
-    public var sample: T? { return frequentValues.sample }
-
     // MARK: - Instance Methods
     /// Returns an array of random values taking frequencies into account or nil if values empty.
     ///
@@ -42,6 +42,6 @@ public struct FrequencyTable<T> {
     /// - Returns: An array of random values or nil if values empty.
     public func sample(size: Int) -> [T]? {
         guard size > 0 && !frequentValues.isEmpty else { return nil }
-        return Array(0..<size).map { _ in sample! }
+        return Array(0 ..< size).map { _ in sample! }
     }
 }

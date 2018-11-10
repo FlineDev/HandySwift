@@ -91,7 +91,7 @@ public struct Regex {
     public func replacingMatches(in input: String, with template: String, count: Int? = nil) -> String {
         var output = input
         let matches = self.matches(in: input)
-        let rangedMatches = Array(matches[0..<min(matches.count, count ?? .max)])
+        let rangedMatches = Array(matches[0 ..< min(matches.count, count ?? .max)])
         for match in rangedMatches.reversed() {
             let replacement = match.string(applyingTemplate: template)
             output.replaceSubrange(match.range, with: replacement)

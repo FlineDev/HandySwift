@@ -13,8 +13,10 @@
              alt="Codebeat Status">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-2.7.0-blue.svg"
-             alt="Version: 2.7.0">
+        <img src="https://img.shields.io/badge/Version-2.7.1
+-blue.svg"
+             alt="Version: 2.7.1
+">
     </a>
     <img src="https://img.shields.io/badge/Swift-4.2-FFAC45.svg"
          alt="Swift: 4.2">
