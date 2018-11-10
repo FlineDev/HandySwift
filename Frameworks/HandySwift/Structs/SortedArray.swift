@@ -169,3 +169,5 @@ extension SortedArray: Collection {
         return internalArray[position]
     }
 }
+
+extension SortedArray: Codable where Element: Codable {}
