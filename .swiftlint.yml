@@ -12,7 +12,6 @@ opt_in_rules:
 - empty_xctest_method
 - explicit_init
 - explicit_type_interface
-- extension_access_modifier
 - fallthrough
 - fatal_error_message
 - file_header

@@ -49,8 +49,8 @@ public struct SortedArray<Element: Comparable> {
     public func index(where predicate: (Element) -> Bool) -> Int? {
         // cover trivial cases
         guard !array.isEmpty else { return nil }
-        if let first = array.first, predicate(first) { return array.startIndex } // swiftlint:disable:this if_as_guard
-        if let last = array.last, !predicate(last) { return nil } // swiftlint:disable:this if_as_guard
+        if let first = array.first, predicate(first) { return array.startIndex }
+        if let last = array.last, !predicate(last) { return nil }
 
         // binary search for first matching element
         var foundMatch = false
@@ -105,14 +105,6 @@ public struct SortedArray<Element: Comparable> {
         return SortedArray(sequence: subarray, preSorted: true)
     }
 
-    /// Accesses a contiguous subrange of the SortedArray's elements.
-    ///
-    /// - Parameter
-    ///   - bounds: A range of the SortedArray's indices. The bounds of the range must be valid indices.
-    public subscript(bounds: Range<Int>) -> SortedArray {
-        return SortedArray(sequence: array[bounds], preSorted: true)
-    }
-
     // MARK: - Mutating Methods
     /// Adds a new item to the sorted array.
     ///
@@ -144,18 +136,18 @@ public struct SortedArray<Element: Comparable> {
     public mutating func remove(at index: Int) {
         internalArray.remove(at: index)
     }
+
+    /// Accesses a contiguous subrange of the SortedArray's elements.
+    ///
+    /// - Parameter
+    ///   - bounds: A range of the SortedArray's indices. The bounds of the range must be valid indices.
+    public subscript(bounds: Range<Int>) -> SortedArray {
+        return SortedArray(sequence: array[bounds], preSorted: true)
+    }
 }
 
-extension SortedArray: Collection { // swiftlint:disable missing_docs
+extension SortedArray: Collection {
     public typealias Index = Array<Element>.Index
-
-    public func index(after index: Int) -> Int {
-        return internalArray.index(after: index)
-    }
-
-    public subscript(position: Int) -> Element {
-        return internalArray[position]
-    }
 
     public var startIndex: Int {
         return internalArray.startIndex
@@ -168,4 +160,12 @@ extension SortedArray: Collection { // swiftlint:disable missing_docs
     public func sorted() -> [Element] {
         return internalArray
     }
-} // swiftlint:enable missing_docs
+
+    public func index(after index: Int) -> Int {
+        return internalArray.index(after: index)
+    }
+
+    public subscript(position: Int) -> Element {
+        return internalArray[position]
+    }
+}

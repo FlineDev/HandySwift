@@ -15,6 +15,11 @@ public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
         self.value = value
     }
 
+    /// Creates an instance initialized with `nil`.
+    public init(nilLiteral: ()) {
+        self.value = nil
+    }
+
     /// Evaluates the given closure when this `Weak` instance is not `nil`,
     /// passing the value as a parameter.
     ///
@@ -39,11 +44,6 @@ public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
         guard let value = value else { return nil }
 
         return try transform(value)
-    }
-
-    /// Creates an instance initialized with `nil`.
-    public init(nilLiteral: ()) {
-        self.value = nil
     }
 }
 
