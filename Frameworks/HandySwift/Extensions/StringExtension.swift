@@ -16,6 +16,16 @@ extension String {
         return isEmpty ? nil : self[index(startIndex, offsetBy: Int(randomBelow: count)!)]
     }
 
+    /// Returns the range containing the full String.
+    public var fullRange: Range<Index> {
+        return startIndex ..< endIndex
+    }
+
+    /// Returns the range as NSRange type for the full String.
+    public var fullNSRange: NSRange {
+        return NSRange(fullRange, in: self)
+    }
+
     /// Create new instance with random numeric/alphabetic/alphanumeric String of given length.
     ///
     /// - Parameters:

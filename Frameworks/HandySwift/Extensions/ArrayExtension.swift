@@ -6,29 +6,8 @@
 import Foundation
 
 extension Array {
+    /// A tuple representing a combination.
     public typealias Combination<T> = (left: Element, right: T)
-
-    /// Returns a random element from the `Array`.
-    ///
-    /// - Returns: A random element from the array or `nil` if empty.
-    public var sample: Element? {
-        guard let randomIndex = Int(randomBelow: count) else { return nil }
-        return self[randomIndex]
-    }
-
-    /// Returns a given number of random elements from the `Array`.
-    ///
-    /// - Parameters:
-    ///   - size: The number of random elements wanted.
-    /// - Returns: An array with the given number of random elements or `nil` if empty.
-    public func sample(size: Int) -> [Element]? {
-        guard !isEmpty else { return nil }
-
-        var sampleElements: [Element] = []
-        size.times { sampleElements.append(sample!) }
-
-        return sampleElements
-    }
 
     /// Combines each element with each element of a given array.
     ///
@@ -108,6 +87,51 @@ extension Array {
 
             size *= 2
         }
+    }
+}
+
+extension RandomAccessCollection where Index == Int {
+    /// Returns a random element from the `Array`.
+    ///
+    /// - Returns: A random element from the array or `nil` if empty.
+    public var sample: Element? {
+        guard let randomIndex = Int(randomBelow: count) else { return nil }
+        return self[randomIndex]
+    }
+
+    /// Returns a given number of random elements from the `Array`.
+    ///
+    /// - Parameters:
+    ///   - size: The number of random elements wanted.
+    /// - Returns: An array with the given number of random elements or `nil` if empty.
+    public func sample(size: Int) -> [Element]? {
+        guard !isEmpty else { return nil }
+
+        var sampleElements: [Element] = []
+        size.times { sampleElements.append(sample!) }
+
+        return sampleElements
+    }
+}
+
+extension Sequence where Element: Numeric {
+    /// Returns the sum of all elements.
+    public func sum() -> Element {
+        return reduce(0, +)
+    }
+}
+
+extension Collection where Element == Int {
+    /// Returns the average of all elements as a Double value.
+    public func average() -> Double {
+        return reduce(0) { $0 + Double($1) } / Double(count)
+    }
+}
+
+extension Collection where Element == Double {
+    /// Returns the average of all elements as a Double value.
+    public func average() -> Double {
+        return reduce(0, +) / Double(count)
     }
 }
 

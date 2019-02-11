@@ -11,6 +11,12 @@
 		3F95C8D520F22DEE0045AFD0 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */; };
 		3F95C8D620F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */; };
 		3F95C8D720F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */; };
+		8218E4D62211D193007AAAF3 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */; };
+		8218E4D72211D193007AAAF3 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */; };
+		8218E4D82211D193007AAAF3 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */; };
+		8218E4DA2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D92211D270007AAAF3 /* NSRangeExtensionTests.swift */; };
+		8218E4DB2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D92211D270007AAAF3 /* NSRangeExtensionTests.swift */; };
+		8218E4DC2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D92211D270007AAAF3 /* NSRangeExtensionTests.swift */; };
 		823B2B351C24AAB7007B3CDD /* HandySwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 823B2B341C24AAB7007B3CDD /* HandySwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		823B2B3C1C24AAB7007B3CDD /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B2B311C24AAB6007B3CDD /* HandySwift.framework */; };
 		823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */; };
@@ -114,6 +120,11 @@
 /* Begin PBXFileReference section */
 		3F95C8D120F22A3C0045AFD0 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionTests.swift; sourceTree = "<group>"; };
+		8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
+		8218E4D92211D270007AAAF3 /* NSRangeExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRangeExtensionTests.swift; sourceTree = "<group>"; };
+		8218E4DD2211D7D3007AAAF3 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
+		8218E4DE2211D7D3007AAAF3 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		8218E4DF2211D7D3007AAAF3 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		823B2B311C24AAB6007B3CDD /* HandySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HandySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		823B2B341C24AAB7007B3CDD /* HandySwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HandySwift.h; sourceTree = "<group>"; };
 		823B2B361C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,7 +149,6 @@
 		82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
-		82EB7874215B96C70042E0FD /* .projlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .projlint.yml; sourceTree = "<group>"; };
 		82EB7875215B96E20042E0FD /* beak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beak.swift; sourceTree = "<group>"; };
 		82EB7876215B98530042E0FD /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		82F22E551C26434900E784A2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -254,6 +264,7 @@
 				8280D7DB1C4A6EC9001172EF /* DictionaryExtension.swift */,
 				A1F221631E3CC05100419B06 /* DispatchTimeIntervalExtension.swift */,
 				823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */,
+				8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */,
 				82CAE2911C2ED1A200F934A7 /* StringExtension.swift */,
 				A11830D21E589F6700CBE087 /* TimeIntervalExtension.swift */,
 			);
@@ -268,6 +279,7 @@
 				8280D7DF1C4A6FF3001172EF /* DictionaryExtensionTests.swift */,
 				827599631E520FB800787F99 /* DispatchTimeIntervalExtensionTests.swift */,
 				823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */,
+				8218E4D92211D270007AAAF3 /* NSRangeExtensionTests.swift */,
 				82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */,
 				A11830D61E58A11D00CBE087 /* TimeIntervalExtensionTests.swift */,
 			);
@@ -334,9 +346,11 @@
 		A1F5AEEA1E05700F003D6949 /* RootFiles */ = {
 			isa = PBXGroup;
 			children = (
-				82EB7874215B96C70042E0FD /* .projlint.yml */,
 				A15C62221EE734F100A7CA38 /* .swiftlint.yml */,
 				82EB7875215B96E20042E0FD /* beak.swift */,
+				8218E4DE2211D7D3007AAAF3 /* CHANGELOG.md */,
+				8218E4DD2211D7D3007AAAF3 /* CODE_OF_CONDUCT.md */,
+				8218E4DF2211D7D3007AAAF3 /* CONTRIBUTING.md */,
 				A19DD6921DE2B70F00C66584 /* HandySwift.podspec */,
 				82EB7876215B98530042E0FD /* LICENSE */,
 				82F22E551C26434900E784A2 /* Package.swift */,
@@ -384,7 +398,6 @@
 				823B2B2E1C24AAB6007B3CDD /* Headers */,
 				823B2B2F1C24AAB6007B3CDD /* Resources */,
 				82F967F41C67A68A0003F12A /* SwiftLint */,
-				82EB7873215B92E90042E0FD /* ProjLint */,
 			);
 			buildRules = (
 			);
@@ -422,7 +435,6 @@
 				825EFDC71C3333B000558497 /* Headers */,
 				825EFDC81C3333B000558497 /* Resources */,
 				82F967F51C67A69A0003F12A /* SwiftLint */,
-				82EB7878215B9EE30042E0FD /* ProjLint */,
 			);
 			buildRules = (
 			);
@@ -460,7 +472,6 @@
 				825EFDE61C33351200558497 /* Headers */,
 				825EFDE71C33351200558497 /* Resources */,
 				82F967F61C67A6A80003F12A /* SwiftLint */,
-				82EB7879215B9EF10042E0FD /* ProjLint */,
 			);
 			buildRules = (
 			);
@@ -593,60 +604,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		82EB7873215B92E90042E0FD /* ProjLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = ProjLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which projlint > /dev/null; then\n        projlint lint --xcode --timeout 2 --ignore-network-errors\n    else\n        echo \"warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint\"\n    fi\nfi\n";
-		};
-		82EB7878215B9EE30042E0FD /* ProjLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = ProjLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which projlint > /dev/null; then\n        projlint lint --xcode --timeout 2 --ignore-network-errors\n    else\n        echo \"warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint\"\n    fi\nfi\n";
-		};
-		82EB7879215B9EF10042E0FD /* ProjLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = ProjLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which projlint > /dev/null; then\n        projlint lint --xcode --timeout 2 --ignore-network-errors\n    else\n        echo \"warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint\"\n    fi\nfi\n";
-		};
 		82F967F41C67A68A0003F12A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -700,6 +657,7 @@
 				CC120CC2205FDB9300C37D7C /* Regex.swift in Sources */,
 				826F69AC1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				A1F221641E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
+				8218E4D62211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				3F95C8D220F22A3C0045AFD0 /* CollectionExtension.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 				C5C89B9420B0A0C10048B07C /* Weak.swift in Sources */,
@@ -724,6 +682,7 @@
 				82CAE2941C2ED5E000F934A7 /* StringExtensionTests.swift in Sources */,
 				82CAE2981C2EE95200F934A7 /* ArrayExtensionTests.swift in Sources */,
 				82812A9F1D06926800CD5B6C /* GlobalsTests.swift in Sources */,
+				8218E4DA2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */,
 				8280D7E01C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 				3F95C8D520F22DEE0045AFD0 /* CollectionExtensionTests.swift in Sources */,
 				CC4AE0CF2087D8A7009931F6 /* RegexTests.swift in Sources */,
@@ -738,6 +697,7 @@
 				CC120CC3205FDC4C00C37D7C /* Regex.swift in Sources */,
 				C5CFB6AD20B0A70300830511 /* Unowned.swift in Sources */,
 				826F69AD1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
+				8218E4D72211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				825EFE051C33358400558497 /* StringExtension.swift in Sources */,
 				82E21E8E211AF9960061EB1B /* CollectionExtension.swift in Sources */,
 				C5CFB6AF20B0A78F00830511 /* Weak.swift in Sources */,
@@ -762,6 +722,7 @@
 				825EFE121C3335A400558497 /* ArrayExtensionTests.swift in Sources */,
 				825EFE0F1C3335A400558497 /* IntExtensionTests.swift in Sources */,
 				82812AA01D06926800CD5B6C /* GlobalsTests.swift in Sources */,
+				8218E4DB2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */,
 				8280D7E11C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 				3F95C8D620F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */,
 				CC4AE0D02087D8A8009931F6 /* RegexTests.swift in Sources */,
@@ -776,6 +737,7 @@
 				CC120CC4205FDC4D00C37D7C /* Regex.swift in Sources */,
 				C5CFB6AE20B0A70300830511 /* Unowned.swift in Sources */,
 				826F69AE1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
+				8218E4D82211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				825EFE0B1C33358500558497 /* StringExtension.swift in Sources */,
 				82E21E8F211AF9970061EB1B /* CollectionExtension.swift in Sources */,
 				C5CFB6B020B0A79000830511 /* Weak.swift in Sources */,
@@ -800,6 +762,7 @@
 				825EFE181C3335A500558497 /* ArrayExtensionTests.swift in Sources */,
 				825EFE151C3335A500558497 /* IntExtensionTests.swift in Sources */,
 				82812AA11D06926800CD5B6C /* GlobalsTests.swift in Sources */,
+				8218E4DC2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */,
 				8280D7E21C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
 				3F95C8D720F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */,
 				CC4AE0D12087D8A9009931F6 /* RegexTests.swift in Sources */,
