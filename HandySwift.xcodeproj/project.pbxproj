@@ -435,7 +435,6 @@
 				825EFDC71C3333B000558497 /* Headers */,
 				825EFDC81C3333B000558497 /* Resources */,
 				82F967F51C67A69A0003F12A /* SwiftLint */,
-				82EB7878215B9EE30042E0FD /* ProjLint */,
 			);
 			buildRules = (
 			);
@@ -473,7 +472,6 @@
 				825EFDE61C33351200558497 /* Headers */,
 				825EFDE71C33351200558497 /* Resources */,
 				82F967F61C67A6A80003F12A /* SwiftLint */,
-				82EB7879215B9EF10042E0FD /* ProjLint */,
 			);
 			buildRules = (
 			);
@@ -606,42 +604,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		82EB7878215B9EE30042E0FD /* ProjLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = ProjLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which projlint > /dev/null; then\n        projlint lint --xcode --timeout 2 --ignore-network-errors\n    else\n        echo \"warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint\"\n    fi\nfi\n";
-		};
-		82EB7879215B9EF10042E0FD /* ProjLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = ProjLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which projlint > /dev/null; then\n        projlint lint --xcode --timeout 2 --ignore-network-errors\n    else\n        echo \"warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint\"\n    fi\nfi\n";
-		};
 		82F967F41C67A68A0003F12A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
