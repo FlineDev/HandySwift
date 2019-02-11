@@ -138,7 +138,6 @@
 		82CAE2931C2ED5E000F934A7 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
-		82EB7874215B96C70042E0FD /* .projlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .projlint.yml; sourceTree = "<group>"; };
 		82EB7875215B96E20042E0FD /* beak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beak.swift; sourceTree = "<group>"; };
 		82EB7876215B98530042E0FD /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		82F22E551C26434900E784A2 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -334,7 +333,6 @@
 		A1F5AEEA1E05700F003D6949 /* RootFiles */ = {
 			isa = PBXGroup;
 			children = (
-				82EB7874215B96C70042E0FD /* .projlint.yml */,
 				A15C62221EE734F100A7CA38 /* .swiftlint.yml */,
 				82EB7875215B96E20042E0FD /* beak.swift */,
 				A19DD6921DE2B70F00C66584 /* HandySwift.podspec */,
@@ -384,7 +382,6 @@
 				823B2B2E1C24AAB6007B3CDD /* Headers */,
 				823B2B2F1C24AAB6007B3CDD /* Resources */,
 				82F967F41C67A68A0003F12A /* SwiftLint */,
-				82EB7873215B92E90042E0FD /* ProjLint */,
 			);
 			buildRules = (
 			);
@@ -593,24 +590,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		82EB7873215B92E90042E0FD /* ProjLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = ProjLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which projlint > /dev/null; then\n        projlint lint --xcode --timeout 2 --ignore-network-errors\n    else\n        echo \"warning: ProjLint not installed, download it from https://github.com/JamitLabs/ProjLint\"\n    fi\nfi\n";
-		};
 		82EB7878215B9EE30042E0FD /* ProjLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -6,6 +6,7 @@
 import Foundation
 
 extension Array {
+    /// A tuple representing a combination.
     public typealias Combination<T> = (left: Element, right: T)
 
     /// Returns a random element from the `Array`.
