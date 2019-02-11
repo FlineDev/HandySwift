@@ -44,4 +44,12 @@ class StringExtensionTests: XCTestCase {
         XCTAssertEqual([1, 2, 3].sample(size: 2)!.count, 2)
         XCTAssertEqual([1, 2, 3].sample(size: 10)!.count, 10)
     }
+
+    func testFullRange() {
+        let testStrings = ["Simple String", "👪 👨‍👩‍👦 👨‍👩‍👧 👨‍👩‍👧‍👦 👨‍👩‍👦‍👦 👨‍👩‍👧‍👧 👨‍👨‍👦 👨‍👨‍👧 👨‍👨‍👧‍👦 👨‍👨‍👦‍👦 👨‍👨‍👧‍👧 👩‍👩‍👦 👩‍👩‍👧 👩‍👩‍👧‍👦 👩‍👩‍👦‍👦 👩‍👩‍👧‍👧"]
+
+        for string in testStrings {
+            XCTAssertEqual(String(string[string.fullRange]), string)
+        }
+    }
 }

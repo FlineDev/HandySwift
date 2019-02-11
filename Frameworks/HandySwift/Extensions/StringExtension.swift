@@ -16,6 +16,11 @@ extension String {
         return isEmpty ? nil : self[index(startIndex, offsetBy: Int(randomBelow: count)!)]
     }
 
+    /// Returns the range containing the full String.
+    public var fullRange: Range<Index> {
+        return startIndex ..< endIndex
+    }
+
     /// Create new instance with random numeric/alphabetic/alphanumeric String of given length.
     ///
     /// - Parameters:
