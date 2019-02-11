@@ -64,6 +64,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
   - [IntExtension](#intextension)
   - [IntegerTypeExtension](#integertypeextension)
   - [StringExtension](#stringextension)
+  - [NSRangeExtension](#nsrangeextension)
   - [CollectionExtension](#collectionextension)
   - [ArrayExtension](#arrayextension)
   - [DictionaryExtension](#dictionaryextension)
@@ -151,6 +152,35 @@ String(randomWithLength: 6, allowedCharactersType: .alphabetic) // => "ysTUzU"
 String(randomWithLength: 8, allowedCharactersType: .alphaNumeric) // => "2TgM5sUG"
 String(randomWithLength: 10, allowedCharactersType: .allCharactersIn("?!🐲🍏✈️🎎🍜"))
 // => "!🍏🐲✈️🎎🐲🍜??🍜"
+```
+
+#### .fullRange
+
+Get the full `Range` on a `String` object.
+
+``` Swift
+let unicodeString = "Hello composed unicode symbols! 👨‍👩‍👧‍👦👨‍👨‍👦‍👦👩‍👩‍👧‍👧"
+unicodeString[unicodeString.fullRange] // => same string
+```
+
+### NSRangeExtension
+
+#### init(_:in:)
+
+Converting from `NSRange` to `Range<String.Index>` became simple in Swift 4:
+
+``` Swift
+let string = "Hello World!"
+let nsRange = NSRange(location: 0, length: 10)
+let swiftRange = Range(nsRange, in: string) 
+```
+
+The opposite is now also possible with this extension:
+
+``` Swift
+let string = "Hello World!"
+let swiftRange: Range<String.Index> = string.fullRange
+let nsRange = NSRange(swiftRange, in: string) 
 ```
 
 ### ArrayExtension

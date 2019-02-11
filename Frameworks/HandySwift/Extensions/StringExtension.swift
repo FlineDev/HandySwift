@@ -21,6 +21,11 @@ extension String {
         return startIndex ..< endIndex
     }
 
+    /// Returns the range as NSRange type for the full String.
+    public var fullNSRange: NSRange {
+        return NSRange(fullRange, in: self)
+    }
+
     /// Create new instance with random numeric/alphabetic/alphanumeric String of given length.
     ///
     /// - Parameters:

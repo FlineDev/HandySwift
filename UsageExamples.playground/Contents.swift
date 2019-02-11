@@ -74,6 +74,20 @@ String(randomWithLength: 6, allowedCharactersType: .alphabetic)
 String(randomWithLength: 8, allowedCharactersType: .alphaNumeric)
 String(randomWithLength: 10, allowedCharactersType: .allCharactersIn("?!🐲🍏✈️🎎🍜"))
 
+//: ### .fullRange
+//: Get the full `Range` on a `String` object.
+
+let unicodeString = "Hello composed unicode symbols! 👨‍👩‍👧‍👦👨‍👨‍👦‍👦👩‍👩‍👧‍👧"
+unicodeString[unicodeString.fullRange]
+
+//: ## NSRangeExtension
+//: ### init(_:in:)
+//: Adds support for converting `Range<String.Index>` to `NSRange`.
+
+let swiftRange: Range<String.Index> = unicodeString.fullRange
+let nsRange = NSRange(swiftRange, in: unicodeString)
+(unicodeString as NSString).substring(with: nsRange)
+
 //: ## Collection Extensions
 //: ### [try:]
 //: Returns an element with the specified index and nil if the array does not have that index.
