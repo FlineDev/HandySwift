@@ -5,9 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 ### Added
-- None.
+- New `NSRange(_:in:)` initializer for converting from `Range<String.Index>`
+- New `sum` computed property on `Sequence` types like `Array`
+- New `average` computed property on `Collection` types with `Int` or `Double` elements like `[Int]`
+- New `fullRange` and `fullNSRange` computed properties on `String`
 ### Changed
-- None.
+- Made some APIs available in wider contexts (like `sample` in `RandomAccessCollection` instead of `Array`) 
 ### Deprecated
 - None.
 ### Removed
