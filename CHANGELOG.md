@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Addedge
+- None.
+### Changed
+- None. 
+### Deprecated
+- None.
+### Removed
+- None.
+### Fixed
+- None.
+### Security
+- None.
+
+
+## [2.8.0]
 ### Added
 - New `NSRange(_:in:)` initializer for converting from `Range<String.Index>`
 - New `sum` computed property on `Sequence` types like `Array`
