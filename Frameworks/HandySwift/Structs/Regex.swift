@@ -101,23 +101,6 @@ public struct Regex {
     }
 }
 
-// MARK: - ExpressibleByStringLiteral
-extension Regex: ExpressibleByStringLiteral {
-    @available(*, deprecated, message: "Use `init(_:options:) throws` instead.")
-    /// Creates a new `Regex` based on a string literal.
-    /// If the internal initialization fails, the code will crash without any option to handle the error.
-    /// For safe `Regex` initialization, use the `init(_: String, options: Options) throws` overload instead.
-    ///
-    /// - parameter stringLiteral: The pattern string.
-    public init(stringLiteral value: String) {
-        do {
-            try self.init(value)
-        } catch {
-            preconditionFailure("Not a valid regex: \(value)")
-        }
-    }
-}
-
 // MARK: - CustomStringConvertible
 extension Regex: CustomStringConvertible {
     /// Returns a string describing the regex using its pattern string.
@@ -139,9 +122,9 @@ extension Regex: Equatable {
 
 // MARK: - Hashable
 extension Regex: Hashable {
-    /// Returns a unique hash value for the `Regex` instance.
-    public var hashValue: Int {
-        return regularExpression.hashValue
+    /// Manages hashing of the `Regex` instance.
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(regularExpression)
     }
 }
 

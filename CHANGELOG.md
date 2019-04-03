@@ -11,7 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Deprecated
 - None.
 ### Removed
-- None.
+- Remove `ExpressibleByStringLiteral` conformance of `Regex` type to only allow initialization via `init(_:options:) throws` interface.
 ### Fixed
 - None.
 ### Security
