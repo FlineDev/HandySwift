@@ -122,9 +122,9 @@ extension Regex: Equatable {
 
 // MARK: - Hashable
 extension Regex: Hashable {
-    /// Returns a unique hash value for the `Regex` instance.
-    public var hashValue: Int {
-        return regularExpression.hashValue
+    /// Manages hashing of the `Regex` instance.
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(regularExpression)
     }
 }
 
