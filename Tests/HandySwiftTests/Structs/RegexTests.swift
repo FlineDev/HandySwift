@@ -90,9 +90,10 @@ class RegexTests: XCTestCase {
 
     func testMatchRange() {
         let regex = try? Regex("[1-9]+")
-        let firstMatchRange = regex?.firstMatch(in: "abc5def")?.range
-        XCTAssertEqual(firstMatchRange?.lowerBound.encodedOffset, 3)
-        XCTAssertEqual(firstMatchRange?.upperBound.encodedOffset, 4)
+        let text = "abc5def"
+        let firstMatchRange = regex?.firstMatch(in: text)?.range
+        XCTAssertEqual(firstMatchRange?.lowerBound.utf16Offset(in: text), 3)
+        XCTAssertEqual(firstMatchRange?.upperBound.utf16Offset(in: text), 4)
     }
 
     func testMatchCaptures() {
