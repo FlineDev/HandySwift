@@ -21,6 +21,9 @@
 		823B2B3C1C24AAB7007B3CDD /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B2B311C24AAB6007B3CDD /* HandySwift.framework */; };
 		823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */; };
 		823B2B501C24AC00007B3CDD /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */; };
+		8251AA2022786D460022B277 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251AA1F22786D460022B277 /* Withable.swift */; };
+		8251AA2122786D460022B277 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251AA1F22786D460022B277 /* Withable.swift */; };
+		8251AA2222786D460022B277 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8251AA1F22786D460022B277 /* Withable.swift */; };
 		8258E4561C2E0C140031CBFF /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258E4551C2E0C140031CBFF /* SortedArray.swift */; };
 		8258E4591C2E1ACE0031CBFF /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */; };
 		825EFDD41C3333B000558497 /* HandySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825EFDCA1C3333B000558497 /* HandySwift.framework */; };
@@ -132,6 +135,7 @@
 		823B2B421C24AAB7007B3CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensionTests.swift; sourceTree = "<group>"; };
+		8251AA1F22786D460022B277 /* Withable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withable.swift; sourceTree = "<group>"; };
 		8258E4551C2E0C140031CBFF /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
 		8258E4581C2E1ACE0031CBFF /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArrayTests.swift; sourceTree = "<group>"; };
 		825EFDCA1C3333B000558497 /* HandySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HandySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +222,7 @@
 			children = (
 				82812A9A1D06877B00CD5B6C /* Globals.swift */,
 				823B2B4B1C24AB7F007B3CDD /* Extensions */,
+				8251AA1E22786CF90022B277 /* Protocols */,
 				8258E4541C2E0BAF0031CBFF /* Structs */,
 			);
 			path = HandySwift;
@@ -284,6 +289,14 @@
 				A11830D61E58A11D00CBE087 /* TimeIntervalExtensionTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8251AA1E22786CF90022B277 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8251AA1F22786D460022B277 /* Withable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		8258E4541C2E0BAF0031CBFF /* Structs */ = {
@@ -662,6 +675,7 @@
 				3F95C8D220F22A3C0045AFD0 /* CollectionExtension.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
 				C5C89B9420B0A0C10048B07C /* Weak.swift in Sources */,
+				8251AA2022786D460022B277 /* Withable.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */,
 				82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */,
 				C5CFB6AC20B0A70300830511 /* Unowned.swift in Sources */,
@@ -702,6 +716,7 @@
 				825EFE051C33358400558497 /* StringExtension.swift in Sources */,
 				82E21E8E211AF9960061EB1B /* CollectionExtension.swift in Sources */,
 				C5CFB6AF20B0A78F00830511 /* Weak.swift in Sources */,
+				8251AA2122786D460022B277 /* Withable.swift in Sources */,
 				A1F221651E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
 				825EFE021C33358400558497 /* SortedArray.swift in Sources */,
 				825EFE031C33358400558497 /* IntExtension.swift in Sources */,
@@ -742,6 +757,7 @@
 				825EFE0B1C33358500558497 /* StringExtension.swift in Sources */,
 				82E21E8F211AF9970061EB1B /* CollectionExtension.swift in Sources */,
 				C5CFB6B020B0A79000830511 /* Weak.swift in Sources */,
+				8251AA2222786D460022B277 /* Withable.swift in Sources */,
 				A1F221661E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
 				825EFE081C33358500558497 /* SortedArray.swift in Sources */,
 				825EFE091C33358500558497 /* IntExtension.swift in Sources */,

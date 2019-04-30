@@ -335,6 +335,18 @@ print(weak)
 var unowned = Unowned(text)
 print(unowned)
 
-//: ### Accessing inner Reference
-//: Access the inner wrapped reference with the `value` property.
-print(unowned.value)
+//: ## Withable
+//: Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free).
+struct Foo: Withable {
+    var bar: Int = 0
+    var baz: Bool = false
+}
+
+// Construct a foo, setting an arbitrary subset of properties
+let foo = Foo { $0.bar = 5 }
+
+// Make a copy of foo, overriding an arbitrary subset of properties
+let foo2 = foo.with { $0.bar = 7; $0.baz = true }
+
+foo.bar
+foo2.bar

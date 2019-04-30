@@ -18,8 +18,8 @@
              alt="Version: 2.8.0
 ">
     </a>
-    <img src="https://img.shields.io/badge/Swift-4.2-FFAC45.svg"
-         alt="Swift: 4.2">
+    <img src="https://img.shields.io/badge/Swift-5.0-FFAC45.svg"
+         alt="Swift: 5.0">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
         alt="Platforms: iOS | tvOS | macOS | Linux">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
@@ -502,6 +502,25 @@ Returns an element with the specified index or nil if the element does not exist
 let testArray = [0, 1, 2, 3, 20]
 testArray[try: 4]  // => Optional(20)
 testArray[try: 20] // => nil
+```
+
+### Withable
+Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free).
+
+``` swift
+struct Foo: Withable {
+    var bar: Int = 0
+    var baz: Bool = false
+}
+
+// Construct a foo, setting an arbitrary subset of properties
+let foo = Foo { $0.bar = 5 }
+
+// Make a copy of foo, overriding an arbitrary subset of properties
+let foo2 = foo.with { $0.bar = 7; $0.baz = true }
+
+foo.bar // => 5
+foo2.bar // => 7
 ```
 
 
