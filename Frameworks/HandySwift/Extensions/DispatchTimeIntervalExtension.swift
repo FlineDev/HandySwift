@@ -23,6 +23,9 @@ extension DispatchTimeInterval {
 
         case .never:
             return TimeInterval.infinity
+
+        @unknown default:
+            fatalError("Unknown DispatchTimeInterval unit.")
         }
     }
 }

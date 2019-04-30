@@ -5,9 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 ### Addedge
-- None.
+- New `Withable` protocol to init/copy objects and set properties in a convenient way on a single line.
 ### Changed
-- None. 
+- Upgraded to Swift 5 & Xcode 10.2. 
 ### Deprecated
 - None.
 ### Removed
