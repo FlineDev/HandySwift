@@ -13,13 +13,11 @@
              alt="Codebeat Status">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-2.8.0
--blue.svg"
-             alt="Version: 2.8.0
-">
+        <img src="https://img.shields.io/badge/Version-3.0.0-blue.svg"
+             alt="Version: 3.0.0">
     </a>
-    <img src="https://img.shields.io/badge/Swift-4.2-FFAC45.svg"
-         alt="Swift: 4.2">
+    <img src="https://img.shields.io/badge/Swift-5.0-FFAC45.svg"
+         alt="Swift: 5.0">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
         alt="Platforms: iOS | tvOS | macOS | Linux">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
@@ -172,7 +170,7 @@ Converting from `NSRange` to `Range<String.Index>` became simple in Swift 4:
 ``` Swift
 let string = "Hello World!"
 let nsRange = NSRange(location: 0, length: 10)
-let swiftRange = Range(nsRange, in: string) 
+let swiftRange = Range(nsRange, in: string)
 ```
 
 The opposite is now also possible with this extension:
@@ -180,7 +178,7 @@ The opposite is now also possible with this extension:
 ``` Swift
 let string = "Hello World!"
 let swiftRange: Range<String.Index> = string.fullRange
-let nsRange = NSRange(swiftRange, in: string) 
+let nsRange = NSRange(swiftRange, in: string)
 ```
 
 ### ArrayExtension
@@ -223,7 +221,7 @@ let structure = ["firstName", "lastName"]
 let dataEntries = [["Harry", "Potter"], ["Hermione", "Granger"], ["Ron", "Weasley"]]
 Dictionary(keys: structure, values: dataEntries[0]) // => ["firstName": "Harry", "lastName": "Potter"]
 
-dataEntries.map{ Dictionary(keys: structure, values: $0) }
+dataEntries.map { Dictionary(keys: structure, values: $0) }
 // => [["firstName": "Harry", "lastName": "Potter"], ["firstName": "Hermione", "lastName": "Grange"], ...]
 
 Dictionary(keys: [1,2,3], values: [1,2,3,4,5]) // => nil
@@ -349,7 +347,7 @@ Returns a random element with frequency-based probability within the array or ni
 
 ``` Swift
 frequencyTable.sample
-let randomWord = frequencyTable.sample.map{ $0.word }
+let randomWord = frequencyTable.sample.map { $0.word }
 // => "Harry"
 ```
 
@@ -359,7 +357,7 @@ Returns an array with `size` frequency-based random elements or nil if array emp
 
 ``` Swift
 frequencyTable.sample(size: 6)
-let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
+let randomWords = frequencyTable.sample(size: 6)!.map { $0.word }
 // => ["Harry", "Ronald", "Harry", "Harry", "Hermione", "Hermione"]
 ```
 
@@ -502,6 +500,41 @@ Returns an element with the specified index or nil if the element does not exist
 let testArray = [0, 1, 2, 3, 20]
 testArray[try: 4]  // => Optional(20)
 testArray[try: 20] // => nil
+```
+
+#### .sum()
+Returns the sum of all elements. The return type is determined by the numeric elements, e.g. Int for [Int].
+NOTE: Only available for `Numeric` types.
+``` swift
+[0, 1, 2, 3, 4].sum() // => 10
+[0.5, 1.5, 2.5].sum() // => 4.5
+```
+
+#### .average()
+Returns the average of all elements as a Double value.
+NOTE: Only available for `Int` and `Double` collections.
+``` swift
+[10, 20, 30, 40].average() // => 25.0
+[10.75, 20.75, 30.25, 40.25].average() // => 25.5
+```
+
+### Withable
+Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free).
+
+``` swift
+struct Foo: Withable {
+    var bar: Int = 0
+    var baz: Bool = false
+}
+
+// Construct a foo, setting an arbitrary subset of properties
+let foo = Foo { $0.bar = 5 }
+
+// Make a copy of foo, overriding an arbitrary subset of properties
+let foo2 = foo.with { $0.bar = 7; $0.baz = true }
+
+foo.bar // => 5
+foo2.bar // => 7
 ```
 
 

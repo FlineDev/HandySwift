@@ -71,15 +71,14 @@ extension String {
 
 extension String {
     /// The type of allowed characters.
-    ///
-    /// - Numeric:          Allow all numbers from 0 to 9.
-    /// - Alphabetic:       Allow all alphabetic characters ignoring case.
-    /// - AlphaNumeric:     Allow both numbers and alphabetic characters ignoring case.
-    /// - AllCharactersIn:  Allow all characters appearing within the specified String.
     public enum AllowedCharacters {
+        /// Allow all numbers from 0 to 9.
         case numeric
+        /// Allow all alphabetic characters ignoring case.
         case alphabetic
+        /// Allow both numbers and alphabetic characters ignoring case.
         case alphaNumeric
+        /// Allow all characters appearing within the specified String.
         case allCharactersIn(String)
     }
 }

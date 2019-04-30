@@ -9,7 +9,7 @@ import XCTest
 class FrequencyTableTests: XCTestCase {
     func testSample() {
         let values = ["Harry", "Hermione", "Ronald"]
-        let frequencyTable = FrequencyTable(values: values) { [5, 10, 1][values.index(of: $0)!] }
+        let frequencyTable = FrequencyTable(values: values) { [5, 10, 1][values.firstIndex(of: $0)!] }
 
         var allSamples: [String] = []
 
@@ -30,7 +30,7 @@ class FrequencyTableTests: XCTestCase {
 
     func testSampleWithSize() {
         let values = ["Harry", "Hermione", "Ronald"]
-        let frequencyTable = FrequencyTable(values: values) { [5, 10, 1][values.index(of: $0)!] }
+        let frequencyTable = FrequencyTable(values: values) { [5, 10, 1][values.firstIndex(of: $0)!] }
 
         let allSamples: [String] = frequencyTable.sample(size: 16_000)!
 
