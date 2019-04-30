@@ -95,6 +95,18 @@ let arrayForTry = [0, 1, 2, 3, 20]
 arrayForTry[try: 4]
 arrayForTry[try: 20]
 
+//: ### .sum()
+//: Returns the sum of all elements. The return type is determined by the numeric elements, e.g. Int for [Int].
+//: NOTE: Only available for `Numeric` types.
+[0, 1, 2, 3, 4].sum()
+[0.5, 1.5, 2.5].sum()
+
+//: ### .average()
+//: Returns the average of all elements as a Double value.
+//: NOTE: Only available for `Int` and `Double` collections.
+[10, 20, 30, 40].average()
+[10.75, 20.75, 30.25, 40.25].average()
+
 //: ## DictionaryExtension
 //: ### init?(keys:values:)
 //: Initializes a new `Dictionary` and fills it with keys and values arrays or returns nil if count of arrays differ.
@@ -165,6 +177,7 @@ unsortedArray // now sorted
 //: ### .timeInterval
 //: Returns a `TimeInterval` object from a `DispatchTimeInterval`.
 
+import Dispatch
 DispatchTimeInterval.milliseconds(500).timeInterval
 
 //: ## TimeIntervalExtension

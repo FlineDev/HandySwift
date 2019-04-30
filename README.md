@@ -223,7 +223,7 @@ let structure = ["firstName", "lastName"]
 let dataEntries = [["Harry", "Potter"], ["Hermione", "Granger"], ["Ron", "Weasley"]]
 Dictionary(keys: structure, values: dataEntries[0]) // => ["firstName": "Harry", "lastName": "Potter"]
 
-dataEntries.map{ Dictionary(keys: structure, values: $0) }
+dataEntries.map { Dictionary(keys: structure, values: $0) }
 // => [["firstName": "Harry", "lastName": "Potter"], ["firstName": "Hermione", "lastName": "Grange"], ...]
 
 Dictionary(keys: [1,2,3], values: [1,2,3,4,5]) // => nil
@@ -349,7 +349,7 @@ Returns a random element with frequency-based probability within the array or ni
 
 ``` Swift
 frequencyTable.sample
-let randomWord = frequencyTable.sample.map{ $0.word }
+let randomWord = frequencyTable.sample.map { $0.word }
 // => "Harry"
 ```
 
@@ -359,7 +359,7 @@ Returns an array with `size` frequency-based random elements or nil if array emp
 
 ``` Swift
 frequencyTable.sample(size: 6)
-let randomWords = frequencyTable.sample(size: 6)!.map{ $0.word }
+let randomWords = frequencyTable.sample(size: 6)!.map { $0.word }
 // => ["Harry", "Ronald", "Harry", "Harry", "Hermione", "Hermione"]
 ```
 
@@ -502,6 +502,22 @@ Returns an element with the specified index or nil if the element does not exist
 let testArray = [0, 1, 2, 3, 20]
 testArray[try: 4]  // => Optional(20)
 testArray[try: 20] // => nil
+```
+
+#### .sum()
+Returns the sum of all elements. The return type is determined by the numeric elements, e.g. Int for [Int].
+NOTE: Only available for `Numeric` types.
+``` swift
+[0, 1, 2, 3, 4].sum() // => 10
+[0.5, 1.5, 2.5].sum() // => 4.5
+```
+
+#### .average()
+Returns the average of all elements as a Double value.
+NOTE: Only available for `Int` and `Double` collections.
+``` swift
+[10, 20, 30, 40].average() // => 25.0
+[10.75, 20.75, 30.25, 40.25].average() // => 25.5
 ```
 
 ### Withable
