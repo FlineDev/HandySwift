@@ -13,8 +13,8 @@
              alt="Codebeat Status">
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-2.8.0-blue.svg"
-             alt="Version: 2.8.0">
+        <img src="https://img.shields.io/badge/Version-3.0.0-blue.svg"
+             alt="Version: 3.0.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-5.0-FFAC45.svg"
          alt="Swift: 5.0">
@@ -170,7 +170,7 @@ Converting from `NSRange` to `Range<String.Index>` became simple in Swift 4:
 ``` Swift
 let string = "Hello World!"
 let nsRange = NSRange(location: 0, length: 10)
-let swiftRange = Range(nsRange, in: string) 
+let swiftRange = Range(nsRange, in: string)
 ```
 
 The opposite is now also possible with this extension:
@@ -178,7 +178,7 @@ The opposite is now also possible with this extension:
 ``` Swift
 let string = "Hello World!"
 let swiftRange: Range<String.Index> = string.fullRange
-let nsRange = NSRange(swiftRange, in: string) 
+let nsRange = NSRange(swiftRange, in: string)
 ```
 
 ### ArrayExtension
