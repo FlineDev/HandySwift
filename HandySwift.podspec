@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Flinesoft/HandySwift.git", :tag => "#{s.version}" }
   s.source_files = "Frameworks/HandySwift/**/*.swift"
   s.framework    = "Foundation"
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
 
 end
