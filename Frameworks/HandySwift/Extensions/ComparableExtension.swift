@@ -18,6 +18,7 @@ extension Comparable {
         return limits.lowerBound > self ? limits.lowerBound
             : limits.upperBound < self ? limits.upperBound
             : self
+        // swiftlint:disable:last too_much_unindentation
     }
 
     /// Returns `self` clamped to the given limits.
@@ -29,6 +30,7 @@ extension Comparable {
     public func clamped(to limits: PartialRangeFrom<Self>) -> Self {
         return limits.lowerBound > self ? limits.lowerBound
             : self
+        // swiftlint:disable:last too_much_unindentation
     }
 
     /// Returns `self` clamped to the given limits.
@@ -40,9 +42,10 @@ extension Comparable {
     public func clamped(to limits: PartialRangeThrough<Self>) -> Self {
         return limits.upperBound < self ? limits.upperBound
             : self
+        // swiftlint:disable:last too_much_unindentation
     }
 
-    // MARK: Mutating variants
+    // MARK: Mutating Variants
     /// Clamps `self` to the given limits.
     ///
     /// - `self`, if it is inside the given limits.
