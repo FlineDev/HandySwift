@@ -120,6 +120,39 @@ let intArray = 5.timesMake { Int(randomBelow: 1_000)! }
 // => [481, 16, 680, 87, 912]
 ```
 
+### ComparableExtension
+
+#### clamped(to:)
+
+Apply a limiting range as the bounds of a `Comparable`.
+Supports `ClosedRange` (`a ... b`), `PartialRangeFrom` (`a...`) and `PartialRangeThrough` (`...b`) as the `limits`.
+
+``` Swift
+let myNum = 3
+myNum.clamped(to: 0 ... 6) // => 3
+myNum.clamped(to: 0 ... 2) // => 2
+myNum.clamped(to: 4 ... 6) // => 4
+myNum.clamped(to: 5...) // => 4
+myNum.clamped(to: ...2) // => 2
+
+let myString = "d"
+myString.clamped(to: "a" ... "g") // => "d"
+myString.clamped(to: "a" ... "c") // => "c"
+myString.clamped(to: "e" ... "g") // => "e"
+myString.clamped(to: "f"...) // => "f"
+myString.clamped(to: ..."c") // => "c"
+```
+
+#### clamp(to:)
+
+In-place `mutating` variant of `clamped(to:)`
+
+``` Swift
+var myNum = 3
+myNum.clamp(to: 0...2)
+myNum // => 2
+```
+
 ### StringExtension
 
 #### .stripped()

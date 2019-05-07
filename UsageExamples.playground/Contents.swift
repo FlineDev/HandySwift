@@ -51,6 +51,32 @@ stringArray
 
 let intArray = 5.timesMake { Int(randomBelow: 1_000)! }
 
+//: ## ComparableExtension
+//: ### clamped(to:)
+//: Apply a limiting range as the bounds of a `Comparable`.
+//: Supports `ClosedRange` (`a ... b`), `PartialRangeFrom` (`a...`) and `PartialRangeThrough` (`...b`) as the `limits`.
+
+let myNum = 3
+myNum.clamped(to: 0 ... 6)
+myNum.clamped(to: 0 ... 2)
+myNum.clamped(to: 4 ... 6)
+myNum.clamped(to: 5...)
+myNum.clamped(to: ...2)
+
+let myString = "d"
+myString.clamped(to: "a" ... "g")
+myString.clamped(to: "a" ... "c")
+myString.clamped(to: "e" ... "g")
+myString.clamped(to: "f"...)
+myString.clamped(to: ..."c")
+
+//: ### clamp(to:)
+//: In-place `mutating` variant of `clamped(to:)`
+
+var myNum = 3
+myNum.clamp(to: 0 ... 2)
+myNum
+
 //: ## StringExtension
 //: ### string.strip
 //: Returns string with whitespace characters stripped from start and end.
