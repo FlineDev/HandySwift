@@ -15,10 +15,13 @@ extension Comparable {
     ///     - `lowerBound` of the given limits, if `self` is smaller than it.
     ///     - `upperBound` of the given limits, if `self` is greater than it.
     public func clamped(to limits: ClosedRange<Self>) -> Self {
-        return limits.lowerBound > self ? limits.lowerBound
-            : limits.upperBound < self ? limits.upperBound
-            : self
-        // swiftlint:disable:last too_much_unindentation
+        if limits.lowerBound > self {
+            return limits.lowerBound
+        } else if limits.upperBound < self {
+            return limits.upperBound
+        } else {
+            return self
+        }
     }
 
     /// Returns `self` clamped to the given limits.
@@ -28,9 +31,11 @@ extension Comparable {
     ///     - `self`, if it is inside the given limits.
     ///     - `lowerBound` of the given limits, if `self` is smaller than it.
     public func clamped(to limits: PartialRangeFrom<Self>) -> Self {
-        return limits.lowerBound > self ? limits.lowerBound
-            : self
-        // swiftlint:disable:last too_much_unindentation
+        if limits.lowerBound > self {
+            return limits.lowerBound
+        } else {
+            return self
+        }
     }
 
     /// Returns `self` clamped to the given limits.
@@ -40,9 +45,11 @@ extension Comparable {
     ///     - `self`, if it is inside the given limits.
     ///     - `upperBound` of the given limits, if `self` is greater than it.
     public func clamped(to limits: PartialRangeThrough<Self>) -> Self {
-        return limits.upperBound < self ? limits.upperBound
-            : self
-        // swiftlint:disable:last too_much_unindentation
+        if limits.upperBound < self {
+            return limits.upperBound
+        } else {
+            return self
+        }
     }
 
     // MARK: Mutating Variants
