@@ -97,6 +97,9 @@
 		CC4AE0CF2087D8A7009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
 		CC4AE0D02087D8A8009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
 		CC4AE0D12087D8A9009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
+		CC66E047228199A0007ABF61 /* ComparableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E046228199A0007ABF61 /* ComparableExtension.swift */; };
+		CC66E048228199DE007ABF61 /* ComparableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E046228199A0007ABF61 /* ComparableExtension.swift */; };
+		CC66E049228199DF007ABF61 /* ComparableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E046228199A0007ABF61 /* ComparableExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +173,7 @@
 		C5CFB6AB20B0A70300830511 /* Unowned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unowned.swift; sourceTree = "<group>"; };
 		CC120CC1205FDB9300C37D7C /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		CC4AE0CD2087D895009931F6 /* RegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
+		CC66E046228199A0007ABF61 /* ComparableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +275,7 @@
 			children = (
 				82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */,
 				3F95C8D120F22A3C0045AFD0 /* CollectionExtension.swift */,
+				CC66E046228199A0007ABF61 /* ComparableExtension.swift */,
 				8280D7DB1C4A6EC9001172EF /* DictionaryExtension.swift */,
 				A1F221631E3CC05100419B06 /* DispatchTimeIntervalExtension.swift */,
 				823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */,
@@ -687,6 +692,7 @@
 				8218E4D62211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				3F95C8D220F22A3C0045AFD0 /* CollectionExtension.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
+				CC66E047228199A0007ABF61 /* ComparableExtension.swift in Sources */,
 				C5C89B9420B0A0C10048B07C /* Weak.swift in Sources */,
 				8251AA2022786D460022B277 /* Withable.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */,
@@ -729,6 +735,7 @@
 				8218E4D72211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				825EFE051C33358400558497 /* StringExtension.swift in Sources */,
 				82E21E8E211AF9960061EB1B /* CollectionExtension.swift in Sources */,
+				CC66E048228199DE007ABF61 /* ComparableExtension.swift in Sources */,
 				C5CFB6AF20B0A78F00830511 /* Weak.swift in Sources */,
 				8251AA2122786D460022B277 /* Withable.swift in Sources */,
 				A1F221651E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
@@ -771,6 +778,7 @@
 				8218E4D82211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				825EFE0B1C33358500558497 /* StringExtension.swift in Sources */,
 				82E21E8F211AF9970061EB1B /* CollectionExtension.swift in Sources */,
+				CC66E049228199DF007ABF61 /* ComparableExtension.swift in Sources */,
 				C5CFB6B020B0A79000830511 /* Weak.swift in Sources */,
 				8251AA2222786D460022B277 /* Withable.swift in Sources */,
 				A1F221661E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
