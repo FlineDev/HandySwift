@@ -73,9 +73,9 @@ myString.clamped(to: ..."c")
 //: ### clamp(to:)
 //: In-place `mutating` variant of `clamped(to:)`
 
-var myNum = 3
-myNum.clamp(to: 0 ... 2)
-myNum
+var myNum2 = 3
+myNum2.clamp(to: 0 ... 2)
+myNum2
 
 //: ## StringExtension
 //: ### string.strip
@@ -371,8 +371,12 @@ print(weak)
 //: `Unowned` is a wrapper to store unowned references to a `Wrapped` instance.
 //: ### Unowned(_:)
 //: Initialize with an object reference.
-var unowned = Unowned(text)
-print(unowned)
+
+// This is commented out as there's a bug with Swift playgrounds that would cause a crash if these lines weren't commented.
+// See https://github.com/Flinesoft/HandySwift/issues/24 for reference.
+
+// var unowned = Unowned(text)
+// print(unowned)
 
 //: ## Withable
 //: Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free).
