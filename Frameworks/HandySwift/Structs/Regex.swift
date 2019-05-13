@@ -1,10 +1,4 @@
-//
-//  Regex.swift
-//  HandySwift
-//
-//  Created by Frederick Pietschmann on 19.03.18.
-//  Copyright © 2018 Flinesoft. All rights reserved.
-//
+// Copyright © 2018 Flinesoft. All rights reserved.
 //  Originally from: https://github.com/sharplet/Regex (modified to remove some weight).
 
 import Foundation

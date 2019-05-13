@@ -1,7 +1,4 @@
-//
-//  Created by Frederick Pietschmann on 07.05.19.
-//  Copyright © 2019 Flinesoft. All rights reserved.
-//
+// Copyright © 2019 Flinesoft. All rights reserved.
 
 import Foundation
 

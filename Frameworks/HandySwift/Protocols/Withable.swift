@@ -1,7 +1,4 @@
-//
-//  Created by Cihat Gündüz on 30.04.19.
-//  Copyright © 2019 Flinesoft. All rights reserved.
-//
+// Copyright © 2019 Flinesoft. All rights reserved.
 
 /// Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free).
 public protocol Withable {
