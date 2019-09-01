@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = "9.0"
 
   s.source       = { :git => "https://github.com/Flinesoft/HandySwift.git", :tag => "#{s.version}" }
-  s.source_files = "Frameworks/HandySwift/**/*.swift"
+  s.source_files = "Sources/HandySwift/**/*.swift"
   s.framework    = "Foundation"
   s.swift_version = "5.0"
 

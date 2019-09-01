@@ -9,8 +9,7 @@ let package = Package(
     targets: [
         .target(
             name: "HandySwift",
-            path: "Frameworks/HandySwift",
-            exclude: ["Frameworks/SupportingFiles"]
+            exclude: ["Sources/SupportingFiles"]
         ),
         .testTarget(
             name: "HandySwiftTests",
