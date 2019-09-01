@@ -26,15 +26,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - New `Withable` protocol to init/copy objects and set properties in a convenient way on a single line.
 ### Changed
 - Upgraded to Swift 5 & Xcode 10.2.
-### Deprecated
-- None.
 ### Removed
 - Remove `ExpressibleByStringLiteral` conformance of `Regex` type to only allow initialization via `init(_:options:) throws` interface.
-### Fixed
-- None.
-### Security
-- None.
-
 
 ## [2.8.0] - 2019-02-11
 ### Added
@@ -44,14 +37,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - New `fullRange` and `fullNSRange` computed properties on `String`
 ### Changed
 - Made some APIs available in wider contexts (like `sample` in `RandomAccessCollection` instead of `Array`)
-### Deprecated
-- None.
-### Removed
-- None.
-### Fixed
-- None.
-### Security
-- None.
 
 ## [2.7.0] - 2018-09-27
 ### Added
