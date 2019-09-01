@@ -97,6 +97,12 @@
 		CC4AE0CF2087D8A7009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
 		CC4AE0D02087D8A8009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
 		CC4AE0D12087D8A9009931F6 /* RegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4AE0CD2087D895009931F6 /* RegexTests.swift */; };
+		CC66E047228199A0007ABF61 /* ComparableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E046228199A0007ABF61 /* ComparableExtension.swift */; };
+		CC66E048228199DE007ABF61 /* ComparableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E046228199A0007ABF61 /* ComparableExtension.swift */; };
+		CC66E049228199DF007ABF61 /* ComparableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E046228199A0007ABF61 /* ComparableExtension.swift */; };
+		CC66E12522819FFF007ABF61 /* ComparableExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E12322819FCF007ABF61 /* ComparableExtensionTests.swift */; };
+		CC66E1262281A000007ABF61 /* ComparableExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E12322819FCF007ABF61 /* ComparableExtensionTests.swift */; };
+		CC66E1272281A000007ABF61 /* ComparableExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC66E12322819FCF007ABF61 /* ComparableExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +130,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E4189DB231B971E00C65B81 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3F95C8D120F22A3C0045AFD0 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionTests.swift; sourceTree = "<group>"; };
 		8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
@@ -170,6 +177,8 @@
 		C5CFB6AB20B0A70300830511 /* Unowned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unowned.swift; sourceTree = "<group>"; };
 		CC120CC1205FDB9300C37D7C /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		CC4AE0CD2087D895009931F6 /* RegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
+		CC66E046228199A0007ABF61 /* ComparableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExtension.swift; sourceTree = "<group>"; };
+		CC66E12322819FCF007ABF61 /* ComparableExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,7 +255,7 @@
 		823B2B271C24AAB6007B3CDD = {
 			isa = PBXGroup;
 			children = (
-				825EFDE11C3333CE00558497 /* Frameworks */,
+				825EFDE11C3333CE00558497 /* Sources */,
 				825EFDE21C3333D200558497 /* Tests */,
 				A1F5AEEA1E05700F003D6949 /* RootFiles */,
 				823B2B321C24AAB6007B3CDD /* Products */,
@@ -271,6 +280,7 @@
 			children = (
 				82CAE2951C2EE64900F934A7 /* ArrayExtension.swift */,
 				3F95C8D120F22A3C0045AFD0 /* CollectionExtension.swift */,
+				CC66E046228199A0007ABF61 /* ComparableExtension.swift */,
 				8280D7DB1C4A6EC9001172EF /* DictionaryExtension.swift */,
 				A1F221631E3CC05100419B06 /* DispatchTimeIntervalExtension.swift */,
 				823B2B4C1C24ABA4007B3CDD /* IntExtension.swift */,
@@ -286,6 +296,7 @@
 			children = (
 				82CAE2971C2EE95200F934A7 /* ArrayExtensionTests.swift */,
 				3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */,
+				CC66E12322819FCF007ABF61 /* ComparableExtensionTests.swift */,
 				8280D7DF1C4A6FF3001172EF /* DictionaryExtensionTests.swift */,
 				827599631E520FB800787F99 /* DispatchTimeIntervalExtensionTests.swift */,
 				823B2B4F1C24AC00007B3CDD /* IntExtensionTests.swift */,
@@ -334,13 +345,13 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
-		825EFDE11C3333CE00558497 /* Frameworks */ = {
+		825EFDE11C3333CE00558497 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				8203930320F3A4DF0074974F /* HandySwift */,
 				825EFDE31C3333F100558497 /* SupportingFiles */,
 			);
-			path = Frameworks;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		825EFDE21C3333D200558497 /* Tests */ = {
@@ -372,6 +383,7 @@
 		A1F5AEEA1E05700F003D6949 /* RootFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2E4189DB231B971E00C65B81 /* .gitignore */,
 				A15C62221EE734F100A7CA38 /* .swiftlint.yml */,
 				82EB7875215B96E20042E0FD /* beak.swift */,
 				8218E4DE2211D7D3007AAAF3 /* CHANGELOG.md */,
@@ -687,6 +699,7 @@
 				8218E4D62211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				3F95C8D220F22A3C0045AFD0 /* CollectionExtension.swift in Sources */,
 				823B2B4D1C24ABA4007B3CDD /* IntExtension.swift in Sources */,
+				CC66E047228199A0007ABF61 /* ComparableExtension.swift in Sources */,
 				C5C89B9420B0A0C10048B07C /* Weak.swift in Sources */,
 				8251AA2022786D460022B277 /* Withable.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExtension.swift in Sources */,
@@ -713,6 +726,7 @@
 				82812A9F1D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8218E4DA2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */,
 				8280D7E01C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
+				CC66E12522819FFF007ABF61 /* ComparableExtensionTests.swift in Sources */,
 				3F95C8D520F22DEE0045AFD0 /* CollectionExtensionTests.swift in Sources */,
 				CC4AE0CF2087D8A7009931F6 /* RegexTests.swift in Sources */,
 			);
@@ -729,6 +743,7 @@
 				8218E4D72211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				825EFE051C33358400558497 /* StringExtension.swift in Sources */,
 				82E21E8E211AF9960061EB1B /* CollectionExtension.swift in Sources */,
+				CC66E048228199DE007ABF61 /* ComparableExtension.swift in Sources */,
 				C5CFB6AF20B0A78F00830511 /* Weak.swift in Sources */,
 				8251AA2122786D460022B277 /* Withable.swift in Sources */,
 				A1F221651E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
@@ -755,6 +770,7 @@
 				82812AA01D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8218E4DB2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */,
 				8280D7E11C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
+				CC66E1262281A000007ABF61 /* ComparableExtensionTests.swift in Sources */,
 				3F95C8D620F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */,
 				CC4AE0D02087D8A8009931F6 /* RegexTests.swift in Sources */,
 			);
@@ -771,6 +787,7 @@
 				8218E4D82211D193007AAAF3 /* NSRangeExtension.swift in Sources */,
 				825EFE0B1C33358500558497 /* StringExtension.swift in Sources */,
 				82E21E8F211AF9970061EB1B /* CollectionExtension.swift in Sources */,
+				CC66E049228199DF007ABF61 /* ComparableExtension.swift in Sources */,
 				C5CFB6B020B0A79000830511 /* Weak.swift in Sources */,
 				8251AA2222786D460022B277 /* Withable.swift in Sources */,
 				A1F221661E3CC05100419B06 /* DispatchTimeIntervalExtension.swift in Sources */,
@@ -797,6 +814,7 @@
 				82812AA11D06926800CD5B6C /* GlobalsTests.swift in Sources */,
 				8218E4DC2211D270007AAAF3 /* NSRangeExtensionTests.swift in Sources */,
 				8280D7E21C4A6FF3001172EF /* DictionaryExtensionTests.swift in Sources */,
+				CC66E1272281A000007ABF61 /* ComparableExtensionTests.swift in Sources */,
 				3F95C8D720F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */,
 				CC4AE0D12087D8A9009931F6 /* RegexTests.swift in Sources */,
 			);
@@ -952,7 +970,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -974,7 +992,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1016,7 +1034,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1038,7 +1056,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -1091,7 +1109,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;
@@ -1112,7 +1130,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Frameworks/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = Sources/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flinesoft.HandySwift;

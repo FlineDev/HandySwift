@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Addedge
+### Added
 - None.
 ### Changed
 - None.
@@ -17,8 +17,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Security
 - None.
 
+## [3.1.0] - 2019-09-01
+### Added
+- New `Comparable.clamped(to:)` and `Comparable.clamp(to:)` interfaces for any `Comparable`, e. g. `Int`.
+
 ## [3.0.0] - 2019-04-30
-### Addedge
+### Added
 - New `Withable` protocol to init/copy objects and set properties in a convenient way on a single line.
 ### Changed
 - Upgraded to Swift 5 & Xcode 10.2.

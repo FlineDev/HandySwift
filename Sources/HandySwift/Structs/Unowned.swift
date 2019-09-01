@@ -1,10 +1,4 @@
-//
-//  Unowned.swift
-//  HandySwift
-//
-//  Created by Murat Yilmaz on 19.05.18.
-//  Copyright © 2018 Flinesoft. All rights reserved.
-//
+// Copyright © 2018 Flinesoft. All rights reserved.
 
 import Foundation
 

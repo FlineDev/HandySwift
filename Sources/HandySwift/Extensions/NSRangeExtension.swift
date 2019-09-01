@@ -1,7 +1,4 @@
-//
-//  Created by Cihat Gündüz on 11.02.19.
-//  Copyright © 2019 Flinesoft. All rights reserved.
-//
+// Copyright © 2019 Flinesoft. All rights reserved.
 
 import Foundation
 

@@ -1,7 +1,4 @@
-//
-//  Created by Stepanov Pavel on 08/07/2018.
-//  Copyright © 2018 Flinesoft. All rights reserved.
-//
+// Copyright © 2018 Flinesoft. All rights reserved.
 
 @testable import HandySwift
 import XCTest
