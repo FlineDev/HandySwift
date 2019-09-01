@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 ### Added
-- New `Comparable.clamped(to:)` and `Comparable.clamp(to:)` interfaces for any `Comparable`, e. g. `Int`.
+- None.
 ### Changed
 - None.
 ### Deprecated
@@ -16,6 +16,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 - None.
 ### Security
 - None.
+
+## [3.1.0] - 2019-09-01
+### Added
+- New `Comparable.clamped(to:)` and `Comparable.clamp(to:)` interfaces for any `Comparable`, e. g. `Int`.
 
 ## [3.0.0] - 2019-04-30
 ### Added
