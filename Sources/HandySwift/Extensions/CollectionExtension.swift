@@ -22,13 +22,13 @@ extension Sequence where Element: Numeric {
 extension Collection where Element: DivisibleArithmetic {
     /// Returns the average of all elements.
     public func average() -> Element {
-        return reduce(.zero, +) / Element(count)
+        return sum() / Element(count)
     }
 }
 
 extension Collection where Element == Int {
     /// Returns the average of all elements as a Double value.
     public func average<ReturnType: DivisibleArithmetic>() -> ReturnType {
-        return ReturnType(reduce(0, +)) / ReturnType(count)
+        return ReturnType(sum()) / ReturnType(count)
     }
 }
