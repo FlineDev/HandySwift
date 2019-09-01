@@ -11,6 +11,9 @@
 		3F95C8D520F22DEE0045AFD0 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */; };
 		3F95C8D620F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */; };
 		3F95C8D720F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */; };
+		63651F90231BFF2000E022DA /* DivisibleArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63651F8F231BFF2000E022DA /* DivisibleArithmetic.swift */; };
+		63651F91231BFF2000E022DA /* DivisibleArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63651F8F231BFF2000E022DA /* DivisibleArithmetic.swift */; };
+		63651F92231BFF2800E022DA /* DivisibleArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63651F8F231BFF2000E022DA /* DivisibleArithmetic.swift */; };
 		8218E4D62211D193007AAAF3 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */; };
 		8218E4D72211D193007AAAF3 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */; };
 		8218E4D82211D193007AAAF3 /* NSRangeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */; };
@@ -133,6 +136,7 @@
 		2E4189DB231B971E00C65B81 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3F95C8D120F22A3C0045AFD0 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionTests.swift; sourceTree = "<group>"; };
+		63651F8F231BFF2000E022DA /* DivisibleArithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisibleArithmetic.swift; sourceTree = "<group>"; };
 		8218E4D52211D193007AAAF3 /* NSRangeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRangeExtension.swift; sourceTree = "<group>"; };
 		8218E4D92211D270007AAAF3 /* NSRangeExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRangeExtensionTests.swift; sourceTree = "<group>"; };
 		8218E4DD2211D7D3007AAAF3 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				8251AA1F22786D460022B277 /* Withable.swift */,
+				63651F8F231BFF2000E022DA /* DivisibleArithmetic.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -706,6 +711,7 @@
 				82CAE2961C2EE64900F934A7 /* ArrayExtension.swift in Sources */,
 				C5CFB6AC20B0A70300830511 /* Unowned.swift in Sources */,
 				82812A9B1D06877B00CD5B6C /* Globals.swift in Sources */,
+				63651F90231BFF2000E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DC1C4A6EC9001172EF /* DictionaryExtension.swift in Sources */,
 				A11830D31E589F6700CBE087 /* TimeIntervalExtension.swift in Sources */,
 			);
@@ -750,6 +756,7 @@
 				825EFE021C33358400558497 /* SortedArray.swift in Sources */,
 				825EFE031C33358400558497 /* IntExtension.swift in Sources */,
 				82812A9C1D06877B00CD5B6C /* Globals.swift in Sources */,
+				63651F91231BFF2000E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DD1C4A6EC9001172EF /* DictionaryExtension.swift in Sources */,
 				A11830D41E589F6700CBE087 /* TimeIntervalExtension.swift in Sources */,
 			);
@@ -794,6 +801,7 @@
 				825EFE081C33358500558497 /* SortedArray.swift in Sources */,
 				825EFE091C33358500558497 /* IntExtension.swift in Sources */,
 				82812A9D1D06877B00CD5B6C /* Globals.swift in Sources */,
+				63651F92231BFF2800E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DE1C4A6EC9001172EF /* DictionaryExtension.swift in Sources */,
 				A11830D51E589F6700CBE087 /* TimeIntervalExtension.swift in Sources */,
 			);
