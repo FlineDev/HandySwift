@@ -19,16 +19,16 @@ extension Sequence where Element: Numeric {
     }
 }
 
-extension Collection where Element == Int {
-    /// Returns the average of all elements as a Double value.
-    public func average() -> Double {
-        return reduce(0) { $0 + Double($1) } / Double(count)
+extension Collection where Element: DivisibleArithmetic {
+    /// Returns the average of all elements.
+    public func average() -> Element {
+        return sum() / Element(count)
     }
 }
 
-extension Collection where Element == Double {
+extension Collection where Element == Int {
     /// Returns the average of all elements as a Double value.
-    public func average() -> Double {
-        return reduce(0, +) / Double(count)
+    public func average<ReturnType: DivisibleArithmetic>() -> ReturnType {
+        return ReturnType(sum()) / ReturnType(count)
     }
 }
