@@ -8,7 +8,7 @@ public struct SortedArray<Element: Comparable> {
     private var internalArray: [Element]
 
     /// Returns the sorted array of elements.
-    public var array: [Element] { return self.internalArray }
+    public var array: [Element] { self.internalArray }
 
     // MARK: - Initializers
     /// Creates a new, empty array.
@@ -141,7 +141,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameter
     ///   - bounds: A range of the SortedArray's indices. The bounds of the range must be valid indices.
     public subscript(bounds: Range<Int>) -> SortedArray {
-        return SortedArray(sequence: array[bounds], preSorted: true)
+        SortedArray(sequence: array[bounds], preSorted: true)
     }
 }
 
@@ -149,23 +149,23 @@ extension SortedArray: Collection {
     public typealias Index = Array<Element>.Index
 
     public var startIndex: Int {
-        return internalArray.startIndex
+        internalArray.startIndex
     }
 
     public var endIndex: Int {
-        return internalArray.endIndex
+        internalArray.endIndex
     }
 
     public func sorted() -> [Element] {
-        return internalArray
+        internalArray
     }
 
     public func index(after index: Int) -> Int {
-        return internalArray.index(after: index)
+        internalArray.index(after: index)
     }
 
     public subscript(position: Int) -> Element {
-        return internalArray[position]
+        internalArray[position]
     }
 }
 

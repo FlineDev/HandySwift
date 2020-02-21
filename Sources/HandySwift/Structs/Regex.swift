@@ -34,7 +34,7 @@ public struct Regex {
     ///
     /// - returns: `true` if the regular expression matches, otherwise `false`.
     public func matches(_ string: String) -> Bool {
-        return firstMatch(in: string) != nil
+        firstMatch(in: string) != nil
     }
 
     /// If the regex matches `string`, returns a `Match` describing the
@@ -99,7 +99,7 @@ public struct Regex {
 extension Regex: CustomStringConvertible {
     /// Returns a string describing the regex using its pattern string.
     public var description: String {
-        return "Regex<\"\(regularExpression.pattern)\">"
+        "Regex<\"\(regularExpression.pattern)\">"
     }
 }
 
@@ -109,7 +109,7 @@ extension Regex: Equatable {
     /// Two `Regex` are considered equal, if both the pattern string and the options
     /// passed on initialization are equal.
     public static func == (lhs: Regex, rhs: Regex) -> Bool {
-        return lhs.regularExpression.pattern == rhs.regularExpression.pattern &&
+        lhs.regularExpression.pattern == rhs.regularExpression.pattern &&
         lhs.regularExpression.options == rhs.regularExpression.options
     }
 }
@@ -175,12 +175,12 @@ extension Regex {
         // MARK: Properties
         /// The entire matched string.
         public lazy var string: String = {
-            return String(describing: self.baseString[self.range])
+            String(describing: self.baseString[self.range])
         }()
 
         /// The range of the matched string.
         public lazy var range: Range<String.Index> = {
-            return Range(self.result.range, in: self.baseString)!
+            Range(self.result.range, in: self.baseString)!
         }()
 
         /// The matching string for each capture group in the regular expression
@@ -257,7 +257,7 @@ extension Regex {
         // MARK: - CustomStringConvertible
         /// Returns a string describing the match.
         public var description: String {
-            return "Match<\"\(string)\">"
+            "Match<\"\(string)\">"
         }
     }
 }

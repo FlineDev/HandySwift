@@ -15,7 +15,7 @@ public struct FrequencyTable<T> {
 
     // MARK: - Computed Instance Properties
     /// - Returns: A random value taking frequencies into account or nil if values empty.
-    public var sample: T? { return frequentValues.sample }
+    public var sample: T? { frequentValues.sample }
 
     // MARK: - Initializers
     /// Creates a new FrequencyTable instance with values and their frequencies provided.
@@ -25,8 +25,8 @@ public struct FrequencyTable<T> {
     ///   - frequencyClosure: The closure to specify the frequency for a specific value.
     public init(values: [T], frequencyClosure: (T) -> Int) {
         valuesWithFrequencies = values.map { ($0, frequencyClosure($0)) }
-        frequentValues = valuesWithFrequencies.reduce([]) { memo, entry in
-            return memo + Array(repeating: entry.value, count: entry.frequency)
+        frequentValues = valuesWithFrequencies.reduce(into: []) { memo, entry in
+            memo += Array(repeating: entry.value, count: entry.frequency)
         }
     }
 

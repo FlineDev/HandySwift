@@ -4,23 +4,23 @@ import Foundation
 
 extension String {
     /// - Returns: `true` if contains any cahracters other than whitespace or newline characters, else `no`.
-    public var isBlank: Bool { return stripped().isEmpty }
+    public var isBlank: Bool { stripped().isEmpty }
 
     /// Returns a random character from the String.
     ///
     /// - Returns: A random character from the String or `nil` if empty.
     public var sample: Character? {
-        return isEmpty ? nil : self[index(startIndex, offsetBy: Int(randomBelow: count)!)]
+        isEmpty ? nil : self[index(startIndex, offsetBy: Int(randomBelow: count)!)]
     }
 
     /// Returns the range containing the full String.
     public var fullRange: Range<Index> {
-        return startIndex ..< endIndex
+        startIndex ..< endIndex
     }
 
     /// Returns the range as NSRange type for the full String.
     public var fullNSRange: NSRange {
-        return NSRange(fullRange, in: self)
+        NSRange(fullRange, in: self)
     }
 
     /// Create new instance with random numeric/alphabetic/alphanumeric String of given length.
@@ -49,7 +49,7 @@ extension String {
     }
 
     /// - Returns: The string stripped by whitespace and newline characters from beginning and end.
-    public func stripped() -> String { return trimmingCharacters(in: .whitespacesAndNewlines) }
+    public func stripped() -> String { trimmingCharacters(in: .whitespacesAndNewlines) }
 
     /// Returns a given number of random characters from the String.
     ///

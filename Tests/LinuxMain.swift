@@ -4,21 +4,19 @@
 @testable import HandySwiftTests
 import XCTest
 
-// swiftlint:disable line_length file_length
-
 extension ArrayExtensionTests {
     static var allTests: [(String, (ArrayExtensionTests) -> () throws -> Void)] = [
         ("testSample", testSample),
         ("testSampleWithSize", testSampleWithSize),
         ("testCombinationsWithOther", testCombinationsWithOther),
         ("testSortByStable", testSortByStable),
-        ("testSortedByStable", testSortedByStable)
+        ("testSortedByStable", testSortedByStable),
     ]
 }
 
 extension CollectionExtensionTests {
     static var allTests: [(String, (CollectionExtensionTests) -> () throws -> Void)] = [
-        ("testTrySubscript", testTrySubscript)
+        ("testTrySubscript", testTrySubscript),
     ]
 }
 
@@ -27,26 +25,26 @@ extension DictionaryExtensionTests {
         ("testInitWithSameCountKeysAndValues", testInitWithSameCountKeysAndValues),
         ("testInitWithDifferentCountKeysAndValues", testInitWithDifferentCountKeysAndValues),
         ("testMergeOtherDictionary", testMergeOtherDictionary),
-        ("testMergedWithOtherDicrionary", testMergedWithOtherDicrionary)
+        ("testMergedWithOtherDicrionary", testMergedWithOtherDicrionary),
     ]
 }
 
 extension DispatchTimeIntervalExtensionTests {
     static var allTests: [(String, (DispatchTimeIntervalExtensionTests) -> () throws -> Void)] = [
-        ("testTimeInterval", testTimeInterval)
+        ("testTimeInterval", testTimeInterval),
     ]
 }
 
 extension FrequencyTableTests {
     static var allTests: [(String, (FrequencyTableTests) -> () throws -> Void)] = [
         ("testSample", testSample),
-        ("testSampleWithSize", testSampleWithSize)
+        ("testSampleWithSize", testSampleWithSize),
     ]
 }
 
 extension GlobalsTests {
     static var allTests: [(String, (GlobalsTests) -> () throws -> Void)] = [
-        ("testDelayed", testDelayed)
+        ("testDelayed", testDelayed),
     ]
 }
 
@@ -54,7 +52,7 @@ extension IntExtensionTests {
     static var allTests: [(String, (IntExtensionTests) -> () throws -> Void)] = [
         ("testInitRandomBelow", testInitRandomBelow),
         ("testTimesMethod", testTimesMethod),
-        ("testTimesMakeMethod", testTimesMakeMethod)
+        ("testTimesMakeMethod", testTimesMakeMethod),
     ]
 }
 
@@ -74,7 +72,7 @@ extension RegexTests {
         ("testMatchStringApplyingTemplate", testMatchStringApplyingTemplate),
         ("testEquatable", testEquatable),
         ("testRegexCustomStringConvertible", testRegexCustomStringConvertible),
-        ("testMatchCustomStringConvertible", testMatchCustomStringConvertible)
+        ("testMatchCustomStringConvertible", testMatchCustomStringConvertible),
     ]
 }
 
@@ -84,7 +82,7 @@ extension SortedArrayTests {
         ("testFirstMatchingIndex", testFirstMatchingIndex),
         ("testSubArrayToIndex", testSubArrayToIndex),
         ("testSubArrayFromIndex", testSubArrayFromIndex),
-        ("testCollectionFeatures", testCollectionFeatures)
+        ("testCollectionFeatures", testCollectionFeatures),
     ]
 }
 
@@ -94,14 +92,14 @@ extension StringExtensionTests {
         ("testIsBlank", testIsBlank),
         ("testInitRandomWithLengthAllowedCharactersType", testInitRandomWithLengthAllowedCharactersType),
         ("testSample", testSample),
-        ("testSampleWithSize", testSampleWithSize)
+        ("testSampleWithSize", testSampleWithSize),
     ]
 }
 
 extension TimeIntervalExtensionTests {
     static var allTests: [(String, (TimeIntervalExtensionTests) -> () throws -> Void)] = [
         ("testUnitInitialization", testUnitInitialization),
-        ("testUnitConversion", testUnitConversion)
+        ("testUnitConversion", testUnitConversion),
     ]
 }
 
@@ -116,5 +114,5 @@ XCTMain([
     testCase(RegexTests.allTests),
     testCase(SortedArrayTests.allTests),
     testCase(StringExtensionTests.allTests),
-    testCase(TimeIntervalExtensionTests.allTests)
+    testCase(TimeIntervalExtensionTests.allTests),
 ])

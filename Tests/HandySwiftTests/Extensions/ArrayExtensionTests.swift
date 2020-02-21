@@ -8,7 +8,7 @@ class ArrayExtensionTests: XCTestCase {
         let a: Int, b: Int // swiftlint:disable:this identifier_name
 
         static func == (lhs: T, rhs: T) -> Bool {
-            return lhs.a == rhs.a && lhs.b == rhs.b
+            lhs.a == rhs.a && lhs.b == rhs.b
         }
     }
 

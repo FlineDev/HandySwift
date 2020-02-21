@@ -28,6 +28,6 @@ extension Int {
     ///   - closure: The code to deliver a return value multiple times.
     public func timesMake<ReturnType>(_ closure: () -> ReturnType) -> [ReturnType] {
         guard self > 0 else { return [] }
-        return (0 ..< self).map { _ in return closure() }
+        return (0 ..< self).map { _ in closure() }
     }
 }

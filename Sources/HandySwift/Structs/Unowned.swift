@@ -16,7 +16,7 @@ public struct Unowned<Wrapped> where Wrapped: AnyObject {
 extension Unowned: CustomDebugStringConvertible where Wrapped: CustomDebugStringConvertible {
     /// A textual representation of this instance, suitable for debugging.
     public var debugDescription: String {
-        return value.debugDescription
+        value.debugDescription
     }
 }
 
@@ -39,7 +39,7 @@ extension Unowned: Equatable where Wrapped: Equatable {
     ///   - lhs: An optional value to compare.
     ///   - rhs: Another optional value to compare.
     public static func == (lhs: Unowned<Wrapped>, rhs: Unowned<Wrapped>) -> Bool {
-        return lhs.value == rhs.value
+        lhs.value == rhs.value
     }
 }
 

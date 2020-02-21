@@ -129,6 +129,6 @@ extension Array where Element: Comparable {
     /// - Parameters:
     ///   - stable: Speifies if the sorting algorithm should be stable.
     public func sorted(stable: Bool) -> [Element] {
-        return sorted(by: { lhs, rhs in lhs < rhs }, stable: stable)
+        sorted(by: { lhs, rhs in lhs < rhs }, stable: stable)
     }
 }

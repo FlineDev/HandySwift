@@ -47,7 +47,7 @@ public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
 extension Weak: CustomDebugStringConvertible {
     /// A textual representation of this instance, suitable for debugging.
     public var debugDescription: String {
-        return value.debugDescription
+        value.debugDescription
     }
 }
 
@@ -70,7 +70,7 @@ extension Weak: Equatable where Wrapped: Equatable {
     ///   - lhs: An optional value to compare.
     ///   - rhs: Another optional value to compare.
     public static func == (lhs: Weak<Wrapped>, rhs: Weak<Wrapped>) -> Bool {
-        return lhs.value == rhs.value
+        lhs.value == rhs.value
     }
 }
 
