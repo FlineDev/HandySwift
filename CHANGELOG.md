@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ### Added
 - New `DivisibleArithmetic` protocol which easily extends `average()` to Collections of `Double`, `Float` and `CGFloat`.
 ### Changed
-- None.
+- Allow `Int.init?(randomBelow:)` to use an arbitrary RandomNumberGenerator (instead of just the system one).
 ### Deprecated
 - None.
 ### Removed
