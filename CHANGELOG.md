@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [Unreleased]
 ### Added
 - New `DivisibleArithmetic` protocol which easily extends `average()` to Collections of `Double`, `Float` and `CGFloat`.
+- Make most of the API `@inlinable` for increased real-time performance.
 ### Changed
 - None.
 ### Deprecated
