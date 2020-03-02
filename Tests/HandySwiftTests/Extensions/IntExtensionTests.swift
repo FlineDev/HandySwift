@@ -11,6 +11,14 @@ class IntExtensionTests: XCTestCase {
             XCTAssertNil(Int(randomBelow: 0))
             XCTAssertNil(Int(randomBelow: -1))
         }
+
+        var generator = SystemRandomNumberGenerator()
+        10.times {
+            XCTAssertTrue(Int(randomBelow: 15, using: &generator)! < 15)
+            XCTAssertTrue(Int(randomBelow: 15, using: &generator)! >= 0)
+            XCTAssertNil(Int(randomBelow: 0, using: &generator))
+            XCTAssertNil(Int(randomBelow: -1, using: &generator))
+        }
     }
 
     func testTimesMethod() {

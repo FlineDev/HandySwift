@@ -12,6 +12,16 @@ extension Int {
         self = .random(in: 0 ..< upperLimit)
     }
 
+    /// Initializes a new `Int ` instance with a random value below a given `Int`.
+    ///
+    /// - Parameters:
+    ///   - randomBelow: The upper bound value to create a random value with.
+    ///   - generator: The `RandomNumberGenerator` source that should be used to generate random numbers.
+    public init?<Generator: RandomNumberGenerator>(randomBelow upperLimit: Int, using generator: inout Generator) {
+        guard upperLimit > 0 else { return nil }
+        self = .random(in: 0 ..< upperLimit, using: &generator)
+    }
+
     /// Runs the code passed as a closure the specified number of times.
     ///
     /// - Parameters:
