@@ -24,6 +24,7 @@ public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
     ///   of the instance.
     /// - Returns: The result of the given closure. If this instance is `nil`,
     ///   returns `nil`.
+    @inlinable
     public func map<U>(_ transform: (Wrapped) throws -> U) rethrows -> U? {
         guard let value = value else { return nil }
 
@@ -37,6 +38,7 @@ public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
     ///   of the instance.
     /// - Returns: The result of the given closure. If this instance is `nil`,
     ///   returns `nil`.
+    @inlinable
     public func flatMap<U>(_ transform: (Wrapped) throws -> U?) rethrows -> U? {
         guard let value = value else { return nil }
 
