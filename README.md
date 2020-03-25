@@ -8,16 +8,19 @@
         <img src="https://app.bitrise.io/app/cbc4cab821708298/status.svg?token=1fWFE7UCuTBoYTGf4StnFQ&branch=stable"
              alt="Build Status">
     </a>
-    <a href="https://codebeat.co/projects/github-com-flinesoft-handyswift">
-        <img src="https://codebeat.co/badges/283e545d-02e9-4fcf-aabc-40cacfbfe26c"
-             alt="Codebeat Status">
+    <a href="https://www.codacy.com/gh/Flinesoft/HandySwift">
+        <img src="https://api.codacy.com/project/badge/Grade/f15d85eb68244c8f8c35af88ace3cdd0"
+             alt="Code Quality"/>
+    </a>
+    <a href="https://www.codacy.com/gh/Flinesoft/HandySwift">
+        <img src="https://api.codacy.com/project/badge/Coverage/f15d85eb68244c8f8c35af88ace3cdd0"
+             alt="Coverage"/>
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
         <img src="https://img.shields.io/badge/Version-3.1.0-blue.svg"
              alt="Version: 3.1.0">
     </a>
-    <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg"
-         alt="Swift: 5.1">
+    <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg" alt="Swift: 5.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
         alt="Platforms: iOS | tvOS | macOS | Linux">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
