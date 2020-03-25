@@ -6,7 +6,7 @@ import Foundation
 /// `Regex` is a swifty regex engine built on top of the NSRegularExpression api.
 public struct Regex {
     // MARK: - Properties
-    private let regularExpression: NSRegularExpression
+    @usableFromInline internal let regularExpression: NSRegularExpression
 
     // MARK: - Initializers
     /// Create a `Regex` based on a pattern string.
@@ -33,6 +33,7 @@ public struct Regex {
     /// - parameter string: The string to test.
     ///
     /// - returns: `true` if the regular expression matches, otherwise `false`.
+    @inlinable
     public func matches(_ string: String) -> Bool {
         firstMatch(in: string) != nil
     }
@@ -44,6 +45,7 @@ public struct Regex {
     /// - parameter string: The string to match against.
     ///
     /// - returns: An optional `Match` describing the first match, or `nil`.
+    @inlinable
     public func firstMatch(in string: String) -> Match? {
         let firstMatch = regularExpression
             .firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
@@ -58,6 +60,7 @@ public struct Regex {
     /// - parameter string: The string to match against.
     ///
     /// - returns: An array of `Match` describing every match in `string`.
+    @inlinable
     public func matches(in string: String) -> [Match] {
         let matches = regularExpression
             .matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
@@ -82,6 +85,7 @@ public struct Regex {
     ///     - count: The maximum count of matches to replace, beginning with the first match.
     ///
     /// - returns: A string with all matches of `regex` replaced by `template`.
+    @inlinable
     public func replacingMatches(in input: String, with template: String, count: Int? = nil) -> String {
         var output = input
         let matches = self.matches(in: input)
@@ -219,6 +223,7 @@ extension Regex {
         private let baseString: String
 
         // MARK: - Initializers
+        @usableFromInline
         internal init(result: NSTextCheckingResult, in string: String) {
             precondition(
                 result.regularExpression != nil,

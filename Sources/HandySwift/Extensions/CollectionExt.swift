@@ -7,6 +7,7 @@ extension Collection {
     ///
     /// - Parameters:
     ///   - try: The index of the element.
+    @inlinable
     public subscript(try index: Index) -> Element? {
         indices.contains(index) ? self[index] : nil
     }
@@ -14,6 +15,7 @@ extension Collection {
 
 extension Sequence where Element: Numeric {
     /// Returns the sum of all elements.
+    @inlinable
     public func sum() -> Element {
         reduce(0, +)
     }
@@ -21,6 +23,7 @@ extension Sequence where Element: Numeric {
 
 extension Collection where Element: DivisibleArithmetic {
     /// Returns the average of all elements.
+    @inlinable
     public func average() -> Element {
         sum() / Element(count)
     }
@@ -28,6 +31,7 @@ extension Collection where Element: DivisibleArithmetic {
 
 extension Collection where Element == Int {
     /// Returns the average of all elements as a Double value.
+    @inlinable
     public func average<ReturnType: DivisibleArithmetic>() -> ReturnType {
         ReturnType(sum()) / ReturnType(count)
     }

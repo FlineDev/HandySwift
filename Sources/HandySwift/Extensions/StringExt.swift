@@ -56,6 +56,7 @@ extension String {
     /// - Parameters:
     ///   - size: The number of random characters wanted.
     /// - Returns: A String with the given number of random characters or `nil` if empty.
+    @inlinable
     public func sample(size: Int) -> String? {
         guard !isEmpty else { return nil }
 
