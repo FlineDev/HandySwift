@@ -1,14 +1,31 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
+
+<details>
+<summary>Formatting Rules for Entries</summary>
+Each entry should use the following format:
+
+```markdown
+- Summary of what was changed in a single line using past tense & followed by two whitespaces.  
+  Issue: [#0](https://github.com/Flinesoft/HandySwift/issues/0) | PR: [#0](https://github.com/Flinesoft/HandySwift/pull/0) | Author: [Cihat Gündüz](https://github.com/Jeehut)
+```
+
+Note that at the end of the summary line, you need to add two whitespaces (`  `) for correct rendering on GitHub.
+
+If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries separated by `, `. Also, remove entries not needed in the second line.
+</details>
 
 ## [Unreleased]
 ### Added
-- New `DivisibleArithmetic` protocol which easily extends `average()` to Collections of `Double`, `Float` and `CGFloat`.
-- Make most of the API `@inlinable` for increased real-time performance.
+- New `DivisibleArithmetic` protocol which easily extends `average()` to Collections of `Double`, `Float` and `CGFloat`.  
+  Issue: [#36](https://github.com/Flinesoft/HandySwift/issues/36) | PR: [#38](https://github.com/Flinesoft/HandySwift/pull/38) | Author: [David Knothe](https://github.com/knothed)
+- Make most of the API `@inlinable` for increased real-time performance.  
+  Issue: [#40](https://github.com/Flinesoft/HandySwift/issues/40) | PR: [#43](https://github.com/Flinesoft/HandySwift/pull/43) | Author: [David Knothe](https://github.com/knothed)
 ### Changed
-- Allow `Int.init?(randomBelow:)` to use an arbitrary RandomNumberGenerator (instead of just the system one).
+- Allow `Int.init?(randomBelow:)` to use an arbitrary RandomNumberGenerator (instead of just the system one).  
+  PR: [#44](https://github.com/Flinesoft/HandySwift/pull/44) | Author: [David Knothe](https://github.com/knothed)
 ### Deprecated
 - None.
 ### Removed

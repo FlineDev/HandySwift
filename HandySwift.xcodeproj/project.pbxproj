@@ -436,11 +436,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 823B2B451C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "HandySwift iOS" */;
 			buildPhases = (
+				82F967F41C67A68A0003F12A /* SwiftLint */,
 				823B2B2C1C24AAB6007B3CDD /* Sources */,
 				823B2B2D1C24AAB6007B3CDD /* Frameworks */,
 				823B2B2E1C24AAB6007B3CDD /* Headers */,
 				823B2B2F1C24AAB6007B3CDD /* Resources */,
-				82F967F41C67A68A0003F12A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -458,6 +458,7 @@
 				823B2B371C24AAB7007B3CDD /* Sources */,
 				823B2B381C24AAB7007B3CDD /* Frameworks */,
 				823B2B391C24AAB7007B3CDD /* Resources */,
+				2E78897B242B4A8100143348 /* Update LinuxMain.swift */,
 			);
 			buildRules = (
 			);
@@ -473,11 +474,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 825EFDDB1C3333B000558497 /* Build configuration list for PBXNativeTarget "HandySwift macOS" */;
 			buildPhases = (
+				82F967F51C67A69A0003F12A /* SwiftLint */,
 				825EFDC51C3333B000558497 /* Sources */,
 				825EFDC61C3333B000558497 /* Frameworks */,
 				825EFDC71C3333B000558497 /* Headers */,
 				825EFDC81C3333B000558497 /* Resources */,
-				82F967F51C67A69A0003F12A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -495,6 +496,7 @@
 				825EFDCF1C3333B000558497 /* Sources */,
 				825EFDD01C3333B000558497 /* Frameworks */,
 				825EFDD11C3333B000558497 /* Resources */,
+				2E78897C242B4B3D00143348 /* Update LinuxMain.swift */,
 			);
 			buildRules = (
 			);
@@ -510,11 +512,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 825EFDFA1C33351300558497 /* Build configuration list for PBXNativeTarget "HandySwift tvOS" */;
 			buildPhases = (
+				82F967F61C67A6A80003F12A /* SwiftLint */,
 				825EFDE41C33351200558497 /* Sources */,
 				825EFDE51C33351200558497 /* Frameworks */,
 				825EFDE61C33351200558497 /* Headers */,
 				825EFDE71C33351200558497 /* Resources */,
-				82F967F61C67A6A80003F12A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -532,6 +534,7 @@
 				825EFDEE1C33351300558497 /* Sources */,
 				825EFDEF1C33351300558497 /* Frameworks */,
 				825EFDF01C33351300558497 /* Resources */,
+				2E78897D242B4B4100143348 /* Update LinuxMain.swift */,
 			);
 			buildRules = (
 			);
@@ -648,6 +651,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E78897B242B4A8100143348 /* Update LinuxMain.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update LinuxMain.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        sourcery --sources Tests --templates .sourcery/LinuxMain.stencil --output .sourcery --force-parse generated\n        mv .sourcery/LinuxMain.generated.swift Tests/LinuxMain.swift\n    else\n        echo \"warning: Sourcery not installed, download it from https://github.com/krzysztofzablocki/Sourcery\"\n    fi\nfi\n";
+		};
+		2E78897C242B4B3D00143348 /* Update LinuxMain.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update LinuxMain.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        sourcery --sources Tests --templates .sourcery/LinuxMain.stencil --output .sourcery --force-parse generated\n        mv .sourcery/LinuxMain.generated.swift Tests/LinuxMain.swift\n    else\n        echo \"warning: Sourcery not installed, download it from https://github.com/krzysztofzablocki/Sourcery\"\n    fi\nfi\n";
+		};
+		2E78897D242B4B4100143348 /* Update LinuxMain.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update LinuxMain.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        sourcery --sources Tests --templates .sourcery/LinuxMain.stencil --output .sourcery --force-parse generated\n        mv .sourcery/LinuxMain.generated.swift Tests/LinuxMain.swift\n    else\n        echo \"warning: Sourcery not installed, download it from https://github.com/krzysztofzablocki/Sourcery\"\n    fi\nfi\n";
+		};
 		82F967F41C67A68A0003F12A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1013,6 +1070,7 @@
 		823B2B491C24AAB7007B3CDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
@@ -1024,6 +1082,7 @@
 		823B2B4A1C24AAB7007B3CDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";

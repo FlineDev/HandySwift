@@ -16,8 +16,8 @@
         <img src="https://img.shields.io/badge/Version-3.1.0-blue.svg"
              alt="Version: 3.1.0">
     </a>
-    <img src="https://img.shields.io/badge/Swift-5.0-FFAC45.svg"
-         alt="Swift: 5.0">
+    <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg"
+         alt="Swift: 5.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
         alt="Platforms: iOS | tvOS | macOS | Linux">
     <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
@@ -59,7 +59,7 @@ If you like this, please also checkout [HandyUIKit](https://github.com/Flinesoft
 
 ## Installation
 
-Currently the recommended way of installing this library is via [Carthage](https://github.com/Carthage/Carthage) on macOS or [Swift Package Manager](https://github.com/apple/swift-package-manager) on Linux. [Cocoapods](https://github.com/CocoaPods/CocoaPods) might work, too, but is not tested.
+Currently the recommended way of installing this library is via [Swift Package Manager](https://github.com/apple/swift-package-manager). [Carthage](https://github.com/Carthage/Carthage) & [Cocoapods](https://github.com/CocoaPods/CocoaPods) are supported, too.
 
 You can of course also just include this framework manually into your project by downloading it or by using git submodules.
 
@@ -566,7 +566,7 @@ NOTE: Only available for `Int` and `Double` collections.
 ```
 
 ### Withable
-Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free).
+Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free). Supported by all `NSObject` subclasses by default.
 
 ``` swift
 struct Foo: Withable {
@@ -594,7 +594,7 @@ Thank you very much for any donation, it really helps out a lot! 💯
 
 ## Contributing
 
-See the file [CONTRIBUTING.md](https://github.com/Flinesoft/HandySwift/blob/stable/CONTRIBUTING.md).
+Contributions are welcome. Feel free to open an issue on GitHub with your ideas or implement an idea yourself and post a pull request. If you want to contribute code, please try to follow the same syntax and semantic in your **commit messages** (see rationale [here](http://chris.beams.io/posts/git-commit/)). Also, please make sure to add an entry to the `CHANGELOG.md` file which explains your change.
 
 
 ## License
