@@ -12,11 +12,10 @@ class RegexTests: XCTestCase {
     }
 
     func testInvalidInitialization() {
-       do {
+        do {
             _ = try Regex("*")
             XCTFail("Regex initialization unexpectedly didn't fail")
-        } catch {
-        }
+        } catch {}
     }
 
     // MARK: - Options
@@ -98,7 +97,7 @@ class RegexTests: XCTestCase {
         let match1 = regex?.firstMatch(in: "2Needed")
         let match2 = regex?.firstMatch(in: "5NeededOptional")
 
-        enum CapturingError: Error { // swiftlint:disable:this nesting
+        enum CapturingError: Error {
             case indexTooHigh
             case noMatch
         }
@@ -120,7 +119,7 @@ class RegexTests: XCTestCase {
 
             XCTAssertEqual(match1Capture0, "2")
             XCTAssertEqual(match1Capture1, "Needed")
-            XCTAssertEqual(match1Capture2, nil)
+            XCTAssertNil(match1Capture2)
 
             XCTAssertEqual(match2Capture0, "5")
             XCTAssertEqual(match2Capture1, "Needed")

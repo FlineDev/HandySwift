@@ -5,7 +5,7 @@ import Foundation
 @testable import HandySwift
 import XCTest
 
-class ComparableExtensionTests: XCTestCase {
+class ComparableExtTests: XCTestCase {
     // MARK: Returning Variants
     func testClampedClosedRange() {
         let myNum = 3

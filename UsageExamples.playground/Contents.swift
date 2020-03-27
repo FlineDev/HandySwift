@@ -128,10 +128,12 @@ arrayForTry[try: 20]
 [0.5, 1.5, 2.5].sum()
 
 //: ### .average()
-//: Returns the average of all elements as a Double value.
-//: NOTE: Only available for `Int` and `Double` collections.
+//: Returns the average of all elements.
+//: NOTE: For `Int` collections, the average is returned alternatively as a `Double`, `Float` or `CGFloat` value.
 [10, 20, 30, 40].average()
 [10.75, 20.75, 30.25, 40.25].average()
+let averageAsFloat: Float = [10, 20, 30, 40].average()
+averageAsFloat
 
 //: ## DictionaryExtension
 //: ### init?(keys:values:)

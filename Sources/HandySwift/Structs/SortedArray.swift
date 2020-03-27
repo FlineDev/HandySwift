@@ -5,10 +5,10 @@ import Foundation
 /// Data structure to keep a sorted array of elements for fast access.
 public struct SortedArray<Element: Comparable> {
     // MARK: - Stored Instance Properties
-    private var internalArray: [Element]
+    @usableFromInline internal var internalArray: [Element]
 
     /// Returns the sorted array of elements.
-    public var array: [Element] { return self.internalArray }
+    public var array: [Element] { self.internalArray }
 
     // MARK: - Initializers
     /// Creates a new, empty array.
@@ -30,7 +30,8 @@ public struct SortedArray<Element: Comparable> {
         self.init(sequence: sequence, preSorted: false)
     }
 
-    private init<S: Sequence>(sequence: S, preSorted: Bool) where S.Iterator.Element == Element {
+    @usableFromInline
+    internal init<S: Sequence>(sequence: S, preSorted: Bool) where S.Iterator.Element == Element {
         internalArray = preSorted ? Array(sequence) : Array(sequence).sorted()
     }
 
@@ -43,6 +44,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - predicate: The predicate to match the elements against.
     /// - Returns: The index of the first matching element or `nil` if none of them matches.
+    @inlinable
     public func index(where predicate: (Element) -> Bool) -> Int? {
         // cover trivial cases
         guard !array.isEmpty else { return nil }
@@ -75,6 +77,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - index: The upper bound index until which to include elements.
     /// - Returns: A new SortedArray instance including all elements until the specified index (exluding it).
+    @inlinable
     public func prefix(upTo index: Int) -> SortedArray {
         let subarray = Array(array[array.indices.prefix(upTo: index)])
         return SortedArray(sequence: subarray, preSorted: true)
@@ -87,6 +90,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - index: The upper bound index until which to include elements.
     /// - Returns: A new SortedArray instance including all elements until the specified index (including it).
+    @inlinable
     public func prefix(through index: Int) -> SortedArray {
         let subarray = Array(array[array.indices.prefix(through: index)])
         return SortedArray(sequence: subarray, preSorted: true)
@@ -99,6 +103,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - index: The lower bound index from which to start including elements.
     /// - Returns: A new SortedArray instance including all elements starting at the specified index.
+    @inlinable
     public func suffix(from index: Int) -> SortedArray {
         let subarray = Array(array[array.indices.suffix(from: index)])
         return SortedArray(sequence: subarray, preSorted: true)
@@ -111,6 +116,7 @@ public struct SortedArray<Element: Comparable> {
     ///
     /// - Parameters:
     ///   - newElement: The new element to be inserted into the array.
+    @inlinable
     public mutating func insert(newElement: Element) {
         let insertIndex = internalArray.firstIndex { $0 >= newElement } ?? internalArray.endIndex
         internalArray.insert(newElement, at: insertIndex)
@@ -122,6 +128,7 @@ public struct SortedArray<Element: Comparable> {
     ///
     /// - Parameters:
     ///   - sequence
+    @inlinable
     public mutating func insert<S: Sequence>(contentsOf sequence: S) where S.Iterator.Element == Element {
         sequence.forEach { insert(newElement: $0) }
     }
@@ -132,6 +139,7 @@ public struct SortedArray<Element: Comparable> {
     ///
     /// - Parameters:
     ///   - index: The index of the element to remove from the sorted array.
+    @inlinable
     public mutating func remove(at index: Int) {
         internalArray.remove(at: index)
     }
@@ -140,32 +148,36 @@ public struct SortedArray<Element: Comparable> {
     ///
     /// - Parameter
     ///   - bounds: A range of the SortedArray's indices. The bounds of the range must be valid indices.
+    @inlinable
     public subscript(bounds: Range<Int>) -> SortedArray {
-        return SortedArray(sequence: array[bounds], preSorted: true)
+        SortedArray(sequence: array[bounds], preSorted: true)
     }
 }
 
 extension SortedArray: Collection {
     public typealias Index = Array<Element>.Index
 
-    public var startIndex: Int {
-        return internalArray.startIndex
+    @inlinable public var startIndex: Int {
+        internalArray.startIndex
     }
 
-    public var endIndex: Int {
-        return internalArray.endIndex
+    @inlinable public var endIndex: Int {
+        internalArray.endIndex
     }
 
+    @inlinable
     public func sorted() -> [Element] {
-        return internalArray
+        internalArray
     }
 
+    @inlinable
     public func index(after index: Int) -> Int {
-        return internalArray.index(after: index)
+        internalArray.index(after: index)
     }
 
+    @inlinable
     public subscript(position: Int) -> Element {
-        return internalArray[position]
+        internalArray[position]
     }
 }
 

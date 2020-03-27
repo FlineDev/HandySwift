@@ -13,6 +13,7 @@ extension Array {
     /// - Parameters:
     ///   - other: Other array to combine the elements with.
     /// - Returns: An array of tuples with the elements of both arrays combined.
+    @inlinable
     public func combinations<T>(with other: [T]) -> [Combination<T>] {
         var combinations = [(Element, T)]()
         forEach { elem in other.forEach { otherElem in combinations.append((elem, otherElem)) } }
@@ -27,6 +28,7 @@ extension Array {
     /// - Parameters:
     ///   - stable: Speifies if the sorting algorithm should be stable.
     ///   - areInIncreasingOrder: The closure to specify the order of the elements to be sorted by.
+    @inlinable
     public mutating func sort(by areInIncreasingOrder: @escaping (Element, Element) -> Bool, stable: Bool) {
         guard stable else { sort(by: areInIncreasingOrder); return }
         stableMergeSort(by: areInIncreasingOrder)
@@ -39,6 +41,7 @@ extension Array {
     /// - Parameters:
     ///   - stable: Speifies if the sorting algorithm should be stable.
     ///   - areInIncreasingOrder: The closure to specify the order of the elements to be sorted by.
+    @inlinable
     public func sorted(by areInIncreasingOrder: @escaping (Element, Element) -> Bool, stable: Bool) -> [Element] {
         guard stable else { return sorted(by: areInIncreasingOrder) }
 
@@ -49,6 +52,7 @@ extension Array {
     }
 
     /// Sorts the array in-place using a stable merge sort algorithm.
+    @inlinable
     mutating func stableMergeSort(by areInIncreasingOrder: @escaping (Element, Element) -> Bool) {
         var tmp = [Element]()
         tmp.reserveCapacity(numericCast(count))
@@ -91,7 +95,7 @@ extension RandomAccessCollection where Index == Int {
     /// Returns a random element from the `Array`.
     ///
     /// - Returns: A random element from the array or `nil` if empty.
-    public var sample: Element? {
+    @inlinable public var sample: Element? {
         guard let randomIndex = Int(randomBelow: count) else { return nil }
         return self[randomIndex]
     }
@@ -101,6 +105,7 @@ extension RandomAccessCollection where Index == Int {
     /// - Parameters:
     ///   - size: The number of random elements wanted.
     /// - Returns: An array with the given number of random elements or `nil` if empty.
+    @inlinable
     public func sample(size: Int) -> [Element]? {
         guard !isEmpty else { return nil }
 
@@ -118,6 +123,7 @@ extension Array where Element: Comparable {
     ///
     /// - Parameters:
     ///   - stable: Speifies if the sorting algorithm should be stable.
+    @inlinable
     public mutating func sort(stable: Bool) {
         sort(by: { lhs, rhs in  lhs < rhs }, stable: stable)
     }
@@ -128,7 +134,8 @@ extension Array where Element: Comparable {
     ///
     /// - Parameters:
     ///   - stable: Speifies if the sorting algorithm should be stable.
+    @inlinable
     public func sorted(stable: Bool) -> [Element] {
-        return sorted(by: { lhs, rhs in lhs < rhs }, stable: stable)
+        sorted(by: { lhs, rhs in lhs < rhs }, stable: stable)
     }
 }

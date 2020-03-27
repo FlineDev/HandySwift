@@ -3,7 +3,7 @@
 @testable import HandySwift
 import XCTest
 
-class DispatchTimeIntervalExtensionTests: XCTestCase {
+class DispatchTimeIntervalExtTests: XCTestCase {
     func testTimeInterval() {
         let dispatchTimeInterval = DispatchTimeInterval.milliseconds(500)
         let timeInterval = dispatchTimeInterval.timeInterval

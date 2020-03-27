@@ -3,12 +3,12 @@
 @testable import HandySwift
 import XCTest
 
-class ArrayExtensionTests: XCTestCase {
+class ArrayExtTests: XCTestCase {
     struct T: Equatable { // swiftlint:disable:this type_name
         let a: Int, b: Int // swiftlint:disable:this identifier_name
 
         static func == (lhs: T, rhs: T) -> Bool {
-            return lhs.a == rhs.a && lhs.b == rhs.b
+            lhs.a == rhs.a && lhs.b == rhs.b
         }
     }
 

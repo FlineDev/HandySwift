@@ -1,4 +1,4 @@
-// Generated using Sourcery 0.15.0 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 0.17.0 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 @testable import HandySwiftTests
@@ -6,8 +6,8 @@ import XCTest
 
 // swiftlint:disable line_length file_length
 
-extension ArrayExtensionTests {
-    static var allTests: [(String, (ArrayExtensionTests) -> () throws -> Void)] = [
+extension ArrayExtTests {
+    static var allTests: [(String, (ArrayExtTests) -> () throws -> Void)] = [
         ("testSample", testSample),
         ("testSampleWithSize", testSampleWithSize),
         ("testCombinationsWithOther", testCombinationsWithOther),
@@ -16,14 +16,27 @@ extension ArrayExtensionTests {
     ]
 }
 
-extension CollectionExtensionTests {
-    static var allTests: [(String, (CollectionExtensionTests) -> () throws -> Void)] = [
-        ("testTrySubscript", testTrySubscript)
+extension CollectionExtTests {
+    static var allTests: [(String, (CollectionExtTests) -> () throws -> Void)] = [
+        ("testTrySubscript", testTrySubscript),
+        ("testSum", testSum),
+        ("testAverage", testAverage)
     ]
 }
 
-extension DictionaryExtensionTests {
-    static var allTests: [(String, (DictionaryExtensionTests) -> () throws -> Void)] = [
+extension ComparableExtTests {
+    static var allTests: [(String, (ComparableExtTests) -> () throws -> Void)] = [
+        ("testClampedClosedRange", testClampedClosedRange),
+        ("testClampedPartialRangeFrom", testClampedPartialRangeFrom),
+        ("testClampedPartialRangeThrough", testClampedPartialRangeThrough),
+        ("testClampClosedRange", testClampClosedRange),
+        ("testClampPartialRangeFrom", testClampPartialRangeFrom),
+        ("testClampPartialRangeThrough", testClampPartialRangeThrough)
+    ]
+}
+
+extension DictionaryExtTests {
+    static var allTests: [(String, (DictionaryExtTests) -> () throws -> Void)] = [
         ("testInitWithSameCountKeysAndValues", testInitWithSameCountKeysAndValues),
         ("testInitWithDifferentCountKeysAndValues", testInitWithDifferentCountKeysAndValues),
         ("testMergeOtherDictionary", testMergeOtherDictionary),
@@ -31,8 +44,8 @@ extension DictionaryExtensionTests {
     ]
 }
 
-extension DispatchTimeIntervalExtensionTests {
-    static var allTests: [(String, (DispatchTimeIntervalExtensionTests) -> () throws -> Void)] = [
+extension DispatchTimeIntervalExtTests {
+    static var allTests: [(String, (DispatchTimeIntervalExtTests) -> () throws -> Void)] = [
         ("testTimeInterval", testTimeInterval)
     ]
 }
@@ -50,11 +63,23 @@ extension GlobalsTests {
     ]
 }
 
-extension IntExtensionTests {
-    static var allTests: [(String, (IntExtensionTests) -> () throws -> Void)] = [
+extension IntExtTests {
+    static var allTests: [(String, (IntExtTests) -> () throws -> Void)] = [
         ("testInitRandomBelow", testInitRandomBelow),
         ("testTimesMethod", testTimesMethod),
         ("testTimesMakeMethod", testTimesMakeMethod)
+    ]
+}
+
+extension NSObjectExtTests {
+    static var allTests: [(String, (NSObjectExtTests) -> () throws -> Void)] = [
+        ("testWith", testWith)
+    ]
+}
+
+extension NSRangeExtTests {
+    static var allTests: [(String, (NSRangeExtTests) -> () throws -> Void)] = [
+        ("testInitWithSwiftRange", testInitWithSwiftRange)
     ]
 }
 
@@ -88,33 +113,45 @@ extension SortedArrayTests {
     ]
 }
 
-extension StringExtensionTests {
-    static var allTests: [(String, (StringExtensionTests) -> () throws -> Void)] = [
+extension StringExtTests {
+    static var allTests: [(String, (StringExtTests) -> () throws -> Void)] = [
         ("testStrip", testStrip),
         ("testIsBlank", testIsBlank),
         ("testInitRandomWithLengthAllowedCharactersType", testInitRandomWithLengthAllowedCharactersType),
         ("testSample", testSample),
-        ("testSampleWithSize", testSampleWithSize)
+        ("testSampleWithSize", testSampleWithSize),
+        ("testFullRange", testFullRange)
     ]
 }
 
-extension TimeIntervalExtensionTests {
-    static var allTests: [(String, (TimeIntervalExtensionTests) -> () throws -> Void)] = [
+extension TimeIntervalExtTests {
+    static var allTests: [(String, (TimeIntervalExtTests) -> () throws -> Void)] = [
         ("testUnitInitialization", testUnitInitialization),
         ("testUnitConversion", testUnitConversion)
     ]
 }
 
+extension WithableTests {
+    static var allTests: [(String, (WithableTests) -> () throws -> Void)] = [
+        ("testInitWith", testInitWith),
+        ("testWith", testWith)
+    ]
+}
+
 XCTMain([
-    testCase(ArrayExtensionTests.allTests),
-    testCase(CollectionExtensionTests.allTests),
-    testCase(DictionaryExtensionTests.allTests),
-    testCase(DispatchTimeIntervalExtensionTests.allTests),
+    testCase(ArrayExtTests.allTests),
+    testCase(CollectionExtTests.allTests),
+    testCase(ComparableExtTests.allTests),
+    testCase(DictionaryExtTests.allTests),
+    testCase(DispatchTimeIntervalExtTests.allTests),
     testCase(FrequencyTableTests.allTests),
     testCase(GlobalsTests.allTests),
-    testCase(IntExtensionTests.allTests),
+    testCase(IntExtTests.allTests),
+    testCase(NSObjectExtTests.allTests),
+    testCase(NSRangeExtTests.allTests),
     testCase(RegexTests.allTests),
     testCase(SortedArrayTests.allTests),
-    testCase(StringExtensionTests.allTests),
-    testCase(TimeIntervalExtensionTests.allTests)
+    testCase(StringExtTests.allTests),
+    testCase(TimeIntervalExtTests.allTests),
+    testCase(WithableTests.allTests)
 ])

@@ -6,7 +6,7 @@ import Foundation
 /// `Regex` is a swifty regex engine built on top of the NSRegularExpression api.
 public struct Regex {
     // MARK: - Properties
-    private let regularExpression: NSRegularExpression
+    @usableFromInline internal let regularExpression: NSRegularExpression
 
     // MARK: - Initializers
     /// Create a `Regex` based on a pattern string.
@@ -33,8 +33,9 @@ public struct Regex {
     /// - parameter string: The string to test.
     ///
     /// - returns: `true` if the regular expression matches, otherwise `false`.
+    @inlinable
     public func matches(_ string: String) -> Bool {
-        return firstMatch(in: string) != nil
+        firstMatch(in: string) != nil
     }
 
     /// If the regex matches `string`, returns a `Match` describing the
@@ -44,6 +45,7 @@ public struct Regex {
     /// - parameter string: The string to match against.
     ///
     /// - returns: An optional `Match` describing the first match, or `nil`.
+    @inlinable
     public func firstMatch(in string: String) -> Match? {
         let firstMatch = regularExpression
             .firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
@@ -58,6 +60,7 @@ public struct Regex {
     /// - parameter string: The string to match against.
     ///
     /// - returns: An array of `Match` describing every match in `string`.
+    @inlinable
     public func matches(in string: String) -> [Match] {
         let matches = regularExpression
             .matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
@@ -82,6 +85,7 @@ public struct Regex {
     ///     - count: The maximum count of matches to replace, beginning with the first match.
     ///
     /// - returns: A string with all matches of `regex` replaced by `template`.
+    @inlinable
     public func replacingMatches(in input: String, with template: String, count: Int? = nil) -> String {
         var output = input
         let matches = self.matches(in: input)
@@ -99,7 +103,7 @@ public struct Regex {
 extension Regex: CustomStringConvertible {
     /// Returns a string describing the regex using its pattern string.
     public var description: String {
-        return "Regex<\"\(regularExpression.pattern)\">"
+        "Regex<\"\(regularExpression.pattern)\">"
     }
 }
 
@@ -109,7 +113,7 @@ extension Regex: Equatable {
     /// Two `Regex` are considered equal, if both the pattern string and the options
     /// passed on initialization are equal.
     public static func == (lhs: Regex, rhs: Regex) -> Bool {
-        return lhs.regularExpression.pattern == rhs.regularExpression.pattern &&
+        lhs.regularExpression.pattern == rhs.regularExpression.pattern &&
         lhs.regularExpression.options == rhs.regularExpression.options
     }
 }
@@ -175,12 +179,12 @@ extension Regex {
         // MARK: Properties
         /// The entire matched string.
         public lazy var string: String = {
-            return String(describing: self.baseString[self.range])
+            String(describing: self.baseString[self.range])
         }()
 
         /// The range of the matched string.
         public lazy var range: Range<String.Index> = {
-            return Range(self.result.range, in: self.baseString)!
+            Range(self.result.range, in: self.baseString)!
         }()
 
         /// The matching string for each capture group in the regular expression
@@ -219,6 +223,7 @@ extension Regex {
         private let baseString: String
 
         // MARK: - Initializers
+        @usableFromInline
         internal init(result: NSTextCheckingResult, in string: String) {
             precondition(
                 result.regularExpression != nil,
@@ -257,7 +262,7 @@ extension Regex {
         // MARK: - CustomStringConvertible
         /// Returns a string describing the match.
         public var description: String {
-            return "Match<\"\(string)\">"
+            "Match<\"\(string)\">"
         }
     }
 }

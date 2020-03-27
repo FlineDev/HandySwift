@@ -8,12 +8,14 @@ public protocol Withable {
 
 extension Withable {
     /// Construct a new instance, setting an arbitrary subset of properties.
+    @inlinable
     public init(with config: (inout Self) -> Void) {
         self.init()
         config(&self)
     }
 
     /// Create a copy, overriding an arbitrary subset of properties.
+    @inlinable
     public func with(_ config: (inout Self) -> Void) -> Self {
         var copy = self
         config(&copy)

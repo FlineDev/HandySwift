@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HandySwift"
-  s.version      = "3.1.0"
+  s.version      = "3.2.0"
   s.summary      = "Handy Swift features that didn't make it into the Swift standard library"
 
   s.description  = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "Cihat Gündüz" => "cocoapods@cihatguenduez.de" }
-  s.social_media_url   = "https://twitter.com/Dschee"
+  s.social_media_url   = "https://twitter.com/Jeehut"
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
@@ -23,6 +23,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/Flinesoft/HandySwift.git", :tag => "#{s.version}" }
   s.source_files = "Sources/HandySwift/**/*.swift"
   s.framework    = "Foundation"
-  s.swift_version = "5.0"
+  s.swift_version = "5.1"
 
 end

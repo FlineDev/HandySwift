@@ -7,82 +7,89 @@ public typealias Timespan = TimeInterval
 
 extension TimeInterval {
     // MARK: - Computed Type Properties
-    internal static var secondsPerDay: Double { return 24 * 60 * 60 }
-    internal static var secondsPerHour: Double { return 60 * 60 }
-    internal static var secondsPerMinute: Double { return 60 }
-    internal static var millisecondsPerSecond: Double { return 1_000 }
-    internal static var microsecondsPerSecond: Double { return 1_000 * 1_000 }
-    internal static var nanosecondsPerSecond: Double { return 1_000 * 1_000 * 1_000 }
+    @usableFromInline internal static var secondsPerDay: Double { 24 * 60 * 60 }
+    @usableFromInline internal static var secondsPerHour: Double { 60 * 60 }
+    @usableFromInline internal static var secondsPerMinute: Double { 60 }
+    @usableFromInline internal static var millisecondsPerSecond: Double { 1_000 }
+    @usableFromInline internal static var microsecondsPerSecond: Double { 1_000 * 1_000 }
+    @usableFromInline internal static var nanosecondsPerSecond: Double { 1_000 * 1_000 * 1_000 }
 
     // MARK: - Computed Instance Properties
     /// - Returns: The `TimeInterval` in days.
-    public var days: Double {
-        return self / TimeInterval.secondsPerDay
+    @inlinable public var days: Double {
+        self / TimeInterval.secondsPerDay
     }
 
     /// - Returns: The `TimeInterval` in hours.
-    public var hours: Double {
-        return self / TimeInterval.secondsPerHour
+    @inlinable public var hours: Double {
+        self / TimeInterval.secondsPerHour
     }
 
     /// - Returns: The `TimeInterval` in minutes.
-    public var minutes: Double {
-        return self / TimeInterval.secondsPerMinute
+    @inlinable public var minutes: Double {
+        self / TimeInterval.secondsPerMinute
     }
 
     /// - Returns: The `TimeInterval` in seconds.
-    public var seconds: Double {
-        return self
+    @inlinable public var seconds: Double {
+        self
     }
 
     /// - Returns: The `TimeInterval` in milliseconds.
-    public var milliseconds: Double {
-        return self * TimeInterval.millisecondsPerSecond
+    @inlinable public var milliseconds: Double {
+        self * TimeInterval.millisecondsPerSecond
     }
 
     /// - Returns: The `TimeInterval` in microseconds.
-    public var microseconds: Double {
-        return self * TimeInterval.microsecondsPerSecond
+    @inlinable public var microseconds: Double {
+        self * TimeInterval.microsecondsPerSecond
     }
 
     /// - Returns: The `TimeInterval` in nanoseconds.
-    public var nanoseconds: Double {
-        return self * TimeInterval.nanosecondsPerSecond
+    @inlinable public var nanoseconds: Double {
+        self * TimeInterval.nanosecondsPerSecond
     }
 
     // MARK: - Type Methods
     /// - Returns: The time in days using the `TimeInterval` type.
+    @inlinable
     public static func days(_ value: Double) -> TimeInterval {
-        return value * secondsPerDay
+        value * secondsPerDay
     }
 
     /// - Returns: The time in hours using the `TimeInterval` type.
+    @inlinable
     public static func hours(_ value: Double) -> TimeInterval {
-        return value * secondsPerHour
+        value * secondsPerHour
     }
 
     /// - Returns: The time in minutes using the `TimeInterval` type.
+    @inlinable
     public static func minutes(_ value: Double) -> TimeInterval {
-        return value * secondsPerMinute
+        value * secondsPerMinute
     }
 
     /// - Returns: The time in seconds using the `TimeInterval` type.
+    @inlinable
     public static func seconds(_ value: Double) -> TimeInterval {
-        return value
+        value
     }
 
     /// - Returns: The time in milliseconds using the `TimeInterval` type.
+    @inlinable
     public static func milliseconds(_ value: Double) -> TimeInterval {
-        return value / millisecondsPerSecond
+        value / millisecondsPerSecond
     }
 
     /// - Returns: The time in microseconds using the `TimeInterval` type.
+    @inlinable
     public static func microseconds(_ value: Double) -> TimeInterval {
-        return value / microsecondsPerSecond
+        value / microsecondsPerSecond
     }
 
     /// - Returns: The time in nanoseconds using the `TimeInterval` type.
+    @inlinable
     public static func nanoseconds(_ value: Double) -> TimeInterval {
-        return value / nanosecondsPerSecond
+        value / nanosecondsPerSecond
     }
 }

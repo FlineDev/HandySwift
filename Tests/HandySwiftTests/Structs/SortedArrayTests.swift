@@ -49,13 +49,13 @@ class SortedArrayTests: XCTestCase {
     func testCollectionFeatures() {
         let intArray: [Int] = [5, 6, 7, 8, 9, 0, 1, 2, 3, 4]
         let sortedIntArray = SortedArray(intArray)
-        let expectedElementsSum = intArray.reduce(0) { result, element in return result + element }
+        let expectedElementsSum = intArray.reduce(0) { result, element in result + element }
 
         var forEachElementsSum = 0
         sortedIntArray.forEach { forEachElementsSum += $0 }
         XCTAssertEqual(forEachElementsSum, expectedElementsSum)
 
-        let reduceElementsSum = sortedIntArray.reduce(0) { result, element in return result + element }
+        let reduceElementsSum = sortedIntArray.reduce(0) { result, element in result + element }
         XCTAssertEqual(reduceElementsSum, expectedElementsSum)
 
         let increasedByOneSortedArray = sortedIntArray.map { $0 + 1 }
