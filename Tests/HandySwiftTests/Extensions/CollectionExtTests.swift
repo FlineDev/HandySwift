@@ -28,13 +28,17 @@ class CollectionExtTests: XCTestCase {
         let intArray = [1, 2, 10]
         XCTAssertEqual(intArray.average(), 4.333, accuracy: 0.001)
 
-        let averageAsCGFloat: CGFloat = intArray.average()
-        XCTAssertEqual(averageAsCGFloat, 4.333, accuracy: 0.001)
+        #if canImport(CoreGraphics)
+            let averageAsCGFloat: CGFloat = intArray.average()
+            XCTAssertEqual(averageAsCGFloat, 4.333, accuracy: 0.001)
+        #endif
 
         let doubleArray = [1.0, 2.0, 10.0]
         XCTAssertEqual(doubleArray.average(), 4.333, accuracy: 0.001)
 
-        let cgFloatArray: [CGFloat] = [1.0, 2.0, 10.0]
-        XCTAssertEqual(cgFloatArray.average(), 4.333, accuracy: 0.001)
+        #if canImport(CoreGraphics)
+            let cgFloatArray: [CGFloat] = [1.0, 2.0, 10.0]
+            XCTAssertEqual(cgFloatArray.average(), 4.333, accuracy: 0.001)
+        #endif
     }
 }
