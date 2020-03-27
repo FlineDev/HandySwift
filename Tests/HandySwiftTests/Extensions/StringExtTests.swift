@@ -3,7 +3,7 @@
 @testable import HandySwift
 import XCTest
 
-class StringExtensionTests: XCTestCase {
+class StringExtTests: XCTestCase {
     func testStrip() {
         let whitespaceString = " \n\t BB-8 likes Rey \t\n "
         XCTAssertEqual(whitespaceString.stripped(), "BB-8 likes Rey")

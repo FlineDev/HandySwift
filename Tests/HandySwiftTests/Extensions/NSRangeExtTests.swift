@@ -3,7 +3,7 @@
 @testable import HandySwift
 import XCTest
 
-class NSRangeExtensionTests: XCTestCase {
+class NSRangeExtTests: XCTestCase {
     func testInitWithSwiftRange() {
         let testStrings = ["Simple String", "👪 👨‍👩‍👦 👨‍👩‍👧 👨‍👩‍👧‍👦 👨‍👩‍👦‍👦 👨‍👩‍👧‍👧 👨‍👨‍👦 👨‍👨‍👧 👨‍👨‍👧‍👦 👨‍👨‍👦‍👦 👨‍👨‍👧‍👧 👩‍👩‍👦 👩‍👩‍👧 👩‍👩‍👧‍👦 👩‍👩‍👦‍👦 👩‍👩‍👧‍👧"]
 

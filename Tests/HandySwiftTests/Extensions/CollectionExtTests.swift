@@ -3,7 +3,7 @@
 @testable import HandySwift
 import XCTest
 
-class CollectionExtensionTests: XCTestCase {
+class CollectionExtTests: XCTestCase {
     func testTrySubscript() {
         let testArray = [0, 1, 2, 3, 20]
 
