@@ -1,11 +1,11 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Flinesoft/HandySwift/stable/Logo.png"
+    <img src="https://raw.githubusercontent.com/Flinesoft/HandySwift/main/Logo.png"
       width=600>
 </p>
 
 <p align="center">
     <a href="https://app.bitrise.io/app/cbc4cab821708298">
-        <img src="https://app.bitrise.io/app/cbc4cab821708298/status.svg?token=1fWFE7UCuTBoYTGf4StnFQ&branch=stable"
+        <img src="https://app.bitrise.io/app/cbc4cab821708298/status.svg?token=1fWFE7UCuTBoYTGf4StnFQ&branch=main"
              alt="Build Status">
     </a>
     <a href="https://www.codacy.com/gh/Flinesoft/HandySwift">
@@ -23,7 +23,7 @@
     <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg" alt="Swift: 5.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
         alt="Platforms: iOS | tvOS | macOS | Linux">
-    <a href="https://github.com/Flinesoft/HandySwift/blob/stable/LICENSE.md">
+    <a href="https://github.com/Flinesoft/HandySwift/blob/main/LICENSE.md">
         <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
               alt="License: MIT">
     </a>
