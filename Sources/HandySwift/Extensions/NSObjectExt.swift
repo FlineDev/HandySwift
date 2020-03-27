@@ -2,4 +2,6 @@
 
 import Foundation
 
-extension NSObject: Withable {}
+#if !os(Linux)
+    extension NSObject: Withable {}
+#endif

@@ -3,7 +3,7 @@
 @testable import HandySwift
 import XCTest
 
-class IntExtensionTests: XCTestCase {
+class IntExtTests: XCTestCase {
     func testInitRandomBelow() {
         10.times {
             XCTAssertTrue(Int(randomBelow: 15)! < 15)

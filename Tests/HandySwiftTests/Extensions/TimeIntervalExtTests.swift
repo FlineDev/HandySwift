@@ -3,7 +3,7 @@
 @testable import HandySwift
 import XCTest
 
-class TimeIntervalExtensionTests: XCTestCase {
+class TimeIntervalExtTests: XCTestCase {
     func testUnitInitialization() {
         XCTAssertEqual(Timespan.days(0.5), 12 * 60 * 60, accuracy: 0.001)
         XCTAssertEqual(Timespan.hours(0.5), 30 * 60, accuracy: 0.001)
