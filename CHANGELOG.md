@@ -19,13 +19,9 @@ If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries se
 
 ## [Unreleased]
 ### Added
-- New `DivisibleArithmetic` protocol which easily extends `average()` to Collections of `Double`, `Float` and `CGFloat`.  
-  Issue: [#36](https://github.com/Flinesoft/HandySwift/issues/36) | PR: [#38](https://github.com/Flinesoft/HandySwift/pull/38) | Author: [David Knothe](https://github.com/knothed)
-- Make most of the API `@inlinable` for increased real-time performance.  
-  Issue: [#40](https://github.com/Flinesoft/HandySwift/issues/40) | PR: [#43](https://github.com/Flinesoft/HandySwift/pull/43) | Author: [David Knothe](https://github.com/knothed)
+- None.
 ### Changed
-- Allow `Int.init?(randomBelow:)` to use an arbitrary RandomNumberGenerator (instead of just the system one).  
-  PR: [#44](https://github.com/Flinesoft/HandySwift/pull/44) | Author: [David Knothe](https://github.com/knothed)
+- None.
 ### Deprecated
 - None.
 ### Removed
@@ -34,6 +30,16 @@ If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries se
 - None.
 ### Security
 - None.
+
+## [3.2.0] - 2020-03-27
+### Added
+- New `DivisibleArithmetic` protocol which easily extends `average()` to Collections of `Double`, `Float` and `CGFloat`.  
+  Issue: [#36](https://github.com/Flinesoft/HandySwift/issues/36) | PR: [#38](https://github.com/Flinesoft/HandySwift/pull/38) | Author: [David Knothe](https://github.com/knothed)
+- Make most of the API `@inlinable` for increased real-time performance.  
+  Issue: [#40](https://github.com/Flinesoft/HandySwift/issues/40) | PR: [#43](https://github.com/Flinesoft/HandySwift/pull/43) | Author: [David Knothe](https://github.com/knothed)
+### Changed
+- Allow `Int.init?(randomBelow:)` to use an arbitrary RandomNumberGenerator (instead of just the system one).  
+  PR: [#44](https://github.com/Flinesoft/HandySwift/pull/44) | Author: [David Knothe](https://github.com/knothed)
 
 ## [3.1.0] - 2019-09-01
 ### Added
