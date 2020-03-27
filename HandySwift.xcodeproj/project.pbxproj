@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E18B292242DECCA000C7776 /* NSObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B291242DECCA000C7776 /* NSObjectExt.swift */; };
+		2E18B293242DECCA000C7776 /* NSObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B291242DECCA000C7776 /* NSObjectExt.swift */; };
+		2E18B294242DECCA000C7776 /* NSObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B291242DECCA000C7776 /* NSObjectExt.swift */; };
 		3F95C8D220F22A3C0045AFD0 /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D120F22A3C0045AFD0 /* CollectionExt.swift */; };
 		3F95C8D520F22DEE0045AFD0 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */; };
 		3F95C8D620F22DEF0045AFD0 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */; };
@@ -133,6 +136,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E18B291242DECCA000C7776 /* NSObjectExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExt.swift; sourceTree = "<group>"; };
 		2E4189DB231B971E00C65B81 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3F95C8D120F22A3C0045AFD0 /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
 		3F95C8D320F22DC60045AFD0 /* CollectionExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionTests.swift; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 				8280D7DB1C4A6EC9001172EF /* DictionaryExt.swift */,
 				A1F221631E3CC05100419B06 /* DispatchTimeIntervalExt.swift */,
 				823B2B4C1C24ABA4007B3CDD /* IntExt.swift */,
+				2E18B291242DECCA000C7776 /* NSObjectExt.swift */,
 				8218E4D52211D193007AAAF3 /* NSRangeExt.swift */,
 				82CAE2911C2ED1A200F934A7 /* StringExt.swift */,
 				A11830D21E589F6700CBE087 /* TimeIntervalExt.swift */,
@@ -436,11 +441,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 823B2B451C24AAB7007B3CDD /* Build configuration list for PBXNativeTarget "HandySwift iOS" */;
 			buildPhases = (
+				82F967F41C67A68A0003F12A /* SwiftLint */,
 				823B2B2C1C24AAB6007B3CDD /* Sources */,
 				823B2B2D1C24AAB6007B3CDD /* Frameworks */,
 				823B2B2E1C24AAB6007B3CDD /* Headers */,
 				823B2B2F1C24AAB6007B3CDD /* Resources */,
-				82F967F41C67A68A0003F12A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -458,6 +463,7 @@
 				823B2B371C24AAB7007B3CDD /* Sources */,
 				823B2B381C24AAB7007B3CDD /* Frameworks */,
 				823B2B391C24AAB7007B3CDD /* Resources */,
+				2E78897B242B4A8100143348 /* Update LinuxMain.swift */,
 			);
 			buildRules = (
 			);
@@ -473,11 +479,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 825EFDDB1C3333B000558497 /* Build configuration list for PBXNativeTarget "HandySwift macOS" */;
 			buildPhases = (
+				82F967F51C67A69A0003F12A /* SwiftLint */,
 				825EFDC51C3333B000558497 /* Sources */,
 				825EFDC61C3333B000558497 /* Frameworks */,
 				825EFDC71C3333B000558497 /* Headers */,
 				825EFDC81C3333B000558497 /* Resources */,
-				82F967F51C67A69A0003F12A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -495,6 +501,7 @@
 				825EFDCF1C3333B000558497 /* Sources */,
 				825EFDD01C3333B000558497 /* Frameworks */,
 				825EFDD11C3333B000558497 /* Resources */,
+				2E78897C242B4B3D00143348 /* Update LinuxMain.swift */,
 			);
 			buildRules = (
 			);
@@ -510,11 +517,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 825EFDFA1C33351300558497 /* Build configuration list for PBXNativeTarget "HandySwift tvOS" */;
 			buildPhases = (
+				82F967F61C67A6A80003F12A /* SwiftLint */,
 				825EFDE41C33351200558497 /* Sources */,
 				825EFDE51C33351200558497 /* Frameworks */,
 				825EFDE61C33351200558497 /* Headers */,
 				825EFDE71C33351200558497 /* Resources */,
-				82F967F61C67A6A80003F12A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -532,6 +539,7 @@
 				825EFDEE1C33351300558497 /* Sources */,
 				825EFDEF1C33351300558497 /* Frameworks */,
 				825EFDF01C33351300558497 /* Resources */,
+				2E78897D242B4B4100143348 /* Update LinuxMain.swift */,
 			);
 			buildRules = (
 			);
@@ -648,6 +656,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2E78897B242B4A8100143348 /* Update LinuxMain.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update LinuxMain.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        sourcery --sources Tests --templates .sourcery/LinuxMain.stencil --output .sourcery --force-parse generated\n        mv .sourcery/LinuxMain.generated.swift Tests/LinuxMain.swift\n    else\n        echo \"warning: Sourcery not installed, download it from https://github.com/krzysztofzablocki/Sourcery\"\n    fi\nfi\n";
+		};
+		2E78897C242B4B3D00143348 /* Update LinuxMain.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update LinuxMain.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        sourcery --sources Tests --templates .sourcery/LinuxMain.stencil --output .sourcery --force-parse generated\n        mv .sourcery/LinuxMain.generated.swift Tests/LinuxMain.swift\n    else\n        echo \"warning: Sourcery not installed, download it from https://github.com/krzysztofzablocki/Sourcery\"\n    fi\nfi\n";
+		};
+		2E78897D242B4B4100143348 /* Update LinuxMain.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Update LinuxMain.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Debug\" ]; then\n    if which swiftlint > /dev/null; then\n        sourcery --sources Tests --templates .sourcery/LinuxMain.stencil --output .sourcery --force-parse generated\n        mv .sourcery/LinuxMain.generated.swift Tests/LinuxMain.swift\n    else\n        echo \"warning: Sourcery not installed, download it from https://github.com/krzysztofzablocki/Sourcery\"\n    fi\nfi\n";
+		};
 		82F967F41C67A68A0003F12A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -700,6 +762,7 @@
 				8258E4561C2E0C140031CBFF /* SortedArray.swift in Sources */,
 				CC120CC2205FDB9300C37D7C /* Regex.swift in Sources */,
 				826F69AC1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
+				2E18B292242DECCA000C7776 /* NSObjectExt.swift in Sources */,
 				A1F221641E3CC05100419B06 /* DispatchTimeIntervalExt.swift in Sources */,
 				8218E4D62211D193007AAAF3 /* NSRangeExt.swift in Sources */,
 				3F95C8D220F22A3C0045AFD0 /* CollectionExt.swift in Sources */,
@@ -745,6 +808,7 @@
 				825EFE061C33358400558497 /* ArrayExt.swift in Sources */,
 				CC120CC3205FDC4C00C37D7C /* Regex.swift in Sources */,
 				C5CFB6AD20B0A70300830511 /* Unowned.swift in Sources */,
+				2E18B293242DECCA000C7776 /* NSObjectExt.swift in Sources */,
 				826F69AD1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				8218E4D72211D193007AAAF3 /* NSRangeExt.swift in Sources */,
 				825EFE051C33358400558497 /* StringExt.swift in Sources */,
@@ -790,6 +854,7 @@
 				825EFE0C1C33358500558497 /* ArrayExt.swift in Sources */,
 				CC120CC4205FDC4D00C37D7C /* Regex.swift in Sources */,
 				C5CFB6AE20B0A70300830511 /* Unowned.swift in Sources */,
+				2E18B294242DECCA000C7776 /* NSObjectExt.swift in Sources */,
 				826F69AE1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				8218E4D82211D193007AAAF3 /* NSRangeExt.swift in Sources */,
 				825EFE0B1C33358500558497 /* StringExt.swift in Sources */,
@@ -1013,6 +1078,7 @@
 		823B2B491C24AAB7007B3CDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";
@@ -1024,6 +1090,7 @@
 		823B2B4A1C24AAB7007B3CDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flinesoft.HandySwift-iOS-Tests";

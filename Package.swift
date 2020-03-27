@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
@@ -16,6 +16,5 @@ let package = Package(
             dependencies: ["HandySwift"],
             exclude: ["Tests/SupportingFiles"]
         )
-    ],
-    swiftLanguageVersions: [4]
+    ]
 )
