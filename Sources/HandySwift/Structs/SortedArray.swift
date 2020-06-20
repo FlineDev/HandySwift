@@ -49,8 +49,8 @@ public struct SortedArray<Element: Comparable> {
         // cover trivial cases
         guard !array.isEmpty else { return nil }
         // swiftlint:disable all
-        if let first = array.first, predicate(first) { return array.startIndex }
-        if let last = array.last, !predicate(last) { return nil }
+        if let first = array.first, predicate(first) { return array.startIndex } // AnyLint.skipHere: IfAsGuard
+        if let last = array.last, !predicate(last) { return nil } // AnyLint.skipHere: IfAsGuard
         // swiftlint:enable all
 
         // binary search for first matching element

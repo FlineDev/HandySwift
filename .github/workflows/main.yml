@@ -1,0 +1,111 @@
+name: CI
+
+on:
+  push:
+    branches: [main, versions]
+
+  pull_request:
+    branches: [main]
+
+jobs:
+  cancel-previous-runs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cancel previous runs of this workflow on same branch
+        uses: rokroskar/workflow-run-cleanup-action@v0.2.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  anylint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Export latest tool versions
+        run: |
+          latest_version() {
+            curl --silent "https://api.github.com/repos/$1/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'
+          }
+          echo "::set-env name=ANYLINT_LATEST_VERSION::$( latest_version Flinesoft/AnyLint )"
+          echo "::set-env name=SWIFT_SH_LATEST_VERSION::$( latest_version mxcl/swift-sh )"
+
+      - name: AnyLint Cache
+        uses: actions/cache@v1
+        id: anylint-cache
+        with:
+          path: anylint-cache
+          key: ${{ runner.os }}-v1-anylint-${{ env.ANYLINT_LATEST_VERSION }}-swift-sh-${{ env.SWIFT_SH_LATEST_VERSION }}
+
+      - name: Copy from cache
+        if: steps.anylint-cache.outputs.cache-hit
+        run: |
+          sudo cp -f anylint-cache/anylint /usr/local/bin/anylint
+          sudo cp -f anylint-cache/swift-sh /usr/local/bin/swift-sh
+
+      - name: Install AnyLint
+        if: steps.anylint-cache.outputs.cache-hit != 'true'
+        run: |
+          git clone https://github.com/Flinesoft/AnyLint.git
+          cd AnyLint
+          swift build -c release
+          sudo cp -f .build/release/anylint /usr/local/bin/anylint
+
+      - name: Install swift-sh
+        if: steps.anylint-cache.outputs.cache-hit != 'true'
+        run: |
+          git clone https://github.com/mxcl/swift-sh.git
+          cd swift-sh
+          swift build -c release
+          sudo cp -f .build/release/swift-sh /usr/local/bin/swift-sh
+
+      - name: Copy to cache
+        if: steps.anylint-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p anylint-cache
+          cp -f /usr/local/bin/anylint anylint-cache/anylint
+          cp -f /usr/local/bin/swift-sh anylint-cache/swift-sh
+
+      - name: Cleanup checkouts
+        run: rm -rf AnyLint && rm -rf swift-sh
+
+      - name: Run AnyLint
+        run: anylint
+
+  swiftlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run SwiftLint
+        uses: norio-nomura/action-swiftlint@3.1.0
+        with:
+          args: --strict
+
+  test-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run tests
+        run: swift test -v
+
+  test-macos:
+    runs-on: macOS-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run tests
+        run: swift test -v --enable-code-coverage
+
+      - name: Report Code Coverage
+        run: |
+          xcrun llvm-cov export -format="lcov" .build/debug/${PACKAGE_NAME}PackageTests.xctest/Contents/MacOS/${PACKAGE_NAME}PackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
+          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r coverage.lcov
+        env:
+          PACKAGE_NAME: HandySwift
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
