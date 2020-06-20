@@ -44,31 +44,31 @@ If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries se
 
 ## [3.1.0] - 2019-09-01
 ### Added
-- New `Comparable.clamped(to:)` and `Comparable.clamp(to:)` interfaces for any `Comparable`, e. g. `Int`.
-
+- New `Comparable.clamped(to:)` and `Comparable.clamp(to:)` interfaces for any `Comparable`, e. g. `Int`.  
+  
 ## [3.0.0] - 2019-04-30
 ### Added
-- New `Withable` protocol to init/copy objects and set properties in a convenient way on a single line.
+- New `Withable` protocol to init/copy objects and set properties in a convenient way on a single line.  
 ### Changed
-- Upgraded to Swift 5 & Xcode 10.2.
+- Upgraded to Swift 5 & Xcode 10.2.  
 ### Removed
-- Remove `ExpressibleByStringLiteral` conformance of `Regex` type to only allow initialization via `init(_:options:) throws` interface.
-
+- Remove `ExpressibleByStringLiteral` conformance of `Regex` type to only allow initialization via `init(_:options:) throws` interface.  
+  
 ## [2.8.0] - 2019-02-11
 ### Added
-- New `NSRange(_:in:)` initializer for converting from `Range<String.Index>`
-- New `sum` computed property on `Sequence` types like `Array`
-- New `average` computed property on `Collection` types with `Int` or `Double` elements like `[Int]`
-- New `fullRange` and `fullNSRange` computed properties on `String`
+- New `NSRange(_:in:)` initializer for converting from `Range<String.Index>`  
+- New `sum` computed property on `Sequence` types like `Array`  
+- New `average` computed property on `Collection` types with `Int` or `Double` elements like `[Int]`  
+- New `fullRange` and `fullNSRange` computed properties on `String`  
 ### Changed
-- Made some APIs available in wider contexts (like `sample` in `RandomAccessCollection` instead of `Array`)
-
+- Made some APIs available in wider contexts (like `sample` in `RandomAccessCollection` instead of `Array`)  
+  
 ## [2.7.0] - 2018-09-27
 ### Added
-- Official support for Linux & Swift Package Manager.
+- Official support for Linux & Swift Package Manager.  
 ### Removed
-- Support for Swift 4.1 and lower was dropped.
-
+- Support for Swift 4.1 and lower was dropped.  
+  
 ## [2.6.0] - 2018-04-22
 ### Added
-- New swifty `Regex` type built on top of the NSRegularExpression API.
+- New swifty `Regex` type built on top of the NSRegularExpression API.  
