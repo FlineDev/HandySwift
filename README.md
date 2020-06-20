@@ -4,9 +4,9 @@
 </p>
 
 <p align="center">
-    <a href="https://app.bitrise.io/app/cbc4cab821708298">
-        <img src="https://app.bitrise.io/app/cbc4cab821708298/status.svg?token=1fWFE7UCuTBoYTGf4StnFQ&branch=main"
-             alt="Build Status">
+    <a href="https://github.com/Flinesoft/HandySwift/actions?query=branch%3Amain">
+        <img src="https://github.com/Flinesoft/HandySwift/workflows/CI/badge.svg"
+             alt="CI">
     </a>
     <a href="https://www.codacy.com/gh/Flinesoft/HandySwift">
         <img src="https://api.codacy.com/project/badge/Grade/f15d85eb68244c8f8c35af88ace3cdd0"
