@@ -8,12 +8,8 @@
         <img src="https://github.com/Flinesoft/HandySwift/workflows/CI/badge.svg"
              alt="CI">
     </a>
-    <a href="https://www.codacy.com/gh/Flinesoft/HandySwift">
-        <img src="https://api.codacy.com/project/badge/Grade/f15d85eb68244c8f8c35af88ace3cdd0"
-             alt="Code Quality"/>
-    </a>
-    <a href="https://www.codacy.com/gh/Flinesoft/HandySwift">
-        <img src="https://api.codacy.com/project/badge/Coverage/f15d85eb68244c8f8c35af88ace3cdd0"
+    <a href="https://codecov.io/gh/Flinesoft/HandySwift">
+        <img src="https://codecov.io/gh/Flinesoft/HandySwift/branch/main/graph/badge.svg"
              alt="Coverage"/>
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
