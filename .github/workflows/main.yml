@@ -102,10 +102,12 @@ jobs:
       - name: Run tests
         run: swift test -v --enable-code-coverage
 
-      - name: Report Code Coverage
-        run: |
-          xcrun llvm-cov export -format="lcov" .build/debug/${PACKAGE_NAME}PackageTests.xctest/Contents/MacOS/${PACKAGE_NAME}PackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
-          bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r coverage.lcov
+      - name: Export coverage Data
+        run: xcrun llvm-cov export -format="lcov" .build/debug/${{ env.PACKAGE_NAME }}PackageTests.xctest/Contents/MacOS/${{ env.PACKAGE_NAME }}PackageTests -instr-profile .build/debug/codecov/default.profdata > coverage.lcov
         env:
           PACKAGE_NAME: HandySwift
-          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v1.0.7
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
