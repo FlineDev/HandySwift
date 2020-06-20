@@ -1,22 +1,16 @@
-// Copyright © 2019 Flinesoft. All rights reserved.
+// Copyright © 2020 Flinesoft. All rights reserved.
 
 @testable import HandySwift
 import XCTest
 
 private struct TextFile: Withable {
-    var contents: String = ""
-    var linesCount: Int = 0
+    var contents: String
+    var linesCount: Int
 }
 
 class WithableTests: XCTestCase {
-    func testInitWith() {
-        let textFile = TextFile { $0.contents = "Text"; $0.linesCount = 5 }
-        XCTAssertEqual(textFile.contents, "Text")
-        XCTAssertEqual(textFile.linesCount, 5)
-    }
-
     func testWith() {
-        let textFile = TextFile()
+        let textFile = TextFile(contents: "", linesCount: 0)
         XCTAssertEqual(textFile.contents, "")
         XCTAssertEqual(textFile.linesCount, 0)
 

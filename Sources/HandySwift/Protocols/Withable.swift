@@ -1,20 +1,10 @@
-// Copyright © 2019 Flinesoft. All rights reserved.
+// Copyright © 2020 Flinesoft. All rights reserved.
 
-/// Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free).
-public protocol Withable {
-    /// Default initializer without parameters to support Withable protocol.
-    init()
-}
+/// Simple protocol to make modifying objects with multiple properties more pleasant (functional, chainable, point-free).
+public protocol Withable { /* no requirements */ }
 
 extension Withable {
-    /// Construct a new instance, setting an arbitrary subset of properties.
-    @inlinable
-    public init(with config: (inout Self) -> Void) {
-        self.init()
-        config(&self)
-    }
-
-    /// Create a copy, overriding an arbitrary subset of properties.
+    /// Create a copy (if a struct) or use same object (if class), improving chainability e.g. after init method.
     @inlinable
     public func with(_ config: (inout Self) -> Void) -> Self {
         var copy = self

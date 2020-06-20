@@ -573,18 +573,15 @@ Simple protocol to make constructing and modifying objects with multiple propert
 
 ``` swift
 struct Foo: Withable {
-    var bar: Int = 0
-    var baz: Bool = false
+    var bar: Int
+    var isEasy: Bool = false
 }
 
-// Construct a foo, setting an arbitrary subset of properties
-let foo = Foo { $0.bar = 5 }
+let defaultFoo = Foo(bar: 5)
+let customFoo = Foo(bar: 5).with { $0.isEasy = true }
 
-// Make a copy of foo, overriding an arbitrary subset of properties
-let foo2 = foo.with { $0.bar = 7; $0.baz = true }
-
-foo.bar // => 5
-foo2.bar // => 7
+foo.isEasy // => false
+foo2.isEasy // => true
 ```
 
 
