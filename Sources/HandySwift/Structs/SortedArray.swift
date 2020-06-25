@@ -154,7 +154,7 @@ public struct SortedArray<Element: Comparable> {
     }
 }
 
-extension SortedArray: Collection {
+extension SortedArray: BidirectionalCollection {
     public typealias Index = Array<Element>.Index
 
     @inlinable public var startIndex: Int {
@@ -173,6 +173,10 @@ extension SortedArray: Collection {
     @inlinable
     public func index(after index: Int) -> Int {
         internalArray.index(after: index)
+    }
+
+    public func index(before index: Int) -> Int {
+        internalArray.index(before: index)
     }
 
     @inlinable
