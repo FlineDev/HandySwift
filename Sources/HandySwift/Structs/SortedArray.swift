@@ -117,7 +117,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - newElement: The new element to be inserted into the array.
     @inlinable
-    public mutating func insert(newElement: Element) {
+    public mutating func insert(_ newElement: Element) {
         let insertIndex = internalArray.firstIndex { $0 >= newElement } ?? internalArray.endIndex
         internalArray.insert(newElement, at: insertIndex)
     }
@@ -130,7 +130,7 @@ public struct SortedArray<Element: Comparable> {
     ///   - sequence
     @inlinable
     public mutating func insert<S: Sequence>(contentsOf sequence: S) where S.Iterator.Element == Element {
-        sequence.forEach { insert(newElement: $0) }
+        sequence.forEach { insert($0) }
     }
 
     /// Removes an item from the sorted array.
@@ -142,6 +142,14 @@ public struct SortedArray<Element: Comparable> {
     @inlinable
     public mutating func remove(at index: Int) {
         internalArray.remove(at: index)
+    }
+
+    /// Removes an item from the sorted array.
+    ///
+    /// - Complexity: O(*n*), where *n* is the length of the collection.
+    @inlinable
+    public mutating func removeAll(where condition: (Element) -> Bool) {
+        internalArray.removeAll(where: condition)
     }
 
     /// Accesses a contiguous subrange of the SortedArray's elements.
