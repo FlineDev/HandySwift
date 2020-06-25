@@ -193,4 +193,12 @@ extension SortedArray: BidirectionalCollection {
     }
 }
 
+extension SortedArray: ExpressibleByArrayLiteral {
+    public typealias ArrayLiteralElement = Element
+
+    public init(arrayLiteral elements: Element...) {
+        self.init(elements)
+    }
+}
+
 extension SortedArray: Codable where Element: Codable {}
