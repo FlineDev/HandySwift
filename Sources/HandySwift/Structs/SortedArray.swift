@@ -202,3 +202,5 @@ extension SortedArray: ExpressibleByArrayLiteral {
 }
 
 extension SortedArray: Codable where Element: Codable {}
+
+extension SortedArray: RandomAccessCollection {}
