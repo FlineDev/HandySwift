@@ -49,8 +49,8 @@ public struct SortedArray<Element: Comparable> {
         // cover trivial cases
         guard !array.isEmpty else { return nil }
         // swiftlint:disable all
-        if let first = array.first, predicate(first) { return array.startIndex }
-        if let last = array.last, !predicate(last) { return nil }
+        if let first = array.first, predicate(first) { return array.startIndex } // AnyLint.skipHere: IfAsGuard
+        if let last = array.last, !predicate(last) { return nil } // AnyLint.skipHere: IfAsGuard
         // swiftlint:enable all
 
         // binary search for first matching element
@@ -117,7 +117,7 @@ public struct SortedArray<Element: Comparable> {
     /// - Parameters:
     ///   - newElement: The new element to be inserted into the array.
     @inlinable
-    public mutating func insert(newElement: Element) {
+    public mutating func insert(_ newElement: Element) {
         let insertIndex = internalArray.firstIndex { $0 >= newElement } ?? internalArray.endIndex
         internalArray.insert(newElement, at: insertIndex)
     }
@@ -130,7 +130,7 @@ public struct SortedArray<Element: Comparable> {
     ///   - sequence
     @inlinable
     public mutating func insert<S: Sequence>(contentsOf sequence: S) where S.Iterator.Element == Element {
-        sequence.forEach { insert(newElement: $0) }
+        sequence.forEach { insert($0) }
     }
 
     /// Removes an item from the sorted array.
@@ -144,6 +144,14 @@ public struct SortedArray<Element: Comparable> {
         internalArray.remove(at: index)
     }
 
+    /// Removes an item from the sorted array.
+    ///
+    /// - Complexity: O(*n*), where *n* is the length of the collection.
+    @inlinable
+    public mutating func removeAll(where condition: (Element) -> Bool) {
+        internalArray.removeAll(where: condition)
+    }
+
     /// Accesses a contiguous subrange of the SortedArray's elements.
     ///
     /// - Parameter
@@ -154,7 +162,7 @@ public struct SortedArray<Element: Comparable> {
     }
 }
 
-extension SortedArray: Collection {
+extension SortedArray: BidirectionalCollection {
     public typealias Index = Array<Element>.Index
 
     @inlinable public var startIndex: Int {
@@ -175,10 +183,24 @@ extension SortedArray: Collection {
         internalArray.index(after: index)
     }
 
+    public func index(before index: Int) -> Int {
+        internalArray.index(before: index)
+    }
+
     @inlinable
     public subscript(position: Int) -> Element {
         internalArray[position]
     }
 }
 
+extension SortedArray: ExpressibleByArrayLiteral {
+    public typealias ArrayLiteralElement = Element
+
+    public init(arrayLiteral elements: Element...) {
+        self.init(elements)
+    }
+}
+
 extension SortedArray: Codable where Element: Codable {}
+
+extension SortedArray: RandomAccessCollection {}

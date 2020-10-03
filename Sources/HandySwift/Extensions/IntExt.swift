@@ -27,9 +27,9 @@ extension Int {
     /// - Parameters:
     ///   - closure: The code to be run multiple times.
     @inlinable
-    public func times(_ closure: () -> Void) {
+    public func times(_ closure: () throws -> Void) rethrows {
         guard self > 0 else { return }
-        for _ in 0 ..< self { closure() }
+        for _ in 0 ..< self { try closure() }
     }
 
     /// Runs the code passed as a closure the specified number of times
@@ -38,8 +38,8 @@ extension Int {
     /// - Parameters:
     ///   - closure: The code to deliver a return value multiple times.
     @inlinable
-    public func timesMake<ReturnType>(_ closure: () -> ReturnType) -> [ReturnType] {
+    public func timesMake<ReturnType>(_ closure: () throws -> ReturnType) rethrows -> [ReturnType] {
         guard self > 0 else { return [] }
-        return (0 ..< self).map { _ in closure() }
+        return try (0 ..< self).map { _ in try closure() }
     }
 }

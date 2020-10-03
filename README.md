@@ -4,21 +4,17 @@
 </p>
 
 <p align="center">
-    <a href="https://app.bitrise.io/app/cbc4cab821708298">
-        <img src="https://app.bitrise.io/app/cbc4cab821708298/status.svg?token=1fWFE7UCuTBoYTGf4StnFQ&branch=main"
-             alt="Build Status">
+    <a href="https://github.com/Flinesoft/HandySwift/actions?query=branch%3Amain">
+        <img src="https://github.com/Flinesoft/HandySwift/workflows/CI/badge.svg"
+             alt="CI">
     </a>
-    <a href="https://www.codacy.com/gh/Flinesoft/HandySwift">
-        <img src="https://api.codacy.com/project/badge/Grade/f15d85eb68244c8f8c35af88ace3cdd0"
-             alt="Code Quality"/>
-    </a>
-    <a href="https://www.codacy.com/gh/Flinesoft/HandySwift">
-        <img src="https://api.codacy.com/project/badge/Coverage/f15d85eb68244c8f8c35af88ace3cdd0"
+    <a href="https://codecov.io/gh/Flinesoft/HandySwift">
+        <img src="https://codecov.io/gh/Flinesoft/HandySwift/branch/main/graph/badge.svg"
              alt="Coverage"/>
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-3.2.0-blue.svg"
-             alt="Version: 3.2.0">
+        <img src="https://img.shields.io/badge/Version-3.2.1-blue.svg"
+             alt="Version: 3.2.1">
     </a>
     <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg" alt="Swift: 5.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
@@ -573,18 +569,15 @@ Simple protocol to make constructing and modifying objects with multiple propert
 
 ``` swift
 struct Foo: Withable {
-    var bar: Int = 0
-    var baz: Bool = false
+    var bar: Int
+    var isEasy: Bool = false
 }
 
-// Construct a foo, setting an arbitrary subset of properties
-let foo = Foo { $0.bar = 5 }
+let defaultFoo = Foo(bar: 5)
+let customFoo = Foo(bar: 5).with { $0.isEasy = true }
 
-// Make a copy of foo, overriding an arbitrary subset of properties
-let foo2 = foo.with { $0.bar = 7; $0.baz = true }
-
-foo.bar // => 5
-foo2.bar // => 7
+foo.isEasy // => false
+foo2.isEasy // => true
 ```
 
 

@@ -210,11 +210,8 @@ extension Regex {
                 }
 
             return captureRanges.map { [unowned self] captureRange in
-                if let captureRange = captureRange {
-                    return String(describing: self.baseString[captureRange])
-                }
-
-                return nil
+                guard let captureRange = captureRange else { return nil }
+                return String(describing: self.baseString[captureRange])
             }
         }()
 

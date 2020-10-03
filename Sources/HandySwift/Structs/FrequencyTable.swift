@@ -25,8 +25,8 @@ public struct FrequencyTable<T> {
     ///   - values: An array full of values to be saved into the frequency table.
     ///   - frequencyClosure: The closure to specify the frequency for a specific value.
     @inlinable
-    public init(values: [T], frequencyClosure: (T) -> Int) {
-        valuesWithFrequencies = values.map { ($0, frequencyClosure($0)) }
+    public init(values: [T], frequencyClosure: (T) throws -> Int) rethrows {
+        valuesWithFrequencies = try values.map { ($0, try frequencyClosure($0)) }
         frequentValues = valuesWithFrequencies.reduce(into: []) { memo, entry in
             memo += Array(repeating: entry.value, count: entry.frequency)
         }

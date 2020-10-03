@@ -1,24 +1,20 @@
-// Copyright © 2019 Flinesoft. All rights reserved.
+// Copyright © 2020 Flinesoft. All rights reserved.
 
-/// Simple protocol to make constructing and modifying objects with multiple properties more pleasant (functional, chainable, point-free).
-public protocol Withable {
-    /// Default initializer without parameters to support Withable protocol.
-    init()
-}
+/// Simple protocol to make modifying objects with multiple properties more pleasant (functional, chainable, point-free).
+public protocol Withable { /* no requirements */ }
 
 extension Withable {
-    /// Construct a new instance, setting an arbitrary subset of properties.
+    @available(*, unavailable, message: "Add `().with` after the type name, e.g. `Foo().with { $0.bar = 5 }` instead of `Foo { $0.bar = 5 }`.")
     @inlinable
-    public init(with config: (inout Self) -> Void) {
-        self.init()
-        config(&self)
+    public init(with config: (inout Self) -> Void) { // swiftlint:disable:this missing_docs
+        fatalError("Function no longer available. Xcode should actually show an unavailable error with message and not compile.")
     }
 
-    /// Create a copy, overriding an arbitrary subset of properties.
+    /// Create a copy (if a struct) or use same object (if class), improving chainability e.g. after init method.
     @inlinable
-    public func with(_ config: (inout Self) -> Void) -> Self {
+    public func with(_ config: (inout Self) throws -> Void) rethrows -> Self {
         var copy = self
-        config(&copy)
+        try config(&copy)
         return copy
     }
 }
