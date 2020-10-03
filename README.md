@@ -13,8 +13,8 @@
              alt="Coverage"/>
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-3.2.0-blue.svg"
-             alt="Version: 3.2.0">
+        <img src="https://img.shields.io/badge/Version-3.2.1-blue.svg"
+             alt="Version: 3.2.1">
     </a>
     <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg" alt="Swift: 5.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
