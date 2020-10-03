@@ -30,7 +30,8 @@ If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries se
 ### Removed
 - None.
 ### Fixed
-- None.
+- Made all functions accept throwing closures to allow wider usage cases for helper functions like `.times` etc.    
+  Author: [Cihat Gündüz](https://github.com/Jeehut)
 ### Security
 - None.
 

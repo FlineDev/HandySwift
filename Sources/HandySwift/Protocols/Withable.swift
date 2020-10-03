@@ -12,9 +12,9 @@ extension Withable {
 
     /// Create a copy (if a struct) or use same object (if class), improving chainability e.g. after init method.
     @inlinable
-    public func with(_ config: (inout Self) -> Void) -> Self {
+    public func with(_ config: (inout Self) throws -> Void) rethrows -> Self {
         var copy = self
-        config(&copy)
+        try config(&copy)
         return copy
     }
 }
