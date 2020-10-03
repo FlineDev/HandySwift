@@ -21,19 +21,25 @@ If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries se
 ### Added
 - None.
 ### Changed
-- `Withable` doesn't require an empty `init()` method anymore. Instead, it can be combined with any initializer. If you used the `Foo { $0.bar = 5 }` type of initializer, you will need to add `().with` behind the type like so: `Foo().with { $0.bar = 5 }`.  
-  Issue: [#49](https://github.com/Flinesoft/HandySwift/issues/49) | PR: [#50](https://github.com/Flinesoft/HandySwift/pull/50) | Author: [Cihat Gündüz](https://github.com/Jeehut)
-- Improved with new `removeAll` method, conformance to `BidirectionalCollection`, `ExpressibleByArrayLiteral` and removal of `newElement` label on `insert.  
-  Author: [Cihat Gündüz](https://github.com/Jeehut)
+- None.
 ### Deprecated
 - None.
 ### Removed
 - None.
 ### Fixed
-- Made all functions accept throwing closures to allow wider usage cases for helper functions like `.times` etc.    
-  Author: [Cihat Gündüz](https://github.com/Jeehut)
+- None.
 ### Security
 - None.
+
+## [3.2.1] - 2020-10-03
+### Changed
+- `Withable` doesn't require an empty `init()` method anymore. Instead, it can be combined with any initializer. If you used the `Foo { $0.bar = 5 }` type of initializer, you will need to add `().with` behind the type like so: `Foo().with { $0.bar = 5 }`.  
+  Issue: [#49](https://github.com/Flinesoft/HandySwift/issues/49) | PR: [#50](https://github.com/Flinesoft/HandySwift/pull/50) | Author: [Cihat Gündüz](https://github.com/Jeehut)
+- Improved with new `removeAll` method, conformance to `BidirectionalCollection`, `ExpressibleByArrayLiteral` and removal of `newElement` label on `insert.  
+  Author: [Cihat Gündüz](https://github.com/Jeehut)
+### Fixed
+- Made all functions accept throwing closures to allow wider usage cases for helper functions like `.times` etc.    
+  Author: [Cihat Gündüz](https://github.com/Jeehut)
 
 ## [3.2.0] - 2020-03-27
 ### Added
