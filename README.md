@@ -74,6 +74,7 @@ Open the Playground from within the `.xcworkspace` in order for it to work.
 - Extensions
   - [IntExtension](#intextension)
   - [IntegerTypeExtension](#integertypeextension)
+  - [DoubleExtension](#doubleextension)
   - [StringExtension](#stringextension)
   - [NSRangeExtension](#nsrangeextension)
   - [CollectionExtension](#collectionextension)
@@ -164,6 +165,30 @@ In-place `mutating` variant of `clamped(to:)`
 var myNum = 3
 myNum.clamp(to: 0...2)
 myNum // => 2
+```
+
+### DoubleExtension
+
+#### round(fractionDigits:rule:)
+
+Rounds the value to an integral value using the specified fraction digits and rounding rule.
+
+``` Swift
+var price: Double = 2.875
+price.round(fractionDigits: 2) // => 2.88
+// OR with explicit rule:
+price.round(fractionDigits: 2, rule: .down) // 2.87
+```
+
+#### rounded(fractionDigits:rule:) -> Double
+
+Returns this value rounded to an integral value using the specified fraction digits and rounding rule.
+
+``` Swift
+let price: Double = 2.875
+price.rounded(fractionDigits: 2) // => 2.88
+// OR with explicit rule:
+price.rounded(fractionDigits: 2, rule: .down) // => 2.87
 ```
 
 ### StringExtension
