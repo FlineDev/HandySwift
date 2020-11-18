@@ -312,8 +312,8 @@
 				2E18B291242DECCA000C7776 /* NSObjectExt.swift */,
 				8218E4D52211D193007AAAF3 /* NSRangeExt.swift */,
 				82CAE2911C2ED1A200F934A7 /* StringExt.swift */,
-				A11830D21E589F6700CBE087 /* TimeIntervalExt.swift */,
 				2E5A375325655F55003704D0 /* StringProtocolExt.swift */,
+				A11830D21E589F6700CBE087 /* TimeIntervalExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
