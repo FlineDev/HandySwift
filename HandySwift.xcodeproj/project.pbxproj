@@ -19,6 +19,9 @@
 		2E18B296242DF436000C7776 /* NSObjectExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B295242DF436000C7776 /* NSObjectExtTests.swift */; };
 		2E18B297242DF436000C7776 /* NSObjectExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B295242DF436000C7776 /* NSObjectExtTests.swift */; };
 		2E18B298242DF436000C7776 /* NSObjectExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B295242DF436000C7776 /* NSObjectExtTests.swift */; };
+		2E5A375425655F55003704D0 /* StringProtocolExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A375325655F55003704D0 /* StringProtocolExt.swift */; };
+		2E5A375525655F55003704D0 /* StringProtocolExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A375325655F55003704D0 /* StringProtocolExt.swift */; };
+		2E5A375625655F55003704D0 /* StringProtocolExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A375325655F55003704D0 /* StringProtocolExt.swift */; };
 		2E61DF7A249E1CA9000AF3C5 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF79249E1CA9000AF3C5 /* Withable.swift */; };
 		2E61DF7B249E1CA9000AF3C5 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF79249E1CA9000AF3C5 /* Withable.swift */; };
 		2E61DF7C249E1CA9000AF3C5 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF79249E1CA9000AF3C5 /* Withable.swift */; };
@@ -150,6 +153,7 @@
 		2E18B291242DECCA000C7776 /* NSObjectExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExt.swift; sourceTree = "<group>"; };
 		2E18B295242DF436000C7776 /* NSObjectExtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtTests.swift; sourceTree = "<group>"; };
 		2E4189DB231B971E00C65B81 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2E5A375325655F55003704D0 /* StringProtocolExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExt.swift; sourceTree = "<group>"; };
 		2E61DF79249E1CA9000AF3C5 /* Withable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withable.swift; sourceTree = "<group>"; };
 		2E61DF7D249E1D37000AF3C5 /* WithableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithableTests.swift; sourceTree = "<group>"; };
 		3F95C8D120F22A3C0045AFD0 /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 				8218E4D52211D193007AAAF3 /* NSRangeExt.swift */,
 				82CAE2911C2ED1A200F934A7 /* StringExt.swift */,
 				A11830D21E589F6700CBE087 /* TimeIntervalExt.swift */,
+				2E5A375325655F55003704D0 /* StringProtocolExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -790,6 +795,7 @@
 				2E61DF7A249E1CA9000AF3C5 /* Withable.swift in Sources */,
 				C5CFB6AC20B0A70300830511 /* Unowned.swift in Sources */,
 				82812A9B1D06877B00CD5B6C /* Globals.swift in Sources */,
+				2E5A375425655F55003704D0 /* StringProtocolExt.swift in Sources */,
 				63651F90231BFF2000E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DC1C4A6EC9001172EF /* DictionaryExt.swift in Sources */,
 				A11830D31E589F6700CBE087 /* TimeIntervalExt.swift in Sources */,
@@ -839,6 +845,7 @@
 				2E61DF7B249E1CA9000AF3C5 /* Withable.swift in Sources */,
 				825EFE031C33358400558497 /* IntExt.swift in Sources */,
 				82812A9C1D06877B00CD5B6C /* Globals.swift in Sources */,
+				2E5A375525655F55003704D0 /* StringProtocolExt.swift in Sources */,
 				63651F91231BFF2000E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DD1C4A6EC9001172EF /* DictionaryExt.swift in Sources */,
 				A11830D41E589F6700CBE087 /* TimeIntervalExt.swift in Sources */,
@@ -888,6 +895,7 @@
 				2E61DF7C249E1CA9000AF3C5 /* Withable.swift in Sources */,
 				825EFE091C33358500558497 /* IntExt.swift in Sources */,
 				82812A9D1D06877B00CD5B6C /* Globals.swift in Sources */,
+				2E5A375625655F55003704D0 /* StringProtocolExt.swift in Sources */,
 				63651F92231BFF2800E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DE1C4A6EC9001172EF /* DictionaryExt.swift in Sources */,
 				A11830D51E589F6700CBE087 /* TimeIntervalExt.swift in Sources */,
