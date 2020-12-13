@@ -48,6 +48,16 @@ class RegexTests: XCTestCase {
     func testMatches() {
         let regex = try? Regex("[1-9]+")
         XCTAssertEqual(regex?.matches(in: "5 432 11").map { $0.string }, ["5", "432", "11"])
+
+        let key = "bi"
+        let complexRegex = try? Regex(#"<\#(key)>([^<>]+)</\#(key)>"#)
+        XCTAssertEqual(
+            complexRegex?.matches(
+                in:
+                    "Add all your <bi>tasks</bi> in here. We will guide you with the right questions to get them <bi>organized</bi>."
+            ).map { $0.string },
+            ["<bi>tasks</bi>", "<bi>organized</bi>"]
+        )
     }
 
     func testReplacingMatches() {

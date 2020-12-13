@@ -200,7 +200,7 @@
 		C5C89B9320B0A0C10048B07C /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		C5CFB6AB20B0A70300830511 /* Unowned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unowned.swift; sourceTree = "<group>"; };
 		CC120CC1205FDB9300C37D7C /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		CC4AE0CD2087D895009931F6 /* RegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
+		CC4AE0CD2087D895009931F6 /* RegexTests.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; tabWidth = 4; };
 		CC66E046228199A0007ABF61 /* ComparableExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExt.swift; sourceTree = "<group>"; };
 		CC66E12322819FCF007ABF61 /* ComparableExtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExtTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,8 +268,8 @@
 		8203930420F3A63F0074974F /* HandySwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				82812A9E1D06926800CD5B6C /* GlobalsTests.swift */,
 				823B2B4E1C24ABD8007B3CDD /* Extensions */,
+				82812A9E1D06926800CD5B6C /* GlobalsTests.swift */,
 				8251AA23227875A10022B277 /* Protocols */,
 				8258E4571C2E196B0031CBFF /* Structs */,
 			);
@@ -324,9 +324,9 @@
 				82CAE2971C2EE95200F934A7 /* ArrayExtTests.swift */,
 				3F95C8D320F22DC60045AFD0 /* CollectionExtTests.swift */,
 				CC66E12322819FCF007ABF61 /* ComparableExtTests.swift */,
-				2E18AD632531E0F800D44748 /* DoubleExtTests.swift */,
 				8280D7DF1C4A6FF3001172EF /* DictionaryExtTests.swift */,
 				827599631E520FB800787F99 /* DispatchTimeIntervalExtTests.swift */,
+				2E18AD632531E0F800D44748 /* DoubleExtTests.swift */,
 				823B2B4F1C24AC00007B3CDD /* IntExtTests.swift */,
 				2E18B295242DF436000C7776 /* NSObjectExtTests.swift */,
 				8218E4D92211D270007AAAF3 /* NSRangeExtTests.swift */,
