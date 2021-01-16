@@ -50,6 +50,13 @@ extension DispatchTimeIntervalExtTests {
     ]
 }
 
+extension DoubleExtTests {
+    static var allTests: [(String, (DoubleExtTests) -> () throws -> Void)] = [
+        ("testRound", testRound),
+        ("testRounded", testRounded)
+    ]
+}
+
 extension FrequencyTableTests {
     static var allTests: [(String, (FrequencyTableTests) -> () throws -> Void)] = [
         ("testSample", testSample),
@@ -143,6 +150,7 @@ XCTMain([
     testCase(ComparableExtTests.allTests),
     testCase(DictionaryExtTests.allTests),
     testCase(DispatchTimeIntervalExtTests.allTests),
+    testCase(DoubleExtTests.allTests),
     testCase(FrequencyTableTests.allTests),
     testCase(GlobalsTests.allTests),
     testCase(IntExtTests.allTests),

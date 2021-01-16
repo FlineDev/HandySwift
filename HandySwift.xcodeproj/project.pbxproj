@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E18AD5A2531DD3D00D44748 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18AD592531DD3D00D44748 /* DoubleExt.swift */; };
+		2E18AD5B2531DD3D00D44748 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18AD592531DD3D00D44748 /* DoubleExt.swift */; };
+		2E18AD5C2531DD3D00D44748 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18AD592531DD3D00D44748 /* DoubleExt.swift */; };
+		2E18AD732531E0FD00D44748 /* DoubleExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18AD632531E0F800D44748 /* DoubleExtTests.swift */; };
+		2E18AD7A2531E0FD00D44748 /* DoubleExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18AD632531E0F800D44748 /* DoubleExtTests.swift */; };
+		2E18AD812531E0FE00D44748 /* DoubleExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18AD632531E0F800D44748 /* DoubleExtTests.swift */; };
 		2E18B292242DECCA000C7776 /* NSObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B291242DECCA000C7776 /* NSObjectExt.swift */; };
 		2E18B293242DECCA000C7776 /* NSObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B291242DECCA000C7776 /* NSObjectExt.swift */; };
 		2E18B294242DECCA000C7776 /* NSObjectExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B291242DECCA000C7776 /* NSObjectExt.swift */; };
 		2E18B296242DF436000C7776 /* NSObjectExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B295242DF436000C7776 /* NSObjectExtTests.swift */; };
 		2E18B297242DF436000C7776 /* NSObjectExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B295242DF436000C7776 /* NSObjectExtTests.swift */; };
 		2E18B298242DF436000C7776 /* NSObjectExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E18B295242DF436000C7776 /* NSObjectExtTests.swift */; };
+		2E5A375425655F55003704D0 /* StringProtocolExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A375325655F55003704D0 /* StringProtocolExt.swift */; };
+		2E5A375525655F55003704D0 /* StringProtocolExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A375325655F55003704D0 /* StringProtocolExt.swift */; };
+		2E5A375625655F55003704D0 /* StringProtocolExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A375325655F55003704D0 /* StringProtocolExt.swift */; };
 		2E61DF7A249E1CA9000AF3C5 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF79249E1CA9000AF3C5 /* Withable.swift */; };
 		2E61DF7B249E1CA9000AF3C5 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF79249E1CA9000AF3C5 /* Withable.swift */; };
 		2E61DF7C249E1CA9000AF3C5 /* Withable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF79249E1CA9000AF3C5 /* Withable.swift */; };
@@ -139,9 +148,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E18AD592531DD3D00D44748 /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
+		2E18AD632531E0F800D44748 /* DoubleExtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtTests.swift; sourceTree = "<group>"; };
 		2E18B291242DECCA000C7776 /* NSObjectExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExt.swift; sourceTree = "<group>"; };
 		2E18B295242DF436000C7776 /* NSObjectExtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtTests.swift; sourceTree = "<group>"; };
 		2E4189DB231B971E00C65B81 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2E5A375325655F55003704D0 /* StringProtocolExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExt.swift; sourceTree = "<group>"; };
 		2E61DF79249E1CA9000AF3C5 /* Withable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withable.swift; sourceTree = "<group>"; };
 		2E61DF7D249E1D37000AF3C5 /* WithableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithableTests.swift; sourceTree = "<group>"; };
 		3F95C8D120F22A3C0045AFD0 /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
@@ -188,7 +200,7 @@
 		C5C89B9320B0A0C10048B07C /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		C5CFB6AB20B0A70300830511 /* Unowned.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unowned.swift; sourceTree = "<group>"; };
 		CC120CC1205FDB9300C37D7C /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		CC4AE0CD2087D895009931F6 /* RegexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; };
+		CC4AE0CD2087D895009931F6 /* RegexTests.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = RegexTests.swift; sourceTree = "<group>"; tabWidth = 4; };
 		CC66E046228199A0007ABF61 /* ComparableExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExt.swift; sourceTree = "<group>"; };
 		CC66E12322819FCF007ABF61 /* ComparableExtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparableExtTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -256,8 +268,8 @@
 		8203930420F3A63F0074974F /* HandySwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				82812A9E1D06926800CD5B6C /* GlobalsTests.swift */,
 				823B2B4E1C24ABD8007B3CDD /* Extensions */,
+				82812A9E1D06926800CD5B6C /* GlobalsTests.swift */,
 				8251AA23227875A10022B277 /* Protocols */,
 				8258E4571C2E196B0031CBFF /* Structs */,
 			);
@@ -295,10 +307,12 @@
 				CC66E046228199A0007ABF61 /* ComparableExt.swift */,
 				8280D7DB1C4A6EC9001172EF /* DictionaryExt.swift */,
 				A1F221631E3CC05100419B06 /* DispatchTimeIntervalExt.swift */,
+				2E18AD592531DD3D00D44748 /* DoubleExt.swift */,
 				823B2B4C1C24ABA4007B3CDD /* IntExt.swift */,
 				2E18B291242DECCA000C7776 /* NSObjectExt.swift */,
 				8218E4D52211D193007AAAF3 /* NSRangeExt.swift */,
 				82CAE2911C2ED1A200F934A7 /* StringExt.swift */,
+				2E5A375325655F55003704D0 /* StringProtocolExt.swift */,
 				A11830D21E589F6700CBE087 /* TimeIntervalExt.swift */,
 			);
 			path = Extensions;
@@ -312,6 +326,7 @@
 				CC66E12322819FCF007ABF61 /* ComparableExtTests.swift */,
 				8280D7DF1C4A6FF3001172EF /* DictionaryExtTests.swift */,
 				827599631E520FB800787F99 /* DispatchTimeIntervalExtTests.swift */,
+				2E18AD632531E0F800D44748 /* DoubleExtTests.swift */,
 				823B2B4F1C24AC00007B3CDD /* IntExtTests.swift */,
 				2E18B295242DF436000C7776 /* NSObjectExtTests.swift */,
 				8218E4D92211D270007AAAF3 /* NSRangeExtTests.swift */,
@@ -775,10 +790,12 @@
 				CC66E047228199A0007ABF61 /* ComparableExt.swift in Sources */,
 				C5C89B9420B0A0C10048B07C /* Weak.swift in Sources */,
 				82CAE2921C2ED1A200F934A7 /* StringExt.swift in Sources */,
+				2E18AD5A2531DD3D00D44748 /* DoubleExt.swift in Sources */,
 				82CAE2961C2EE64900F934A7 /* ArrayExt.swift in Sources */,
 				2E61DF7A249E1CA9000AF3C5 /* Withable.swift in Sources */,
 				C5CFB6AC20B0A70300830511 /* Unowned.swift in Sources */,
 				82812A9B1D06877B00CD5B6C /* Globals.swift in Sources */,
+				2E5A375425655F55003704D0 /* StringProtocolExt.swift in Sources */,
 				63651F90231BFF2000E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DC1C4A6EC9001172EF /* DictionaryExt.swift in Sources */,
 				A11830D31E589F6700CBE087 /* TimeIntervalExt.swift in Sources */,
@@ -804,6 +821,7 @@
 				3F95C8D520F22DEE0045AFD0 /* CollectionExtTests.swift in Sources */,
 				2E18B296242DF436000C7776 /* NSObjectExtTests.swift in Sources */,
 				CC4AE0CF2087D8A7009931F6 /* RegexTests.swift in Sources */,
+				2E18AD732531E0FD00D44748 /* DoubleExtTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,10 +840,12 @@
 				CC66E048228199DE007ABF61 /* ComparableExt.swift in Sources */,
 				C5CFB6AF20B0A78F00830511 /* Weak.swift in Sources */,
 				A1F221651E3CC05100419B06 /* DispatchTimeIntervalExt.swift in Sources */,
+				2E18AD5B2531DD3D00D44748 /* DoubleExt.swift in Sources */,
 				825EFE021C33358400558497 /* SortedArray.swift in Sources */,
 				2E61DF7B249E1CA9000AF3C5 /* Withable.swift in Sources */,
 				825EFE031C33358400558497 /* IntExt.swift in Sources */,
 				82812A9C1D06877B00CD5B6C /* Globals.swift in Sources */,
+				2E5A375525655F55003704D0 /* StringProtocolExt.swift in Sources */,
 				63651F91231BFF2000E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DD1C4A6EC9001172EF /* DictionaryExt.swift in Sources */,
 				A11830D41E589F6700CBE087 /* TimeIntervalExt.swift in Sources */,
@@ -851,6 +871,7 @@
 				3F95C8D620F22DEF0045AFD0 /* CollectionExtTests.swift in Sources */,
 				2E18B297242DF436000C7776 /* NSObjectExtTests.swift in Sources */,
 				CC4AE0D02087D8A8009931F6 /* RegexTests.swift in Sources */,
+				2E18AD7A2531E0FD00D44748 /* DoubleExtTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,10 +890,12 @@
 				CC66E049228199DF007ABF61 /* ComparableExt.swift in Sources */,
 				C5CFB6B020B0A79000830511 /* Weak.swift in Sources */,
 				A1F221661E3CC05100419B06 /* DispatchTimeIntervalExt.swift in Sources */,
+				2E18AD5C2531DD3D00D44748 /* DoubleExt.swift in Sources */,
 				825EFE081C33358500558497 /* SortedArray.swift in Sources */,
 				2E61DF7C249E1CA9000AF3C5 /* Withable.swift in Sources */,
 				825EFE091C33358500558497 /* IntExt.swift in Sources */,
 				82812A9D1D06877B00CD5B6C /* Globals.swift in Sources */,
+				2E5A375625655F55003704D0 /* StringProtocolExt.swift in Sources */,
 				63651F92231BFF2800E022DA /* DivisibleArithmetic.swift in Sources */,
 				8280D7DE1C4A6EC9001172EF /* DictionaryExt.swift in Sources */,
 				A11830D51E589F6700CBE087 /* TimeIntervalExt.swift in Sources */,
@@ -898,6 +921,7 @@
 				3F95C8D720F22DEF0045AFD0 /* CollectionExtTests.swift in Sources */,
 				2E18B298242DF436000C7776 /* NSObjectExtTests.swift in Sources */,
 				CC4AE0D12087D8A9009931F6 /* RegexTests.swift in Sources */,
+				2E18AD812531E0FE00D44748 /* DoubleExtTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
