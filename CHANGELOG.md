@@ -19,8 +19,8 @@ If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries se
 
 ## [Unreleased]
 ### Added
-- Added `round(fractionDigits:rule:)` & `rounded(fractionDigits:rule:)` methods to `Double` type.    
-Author: [Cihat Gündüz](https://github.com/Jeehut)
+- Added new convenience `encrypt(key:)` and `decrypt(key:)` functions to `String` type for platforms supporting `CryptoKit`. Uses AES.GCM algorithm for encryption.  
+  Author: [Cihat Gündüz](https://github.com/Jeehut)
 ### Changed
 - None.
 ### Deprecated

@@ -232,6 +232,28 @@ let unicodeString = "Hello composed unicode symbols! 👨‍👩‍👧‍👦�
 unicodeString[unicodeString.fullRange] // => same string
 ```
 
+### .encrypted(key:)
+
+Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
+`@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)`
+
+``` Swift
+let key = SymmetricKey(size: .bits256)
+
+let plainText = "Harry Potter is a 🧙"
+let encryptedString = try plainText.encrypted(key: key) // => "nz9LDkTNUEFj16Hrqvs4oCYeuIgV+nSP4OSqahkbtH62eJHHW664wC8NeFAMBPq7ZsY="
+```
+
+### .decrypted(key:)
+
+Decrypts this base64 encoded representation of encrypted data with the given key using AES.GCM and returns the decrypted plain text `String`.
+`@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)`
+
+``` Swift
+encryptedString.decrypt(key: key) // => "Harry Potter is a 🧙" 
+```
+
+
 ### NSRangeExtension
 
 #### init(_:in:)

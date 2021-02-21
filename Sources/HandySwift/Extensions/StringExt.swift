@@ -1,6 +1,9 @@
 // Copyright © 2015 Flinesoft. All rights reserved.
 
 import Foundation
+#if canImport(CryptoKit)
+import CryptoKit
+#endif
 
 extension String {
     /// - Returns: `true` if contains any cahracters other than whitespace or newline characters, else `no`.
@@ -78,5 +81,25 @@ extension String {
         case alphaNumeric
         /// Allow all characters appearing within the specified String.
         case allCharactersIn(String)
+    }
+}
+
+extension String {
+    /// Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
+    @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+    func encrypted(key: SymmetricKey) throws -> String {
+        let plainData = self.data(using: .utf8)!
+        let encryptedData = try AES.GCM.seal(plainData, using: key).combined!
+        return encryptedData.base64EncodedString()
+    }
+
+    /// Decrypts this base64 encoded representation of encrypted data with the given key using AES.GCM and returns the decrypted plain text `String`.
+    @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+    func decrypted(key: SymmetricKey) throws -> String {
+        let encryptedData = Data(base64Encoded: self)!
+        let sealedBox = try AES.GCM.SealedBox(combined: encryptedData)
+
+        let plainData = try AES.GCM.open(sealedBox, using: key)
+        return String(data: plainData, encoding: .utf8)!
     }
 }

@@ -284,7 +284,9 @@
 				A1F5AEEA1E05700F003D6949 /* RootFiles */,
 				823B2B321C24AAB6007B3CDD /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		823B2B321C24AAB6007B3CDD /* Products */ = {
 			isa = PBXGroup;

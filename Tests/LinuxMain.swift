@@ -1,6 +1,5 @@
-// Generated using Sourcery 1.0.0 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 1.0.3 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
-
 @testable import HandySwiftTests
 import XCTest
 
@@ -127,7 +126,8 @@ extension StringExtTests {
         ("testInitRandomWithLengthAllowedCharactersType", testInitRandomWithLengthAllowedCharactersType),
         ("testSample", testSample),
         ("testSampleWithSize", testSampleWithSize),
-        ("testFullRange", testFullRange)
+        ("testFullRange", testFullRange),
+        ("testEncryptDecryptFullCircle", testEncryptDecryptFullCircle)
     ]
 }
 

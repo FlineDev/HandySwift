@@ -1,5 +1,8 @@
 // Copyright © 2015 Flinesoft. All rights reserved.
 
+#if canImport(CryptoKit)
+import CryptoKit
+#endif
 @testable import HandySwift
 import XCTest
 
@@ -48,5 +51,17 @@ class StringExtTests: XCTestCase {
         for string in testStrings {
             XCTAssertEqual(String(string[string.fullRange]), string)
         }
+    }
+
+    @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+    func testEncryptDecryptFullCircle() throws {
+        let correctKey = SymmetricKey(size: .bits256)
+        let wrongKey = SymmetricKey(size: .bits256)
+
+        let plainText = "Harry Potter is a 🧙"
+        let encryptedString = try plainText.encrypted(key: correctKey)
+        XCTAssertNotEqual(encryptedString, plainText)
+        XCTAssertEqual(try encryptedString.decrypted(key: correctKey), plainText)
+        XCTAssertThrowsError(try encryptedString.decrypted(key: wrongKey))
     }
 }
