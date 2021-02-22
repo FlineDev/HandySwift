@@ -87,7 +87,7 @@ extension String {
 extension String {
     /// Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
     @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-    func encrypted(key: SymmetricKey) throws -> String {
+    public func encrypted(key: SymmetricKey) throws -> String {
         let plainData = self.data(using: .utf8)!
         let encryptedData = try AES.GCM.seal(plainData, using: key).combined!
         return encryptedData.base64EncodedString()
@@ -95,7 +95,7 @@ extension String {
 
     /// Decrypts this base64 encoded representation of encrypted data with the given key using AES.GCM and returns the decrypted plain text `String`.
     @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-    func decrypted(key: SymmetricKey) throws -> String {
+    public func decrypted(key: SymmetricKey) throws -> String {
         let encryptedData = Data(base64Encoded: self)!
         let sealedBox = try AES.GCM.SealedBox(combined: encryptedData)
 
