@@ -28,6 +28,9 @@
 		2E61DF7E249E1D37000AF3C5 /* WithableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF7D249E1D37000AF3C5 /* WithableTests.swift */; };
 		2E61DF7F249E1D37000AF3C5 /* WithableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF7D249E1D37000AF3C5 /* WithableTests.swift */; };
 		2E61DF80249E1D37000AF3C5 /* WithableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61DF7D249E1D37000AF3C5 /* WithableTests.swift */; };
+		2E86A32025E5943800845C6D /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E86A31F25E5943800845C6D /* DataExt.swift */; };
+		2E86A32125E5943800845C6D /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E86A31F25E5943800845C6D /* DataExt.swift */; };
+		2E86A32225E5943800845C6D /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E86A31F25E5943800845C6D /* DataExt.swift */; };
 		3F95C8D220F22A3C0045AFD0 /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D120F22A3C0045AFD0 /* CollectionExt.swift */; };
 		3F95C8D520F22DEE0045AFD0 /* CollectionExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtTests.swift */; };
 		3F95C8D620F22DEF0045AFD0 /* CollectionExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95C8D320F22DC60045AFD0 /* CollectionExtTests.swift */; };
@@ -156,6 +159,7 @@
 		2E5A375325655F55003704D0 /* StringProtocolExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProtocolExt.swift; sourceTree = "<group>"; };
 		2E61DF79249E1CA9000AF3C5 /* Withable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Withable.swift; sourceTree = "<group>"; };
 		2E61DF7D249E1D37000AF3C5 /* WithableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithableTests.swift; sourceTree = "<group>"; };
+		2E86A31F25E5943800845C6D /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
 		3F95C8D120F22A3C0045AFD0 /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
 		3F95C8D320F22DC60045AFD0 /* CollectionExtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtTests.swift; sourceTree = "<group>"; };
 		63651F8F231BFF2000E022DA /* DivisibleArithmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisibleArithmetic.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				82CAE2951C2EE64900F934A7 /* ArrayExt.swift */,
 				3F95C8D120F22A3C0045AFD0 /* CollectionExt.swift */,
 				CC66E046228199A0007ABF61 /* ComparableExt.swift */,
+				2E86A31F25E5943800845C6D /* DataExt.swift */,
 				8280D7DB1C4A6EC9001172EF /* DictionaryExt.swift */,
 				A1F221631E3CC05100419B06 /* DispatchTimeIntervalExt.swift */,
 				2E18AD592531DD3D00D44748 /* DoubleExt.swift */,
@@ -785,6 +790,7 @@
 				CC120CC2205FDB9300C37D7C /* Regex.swift in Sources */,
 				826F69AC1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				2E18B292242DECCA000C7776 /* NSObjectExt.swift in Sources */,
+				2E86A32025E5943800845C6D /* DataExt.swift in Sources */,
 				A1F221641E3CC05100419B06 /* DispatchTimeIntervalExt.swift in Sources */,
 				8218E4D62211D193007AAAF3 /* NSRangeExt.swift in Sources */,
 				3F95C8D220F22A3C0045AFD0 /* CollectionExt.swift in Sources */,
@@ -835,6 +841,7 @@
 				CC120CC3205FDC4C00C37D7C /* Regex.swift in Sources */,
 				C5CFB6AD20B0A70300830511 /* Unowned.swift in Sources */,
 				2E18B293242DECCA000C7776 /* NSObjectExt.swift in Sources */,
+				2E86A32125E5943800845C6D /* DataExt.swift in Sources */,
 				826F69AD1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				8218E4D72211D193007AAAF3 /* NSRangeExt.swift in Sources */,
 				825EFE051C33358400558497 /* StringExt.swift in Sources */,
@@ -885,6 +892,7 @@
 				CC120CC4205FDC4D00C37D7C /* Regex.swift in Sources */,
 				C5CFB6AE20B0A70300830511 /* Unowned.swift in Sources */,
 				2E18B294242DECCA000C7776 /* NSObjectExt.swift in Sources */,
+				2E86A32225E5943800845C6D /* DataExt.swift in Sources */,
 				826F69AE1C3895A300B2CC6B /* FrequencyTable.swift in Sources */,
 				8218E4D82211D193007AAAF3 /* NSRangeExt.swift in Sources */,
 				825EFE0B1C33358500558497 /* StringExt.swift in Sources */,

@@ -89,7 +89,7 @@ extension String {
     @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
     public func encrypted(key: SymmetricKey) throws -> String {
         let plainData = self.data(using: .utf8)!
-        let encryptedData = try AES.GCM.seal(plainData, using: key).combined!
+        let encryptedData = try plainData.encrypted(key: key)
         return encryptedData.base64EncodedString()
     }
 
@@ -97,9 +97,7 @@ extension String {
     @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
     public func decrypted(key: SymmetricKey) throws -> String {
         let encryptedData = Data(base64Encoded: self)!
-        let sealedBox = try AES.GCM.SealedBox(combined: encryptedData)
-
-        let plainData = try AES.GCM.open(sealedBox, using: key)
+        let plainData = try encryptedData.decrypted(key: key)
         return String(data: plainData, encoding: .utf8)!
     }
 }
