@@ -84,6 +84,7 @@ extension String {
     }
 }
 
+#if canImport(CryptoKit)
 extension String {
     /// Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
     @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
@@ -101,3 +102,4 @@ extension String {
         return String(data: plainData, encoding: .utf8)!
     }
 }
+#endif

@@ -1,9 +1,8 @@
 // Copyright © 2021 Flinesoft. All rights reserved.
 
-import Foundation
 #if canImport(CryptoKit)
 import CryptoKit
-#endif
+import Foundation
 
 extension Data {
     /// Encrypts this plain `Data` with the given key using AES.GCM and returns the encrypted data.
@@ -19,3 +18,4 @@ extension Data {
         return try AES.GCM.open(sealedBox, using: key)
     }
 }
+#endif
