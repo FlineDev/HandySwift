@@ -19,8 +19,7 @@ If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries se
 
 ## [Unreleased]
 ### Added
-- Added new convenience `encrypt(key:)` and `decrypt(key:)` functions to `String` type for platforms supporting `CryptoKit`. Uses AES.GCM algorithm for encryption.  
-  Author: [Cihat Gündüz](https://github.com/Jeehut)
+- None.
 ### Changed
 - None.
 ### Deprecated
@@ -31,6 +30,11 @@ If needed, pluralize to `Tasks`, `PRs` or `Authors` and list multiple entries se
 - None.
 ### Security
 - None.
+
+## [3.4.0] - 2021-09-28
+### Added
+- Added new convenience `encrypt(key:)` and `decrypt(key:)` functions to `String` type for platforms supporting `CryptoKit`. Uses AES.GCM algorithm for encryption.  
+  Author: [Cihat Gündüz](https://github.com/Jeehut)
 
 ## [3.3.0] - 2021-01-16
 ### Added

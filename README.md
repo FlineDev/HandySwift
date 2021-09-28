@@ -13,8 +13,8 @@
              alt="Coverage"/>
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-3.3.0-blue.svg"
-             alt="Version: 3.3.0">
+        <img src="https://img.shields.io/badge/Version-3.4.0-blue.svg"
+             alt="Version: 3.4.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg" alt="Swift: 5.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
@@ -250,7 +250,7 @@ Decrypts this base64 encoded representation of encrypted data with the given key
 `@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)`
 
 ``` Swift
-encryptedString.decrypt(key: key) // => "Harry Potter is a 🧙" 
+encryptedString.decrypt(key: key) // => "Harry Potter is a 🧙"
 ```
 
 
