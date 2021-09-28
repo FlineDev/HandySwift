@@ -13,8 +13,8 @@
              alt="Coverage"/>
     </a>
     <a href="https://github.com/Flinesoft/HandySwift/releases">
-        <img src="https://img.shields.io/badge/Version-3.3.0-blue.svg"
-             alt="Version: 3.3.0">
+        <img src="https://img.shields.io/badge/Version-3.4.0-blue.svg"
+             alt="Version: 3.4.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg" alt="Swift: 5.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
@@ -231,6 +231,28 @@ Get the full `Range` on a `String` object.
 let unicodeString = "Hello composed unicode symbols! 👨‍👩‍👧‍👦👨‍👨‍👦‍👦👩‍👩‍👧‍👧"
 unicodeString[unicodeString.fullRange] // => same string
 ```
+
+#### .encrypted(key:)
+
+Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
+`@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)`
+
+``` Swift
+let key = SymmetricKey(size: .bits256)
+
+let plainText = "Harry Potter is a 🧙"
+let encryptedString = try plainText.encrypted(key: key) // => "nz9LDkTNUEFj16Hrqvs4oCYeuIgV+nSP4OSqahkbtH62eJHHW664wC8NeFAMBPq7ZsY="
+```
+
+#### .decrypted(key:)
+
+Decrypts this base64 encoded representation of encrypted data with the given key using AES.GCM and returns the decrypted plain text `String`.
+`@available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)`
+
+``` Swift
+encryptedString.decrypt(key: key) // => "Harry Potter is a 🧙"
+```
+
 
 ### NSRangeExtension
 
@@ -608,7 +630,7 @@ foo2.isEasy // => true
 
 ## Donation
 
-BartyCrouch was brought to you by [Cihat Gündüz](https://github.com/Jeehut) in his free time. If you want to thank me and support the development of this project, please **make a small donation on [PayPal](https://paypal.me/Dschee/5EUR)**. In case you also like my other [open source contributions](https://github.com/Flinesoft) and [articles](https://medium.com/@Jeehut), please consider motivating me by **becoming a sponsor on [GitHub](https://github.com/sponsors/Jeehut)** or a **patron on [Patreon](https://www.patreon.com/Jeehut)**.
+HandySwift was brought to you by [Cihat Gündüz](https://github.com/Jeehut) in his free time. If you want to thank me and support the development of this project, please **make a small donation on [PayPal](https://paypal.me/Dschee/5EUR)**. In case you also like my other [open source contributions](https://github.com/Flinesoft) and [articles](https://medium.com/@Jeehut), please consider motivating me by **becoming a sponsor on [GitHub](https://github.com/sponsors/Jeehut)** or a **patron on [Patreon](https://www.patreon.com/Jeehut)**.
 
 Thank you very much for any donation, it really helps out a lot! 💯
 

@@ -3,5 +3,5 @@
 import Foundation
 
 #if !os(Linux)
-    extension NSObject: Withable {}
+extension NSObject: Withable {}
 #endif

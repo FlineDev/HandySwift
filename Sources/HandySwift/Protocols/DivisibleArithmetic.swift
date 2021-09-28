@@ -2,15 +2,15 @@
 
 /// A type which conforms to DivisibleArithmetic provides the basic arithmetic operations: additon, subtraction, multiplication and division.
 public protocol DivisibleArithmetic: Numeric {
-    init(_ value: Int)
-    static func / (lhs: Self, rhs: Self) -> Self
+  init(_ value: Int)
+  static func / (lhs: Self, rhs: Self) -> Self
 }
 
 extension Double: DivisibleArithmetic {}
 extension Float: DivisibleArithmetic {}
 
 #if canImport(CoreGraphics)
-    import CoreGraphics
+import CoreGraphics
 
-    extension CGFloat: DivisibleArithmetic {}
+extension CGFloat: DivisibleArithmetic {}
 #endif

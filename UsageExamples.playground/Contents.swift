@@ -1,6 +1,9 @@
 import UIKit
 import HandySwift
 import PlaygroundSupport
+#if canImport(CryptoKit)
+import CryptoKit
+#endif
 
 // Wait for all async calls
 PlaygroundPage.current.needsIndefiniteExecution = true
@@ -105,6 +108,20 @@ String(randomWithLength: 10, allowedCharactersType: .allCharactersIn("?!🐲🍏
 
 let unicodeString = "Hello composed unicode symbols! 👨‍👩‍👧‍👦👨‍👨‍👦‍👦👩‍👩‍👧‍👧"
 unicodeString[unicodeString.fullRange]
+
+//: ### .encrypted(key:)
+//: Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
+//: @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+let key = SymmetricKey(size: .bits256)
+
+let plainText = "Harry Potter is a 🧙"
+let encryptedString = try plainText.encrypted(key: key)
+
+//: ### .decrypted(key:)
+//: Decrypts this base64 encoded representation of encrypted data with the given key using AES.GCM and returns the decrypted plain text `String`.
+//: @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+
+encryptedString.decrypt(key: key)
 
 //: ## NSRangeExtension
 //: ### init(_:in:)
