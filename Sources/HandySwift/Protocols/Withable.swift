@@ -9,7 +9,7 @@ extension Withable {
   public init(with config: (inout Self) -> Void) { // swiftlint:disable:this missing_docs
     fatalError("Function no longer available. Xcode should actually show an unavailable error with message and not compile.")
   }
-  
+
   /// Create a copy (if a struct) or use same object (if class), improving chainability e.g. after init method.
   @inlinable
   public func with(_ config: (inout Self) throws -> Void) rethrows -> Self {

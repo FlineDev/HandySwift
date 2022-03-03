@@ -7,7 +7,7 @@ import Foundation
 public struct Regex {
   // MARK: - Properties
   @usableFromInline internal let regularExpression: NSRegularExpression
-  
+
   // MARK: - Initializers
   /// Create a `Regex` based on a pattern string.
   ///
@@ -26,7 +26,7 @@ public struct Regex {
       options: options.toNSRegularExpressionOptions
     )
   }
-  
+
   // MARK: - Methods: Matching
   /// Returns `true` if the regex matches `string`, otherwise returns `false`.
   ///
@@ -37,7 +37,7 @@ public struct Regex {
   public func matches(_ string: String) -> Bool {
     firstMatch(in: string) != nil
   }
-  
+
   /// If the regex matches `string`, returns a `Match` describing the
   /// first matched string and any captures. If there are no matches, returns
   /// `nil`.
@@ -51,7 +51,7 @@ public struct Regex {
       .firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
       .map { Match(result: $0, in: string) }
   }
-  
+
   /// If the regex matches `string`, returns an array of `Match`, describing
   /// every match inside `string`. If there are no matches, returns an empty
   /// array.
@@ -65,7 +65,7 @@ public struct Regex {
       .matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
       .map { Match(result: $0, in: string) }
   }
-  
+
   // MARK: Replacing
   /// Returns a new string where each substring matched by `regex` is replaced
   /// with `template`.
@@ -92,7 +92,7 @@ public struct Regex {
       let replacement = match.string(applyingTemplate: template)
       output.replaceSubrange(match.range, with: replacement)
     }
-    
+
     return output
   }
 }
@@ -131,23 +131,23 @@ extension Regex {
     // MARK: - Properties
     /// Ignores the case of letters when matching.
     public static let ignoreCase = Options(rawValue: 1)
-    
+
     /// Ignore any metacharacters in the pattern, treating every character as
     /// a literal.
     public static let ignoreMetacharacters = Options(rawValue: 1 << 1)
-    
+
     /// By default, "^" matches the beginning of the string and "$" matches the
     /// end of the string, ignoring any newlines. With this option, "^" will
     /// the beginning of each line, and "$" will match the end of each line.
     public static let anchorsMatchLines = Options(rawValue: 1 << 2)
-    
+
     /// Usually, "." matches all characters except newlines (\n). Using this,
     /// options will allow "." to match newLines
     public static let dotMatchesLineSeparators = Options(rawValue: 1 << 3)
-    
+
     /// The raw value of the `OptionSet`
     public let rawValue: Int
-    
+
     /// Transform an instance of `Regex.Options` into the equivalent `NSRegularExpression.Options`.
     ///
     /// - returns: The equivalent `NSRegularExpression.Options`.
@@ -159,7 +159,7 @@ extension Regex {
       if contains(.dotMatchesLineSeparators) { options.insert(.dotMatchesLineSeparators) }
       return options
     }
-    
+
     // MARK: - Initializers
     /// The raw value init for the `OptionSet`
     public init(rawValue: Int) {
@@ -179,12 +179,12 @@ extension Regex {
     public lazy var string: String = {
       String(describing: self.baseString[self.range])
     }()
-    
+
     /// The range of the matched string.
     public lazy var range: Range<String.Index> = {
       Range(self.result.range, in: self.baseString)!
     }()
-    
+
     /// The matching string for each capture group in the regular expression
     /// (if any).
     ///
@@ -206,17 +206,17 @@ extension Regex {
         .map { [unowned self] in
           Range($0, in: self.baseString)
         }
-      
+
       return captureRanges.map { [unowned self] captureRange in
         guard let captureRange = captureRange else { return nil }
         return String(describing: self.baseString[captureRange])
       }
     }()
-    
+
     private let result: NSTextCheckingResult
-    
+
     private let baseString: String
-    
+
     // MARK: - Initializers
     @usableFromInline
     internal init(result: NSTextCheckingResult, in string: String) {
@@ -224,11 +224,11 @@ extension Regex {
         result.regularExpression != nil,
         "NSTextCheckingResult must originate from regular expression parsing."
       )
-      
+
       self.result = result
       self.baseString = string
     }
-    
+
     // MARK: - Methods
     /// Returns a new string where the matched string is replaced according to the `template`.
     ///
@@ -246,12 +246,12 @@ extension Regex {
     public func string(applyingTemplate template: String) -> String {
       result.regularExpression!.replacementString(
         for: result,
-           in: baseString,
-           offset: 0,
-           template: template
+        in: baseString,
+        offset: 0,
+        template: template
       )
     }
-    
+
     // MARK: - CustomStringConvertible
     /// Returns a string describing the match.
     public var description: String {

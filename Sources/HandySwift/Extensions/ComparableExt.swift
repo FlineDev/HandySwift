@@ -21,7 +21,7 @@ extension Comparable {
       return self
     }
   }
-  
+
   /// Returns `self` clamped to the given limits.
   ///
   /// - Parameter limits: The partial range (from) determining the minimum value.
@@ -36,7 +36,7 @@ extension Comparable {
       return self
     }
   }
-  
+
   /// Returns `self` clamped to the given limits.
   ///
   /// - Parameter limits: The partial range (through) determining the maximum value.
@@ -51,7 +51,7 @@ extension Comparable {
       return self
     }
   }
-  
+
   // MARK: Mutating Variants
   /// Clamps `self` to the given limits.
   ///
@@ -64,7 +64,7 @@ extension Comparable {
   public mutating func clamp(to limits: ClosedRange<Self>) {
     self = clamped(to: limits)
   }
-  
+
   /// Clamps `self` to the given limits.
   ///
   /// - `self`, if it is inside the given limits.
@@ -75,7 +75,7 @@ extension Comparable {
   public mutating func clamp(to limits: PartialRangeFrom<Self>) {
     self = clamped(to: limits)
   }
-  
+
   /// Clamps `self` to the given limits.
   ///
   /// - `self`, if it is inside the given limits.

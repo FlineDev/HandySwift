@@ -11,7 +11,7 @@ extension Int {
     guard upperLimit > 0 else { return nil }
     self = .random(in: 0 ..< upperLimit)
   }
-  
+
   /// Initializes a new `Int ` instance with a random value below a given `Int`.
   ///
   /// - Parameters:
@@ -21,7 +21,7 @@ extension Int {
     guard upperLimit > 0 else { return nil }
     self = .random(in: 0 ..< upperLimit, using: &generator)
   }
-  
+
   /// Runs the code passed as a closure the specified number of times.
   ///
   /// - Parameters:
@@ -31,7 +31,7 @@ extension Int {
     guard self > 0 else { return }
     for _ in 0 ..< self { try closure() }
   }
-  
+
   /// Runs the code passed as a closure the specified number of times
   /// and creates an array from the return values.
   ///

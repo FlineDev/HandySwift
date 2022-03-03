@@ -6,7 +6,7 @@ import Foundation
 public struct Unowned<Wrapped> where Wrapped: AnyObject {
   /// The value of `Wrapped` stored as unowned reference
   public unowned var value: Wrapped
-  
+
   /// Creates an instance that stores the given value.
   public init(_ value: Wrapped) {
     self.value = value

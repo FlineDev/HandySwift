@@ -13,7 +13,7 @@ class WithableTests: XCTestCase {
     let textFile = TextFile(contents: "", linesCount: 0)
     XCTAssertEqual(textFile.contents, "")
     XCTAssertEqual(textFile.linesCount, 0)
-    
+
     let modifiedTextFile = textFile.with { $0.contents = "Text"; $0.linesCount = 5 }
     XCTAssertEqual(textFile.contents, "")
     XCTAssertEqual(textFile.linesCount, 0)

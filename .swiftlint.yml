@@ -113,6 +113,9 @@ identifier_name:
     - db
     - to
 
+indentation_width:
+  indentation_width: 2
+
 line_length: 160
 
 nesting:

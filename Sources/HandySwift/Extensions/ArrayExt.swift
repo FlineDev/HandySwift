@@ -5,7 +5,7 @@ import Foundation
 extension Array {
   /// A tuple representing a combination.
   public typealias Combination<T> = (left: Element, right: T)
-  
+
   /// Combines each element with each element of a given array.
   ///
   /// Also known as: Cartesian product.
@@ -17,10 +17,10 @@ extension Array {
   public func combinations<T>(with other: [T]) -> [Combination<T>] {
     var combinations = [(Element, T)]()
     forEach { elem in other.forEach { otherElem in combinations.append((elem, otherElem)) } }
-    
+
     return combinations
   }
-  
+
   /// Sorts the collection in place by the order specified in the closure.
   ///
   /// NOTE: The default `sort` method is not stable, this one allows to explicitly specify it to be stable.
@@ -33,7 +33,7 @@ extension Array {
     guard stable else { sort(by: areInIncreasingOrder); return }
     stableMergeSort(by: areInIncreasingOrder)
   }
-  
+
   /// Returns the elements of the sequence, sorted.
   ///
   /// NOTE: The default `sorted` method is not stable, this one allows to explicitly specify it to be stable.
@@ -44,30 +44,30 @@ extension Array {
   @inlinable
   public func sorted(by areInIncreasingOrder: @escaping (Element, Element) -> Bool, stable: Bool) -> [Element] {
     guard stable else { return sorted(by: areInIncreasingOrder) }
-    
+
     var copy = [Element](self)
     copy.stableMergeSort(by: areInIncreasingOrder)
-    
+
     return copy
   }
-  
+
   /// Sorts the array in-place using a stable merge sort algorithm.
   @inlinable
   mutating func stableMergeSort(by areInIncreasingOrder: @escaping (Element, Element) -> Bool) {
     var tmp = [Element]()
     tmp.reserveCapacity(numericCast(count))
-    
+
     func merge(low: Int, mid: Int, high: Int) {
       tmp.removeAll(keepingCapacity: true)
       tmp.append(contentsOf: self[low ..< high])
-      
+
       var i = 0, j = mid - low // swiftlint:disable:this identifier_name
       let iMax = j, jMax = tmp.count
-      
+
       for k in low ..< high { // swiftlint:disable:this identifier_name
         let tmpPosIsJ = i == iMax || (j != jMax && areInIncreasingOrder(tmp[j], tmp[i]))
         self[k] = tmp[tmpPosIsJ ? j : i]
-        
+
         if tmpPosIsJ {
           j += 1
         } else {
@@ -75,17 +75,17 @@ extension Array {
         }
       }
     }
-    
+
     let n = count // swiftlint:disable:this identifier_name
     var size = 1
     while size < n {
       var low = 0
-      
+
       while low < n - size {
         merge(low: low, mid: low + size, high: Swift.min(low + size * 2, n))
         low += size * 2
       }
-      
+
       size *= 2
     }
   }
@@ -99,7 +99,7 @@ extension RandomAccessCollection where Index == Int {
     guard let randomIndex = Int(randomBelow: count) else { return nil }
     return self[randomIndex]
   }
-  
+
   /// Returns a given number of random elements from the `Array`.
   ///
   /// - Parameters:
@@ -108,10 +108,10 @@ extension RandomAccessCollection where Index == Int {
   @inlinable
   public func sample(size: Int) -> [Element]? {
     guard !isEmpty else { return nil }
-    
+
     var sampleElements: [Element] = []
     size.times { sampleElements.append(sample!) }
-    
+
     return sampleElements
   }
 }
@@ -127,7 +127,7 @@ extension Array where Element: Comparable {
   public mutating func sort(stable: Bool) {
     sort(by: { lhs, rhs in  lhs < rhs }, stable: stable)
   }
-  
+
   /// Returns the elements of the sequence, sorted.
   ///
   /// NOTE: The default `sorted` method is not stable, this one allows to explicitly specify it to be stable.

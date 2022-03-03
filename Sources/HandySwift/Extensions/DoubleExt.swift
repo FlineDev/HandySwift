@@ -10,7 +10,7 @@ extension Double {
     let divisor = pow(10.0, Double(fractionDigits))
     self = (self * divisor).rounded(rule) / divisor
   }
-  
+
   /// Returns this value rounded to an integral value using the specified fraction digits and rounding rule.
   ///
   /// - NOTE: Dropping the `rule` parameter will default to “schoolbook rounding”.

@@ -7,17 +7,17 @@ public struct FrequencyTable<T> {
   // MARK: - Sub Types
   @usableFromInline
   typealias Entry = (value: T, frequency: Int)
-  
+
   // MARK: - Stored Instance Properties
   @usableFromInline internal let valuesWithFrequencies: [Entry]
-  
+
   /// Contains all values the amount of time of their frequencies.
   @usableFromInline internal let frequentValues: [T]
-  
+
   // MARK: - Computed Instance Properties
   /// - Returns: A random value taking frequencies into account or nil if values empty.
   @inlinable public var sample: T? { frequentValues.sample }
-  
+
   // MARK: - Initializers
   /// Creates a new FrequencyTable instance with values and their frequencies provided.
   ///
@@ -31,7 +31,7 @@ public struct FrequencyTable<T> {
       memo += Array(repeating: entry.value, count: entry.frequency)
     }
   }
-  
+
   // MARK: - Instance Methods
   /// Returns an array of random values taking frequencies into account or nil if values empty.
   ///

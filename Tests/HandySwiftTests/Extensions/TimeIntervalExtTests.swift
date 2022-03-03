@@ -13,11 +13,11 @@ class TimeIntervalExtTests: XCTestCase {
     XCTAssertEqual(Timespan.microseconds(0.5), 0.5 / 1_000_000, accuracy: 0.001)
     XCTAssertEqual(Timespan.nanoseconds(0.5), 0.5 / 1_000_000_000, accuracy: 0.001)
   }
-  
+
   func testUnitConversion() {
     let timespan = Timespan.hours(4)
     let multipledTimespan = timespan * 3
-    
+
     XCTAssertEqual(multipledTimespan.days, 0.5, accuracy: 0.001)
     XCTAssertEqual(multipledTimespan.hours, 12, accuracy: 0.001)
     XCTAssertEqual(multipledTimespan.minutes, 12 * 60, accuracy: 0.001)
