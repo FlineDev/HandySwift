@@ -58,14 +58,11 @@ If you like this, please also checkout [HandyUIKit](https://github.com/Flinesoft
 
 ## Installation
 
-Currently the recommended way of installing this library is via [Swift Package Manager](https://github.com/apple/swift-package-manager). [Carthage](https://github.com/Carthage/Carthage) & [Cocoapods](https://github.com/CocoaPods/CocoaPods) are supported, too.
+Currently the recommended way of installing this library is via [Swift Package Manager](https://github.com/apple/swift-package-manager).  [Cocoapods](https://github.com/CocoaPods/CocoaPods) is supported, too.
 
 You can of course also just include this framework manually into your project by downloading it or by using git submodules.
 
 ## Usage
-
-Please have a look at the UsageExamples.playground for a complete list of features provided.
-Open the Playground from within the `.xcworkspace` in order for it to work.
 
 ---
 #### Feature Overview
