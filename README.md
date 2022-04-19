@@ -1,25 +1,25 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Flinesoft/HandySwift/main/Logo.png"
+    <img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Logo.png"
       width=600>
 </p>
 
 <p align="center">
-    <a href="https://github.com/Flinesoft/HandySwift/actions?query=branch%3Amain">
-        <img src="https://github.com/Flinesoft/HandySwift/workflows/CI/badge.svg"
+    <a href="https://github.com/FlineDev/HandySwift/actions?query=branch%3Amain">
+        <img src="https://github.com/FlineDev/HandySwift/workflows/CI/badge.svg"
              alt="CI">
     </a>
-    <a href="https://codecov.io/gh/Flinesoft/HandySwift">
-        <img src="https://codecov.io/gh/Flinesoft/HandySwift/branch/main/graph/badge.svg"
+    <a href="https://codecov.io/gh/FlineDev/HandySwift">
+        <img src="https://codecov.io/gh/FlineDev/HandySwift/branch/main/graph/badge.svg"
              alt="Coverage"/>
     </a>
-    <a href="https://github.com/Flinesoft/HandySwift/releases">
+    <a href="https://github.com/FlineDev/HandySwift/releases">
         <img src="https://img.shields.io/badge/Version-3.4.0-blue.svg"
              alt="Version: 3.4.0">
     </a>
     <img src="https://img.shields.io/badge/Swift-5.1-FFAC45.svg" alt="Swift: 5.1">
     <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20tvOS%20%7C%20macOS%20%7C%20Linux-FF69B4.svg"
         alt="Platforms: iOS | tvOS | macOS | Linux">
-    <a href="https://github.com/Flinesoft/HandySwift/blob/main/LICENSE.md">
+    <a href="https://github.com/FlineDev/HandySwift/blob/main/LICENSE.md">
         <img src="https://img.shields.io/badge/License-MIT-lightgrey.svg"
               alt="License: MIT">
     </a>
@@ -42,7 +42,7 @@
     <a href="#installation">Installation</a>
   • <a href="#usage">Usage</a>
   • <a href="#donation">Donation</a>
-  • <a href="https://github.com/Flinesoft/HandySwift/issues">Issues</a>
+  • <a href="https://github.com/FlineDev/HandySwift/issues">Issues</a>
   • <a href="#contributing">Contributing</a>
   • <a href="#license">License</a>
 </p>
@@ -52,9 +52,9 @@
 
 The goal of this library is to **provide handy features** that didn't make it to the Swift standard library (yet) due to many different reasons. Those could be that the Swift community wants to keep the standard library clean and manageable or simply hasn't finished discussion on a specific feature yet.
 
-If you like this, please also checkout [HandyUIKit](https://github.com/Flinesoft/HandyUIKit) for handy UI features that we feel should have been part of the UIKit frameworks in the first place.
+If you like this, please also checkout [HandyUIKit](https://github.com/FlineDev/HandyUIKit) for handy UI features that we feel should have been part of the UIKit frameworks in the first place.
 
-> If you are **upgrading from a previous major version** of HandySwift (e.g. 1.x to 2.x) then checkout the [releases section on GitHub](https://github.com/Flinesoft/HandySwift/releases) and look out for the release notes of the last major releas(es) (e.g. 2.0.0) for an overview of the changes made. It'll save you time as hints are on how best to migrate are included there.
+> If you are **upgrading from a previous major version** of HandySwift (e.g. 1.x to 2.x) then checkout the [releases section on GitHub](https://github.com/FlineDev/HandySwift/releases) and look out for the release notes of the last major releas(es) (e.g. 2.0.0) for an overview of the changes made. It'll save you time as hints are on how best to migrate are included there.
 
 ## Installation
 
@@ -627,7 +627,7 @@ foo2.isEasy // => true
 
 ## Donation
 
-HandySwift was brought to you by [Cihat Gündüz](https://github.com/Jeehut) in his free time. If you want to thank me and support the development of this project, please **make a small donation on [PayPal](https://paypal.me/Dschee/5EUR)**. In case you also like my other [open source contributions](https://github.com/Flinesoft) and [articles](https://medium.com/@Jeehut), please consider motivating me by **becoming a sponsor on [GitHub](https://github.com/sponsors/Jeehut)** or a **patron on [Patreon](https://www.patreon.com/Jeehut)**.
+HandySwift was brought to you by [Cihat Gündüz](https://github.com/Jeehut) in his free time. If you want to thank me and support the development of this project, please **make a small donation on [PayPal](https://paypal.me/Dschee/5EUR)**. In case you also like my other [open source contributions](https://github.com/FlineDev) and [articles](https://medium.com/@Jeehut), please consider motivating me by **becoming a sponsor on [GitHub](https://github.com/sponsors/Jeehut)** or a **patron on [Patreon](https://www.patreon.com/Jeehut)**.
 
 Thank you very much for any donation, it really helps out a lot! 💯
 
