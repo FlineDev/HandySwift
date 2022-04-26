@@ -620,8 +620,8 @@ struct Foo: Withable {
 let defaultFoo = Foo(bar: 5)
 let customFoo = Foo(bar: 5).with { $0.isEasy = true }
 
-foo.isEasy // => false
-foo2.isEasy // => true
+defaultFoo.isEasy // => false
+customFoo.isEasy // => true
 ```
 
 
