@@ -143,7 +143,7 @@ let myNum = 3
 myNum.clamped(to: 0 ... 6) // => 3
 myNum.clamped(to: 0 ... 2) // => 2
 myNum.clamped(to: 4 ... 6) // => 4
-myNum.clamped(to: 5...) // => 4
+myNum.clamped(to: 5...) // => 5
 myNum.clamped(to: ...2) // => 2
 
 let myString = "d"
