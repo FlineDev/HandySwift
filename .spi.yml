@@ -1,5 +1,4 @@
 version: 1
 builder:
   configs:
-    - platform: macos
-      documentation_targets: [HandySwift]
+    - documentation_targets: [HandySwift]
