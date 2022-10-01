@@ -86,10 +86,23 @@ extension String {
 
 #if canImport(CryptoKit)
 extension String {
-  public enum CryptingError: Error {
+  public enum CryptingError: LocalizedError {
     case convertingStringToDataFailed
     case decryptingDataFailed
     case convertingDataToStringFailed
+
+    public var errorDescription: String? {
+      switch self {
+      case .convertingDataToStringFailed:
+        return "Converting Data to String failed."
+
+      case .decryptingDataFailed:
+        return "Decrypting Data failed."
+
+      case .convertingStringToDataFailed:
+        return "Converting String to Data failed."
+      }
+    }
   }
 
   /// Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
