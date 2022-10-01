@@ -86,10 +86,20 @@ extension String {
 
 #if canImport(CryptoKit)
 extension String {
+  public enum CryptingError: Error {
+    case convertingStringToDataFailed
+    case decryptingDataFailed
+    case convertingDataToStringFailed
+  }
+
   /// Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
+  /// Throws a ``CryptingError``
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func encrypted(key: SymmetricKey) throws -> String {
-    let plainData = self.data(using: .utf8)!
+    guard let plainData = self.data(using: .utf8) else {
+      throw CryptingError.convertingStringToDataFailed
+    }
+
     let encryptedData = try plainData.encrypted(key: key)
     return encryptedData.base64EncodedString()
   }
@@ -97,9 +107,16 @@ extension String {
   /// Decrypts this base64 encoded representation of encrypted data with the given key using AES.GCM and returns the decrypted plain text `String`.
   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
   public func decrypted(key: SymmetricKey) throws -> String {
-    let encryptedData = Data(base64Encoded: self)!
+    guard let encryptedData = Data(base64Encoded: self) else {
+      throw CryptingError.decryptingDataFailed
+    }
+
     let plainData = try encryptedData.decrypted(key: key)
-    return String(data: plainData, encoding: .utf8)!
+    guard let plainString = String(data: plainData, encoding: .utf8) else {
+      throw CryptingError.convertingDataToStringFailed
+    }
+
+    return plainString
   }
 }
 #endif
