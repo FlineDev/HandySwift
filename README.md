@@ -54,13 +54,8 @@ The goal of this library is to **provide handy features** that didn't make it to
 
 If you like this, please also checkout [HandyUIKit](https://github.com/FlineDev/HandyUIKit) for handy UI features that we feel should have been part of the UIKit frameworks in the first place.
 
-> If you are **upgrading from a previous major version** of HandySwift (e.g. 1.x to 2.x) then checkout the [releases section on GitHub](https://github.com/FlineDev/HandySwift/releases) and look out for the release notes of the last major releas(es) (e.g. 2.0.0) for an overview of the changes made. It'll save you time as hints are on how best to migrate are included there.
+> If you are **upgrading from a previous major version** of HandySwift (e.g. 1.x to 2.x) then checkout the [releases section on GitHub](https://github.com/FlineDev/HandySwift/releases) and look out for the release notes of the last major releas(es) (e.g. 2.0.0) for an overview of the changes made. It'll save you time as hints on how best to migrate are included there.
 
-## Installation
-
-Currently the recommended way of installing this library is via [Swift Package Manager](https://github.com/apple/swift-package-manager).  [Cocoapods](https://github.com/CocoaPods/CocoaPods) is supported, too.
-
-You can of course also just include this framework manually into your project by downloading it or by using git submodules.
 
 ## Usage
 
@@ -437,7 +432,7 @@ Returns a random element with frequency-based probability within the array or ni
 
 ``` Swift
 frequencyTable.sample
-let randomWord = frequencyTable.sample.map { $0.word }
+let randomWord = frequencyTable.sample.word
 // => "Harry"
 ```
 
@@ -447,7 +442,7 @@ Returns an array with `size` frequency-based random elements or nil if array emp
 
 ``` Swift
 frequencyTable.sample(size: 6)
-let randomWords = frequencyTable.sample(size: 6)!.map { $0.word }
+let randomWords = frequencyTable.sample(size: 6)!.map(\.word)
 // => ["Harry", "Ronald", "Harry", "Harry", "Hermione", "Hermione"]
 ```
 
@@ -585,7 +580,7 @@ print(unowned.value)
 
 #### [try:]
 
-Returns an element with the specified index or nil if the element does not exist .
+Returns an element with the specified index or nil if the element does not exist.
 ``` swift
 let testArray = [0, 1, 2, 3, 20]
 testArray[try: 4]  // => Optional(20)
