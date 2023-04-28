@@ -1,5 +1,3 @@
-// Copyright © 2016 Flinesoft. All rights reserved.
-
 import Foundation
 
 /// Runs code with delay given in seconds. Uses the main thread if not otherwise specified.

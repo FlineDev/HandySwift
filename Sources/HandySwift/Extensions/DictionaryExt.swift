@@ -1,5 +1,3 @@
-// Copyright © 2016 Flinesoft. All rights reserved.
-
 import Foundation
 
 extension Dictionary {

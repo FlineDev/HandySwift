@@ -1,5 +1,3 @@
-// Copyright © 2019 Flinesoft. All rights reserved.
-
 import Foundation
 
 @testable import HandySwift

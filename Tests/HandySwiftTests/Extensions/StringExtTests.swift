@@ -1,5 +1,3 @@
-// Copyright © 2015 Flinesoft. All rights reserved.
-
 #if canImport(CryptoKit)
 import CryptoKit
 #endif

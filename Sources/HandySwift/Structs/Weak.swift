@@ -1,5 +1,3 @@
-// Copyright © 2018 Flinesoft. All rights reserved.
-
 import Foundation
 
 /// A wrapper for storing weak references to a `Wrapped` instance.

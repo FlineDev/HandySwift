@@ -1,5 +1,3 @@
-// Copyright © 2020 Flinesoft. All rights reserved.
-
 /// Simple protocol to make modifying objects with multiple properties more pleasant (functional, chainable, point-free).
 public protocol Withable { /* no requirements */ }
 

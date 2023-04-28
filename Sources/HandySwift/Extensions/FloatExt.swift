@@ -1,5 +1,3 @@
-// Copyright © 2021 Flinesoft. All rights reserved.
-
 import Foundation
 
 extension Float {

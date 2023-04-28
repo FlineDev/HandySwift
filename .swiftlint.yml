@@ -20,7 +20,6 @@ opt_in_rules:
 - explicit_type_interface
 - fallthrough
 - fatal_error_message
-- file_header
 - file_name
 - file_name_no_space
 - file_types_order
@@ -99,9 +98,6 @@ explicit_type_interface:
   allow_redundancy: true
   excluded:
     - local
-
-file_header:
-  required_pattern: \/\/ Copyright © \d{4} Flinesoft\. All rights reserved\.
 
 file_name:
   suffix_pattern: "Ext"

@@ -1,5 +1,3 @@
-// Copyright © 2016 Flinesoft. All rights reserved.
-
 import Foundation
 
 /// Data structure to retrieve random values with their frequency taken into account.

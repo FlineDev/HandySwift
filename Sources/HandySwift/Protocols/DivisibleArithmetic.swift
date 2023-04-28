@@ -1,5 +1,3 @@
-// Copyright © 2019 Flinesoft. All rights reserved.
-
 /// A type which conforms to DivisibleArithmetic provides the basic arithmetic operations: additon, subtraction, multiplication and division.
 public protocol DivisibleArithmetic: Numeric {
   init(_ value: Int)

@@ -1,5 +1,3 @@
-// Copyright © 2017 Flinesoft. All rights reserved.
-
 @testable import HandySwift
 import XCTest
 

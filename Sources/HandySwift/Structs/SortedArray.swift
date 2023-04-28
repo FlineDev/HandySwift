@@ -1,5 +1,3 @@
-// Copyright © 2015 Flinesoft. All rights reserved.
-
 import Foundation
 
 /// Data structure to keep a sorted array of elements for fast access.
