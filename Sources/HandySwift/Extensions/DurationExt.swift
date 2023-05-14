@@ -2,6 +2,11 @@ import Foundation
 
 @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
 extension Duration {
+  /// - Returns: The Duration as a ``TimeInterval``, which is a ``Double`` representing the duration in seconds.
+  public var timeInterval: TimeInterval {
+    TimeInterval(self.components.seconds) + (TimeInterval(self.components.attoseconds) / 1_000_000_000_000_000_000)
+  }
+
   /// Construct a `Duration` given a number of weeks represented as a`BinaryInteger`.
   /// - Returns: A `Duration` representing a given number of weeks.
   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
