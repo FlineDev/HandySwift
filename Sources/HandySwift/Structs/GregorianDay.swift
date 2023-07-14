@@ -45,3 +45,8 @@ public struct GregorianDay {
       return components.date!
    }
 }
+
+extension GregorianDay: Codable, Hashable, Sendable {}
+extension GregorianDay: Identifiable {
+   public var id: String { "\(self.year)-\(self.month)-\(self.day)" }
+}

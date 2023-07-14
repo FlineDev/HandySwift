@@ -36,3 +36,8 @@ public struct GregorianTimeOfDay {
       return components.date!
    }
 }
+
+extension GregorianTimeOfDay: Codable, Hashable, Sendable {}
+extension GregorianTimeOfDay: Identifiable {
+   public var id: String { "\(self.hour):\(self.minute):\(self.second)" }
+}
