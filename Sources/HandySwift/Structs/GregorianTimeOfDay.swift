@@ -35,6 +35,23 @@ public struct GregorianTimeOfDay {
       )
       return components.date!
    }
+
+   @available(iOS 16, macOS 13.0, *)
+   public init(durationSinceStartOfDay: Duration) {
+      self.hour = Int(durationSinceStartOfDay.timeInterval.hours)
+      self.minute = Int((durationSinceStartOfDay - .hours(self.hour)).timeInterval.minutes)
+      self.second = Int((durationSinceStartOfDay - .hours(self.hour) - .minutes(self.minute)).timeInterval.seconds)
+   }
+
+   @available(iOS 16, macOS 13.0, *)
+   public var durationSinceStartOfDay: Duration {
+      .hours(self.hour) + .minutes(self.minute) + .seconds(self.second)
+   }
+
+   @available(iOS 16, macOS 13.0, *)
+   public func advanced(by duration: Duration) -> Self {
+      GregorianTimeOfDay(durationSinceStartOfDay: self.durationSinceStartOfDay + duration)
+   }
 }
 
 extension GregorianTimeOfDay: Codable, Hashable, Sendable {}
