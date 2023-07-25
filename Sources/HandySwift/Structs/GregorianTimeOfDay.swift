@@ -58,3 +58,11 @@ extension GregorianTimeOfDay: Codable, Hashable, Sendable {}
 extension GregorianTimeOfDay: Identifiable {
    public var id: String { "\(self.hour):\(self.minute):\(self.second)" }
 }
+
+extension GregorianTimeOfDay: Comparable {
+   public static func < (left: GregorianTimeOfDay, right: GregorianTimeOfDay) -> Bool {
+      guard left.hour == right.hour else { return left.hour < right.hour }
+      guard left.minute == right.minute else { return left.minute < right.minute }
+      return left.second < right.second
+   }
+}

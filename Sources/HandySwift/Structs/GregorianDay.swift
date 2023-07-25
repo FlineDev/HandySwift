@@ -50,3 +50,11 @@ extension GregorianDay: Codable, Hashable, Sendable {}
 extension GregorianDay: Identifiable {
    public var id: String { "\(self.year)-\(self.month)-\(self.day)" }
 }
+
+extension GregorianDay: Comparable {
+   public static func < (left: GregorianDay, right: GregorianDay) -> Bool {
+      guard left.year == right.year else { return left.year < right.year }
+      guard left.month == right.month else { return left.month < right.month }
+      return left.day < right.day
+   }
+}
