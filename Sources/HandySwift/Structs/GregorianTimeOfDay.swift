@@ -12,7 +12,7 @@ public struct GregorianTimeOfDay {
       self.second = components.second!
    }
 
-   public init(hour: Int, minute: Int = 0, second: Int = 0) {
+   public init(hour: Int, minute: Int, second: Int = 0) {
       assert(hour >= 0 && hour < 24)
       assert(minute >= 0 && minute < 60)
       assert(second >= 0 && second < 60)
@@ -65,4 +65,9 @@ extension GregorianTimeOfDay: Comparable {
       guard left.minute == right.minute else { return left.minute < right.minute }
       return left.second < right.second
    }
+}
+
+extension GregorianTimeOfDay {
+   public static var zero: Self { GregorianTimeOfDay(hour: 0, minute: 0, second: 0) }
+   public static var now: Self { GregorianTimeOfDay(date: Date()) }
 }

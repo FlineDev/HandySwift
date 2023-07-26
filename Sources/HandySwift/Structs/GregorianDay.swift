@@ -22,6 +22,10 @@ public struct GregorianDay {
       self.day = day
    }
 
+   public func advanced(by days: Int) -> Self {
+      GregorianDay(date: self.midOfDay().addingTimeInterval(.days(Double(days))))
+   }
+
    public func startOfDay(timeZone: TimeZone = .current) -> Date {
       let components = DateComponents(
          calendar: Calendar(identifier: .gregorian),
@@ -57,4 +61,10 @@ extension GregorianDay: Comparable {
       guard left.month == right.month else { return left.month < right.month }
       return left.day < right.day
    }
+}
+
+extension GregorianDay {
+   public static var yesterday: Self { GregorianDay(date: Date()).advanced(by: -1) }
+   public static var today: Self { GregorianDay(date: Date()) }
+   public static var tomorrow: Self { GregorianDay(date: Date()).advanced(by: 1) }
 }
