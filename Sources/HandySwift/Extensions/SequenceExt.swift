@@ -5,9 +5,7 @@ extension Sequence {
    public func sorted(byKeyPath keyPath: KeyPath<Element, some Comparable>) -> [Self.Element] {
       self.sorted { $0[keyPath: keyPath] < $1[keyPath: keyPath] }
    }
-}
 
-extension Sequence {
    /// Returns the number of elements in the sequence that satisfy the given predicate.
    ///
    /// You can use this method to count the number of elements that pass a test.
@@ -102,46 +100,38 @@ extension Sequence {
       self.count { $0[keyPath: keyPath] <= otherValue }
    }
 
-   /// Returns an Int value representing how many elements in the sequence have an Equatable keypath value equal to the provided value.
    public func filter<Value: Equatable>(where keyPath: KeyPath<Element, Value>, equalTo otherValue: Value) -> [Element] {
       self.filter { $0[keyPath: keyPath] == otherValue }
    }
 
-   /// Returns an Int value representing how many elements in the sequence have an Equatable keypath value not equal to the provided value.
    public func filter<Value: Equatable>(where keyPath: KeyPath<Element, Value>, notEqualTo otherValue: Value) -> [Element] {
       self.filter { $0[keyPath: keyPath] != otherValue }
    }
 
-   /// Returns an Int value representing how many elements in the sequence have a String keypath value that begins with the specified prefix.
    public func filter(where keyPath: KeyPath<Element, String>, prefixedBy prefix: String) -> [Element] {
       self.filter { $0[keyPath: keyPath].hasPrefix(prefix) }
    }
 
-   /// Returns an Int value representing how many elements in the sequence have a String keypath value that begins with one of the specified prefixes.
    public func filter(where keyPath: KeyPath<Element, String>, prefixedByOneOf prefixes: some Sequence<String>) -> [Element] {
       self.filter { element in
          prefixes.contains { element[keyPath: keyPath].hasPrefix($0) }
       }
    }
 
-   /// Returns an Int value representing how many elements in the sequence have a String keypath value that contains the specified substring.
    public func filter(where keyPath: KeyPath<Element, String>, contains substring: String) -> [Element] {
       self.filter { $0[keyPath: keyPath].contains(substring) }
    }
 
-   /// Returns an Int value representing how many elements in the sequence have a String keypath value that contains one of the specified substrings.
    public func filter(where keyPath: KeyPath<Element, String>, containsOneOf substrings: [String]) -> [Element] {
       self.filter { element in
          substrings.contains { element[keyPath: keyPath].contains($0) }
       }
    }
 
-   /// Returns an Int value representing how many elements in the sequence have a String keypath value that ends with the specified suffix.
    public func filter(where keyPath: KeyPath<Element, String>, suffixedBy suffix: String) -> [Element] {
       self.filter { $0[keyPath: keyPath].hasSuffix(suffix) }
    }
 
-   /// Returns an Int value representing how many elements in the sequence have a String keypath value that ends with one of the specified suffixes.
    public func filter(where keyPath: KeyPath<Element, String>, suffixedByOneOf suffixes: [String]) -> [Element] {
       self.filter { element in
          suffixes.contains { element[keyPath: keyPath].hasSuffix($0) }
@@ -162,6 +152,60 @@ extension Sequence {
 
    public func filter<Value: Comparable>(where keyPath: KeyPath<Element, Value>, lessThanOrEqual otherValue: Value) -> [Element] {
       self.filter { $0[keyPath: keyPath] <= otherValue }
+   }
+
+   public func first<Value: Equatable>(where keyPath: KeyPath<Element, Value>, equalTo otherValue: Value) -> Element? {
+      self.first { $0[keyPath: keyPath] == otherValue }
+   }
+
+   public func first<Value: Equatable>(where keyPath: KeyPath<Element, Value>, notEqualTo otherValue: Value) -> Element? {
+      self.first { $0[keyPath: keyPath] != otherValue }
+   }
+
+   public func first(where keyPath: KeyPath<Element, String>, prefixedBy prefix: String) -> Element? {
+      self.first { $0[keyPath: keyPath].hasPrefix(prefix) }
+   }
+
+   public func first(where keyPath: KeyPath<Element, String>, prefixedByOneOf prefixes: some Sequence<String>) -> Element? {
+      self.first { element in
+         prefixes.contains { element[keyPath: keyPath].hasPrefix($0) }
+      }
+   }
+
+   public func first(where keyPath: KeyPath<Element, String>, contains substring: String) -> Element? {
+      self.first { $0[keyPath: keyPath].contains(substring) }
+   }
+
+   public func first(where keyPath: KeyPath<Element, String>, containsOneOf substrings: [String]) -> Element? {
+      self.first { element in
+         substrings.contains { element[keyPath: keyPath].contains($0) }
+      }
+   }
+
+   public func first(where keyPath: KeyPath<Element, String>, suffixedBy suffix: String) -> Element? {
+      self.first { $0[keyPath: keyPath].hasSuffix(suffix) }
+   }
+
+   public func first(where keyPath: KeyPath<Element, String>, suffixedByOneOf suffixes: [String]) -> Element? {
+      self.first { element in
+         suffixes.contains { element[keyPath: keyPath].hasSuffix($0) }
+      }
+   }
+
+   public func first<Value: Comparable>(where keyPath: KeyPath<Element, Value>, greaterThan otherValue: Value) -> Element? {
+      self.first { $0[keyPath: keyPath] > otherValue }
+   }
+
+   public func first<Value: Comparable>(where keyPath: KeyPath<Element, Value>, greaterThanOrEqual otherValue: Value) -> Element? {
+      self.first { $0[keyPath: keyPath] >= otherValue }
+   }
+
+   public func first<Value: Comparable>(where keyPath: KeyPath<Element, Value>, lessThan otherValue: Value) -> Element? {
+      self.first { $0[keyPath: keyPath] < otherValue }
+   }
+
+   public func first<Value: Comparable>(where keyPath: KeyPath<Element, Value>, lessThanOrEqual otherValue: Value) -> Element? {
+      self.first { $0[keyPath: keyPath] <= otherValue }
    }
 }
 
