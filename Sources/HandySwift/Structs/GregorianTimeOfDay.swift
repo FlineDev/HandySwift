@@ -1,12 +1,14 @@
 import Foundation
 
 public struct GregorianTimeOfDay {
+   public let overflowingDays: Int
    public let hour: Int
    public let minute: Int
    public let second: Int
    
    public init(date: Date) {
       let components = Calendar(identifier: .gregorian).dateComponents([.hour, .minute, .second], from: date)
+      self.overflowingDays = 0
       self.hour = components.hour!
       self.minute = components.minute!
       self.second = components.second!
@@ -17,6 +19,7 @@ public struct GregorianTimeOfDay {
       assert(minute >= 0 && minute < 60)
       assert(second >= 0 && second < 60)
       
+      self.overflowingDays = 0
       self.hour = hour
       self.minute = minute
       self.second = second
@@ -33,19 +36,20 @@ public struct GregorianTimeOfDay {
          minute: self.minute,
          second: self.second
       )
-      return components.date!
+      return components.date!.addingTimeInterval(.days(Double(self.overflowingDays)))
    }
    
    @available(iOS 16, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
    public init(durationSinceStartOfDay: Duration) {
-      self.hour = Int(durationSinceStartOfDay.timeInterval.hours)
-      self.minute = Int((durationSinceStartOfDay - .hours(self.hour)).timeInterval.minutes)
-      self.second = Int((durationSinceStartOfDay - .hours(self.hour) - .minutes(self.minute)).timeInterval.seconds)
+      self.overflowingDays = Int(durationSinceStartOfDay.timeInterval.days)
+      self.hour = Int((durationSinceStartOfDay - .days(self.overflowingDays)).timeInterval.hours)
+      self.minute = Int((durationSinceStartOfDay - .days(self.overflowingDays) - .hours(self.hour)).timeInterval.minutes)
+      self.second = Int((durationSinceStartOfDay - .days(self.overflowingDays) - .hours(self.hour) - .minutes(self.minute)).timeInterval.seconds)
    }
    
    @available(iOS 16, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
    public var durationSinceStartOfDay: Duration {
-      .hours(self.hour) + .minutes(self.minute) + .seconds(self.second)
+      .days(self.overflowingDays) + .hours(self.hour) + .minutes(self.minute) + .seconds(self.second)
    }
    
    @available(iOS 16, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
@@ -61,6 +65,7 @@ extension GregorianTimeOfDay: Identifiable {
 
 extension GregorianTimeOfDay: Comparable {
    public static func < (left: GregorianTimeOfDay, right: GregorianTimeOfDay) -> Bool {
+      guard left.overflowingDays == right.overflowingDays else { return left.overflowingDays < right.overflowingDays }
       guard left.hour == right.hour else { return left.hour < right.hour }
       guard left.minute == right.minute else { return left.minute < right.minute }
       return left.second < right.second
