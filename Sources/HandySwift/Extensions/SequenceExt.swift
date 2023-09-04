@@ -6,6 +6,16 @@ extension Sequence {
       self.sorted { $0[keyPath: keyPath] < $1[keyPath: keyPath] }
    }
 
+   /// Returns the maximum element in the sequence, sorted using the ``Comparable`` value of the given keypath.
+   public func max(byKeyPath keyPath: KeyPath<Element, some Comparable>) -> Self.Element? {
+      self.sorted { $0[keyPath: keyPath] < $1[keyPath: keyPath] }.last
+   }
+
+   /// Returns the maximum element in the sequence, sorted using the ``Comparable`` value of the given keypath.
+   public func min(byKeyPath keyPath: KeyPath<Element, some Comparable>) -> Self.Element? {
+      self.sorted { $0[keyPath: keyPath] < $1[keyPath: keyPath] }.first
+   }
+
    /// Returns the number of elements in the sequence that satisfy the given predicate.
    ///
    /// You can use this method to count the number of elements that pass a test.
