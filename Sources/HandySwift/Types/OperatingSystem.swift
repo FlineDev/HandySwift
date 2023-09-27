@@ -14,7 +14,7 @@ public enum OperatingSystem: AutoConforming {
    case linux
    case windows
 
-   static var current: OperatingSystem {
+   public static var current: OperatingSystem {
       #if os(iOS)
       return .iOS
       #elseif os(macOS)
