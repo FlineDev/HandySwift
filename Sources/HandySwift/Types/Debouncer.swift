@@ -17,7 +17,7 @@ public final class Debouncer {
    /// This version of `delay` uses a `Duration` to specify the delay time.
    @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
    public func delay(for duration: Duration, id: String = "default", operation: @escaping () -> Void) {
-      self.timerByID[id]?.invalidate()
+      self.cancel(id: id)
       self.timerByID[id] = Timer.scheduledTimer(withTimeInterval: duration.timeInterval, repeats: false) { _ in
          operation()
       }
@@ -32,9 +32,17 @@ public final class Debouncer {
    ///
    /// This version of `delay` uses a `TimeInterval` to specify the delay time.
    public func delay(for interval: TimeInterval, id: String = "default", operation: @escaping () -> Void) {
-      self.timerByID[id]?.invalidate()
+      self.cancel(id: id)
       self.timerByID[id] = Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { _ in
          operation()
       }
+   }
+
+   /// Cancels any in-flight operations with ghe provided `id`.
+   ///
+   /// - Parameters:
+   ///   - id: An optional identifier to distinguish different delays (default is "default").
+   public func cancel(id: String = "default") {
+      self.timerByID[id]?.invalidate()
    }
 }
