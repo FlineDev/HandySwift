@@ -38,11 +38,15 @@ public final class Debouncer {
       }
    }
 
-   /// Cancels any in-flight operations with ghe provided `id`.
-   ///
-   /// - Parameters:
-   ///   - id: An optional identifier to distinguish different delays (default is "default").
-   public func cancel(id: String = "default") {
+   /// Cancels any in-flight operations with the provided `id`.
+   public func cancel(id: String) {
       self.timerByID[id]?.invalidate()
+   }
+
+   /// Cancels all in-flight operations independent of their `id`. This could be called `.onDisappear` when this is used in a SwiftUI view, for example.
+   public func cancelAll() {
+      for timer in self.timerByID.values {
+         timer.invalidate()
+      }
    }
 }
