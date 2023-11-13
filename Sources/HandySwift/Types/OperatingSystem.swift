@@ -33,4 +33,26 @@ public enum OperatingSystem: AutoConforming {
       fatalError("Unsupported operating system")
       #endif
    }
+   
+   /// - Returns: The value provided for the OS-specific parameter if provided, else falls back to `default`.
+   public static func value<T>(
+      default defaultValue: T,
+      iOS: T? = nil,
+      macOS: T? = nil,
+      tvOS: T? = nil,
+      visionOS: T? = nil,
+      watchOS: T? = nil,
+      linux: T? = nil,
+      windows: T? = nil
+   ) -> T {
+      switch Self.current {
+      case .iOS: iOS ?? defaultValue
+      case .macOS: macOS ?? defaultValue
+      case .tvOS: tvOS ?? defaultValue
+      case .visionOS: visionOS ?? defaultValue
+      case .watchOS: watchOS ?? defaultValue
+      case .linux: linux ?? defaultValue
+      case .windows: windows ?? defaultValue
+      }
+   }
 }
