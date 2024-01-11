@@ -19,6 +19,14 @@ extension Sequence where Element: Numeric {
    }
 }
 
+extension Sequence {
+   /// Returns the sum of all elements mapped to a numeric value.
+   @inlinable
+   public func sum<N: Numeric>(mapToNumeric: (Element) -> N) -> N {
+      self.reduce(into: 0) { $0 += mapToNumeric($1) }
+   }
+}
+
 extension Collection where Element: DivisibleArithmetic {
    /// Returns the average of all elements.
    @inlinable
