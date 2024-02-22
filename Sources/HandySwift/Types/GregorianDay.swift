@@ -50,7 +50,33 @@ public struct GregorianDay {
    }
 }
 
-extension GregorianDay: Codable, Hashable, Sendable {}
+extension GregorianDay: Codable {
+   static var dateFormatter: DateFormatter {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "yyyy-MM-dd"
+      dateFormatter.calendar = Calendar(identifier: .gregorian)
+      return dateFormatter
+   }
+
+   public init(from decoder: Decoder) throws {
+      let container = try decoder.singleValueContainer()
+      let dateString = try container.decode(String.self)
+
+      guard let date = Self.dateFormatter.date(from: dateString) else {
+         throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string")
+      }
+
+      self = GregorianDay(date: date)
+   }
+
+   public func encode(to encoder: Encoder) throws {
+      var container = encoder.singleValueContainer()
+      let dateString = Self.dateFormatter.string(from: self.startOfDay())
+      try container.encode(dateString)
+   }
+}
+
+extension GregorianDay: Hashable, Sendable {}
 extension GregorianDay: Identifiable {
    public var id: String { "\(self.year)-\(self.month)-\(self.day)" }
 }
