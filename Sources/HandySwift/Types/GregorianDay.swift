@@ -5,7 +5,12 @@ public struct GregorianDay {
    public let year: Int
    public let month: Int
    public let day: Int
-   
+
+   /// Returns an ISO 8601 formatted String representation of the date, e.g. `2024-02-24`.
+   public var iso8601Formatted: String {
+      "\(String(format: "%04d", self.year))-\(String(format: "%02d", self.month))-\(String(format: "%02d", self.day))"
+   }
+
    public init(date: Date) {
       let components = Calendar(identifier: .gregorian).dateComponents([.year, .month, .day], from: date)
       self.year = components.year!
@@ -51,18 +56,15 @@ public struct GregorianDay {
 }
 
 extension GregorianDay: Codable {
-   static var dateFormatter: DateFormatter {
-      let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "yyyy-MM-dd"
-      dateFormatter.calendar = Calendar(identifier: .gregorian)
-      return dateFormatter
-   }
-
    public init(from decoder: Decoder) throws {
       let container = try decoder.singleValueContainer()
       let dateString = try container.decode(String.self)
 
-      guard let date = Self.dateFormatter.date(from: dateString) else {
+      let formatter = DateFormatter()
+      formatter.dateFormat = "yyyy-MM-dd"
+      formatter.calendar = Calendar(identifier: .gregorian)
+
+      guard let date = formatter.date(from: dateString) else {
          throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string")
       }
 
@@ -71,8 +73,7 @@ extension GregorianDay: Codable {
 
    public func encode(to encoder: Encoder) throws {
       var container = encoder.singleValueContainer()
-      let dateString = Self.dateFormatter.string(from: self.startOfDay())
-      try container.encode(dateString)
+      try container.encode(self.iso8601Formatted)
    }
 }
 
