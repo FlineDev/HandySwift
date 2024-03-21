@@ -2,19 +2,23 @@ import Foundation
 
 /// A wrapper for storing weak references to a `Wrapped` instance.
 public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
-   /// The value of `Wrapped` stored as weak reference
+   /// The value of `Wrapped` stored as weak reference.
    public weak var value: Wrapped?
-   
+
    /// Creates an instance that stores the given value.
+   ///
+   /// - Parameter value: The value to store as a weak reference.
    public init(_ value: Wrapped) {
       self.value = value
    }
-   
+
    /// Creates an instance initialized with `nil`.
+   ///
+   /// - Parameter nilLiteral: An argument to initialize the instance to `nil`.
    public init(nilLiteral: ()) {
       self.value = nil
    }
-   
+
    /// Evaluates the given closure when this `Weak` instance is not `nil`,
    /// passing the value as a parameter.
    ///
@@ -25,10 +29,10 @@ public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
    @inlinable
    public func map<U>(_ transform: (Wrapped) throws -> U) rethrows -> U? {
       guard let value = value else { return nil }
-      
+
       return try transform(value)
    }
-   
+
    /// Evaluates the given closure when this `Weak` instance is not `nil`,
    /// passing the value as a parameter.
    ///
@@ -39,7 +43,7 @@ public struct Weak<Wrapped>: ExpressibleByNilLiteral where Wrapped: AnyObject {
    @inlinable
    public func flatMap<U>(_ transform: (Wrapped) throws -> U?) rethrows -> U? {
       guard let value = value else { return nil }
-      
+
       return try transform(value)
    }
 }

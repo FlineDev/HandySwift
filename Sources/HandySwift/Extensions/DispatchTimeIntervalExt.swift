@@ -1,24 +1,26 @@
 import Foundation
 
 extension DispatchTimeInterval {
-   /// - Returns: The time in seconds using the`TimeInterval` type.
+   /// Converts the dispatch time interval to seconds using the `TimeInterval` type.
+   ///
+   /// - Returns: The time interval in seconds.
    public var timeInterval: TimeInterval {
       switch self {
       case let .seconds(seconds):
-         return Double(seconds)
-         
+         Double(seconds)
+
       case let .milliseconds(milliseconds):
-         return Double(milliseconds) / TimeInterval.millisecondsPerSecond
-         
+         Double(milliseconds) / TimeInterval.millisecondsPerSecond
+
       case let .microseconds(microseconds):
-         return Double(microseconds) / TimeInterval.microsecondsPerSecond
-         
+         Double(microseconds) / TimeInterval.microsecondsPerSecond
+
       case let .nanoseconds(nanoseconds):
-         return Double(nanoseconds) / TimeInterval.nanosecondsPerSecond
-         
+         Double(nanoseconds) / TimeInterval.nanosecondsPerSecond
+
       case .never:
-         return TimeInterval.infinity
-         
+         TimeInterval.infinity
+
       @unknown default:
          fatalError("Unknown DispatchTimeInterval unit.")
       }

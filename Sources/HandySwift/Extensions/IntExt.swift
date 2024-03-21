@@ -5,17 +5,20 @@ extension Int {
    ///
    /// - Parameters:
    ///   - closure: The code to be run multiple times.
+   /// - Throws: Any error thrown by the closure.
    @inlinable
    public func times(_ closure: () throws -> Void) rethrows {
       guard self > 0 else { return }
       for _ in 0..<self { try closure() }
    }
-   
+
    /// Runs the code passed as a closure the specified number of times
    /// and creates an array from the return values.
    ///
    /// - Parameters:
    ///   - closure: The code to deliver a return value multiple times.
+   /// - Returns: An array containing the return values of each iteration.
+   /// - Throws: Any error thrown by the closure.
    @inlinable
    public func timesMake<ReturnType>(_ closure: () throws -> ReturnType) rethrows -> [ReturnType] {
       guard self > 0 else { return [] }

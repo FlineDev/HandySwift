@@ -1,6 +1,31 @@
 import Foundation
 
 /// Data structure to keep a sorted array of elements for fast access.
+///
+/// - Note: Use `SortedArray` over a regular array when read access (like searches) inside the array are time-sensitive. Pre-sorting elements makes mutations (such as inserts) slightly slower but searches much faster.
+///
+/// Example:
+/// ```swift
+/// // Operations such as initializing with an array literal or inserting keep the elements in the array sorted automatically:
+/// var sortedNumbers: SortedArray<Int> = [7, 5]
+/// sortedNumbers.insert(3)  // Complexity: O(log(n))
+/// print(sortedNumbers) // Output: [3, 5, 7]
+///
+/// // Find the index of the first element matching a given predicate much faster (using binary search) than on regular arrays (in `O(log(n))`):
+/// let index = sortedNumbers.firstIndex { $0 >= 4 }
+/// print(index) // Output: Optional(1)
+///
+/// // Get a sub-array from the start up to (excluding) a given index without the need to sort again (in `O(1)`):
+/// let prefix = sortedNumbers.prefix(upTo: 2)
+/// print(prefix) // Output: [3, 5]
+///
+/// // Get a sub-array from a given index to the end (also in `O(1)`):
+/// let suffix = sortedNumbers.suffix(from: 1)
+/// print(suffix) // Output: [5, 7]
+///
+/// // Convert back to a regular array when needed
+/// let numbers: [Int] = sortedNumbers.array
+/// ```
 public struct SortedArray<Element: Comparable> {
    @usableFromInline
    internal var internalArray: [Element]
@@ -157,39 +182,65 @@ public struct SortedArray<Element: Comparable> {
 }
 
 extension SortedArray: BidirectionalCollection {
+   /// The position of the first element in a nonempty collection.
+   ///
+   /// If the collection is empty, `startIndex` is equal to `endIndex`.
    public typealias Index = Array<Element>.Index
-   
+
+   /// The position of the first element in a nonempty collection.
+   ///
+   /// If the collection is empty, `startIndex` is equal to `endIndex`.
    @inlinable public var startIndex: Int {
       internalArray.startIndex
    }
-   
-   @inlinable public var endIndex: Int {
+
+   /// The collection's "past-the-end" position---that is, the position one greater than the last valid subscript argument.
+   ///
+   /// When you need a range that includes the last element of a collection, use the `..<` operator with `endIndex`.
+   public var endIndex: Int {
       internalArray.endIndex
    }
-   
+
+   /// Returns the elements of the collection in sorted order.
+   ///
+   /// - Returns: An array containing the sorted elements of the collection.
    @inlinable
    public func sorted() -> [Element] {
       internalArray
    }
-   
-   @inlinable
+
+   /// Returns the position immediately after the given index.
+   ///
+   /// - Parameter index: A valid index of the collection. `index` must be less than `endIndex`.
+   /// - Returns: The index value immediately after `index`.
    public func index(after index: Int) -> Int {
       internalArray.index(after: index)
    }
-   
+
+   /// Returns the position immediately before the given index.
+   ///
+   /// - Parameter index: A valid index of the collection. `index` must be greater than `startIndex`.
+   /// - Returns: The index value immediately before `index`.
    public func index(before index: Int) -> Int {
       internalArray.index(before: index)
    }
-   
-   @inlinable
+
+   /// Accesses the element at the specified position.
+   ///
+   /// - Parameter position: The position of the element to access. `position` must be a valid index of the collection.
+   /// - Returns: The element at the specified index.
    public subscript(position: Int) -> Element {
       internalArray[position]
    }
 }
 
 extension SortedArray: ExpressibleByArrayLiteral {
+   /// The type of the elements of an array literal.
    public typealias ArrayLiteralElement = Element
-   
+
+   /// Creates an instance initialized with the given elements.
+   ///
+   /// - Parameter elements: A variadic list of elements of the new array.
    public init(arrayLiteral elements: Element...) {
       self.init(elements)
    }
@@ -198,6 +249,10 @@ extension SortedArray: ExpressibleByArrayLiteral {
 extension SortedArray: Codable where Element: Codable {}
 
 extension SortedArray: RandomAccessCollection {}
+
+extension SortedArray: CustomStringConvertible {
+   public var description: String { self.array.description }
+}
 
 // MARK: Migration
 extension SortedArray {

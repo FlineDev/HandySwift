@@ -1,9 +1,9 @@
 import Foundation
 
 extension Comparable {
-   /// Returns `self` clamped to the given limits.
+   /// Returns `self` clamped to the given closed range limits.
    ///
-   /// - Parameter limits: The closed range determining minimum & maxmimum value.
+   /// - Parameter limits: The closed range determining the minimum and maximum value.
    /// - Returns:
    ///     - `self`, if it is inside the given limits.
    ///     - `lowerBound` of the given limits, if `self` is smaller than it.
@@ -18,8 +18,8 @@ extension Comparable {
          self
       }
    }
-   
-   /// Returns `self` clamped to the given limits.
+
+   /// Returns `self` clamped to the given partial range (from) limits.
    ///
    /// - Parameter limits: The partial range (from) determining the minimum value.
    /// - Returns:
@@ -29,8 +29,8 @@ extension Comparable {
    public func clamped(to limits: PartialRangeFrom<Self>) -> Self {
       limits.lowerBound > self ? limits.lowerBound : self
    }
-   
-   /// Returns `self` clamped to the given limits.
+
+   /// Returns `self` clamped to the given partial range (through) limits.
    ///
    /// - Parameter limits: The partial range (through) determining the maximum value.
    /// - Returns:
@@ -40,20 +40,20 @@ extension Comparable {
    public func clamped(to limits: PartialRangeThrough<Self>) -> Self {
       limits.upperBound < self ? limits.upperBound : self
    }
-   
-   /// Clamps `self` to the given limits.
+
+   /// Clamps `self` to the given closed range limits.
    ///
    /// - `self`, if it is inside the given limits.
    /// - `lowerBound` of the given limits, if `self` is smaller than it.
    /// - `upperBound` of the given limits, if `self` is greater than it.
    ///
-   /// - Parameter limits: The closed range determining minimum & maxmimum value.
+   /// - Parameter limits: The closed range determining minimum and maximum value.
    @inlinable
    public mutating func clamp(to limits: ClosedRange<Self>) {
       self = clamped(to: limits)
    }
-   
-   /// Clamps `self` to the given limits.
+
+   /// Clamps `self` to the given partial range (from) limits.
    ///
    /// - `self`, if it is inside the given limits.
    /// - `lowerBound` of the given limits, if `self` is smaller than it.
@@ -63,8 +63,8 @@ extension Comparable {
    public mutating func clamp(to limits: PartialRangeFrom<Self>) {
       self = clamped(to: limits)
    }
-   
-   /// Clamps `self` to the given limits.
+
+   /// Clamps `self` to the given partial range (through) limits.
    ///
    /// - `self`, if it is inside the given limits.
    /// - `upperBound` of the given limits, if `self` is greater than it.

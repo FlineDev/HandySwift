@@ -1,11 +1,15 @@
 import Foundation
 
 extension Dictionary {
-   /// Initializes a new `Dictionary` and fills it with keys and values arrays.
+   /// Initializes a new `Dictionary` and populates it with keys and values arrays.
    ///
    /// - Parameters:
-   ///   - keys:       The `Array` of keys.
-   ///   - values:     The `Array` of values.
+   ///   - keys: An array containing keys to be added to the dictionary.
+   ///   - values: An array containing values corresponding to the keys.
+   ///
+   /// - Requires: The number of elements in `keys` must be equal to the number of elements in `values`.
+   ///
+   /// - Returns: A new dictionary initialized with the provided keys and values arrays, or `nil` if the number of elements in the arrays differs.
    @inlinable
    public init?(keys: [Key], values: [Value]) {
       guard keys.count == values.count else { return nil }

@@ -1,11 +1,11 @@
 import Foundation
 
 extension RandomAccessCollection where Index == Int {
-   /// Returns a given number of random elements from the `Array`.
+   /// Returns a given number of random elements from the collection.
    ///
    /// - Parameters:
    ///   - count: The number of random elements wanted.
-   /// - Returns: An array with the given number of random elements or `nil` if empty.
+   /// - Returns: An array with the given number of random elements or `nil` if the collection is empty.
    @inlinable
    public func randomElements(count: Int) -> [Element]? {
       guard !self.isEmpty else { return nil }
