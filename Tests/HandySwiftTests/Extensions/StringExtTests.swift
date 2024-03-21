@@ -5,14 +5,6 @@ import CryptoKit
 import XCTest
 
 class StringExtTests: XCTestCase {
-   func testStrip() {
-      let whitespaceString = " \n\t BB-8 likes Rey \t\n "
-      XCTAssertEqual(whitespaceString.stripped(), "BB-8 likes Rey")
-      
-      let nonWhitespaceString = "Luke Skywalker lives."
-      XCTAssertEqual(nonWhitespaceString.stripped(), nonWhitespaceString)
-   }
-   
    func testIsBlank() {
       XCTAssertTrue("".isBlank)
       XCTAssertTrue("  \t  ".isBlank)
@@ -32,15 +24,15 @@ class StringExtTests: XCTestCase {
    }
    
    func testSample() {
-      XCTAssertNil("".sample)
-      XCTAssertNotNil("abc".sample)
-      XCTAssertTrue("abc".contains("abc".sample!))
+      XCTAssertNil("".randomElement())
+      XCTAssertNotNil("abc".randomElement())
+      XCTAssertTrue("abc".contains("abc".randomElement()!))
    }
    
    func testSampleWithSize() {
-      XCTAssertNil(([] as [Int]).sample(size: 2))
-      XCTAssertEqual([1, 2, 3].sample(size: 2)!.count, 2)
-      XCTAssertEqual([1, 2, 3].sample(size: 10)!.count, 10)
+      XCTAssertNil(([] as [Int]).randomElements(count: 2))
+      XCTAssertEqual([1, 2, 3].randomElements(count: 2)!.count, 2)
+      XCTAssertEqual([1, 2, 3].randomElements(count: 10)!.count, 10)
    }
    
    func testFullRange() {

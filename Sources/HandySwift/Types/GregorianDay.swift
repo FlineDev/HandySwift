@@ -30,7 +30,11 @@ public struct GregorianDay {
    public func advanced(by days: Int) -> Self {
       GregorianDay(date: self.midOfDay().addingTimeInterval(.days(Double(days))))
    }
-   
+
+   public func reversed(by days: Int) -> Self {
+      self.advanced(by: -days)
+   }
+
    public func startOfDay(timeZone: TimeZone = .current) -> Date {
       let components = DateComponents(
          calendar: Calendar(identifier: .gregorian),
@@ -41,7 +45,7 @@ public struct GregorianDay {
       )
       return components.date!
    }
-   
+
    public func midOfDay(timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> Date {
       let components = DateComponents(
          calendar: Calendar(identifier: .gregorian),

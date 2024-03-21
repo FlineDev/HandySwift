@@ -4,26 +4,19 @@ import CryptoKit
 #endif
 
 extension String {
-   /// - Returns: `true` if contains any cahracters other than whitespace or newline characters, else `no`.
-   public var isBlank: Bool { stripped().isEmpty }
-   
-   /// Returns a random character from the String.
-   ///
-   /// - Returns: A random character from the String or `nil` if empty.
-   public var sample: Character? {
-      isEmpty ? nil : self[index(startIndex, offsetBy: Int(randomBelow: count)!)]
-   }
-   
+   /// - Returns: `true` if contains any characters other than whitespace or newline characters, else `false`.
+   public var isBlank: Bool { self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+
    /// Returns the range containing the full String.
    public var fullRange: Range<Index> {
-      startIndex ..< endIndex
+      self.startIndex..<self.endIndex
    }
    
    /// Returns the range as NSRange type for the full String.
    public var fullNSRange: NSRange {
       NSRange(fullRange, in: self)
    }
-   
+
    /// Create new instance with random numeric/alphabetic/alphanumeric String of given length.
    ///
    /// - Parameters:
@@ -46,25 +39,18 @@ extension String {
          }
       }()
       
-      self.init(allowedCharsString.sample(size: length)!)
+      self.init(allowedCharsString.randomElements(count: length)!)
    }
-   
-   /// - Returns: The string stripped by whitespace and newline characters from beginning and end.
-   public func stripped() -> String { trimmingCharacters(in: .whitespacesAndNewlines) }
-   
+
    /// Returns a given number of random characters from the String.
    ///
    /// - Parameters:
-   ///   - size: The number of random characters wanted.
+   ///   - count: The number of random characters wanted.
    /// - Returns: A String with the given number of random characters or `nil` if empty.
    @inlinable
-   public func sample(size: Int) -> String? {
-      guard !isEmpty else { return nil }
-      
-      var sampleElements = String()
-      size.times { sampleElements.append(sample!) }
-      
-      return sampleElements
+   public func randomElements(count: Int) -> String? {
+      guard !self.isEmpty else { return nil }
+      return String(count.timesMake { self.randomElement()! })
    }
 }
 
@@ -105,7 +91,7 @@ extension String {
    
    /// Encrypts this plain text `String` with the given key using AES.GCM and returns a base64 encoded representation of the encrypted data.
    /// Throws a ``CryptingError``
-   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+   @available(iOS 13, macOS 10.15, tvOS 13, visionOS 1, watchOS 6, *)
    public func encrypted(key: SymmetricKey) throws -> String {
       guard let plainData = self.data(using: .utf8) else {
          throw CryptingError.convertingStringToDataFailed
@@ -116,7 +102,7 @@ extension String {
    }
    
    /// Decrypts this base64 encoded representation of encrypted data with the given key using AES.GCM and returns the decrypted plain text `String`.
-   @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
+   @available(iOS 13, macOS 10.15, tvOS 13, visionOS 1, watchOS 6, *)
    public func decrypted(key: SymmetricKey) throws -> String {
       guard let encryptedData = Data(base64Encoded: self) else {
          throw CryptingError.decryptingDataFailed
@@ -131,3 +117,15 @@ extension String {
    }
 }
 #endif
+
+// MARK: Migration
+extension String {
+   @available(*, unavailable, renamed: "randomElement()")
+   public var sample: Character? { fatalError() }
+
+   @available(*, unavailable, renamed: "trimmingCharacters(in:)", message: "Pass `.whitespacesAndNewlines` to the functions `in` parameter for same behavior.")
+   public func stripped() -> String { fatalError() }
+
+   @available(*, unavailable, renamed: "randomElements(count:)")
+   public func sample(size: Int) -> String? { fatalError() }
+}

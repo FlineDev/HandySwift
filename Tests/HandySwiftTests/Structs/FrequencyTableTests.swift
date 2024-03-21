@@ -8,7 +8,7 @@ class FrequencyTableTests: XCTestCase {
       
       var allSamples: [String] = []
       
-      16_000.times { allSamples.append(frequencyTable.sample!) }
+      16_000.times { allSamples.append(frequencyTable.randomElement()!) }
       
       let harryCount = allSamples.filter { $0 == "Harry" }.count
       XCTAssertGreaterThan(harryCount, 4_000)
@@ -27,7 +27,7 @@ class FrequencyTableTests: XCTestCase {
       let values = ["Harry", "Hermione", "Ronald"]
       let frequencyTable = FrequencyTable(values: values) { [5, 10, 1][values.firstIndex(of: $0)!] }
       
-      let allSamples: [String] = frequencyTable.sample(size: 16_000)!
+      let allSamples: [String] = frequencyTable.randomElements(count: 16_000)!
       
       let harryCount = allSamples.filter { $0 == "Harry" }.count
       XCTAssertGreaterThan(harryCount, 4_000)

@@ -5,13 +5,13 @@ class CollectionExtTests: XCTestCase {
    func testTrySubscript() {
       let testArray = [0, 1, 2, 3, 20]
       
-      XCTAssertNil(testArray[try: 8])
-      XCTAssert(testArray[try: -1] == nil)
-      XCTAssert(testArray[try: 0] != nil)
-      XCTAssert(testArray[try: 4] == testArray[4])
+      XCTAssertNil(testArray[safe: 8])
+      XCTAssert(testArray[safe: -1] == nil)
+      XCTAssert(testArray[safe: 0] != nil)
+      XCTAssert(testArray[safe: 4] == testArray[4])
       
       let secondTestArray = [Int]()
-      XCTAssertNil(secondTestArray[try: 0])
+      XCTAssertNil(secondTestArray[safe: 0])
    }
    
    func testSum() {

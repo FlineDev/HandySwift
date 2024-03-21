@@ -1,14 +1,13 @@
 // Copyright © 2018 Flinesoft. All rights reserved.
-//  Originally from: https://github.com/sharplet/Regex (modified to remove some weight).
+// Originally from: https://github.com/sharplet/Regex (modified to remove some weight).
 
 import Foundation
 
-/// `Regex` is a swifty regex engine built on top of the NSRegularExpression api.
-public struct Regex {
-   // MARK: - Properties
-   @usableFromInline internal let regularExpression: NSRegularExpression
-   
-   // MARK: - Initializers
+/// `HandyRegex` is a swifty regex engine built on top of the NSRegularExpression API.
+public struct HandyRegex {
+   @usableFromInline 
+   internal let regularExpression: NSRegularExpression
+
    /// Create a `Regex` based on a pattern string.
    ///
    /// If `pattern` is not a valid regular expression, an error is thrown
@@ -20,19 +19,20 @@ public struct Regex {
    ///       For details, see `Regex.Options`.
    ///
    /// - throws: A value of `ErrorType` describing the invalid regular expression.
+   @available(*, deprecated, message: "The HandyRegex type will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    public init(_ pattern: String, options: Options = []) throws {
       regularExpression = try NSRegularExpression(
          pattern: pattern,
          options: options.toNSRegularExpressionOptions
       )
    }
-   
-   // MARK: - Methods: Matching
+
    /// Returns `true` if the regex matches `string`, otherwise returns `false`.
    ///
    /// - parameter string: The string to test.
    ///
    /// - returns: `true` if the regular expression matches, otherwise `false`.
+   @available(*, deprecated, message: "The HandyRegex type will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    @inlinable
    public func matches(_ string: String) -> Bool {
       firstMatch(in: string) != nil
@@ -45,6 +45,7 @@ public struct Regex {
    /// - parameter string: The string to match against.
    ///
    /// - returns: An optional `Match` describing the first match, or `nil`.
+   @available(*, deprecated, message: "The HandyRegex type will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    @inlinable
    public func firstMatch(in string: String) -> Match? {
       regularExpression
@@ -59,14 +60,14 @@ public struct Regex {
    /// - parameter string: The string to match against.
    ///
    /// - returns: An array of `Match` describing every match in `string`.
+   @available(*, deprecated, message: "The HandyRegex type will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    @inlinable
    public func matches(in string: String) -> [Match] {
       regularExpression
          .matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
          .map { Match(result: $0, in: string) }
    }
-   
-   // MARK: Replacing
+
    /// Returns a new string where each substring matched by `regex` is replaced
    /// with `template`.
    ///
@@ -83,6 +84,7 @@ public struct Regex {
    ///     - count: The maximum count of matches to replace, beginning with the first match.
    ///
    /// - returns: A string with all matches of `regex` replaced by `template`.
+   @available(*, deprecated, message: "The HandyRegex will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    @inlinable
    public func replacingMatches(in input: String, with template: String, count: Int? = nil) -> String {
       var output = input
@@ -97,38 +99,33 @@ public struct Regex {
    }
 }
 
-// MARK: - CustomStringConvertible
-extension Regex: CustomStringConvertible {
+extension HandyRegex: CustomStringConvertible {
    /// Returns a string describing the regex using its pattern string.
    public var description: String {
       "Regex<\"\(regularExpression.pattern)\">"
    }
 }
 
-// MARK: - Equatable
-extension Regex: Equatable {
+extension HandyRegex: Equatable {
    /// Determines the equality of to `Regex`` instances.
    /// Two `Regex` are considered equal, if both the pattern string and the options
    /// passed on initialization are equal.
-   public static func == (lhs: Regex, rhs: Regex) -> Bool {
+   public static func == (lhs: HandyRegex, rhs: HandyRegex) -> Bool {
       lhs.regularExpression.pattern == rhs.regularExpression.pattern &&
       lhs.regularExpression.options == rhs.regularExpression.options
    }
 }
 
-// MARK: - Hashable
-extension Regex: Hashable {
+extension HandyRegex: Hashable {
    /// Manages hashing of the `Regex` instance.
    public func hash(into hasher: inout Hasher) {
       hasher.combine(regularExpression)
    }
 }
 
-// MARK: - Options
-extension Regex {
+extension HandyRegex {
    /// `Options` defines alternate behaviours of regular expressions when matching.
    public struct Options: OptionSet {
-      // MARK: - Properties
       /// Ignores the case of letters when matching.
       public static let ignoreCase = Options(rawValue: 1)
       
@@ -159,8 +156,7 @@ extension Regex {
          if contains(.dotMatchesLineSeparators) { options.insert(.dotMatchesLineSeparators) }
          return options
       }
-      
-      // MARK: - Initializers
+
       /// The raw value init for the `OptionSet`
       public init(rawValue: Int) {
          self.rawValue = rawValue
@@ -168,13 +164,11 @@ extension Regex {
    }
 }
 
-// MARK: - Match
-extension Regex {
+extension HandyRegex {
    /// A `Match` encapsulates the result of a single match in a string,
    /// providing access to the matched string, as well as any capture groups within
    /// that string.
    public class Match: CustomStringConvertible {
-      // MARK: Properties
       /// The entire matched string.
       public lazy var string: String = {
          String(describing: self.baseString[self.range])
@@ -216,8 +210,7 @@ extension Regex {
       private let result: NSTextCheckingResult
       
       private let baseString: String
-      
-      // MARK: - Initializers
+
       @usableFromInline
       internal init(result: NSTextCheckingResult, in string: String) {
          precondition(
@@ -228,8 +221,7 @@ extension Regex {
          self.result = result
          self.baseString = string
       }
-      
-      // MARK: - Methods
+
       /// Returns a new string where the matched string is replaced according to the `template`.
       ///
       /// The template string may be a literal string, or include template variables:
@@ -251,8 +243,7 @@ extension Regex {
             template: template
          )
       }
-      
-      // MARK: - CustomStringConvertible
+
       /// Returns a string describing the match.
       public var description: String {
          "Match<\"\(string)\">"

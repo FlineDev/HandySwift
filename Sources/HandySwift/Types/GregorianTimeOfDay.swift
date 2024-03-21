@@ -1,5 +1,6 @@
 import Foundation
 
+/// A time without date info.
 public struct GregorianTimeOfDay {
    public let overflowingDays: Int
    public let hour: Int
@@ -39,7 +40,7 @@ public struct GregorianTimeOfDay {
       return components.date!.addingTimeInterval(.days(Double(self.overflowingDays)))
    }
    
-   @available(iOS 16, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
+   @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
    public init(durationSinceStartOfDay: Duration) {
       self.overflowingDays = Int(durationSinceStartOfDay.timeInterval.days)
       self.hour = Int((durationSinceStartOfDay - .days(self.overflowingDays)).timeInterval.hours)
@@ -47,14 +48,19 @@ public struct GregorianTimeOfDay {
       self.second = Int((durationSinceStartOfDay - .days(self.overflowingDays) - .hours(self.hour) - .minutes(self.minute)).timeInterval.seconds)
    }
    
-   @available(iOS 16, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
+   @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
    public var durationSinceStartOfDay: Duration {
       .days(self.overflowingDays) + .hours(self.hour) + .minutes(self.minute) + .seconds(self.second)
    }
    
-   @available(iOS 16, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
+   @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
    public func advanced(by duration: Duration) -> Self {
       GregorianTimeOfDay(durationSinceStartOfDay: self.durationSinceStartOfDay + duration)
+   }
+
+   @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
+   public func reversed(by duration: Duration) -> Self {
+      GregorianTimeOfDay(durationSinceStartOfDay: self.durationSinceStartOfDay - duration)
    }
 }
 

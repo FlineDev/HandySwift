@@ -4,51 +4,48 @@ import Foundation
 import XCTest
 
 class RegexTests: XCTestCase {
-   // MARK: - Initialization
    func testValidInitialization() {
-      XCTAssertNoThrow({ try Regex("abc") }) // swiftlint:disable:this trailing_closure
+      XCTAssertNoThrow({ try HandyRegex("abc") })
    }
    
    func testInvalidInitialization() {
       do {
-         _ = try Regex("*")
+         _ = try HandyRegex("*")
          XCTFail("Regex initialization unexpectedly didn't fail")
       } catch {}
    }
-   
-   // MARK: - Options
+
    func testOptions() {
-      let regexOptions1: Regex.Options = [.ignoreCase, .ignoreMetacharacters, .anchorsMatchLines, .dotMatchesLineSeparators]
+      let regexOptions1: HandyRegex.Options = [.ignoreCase, .ignoreMetacharacters, .anchorsMatchLines, .dotMatchesLineSeparators]
       let nsRegexOptions1: NSRegularExpression.Options = [.caseInsensitive, .ignoreMetacharacters, .anchorsMatchLines, .dotMatchesLineSeparators]
       
-      let regexOptions2: Regex.Options = [.ignoreMetacharacters]
+      let regexOptions2: HandyRegex.Options = [.ignoreMetacharacters]
       let nsRegexOptions2: NSRegularExpression.Options = [.ignoreMetacharacters]
       
-      let regexOptions3: Regex.Options = []
+      let regexOptions3: HandyRegex.Options = []
       let nsRegexOptions3: NSRegularExpression.Options = []
       
       XCTAssertEqual(regexOptions1.toNSRegularExpressionOptions, nsRegexOptions1)
       XCTAssertEqual(regexOptions2.toNSRegularExpressionOptions, nsRegexOptions2)
       XCTAssertEqual(regexOptions3.toNSRegularExpressionOptions, nsRegexOptions3)
    }
-   
-   // MARK: - Matching
+
    func testMatchesBool() {
-      let regex = try? Regex("[1-9]+")
+      let regex = try? HandyRegex("[1-9]+")
       XCTAssertTrue(regex!.matches("5"))
    }
    
    func testFirstMatch() {
-      let regex = try? Regex("[1-9]?+")
+      let regex = try? HandyRegex("[1-9]?+")
       XCTAssertEqual(regex?.firstMatch(in: "5 3 7")?.string, "5")
    }
    
    func testMatches() {
-      let regex = try? Regex("[1-9]+")
+      let regex = try? HandyRegex("[1-9]+")
       XCTAssertEqual(regex?.matches(in: "5 432 11").map { $0.string }, ["5", "432", "11"])
       
       let key = "bi"
-      let complexRegex = try? Regex(#"<\#(key)>([^<>]+)</\#(key)>"#)
+      let complexRegex = try? HandyRegex(#"<\#(key)>([^<>]+)</\#(key)>"#)
       XCTAssertEqual(
          complexRegex?.matches(
             in:
@@ -59,8 +56,8 @@ class RegexTests: XCTestCase {
    }
    
    func testReplacingMatches() {
-      let regex = try? Regex("([1-9]+)")
-      
+      let regex = try? HandyRegex("([1-9]+)")
+
       let stringAfterReplace1 = regex?.replacingMatches(in: "5 3 7", with: "2")
       let stringAfterReplace2 = regex?.replacingMatches(in: "5 3 7", with: "$1")
       let stringAfterReplace3 = regex?.replacingMatches(in: "5 3 7", with: "1$1,")
@@ -79,21 +76,20 @@ class RegexTests: XCTestCase {
       let newValue = "Simuliere, wie gut ein \\nE-Fahrzeug zu dir passt2"
       let expectedResult = "\n<string name=\"nav_menu_sim_info\">Simuliere, wie gut ein \\nE-Fahrzeug zu dir passt2</string>\n"
       
-      let regex = try? Regex("(<string[^>]* name=\"nav_menu_sim_info\"[^>]*>)(.*)(</string>)")
+      let regex = try? HandyRegex("(<string[^>]* name=\"nav_menu_sim_info\"[^>]*>)(.*)(</string>)")
       let stringAfterReplace1 = regex?.replacingMatches(in: testString, with: "$1\(NSRegularExpression.escapedTemplate(for: newValue))$3")
       
       XCTAssertEqual(stringAfterReplace1, expectedResult)
    }
-   
-   // MARK: - Match
+
    func testMatchString() {
-      let regex = try? Regex("[1-9]+")
+      let regex = try? HandyRegex("[1-9]+")
       let firstMatchString = regex?.firstMatch(in: "abc5def")?.string
       XCTAssertEqual(firstMatchString, "5")
    }
    
    func testMatchRange() {
-      let regex = try? Regex("[1-9]+")
+      let regex = try? HandyRegex("[1-9]+")
       let text = "abc5def"
       let firstMatchRange = regex?.firstMatch(in: text)?.range
       XCTAssertEqual(firstMatchRange?.lowerBound.utf16Offset(in: text), 3)
@@ -101,7 +97,7 @@ class RegexTests: XCTestCase {
    }
    
    func testMatchCaptures() {
-      let regex = try? Regex("([1-9])(Needed)(Optional)?")
+      let regex = try? HandyRegex("([1-9])(Needed)(Optional)?")
       let match1 = regex?.firstMatch(in: "2Needed")
       let match2 = regex?.firstMatch(in: "5NeededOptional")
       
@@ -110,7 +106,7 @@ class RegexTests: XCTestCase {
          case noMatch
       }
       
-      func captures(at index: Int, forMatch match: Regex.Match?) throws -> String? {
+      func captures(at index: Int, forMatch match: HandyRegex.Match?) throws -> String? {
          guard let captures = match?.captures else { throw CapturingError.noMatch }
          guard captures.count > index else { throw CapturingError.indexTooHigh }
          return captures[index]
@@ -146,18 +142,17 @@ class RegexTests: XCTestCase {
    }
    
    func testMatchStringApplyingTemplate() {
-      let regex = try? Regex("([1-9])(Needed)")
+      let regex = try? HandyRegex("([1-9])(Needed)")
       let match = regex?.firstMatch(in: "1Needed")
       XCTAssertEqual(match?.string(applyingTemplate: "Test$1ThatIs$2"), "Test1ThatIsNeeded")
    }
-   
-   // MARK: - Equatable
+
    func testEquatable() {
       do {
-         let regex1 = try Regex("abc")
-         let regex2 = try Regex("abc")
-         let regex3 = try Regex("cba")
-         let regex4 = try Regex("abc", options: [.ignoreCase])
+         let regex1 = try HandyRegex("abc")
+         let regex2 = try HandyRegex("abc")
+         let regex3 = try HandyRegex("cba")
+         let regex4 = try HandyRegex("abc", options: [.ignoreCase])
          let regex5 = regex1
          
          XCTAssertEqual(regex1, regex2)
@@ -177,15 +172,14 @@ class RegexTests: XCTestCase {
          XCTFail("Sample Regex creation failed.")
       }
    }
-   
-   // MARK: - CustomStringConvertible
+
    func testRegexCustomStringConvertible() {
-      let regex = try? Regex("foo")
+      let regex = try? HandyRegex("foo")
       XCTAssertEqual(regex?.description, "Regex<\"foo\">")
    }
    
    func testMatchCustomStringConvertible() {
-      let regex = try? Regex("bar")
+      let regex = try? HandyRegex("bar")
       let match = regex?.firstMatch(in: "bar")!
       XCTAssertEqual(match?.description, "Match<\"bar\">")
    }

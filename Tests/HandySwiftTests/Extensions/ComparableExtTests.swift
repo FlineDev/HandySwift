@@ -4,7 +4,6 @@ import Foundation
 import XCTest
 
 class ComparableExtTests: XCTestCase {
-   // MARK: Returning Variants
    func testClampedClosedRange() {
       let myNum = 3
       XCTAssertEqual(myNum.clamped(to: 0 ... 4), 3)
@@ -29,15 +28,14 @@ class ComparableExtTests: XCTestCase {
    
    func testClampedPartialRangeThrough() {
       let myNum = 3
-      XCTAssertEqual(myNum.clamped(to: ...4), 3) // swiftlint:disable:this tuple_index
-      XCTAssertEqual(myNum.clamped(to: ...2), 2) // swiftlint:disable:this tuple_index
+      XCTAssertEqual(myNum.clamped(to: ...4), 3)
+      XCTAssertEqual(myNum.clamped(to: ...2), 2)
       
       let myString = "d"
       XCTAssertEqual(myString.clamped(to: ..."e"), "d")
       XCTAssertEqual(myString.clamped(to: ..."c"), "c")
    }
    
-   // MARK: Mutating Variants
    func testClampClosedRange() {
       let myNum = 3
       
@@ -94,11 +92,11 @@ class ComparableExtTests: XCTestCase {
       let myNum = 3
       
       var myNumCopy = myNum
-      myNumCopy.clamp(to: ...4) // swiftlint:disable:this tuple_index
+      myNumCopy.clamp(to: ...4)
       XCTAssertEqual(myNumCopy, 3)
       
       myNumCopy = myNum
-      myNumCopy.clamp(to: ...2) // swiftlint:disable:this tuple_index
+      myNumCopy.clamp(to: ...2)
       XCTAssertEqual(myNumCopy, 2)
       
       let myString = "d"

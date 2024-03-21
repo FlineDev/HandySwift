@@ -314,3 +314,19 @@ extension Sequence where Element: Comparable {
       self.filter { $0 <= otherValue }
    }
 }
+
+extension Sequence where Element: Numeric {
+   /// Returns the sum of all elements.
+   @inlinable
+   public func sum() -> Element {
+      reduce(0, +)
+   }
+}
+
+extension Sequence {
+   /// Returns the sum of all elements mapped to a numeric value.
+   @inlinable
+   public func sum<N: Numeric>(mapToNumeric: (Element) -> N) -> N {
+      self.reduce(into: 0) { $0 += mapToNumeric($1) }
+   }
+}

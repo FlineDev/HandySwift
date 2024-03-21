@@ -8,13 +8,13 @@ extension DispatchTimeInterval {
          return Double(seconds)
          
       case let .milliseconds(milliseconds):
-         return Double(milliseconds) / Timespan.millisecondsPerSecond
+         return Double(milliseconds) / TimeInterval.millisecondsPerSecond
          
       case let .microseconds(microseconds):
-         return Double(microseconds) / Timespan.microsecondsPerSecond
+         return Double(microseconds) / TimeInterval.microsecondsPerSecond
          
       case let .nanoseconds(nanoseconds):
-         return Double(nanoseconds) / Timespan.nanosecondsPerSecond
+         return Double(nanoseconds) / TimeInterval.nanosecondsPerSecond
          
       case .never:
          return TimeInterval.infinity

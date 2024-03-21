@@ -1,7 +1,6 @@
 import Foundation
 
 extension Comparable {
-   // MARK: - Clamp: Returning Variants
    /// Returns `self` clamped to the given limits.
    ///
    /// - Parameter limits: The closed range determining minimum & maxmimum value.
@@ -12,11 +11,11 @@ extension Comparable {
    @inlinable
    public func clamped(to limits: ClosedRange<Self>) -> Self {
       if limits.lowerBound > self {
-         return limits.lowerBound
+         limits.lowerBound
       } else if limits.upperBound < self {
-         return limits.upperBound
+         limits.upperBound
       } else {
-         return self
+         self
       }
    }
    
@@ -28,11 +27,7 @@ extension Comparable {
    ///     - `lowerBound` of the given limits, if `self` is smaller than it.
    @inlinable
    public func clamped(to limits: PartialRangeFrom<Self>) -> Self {
-      if limits.lowerBound > self {
-         return limits.lowerBound
-      } else {
-         return self
-      }
+      limits.lowerBound > self ? limits.lowerBound : self
    }
    
    /// Returns `self` clamped to the given limits.
@@ -43,14 +38,9 @@ extension Comparable {
    ///     - `upperBound` of the given limits, if `self` is greater than it.
    @inlinable
    public func clamped(to limits: PartialRangeThrough<Self>) -> Self {
-      if limits.upperBound < self {
-         return limits.upperBound
-      } else {
-         return self
-      }
+      limits.upperBound < self ? limits.upperBound : self
    }
    
-   // MARK: Mutating Variants
    /// Clamps `self` to the given limits.
    ///
    /// - `self`, if it is inside the given limits.

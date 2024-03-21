@@ -2,13 +2,12 @@ import Foundation
 
 /// Data structure to keep a sorted array of elements for fast access.
 public struct SortedArray<Element: Comparable> {
-   // MARK: - Stored Instance Properties
-   @usableFromInline internal var internalArray: [Element]
-   
+   @usableFromInline
+   internal var internalArray: [Element]
+
    /// Returns the sorted array of elements.
    public var array: [Element] { self.internalArray }
    
-   // MARK: - Initializers
    /// Creates a new, empty array.
    ///
    /// For example:
@@ -33,7 +32,6 @@ public struct SortedArray<Element: Comparable> {
       internalArray = preSorted ? Array(sequence) : Array(sequence).sorted()
    }
    
-   // MARK: - Instance Methods
    /// Returns the first index in which an element of the array satisfies the given predicate.
    /// Matching is done using binary search to minimize complexity.
    ///
@@ -43,13 +41,12 @@ public struct SortedArray<Element: Comparable> {
    ///   - predicate: The predicate to match the elements against.
    /// - Returns: The index of the first matching element or `nil` if none of them matches.
    @inlinable
-   public func index(where predicate: (Element) -> Bool) -> Int? {
+   public func firstIndex(where predicate: (Element) -> Bool) -> Int? {
       // cover trivial cases
       guard !array.isEmpty else { return nil }
-      // swiftlint:disable all
-      if let first = array.first, predicate(first) { return array.startIndex } // AnyLint.skipHere: IfAsGuard
-      if let last = array.last, !predicate(last) { return nil } // AnyLint.skipHere: IfAsGuard
-      // swiftlint:enable all
+      
+      if let first = array.first, predicate(first) { return array.startIndex }
+      if let last = array.last, !predicate(last) { return nil }
       
       // binary search for first matching element
       var foundMatch = false
@@ -107,7 +104,6 @@ public struct SortedArray<Element: Comparable> {
       return SortedArray(sequence: subarray, preSorted: true)
    }
    
-   // MARK: - Mutating Methods
    /// Adds a new item to the sorted array.
    ///
    /// - Complexity: O(log(n))
@@ -202,3 +198,9 @@ extension SortedArray: ExpressibleByArrayLiteral {
 extension SortedArray: Codable where Element: Codable {}
 
 extension SortedArray: RandomAccessCollection {}
+
+// MARK: Migration
+extension SortedArray {
+   @available(*, unavailable, renamed: "firstIndex(where:)")
+   public func index(where predicate: (Element) -> Bool) -> Int? { fatalError() }
+}

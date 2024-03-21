@@ -1,6 +1,11 @@
 import Foundation
 
-/// A class for delaying and debouncing operations.
+/// A class for debouncing operations.
+///
+/// Debouncing ensures that an operation is not executed multiple times within a given time frame, cancelling any duplicate operations.
+/// Only the last operation will be executed, and only after the given time frame has passed.
+///
+/// - NOTE: This is useful to reduce reloads such as when a user is typing text into a search field. Instead of searching immediately on each letter change, it's better to debounce by ~500 milliseconds.
 public final class Debouncer {
    private var timerByID: [String: Timer] = [:]
 
@@ -15,7 +20,7 @@ public final class Debouncer {
    ///   - operation: The operation to be delayed and executed.
    ///
    /// This version of `delay` uses a `Duration` to specify the delay time.
-   @available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+   @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
    public func delay(for duration: Duration, id: String = "default", operation: @escaping () -> Void) {
       self.cancel(id: id)
       self.timerByID[id] = Timer.scheduledTimer(withTimeInterval: duration.timeInterval, repeats: false) { _ in

@@ -2,21 +2,16 @@ import Foundation
 
 /// Data structure to retrieve random values with their frequency taken into account.
 public struct FrequencyTable<T> {
-   // MARK: - Sub Types
    @usableFromInline
    typealias Entry = (value: T, frequency: Int)
    
-   // MARK: - Stored Instance Properties
-   @usableFromInline internal let valuesWithFrequencies: [Entry]
-   
+   @usableFromInline
+   internal let valuesWithFrequencies: [Entry]
+
    /// Contains all values the amount of time of their frequencies.
-   @usableFromInline internal let frequentValues: [T]
-   
-   // MARK: - Computed Instance Properties
-   /// - Returns: A random value taking frequencies into account or nil if values empty.
-   @inlinable public var sample: T? { frequentValues.sample }
-   
-   // MARK: - Initializers
+   @usableFromInline
+   internal let frequentValues: [T]
+
    /// Creates a new FrequencyTable instance with values and their frequencies provided.
    ///
    /// - Parameters:
@@ -29,8 +24,11 @@ public struct FrequencyTable<T> {
          memo += Array(repeating: entry.value, count: entry.frequency)
       }
    }
-   
-   // MARK: - Instance Methods
+
+   /// - Returns: A random value taking frequencies into account or nil if values empty.
+   @inlinable
+   public func randomElement() -> T? { self.frequentValues.randomElement() }
+
    /// Returns an array of random values taking frequencies into account or nil if values empty.
    ///
    /// - Parameters:
@@ -38,8 +36,17 @@ public struct FrequencyTable<T> {
    ///
    /// - Returns: An array of random values or nil if values empty.
    @inlinable
-   public func sample(size: Int) -> [T]? {
-      guard size > 0 && !frequentValues.isEmpty else { return nil }
-      return Array(0 ..< size).map { _ in sample! }
+   public func randomElements(count: Int) -> [T]? {
+      guard !self.frequentValues.isEmpty else { return nil }
+      return count.timesMake { self.frequentValues.randomElement()! }
    }
+}
+
+// MARK: Migration
+extension FrequencyTable {
+   @available(*, unavailable, renamed: "randomElement()")
+   public var sample: T? { fatalError() }
+
+   @available(*, unavailable, renamed: "randomElements(count:)")
+   public func sample(size: Int) -> [T]? { fatalError() }
 }

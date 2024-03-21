@@ -2,6 +2,7 @@ import Foundation
 
 public typealias OS = OperatingSystem
 
+/// The list of possible Operating Systems a Swift program might run in.
 public enum OperatingSystem: AutoConforming {
    // Apple Platforms
    case iOS

@@ -6,7 +6,7 @@ class GlobalsTests: XCTestCase {
       let expectation = self.expectation(description: "Wait for delay.")
       
       let callDate = Date()
-      let delayTime = Timespan.milliseconds(1_500)
+      let delayTime = TimeInterval.milliseconds(1_500)
       delay(by: .milliseconds(1_500)) {
          XCTAssertEqual(callDate.timeIntervalSince1970 + delayTime, NSDate().timeIntervalSince1970, accuracy: 0.25)
          expectation.fulfill()
