@@ -56,7 +56,7 @@ extension String {
    ///
    /// - Parameters:
    ///   - randomWithLength: The length of the random string to create.
-   ///   - allowedCharactersType: The type of allowed characters, see enum `AllowedCharacters`.
+   ///   - allowedCharactersType: The type of allowed characters, see enum ``AllowedCharacters``.
    public init(randomWithLength length: Int, allowedCharactersType: AllowedCharacters) {
       let allowedCharsString: String = {
          switch allowedCharactersType {
@@ -145,7 +145,7 @@ extension String {
    ///
    /// - Parameter key: The symmetric key used for encryption.
    /// - Returns: A base64 encoded representation of the encrypted data.
-   /// - Throws: A `CryptingError` if encryption fails.
+   /// - Throws: A ``CryptingError`` if encryption fails.
    @available(iOS 13, macOS 10.15, tvOS 13, visionOS 1, watchOS 6, *)
    public func encrypted(key: SymmetricKey) throws -> String {
       guard let plainData = self.data(using: .utf8) else {
@@ -169,7 +169,7 @@ extension String {
    ///
    /// - Parameter key: The symmetric key used for decryption.
    /// - Returns: The decrypted plain text `String`.
-   /// - Throws: A `CryptingError` if decryption fails.
+   /// - Throws: A ``CryptingError`` if decryption fails.
    @available(iOS 13, macOS 10.15, tvOS 13, visionOS 1, watchOS 6, *)
    public func decrypted(key: SymmetricKey) throws -> String {
       guard let encryptedData = Data(base64Encoded: self) else {

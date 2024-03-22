@@ -131,7 +131,7 @@ extension Duration {
    ///
    /// - Parameter factor: The multiplication factor.
    /// - Returns: A `Duration` representing the multiplied duration.
-   func multiplied(by factor: Double) -> Duration {
+   public func multiplied(by factor: Double) -> Duration {
       (self.timeInterval * factor).duration()
    }
 
@@ -145,7 +145,7 @@ extension Duration {
    ///
    /// - Parameter factor: The multiplication factor.
    /// - Returns: A `Duration` representing the multiplied duration.
-   func multiplied(by factor: Int) -> Duration {
+   public func multiplied(by factor: Int) -> Duration {
       self.multiplied(by: Double(factor))
    }
 
@@ -159,7 +159,7 @@ extension Duration {
    ///
    /// - Parameter denominator: The denominator.
    /// - Returns: A `Duration` representing the divided duration.
-   func divided(by denominator: Double) -> Duration {
+   public func divided(by denominator: Double) -> Duration {
       (self.timeInterval / denominator).duration()
    }
 
@@ -173,7 +173,7 @@ extension Duration {
    ///
    /// - Parameter denominator: The denominator.
    /// - Returns: A `Duration` representing the divided duration.
-   func divided(by denominator: Int) -> Duration {
+   public func divided(by denominator: Int) -> Duration {
       self.divided(by: Double(denominator))
    }
 
@@ -188,7 +188,7 @@ extension Duration {
    ///
    /// - Parameter duration: The duration to divide by.
    /// - Returns: The ratio of the two durations.
-   func divided(by duration: Duration) -> Double {
+   public func divided(by duration: Duration) -> Double {
       self.timeInterval / duration.timeInterval
    }
 }
