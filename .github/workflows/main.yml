@@ -18,7 +18,7 @@ jobs:
         run: swift test
 
   test-macos:
-    runs-on: macos-14-arm64
+    runs-on: macos-14
 
     steps:
       - uses: actions/checkout@v4
