@@ -105,7 +105,7 @@ public struct FrequencyTable<T> {
    }
 }
 
-// MARK: Migration
+// - MARK: Migration
 extension FrequencyTable {
    @available(*, unavailable, renamed: "randomElement()")
    public var sample: T? { fatalError() }

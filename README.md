@@ -1,6 +1,5 @@
 <img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Images/HandySwift.webp" width="256" />
 
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FFlineDev%2FHandySwift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/FlineDev/HandySwift)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FFlineDev%2FHandySwift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/FlineDev/HandySwift)
 
 # HandySwift

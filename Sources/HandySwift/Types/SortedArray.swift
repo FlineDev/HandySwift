@@ -254,7 +254,7 @@ extension SortedArray: CustomStringConvertible {
    public var description: String { self.array.description }
 }
 
-// MARK: Migration
+// - MARK: Migration
 extension SortedArray {
    @available(*, unavailable, renamed: "firstIndex(where:)")
    public func index(where predicate: (Element) -> Bool) -> Int? { fatalError() }

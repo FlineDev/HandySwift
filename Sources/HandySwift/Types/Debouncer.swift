@@ -5,14 +5,27 @@ import Foundation
 /// Debouncing ensures that an operation is not executed multiple times within a given time frame, cancelling any duplicate operations.
 /// Only the last operation will be executed, and only after the given time frame has passed.
 ///
-/// - Note: This is useful to reduce reloads such as when a user is typing text into a search field. Instead of searching immediately on each letter change, it's better to debounce by ~500 milliseconds.
+/// - Note: This is useful for improving user experience in scenarios like search functionalities in apps, where you might want to reduce the number of search operations triggered by keystroke events.
 ///
-/// Example:
+/// Example for SwiftUI's `.searchable` modifier:
 /// ```swift
+/// @State private var searchText = ""
 /// let debouncer = Debouncer()
-/// debouncer.delay(for: .milliseconds(500)) {
-///     // Perform search operation after 500 milliseconds of user inactivity
-///     performSearch()
+///
+/// var body: some View {
+///     List(filteredItems) { item in
+///         Text(item.title)
+///     }
+///     .searchable(text: self.$searchText)
+///     .onChange(of: self.searchText) { newValue in
+///         self.debouncer.delay(for: 0.5) {
+///             // Perform search operation with the updated search text after 500 milliseconds of user inactivity
+///             self.performSearch(with: newValue)
+///         }
+///     }
+///     .onDisappear {
+///         debouncer.cancelAll()
+///     }
 /// }
 /// ```
 public final class Debouncer {
@@ -28,9 +41,16 @@ public final class Debouncer {
    ///   - id: An optional identifier to distinguish different delays (default is "default").
    ///   - operation: The operation to be delayed and executed.
    ///
-   /// This version of `delay` uses a `Duration` to specify the delay time.
+   /// This version of `delay` uses a `Duration` to specify the delay time, available in iOS 16 and later.
    ///
-   /// - Availability: iOS 16.0, macOS 13.0, tvOS 16.0, visionOS 1.0, watchOS 9.0
+   /// Example:
+   /// ```swift
+   /// let debouncer = Debouncer()
+   /// debouncer.delay(for: .milliseconds(500), id: "search") {
+   ///     // Perform some operation after a 500 milliseconds delay
+   ///     performOperation()
+   /// }
+   /// ```
    @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
    public func delay(for duration: Duration, id: String = "default", operation: @escaping () -> Void) {
       self.cancel(id: id)
@@ -48,10 +68,10 @@ public final class Debouncer {
    ///
    /// This version of `delay` uses a `TimeInterval` to specify the delay time.
    ///
-   /// Example:
+   /// Example for a generic operation:
    /// ```swift
    /// let debouncer = Debouncer()
-   /// debouncer.delay(for: .milliseconds(500)) {
+   /// debouncer.delay(for: 0.5, id: "genericOperation") {
    ///     // Perform some operation after a 500 milliseconds delay
    ///     performOperation()
    /// }

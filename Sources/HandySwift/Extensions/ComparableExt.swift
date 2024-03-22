@@ -2,6 +2,16 @@ import Foundation
 
 extension Comparable {
    /// Returns `self` clamped to the given closed range limits.
+   /// This method ensures that the value remains within a specific range.
+   /// If the value is outside the range, it's adjusted to the nearest boundary of the range.
+   ///
+   /// Example:
+   /// ```swift
+   /// let myNum = 3
+   /// let clampedNum = myNum.clamped(to: 0 ... 6) // => 3
+   /// let clampedNumBelow = myNum.clamped(to: 0 ... 2) // => 2
+   /// let clampedNumAbove = myNum.clamped(to: 4 ... 6) // => 4
+   /// ```
    ///
    /// - Parameter limits: The closed range determining the minimum and maximum value.
    /// - Returns:
@@ -19,7 +29,13 @@ extension Comparable {
       }
    }
 
-   /// Returns `self` clamped to the given partial range (from) limits.
+   /// Returns `self` clamped to the given partial range (from) limits. This method ensures that the value does not fall below a specified minimum.
+   ///
+   /// Example:
+   /// ```swift
+   /// let myNum = 3
+   /// let clampedNum = myNum.clamped(to: 5...) // => 5
+   /// ```
    ///
    /// - Parameter limits: The partial range (from) determining the minimum value.
    /// - Returns:
@@ -30,7 +46,14 @@ extension Comparable {
       limits.lowerBound > self ? limits.lowerBound : self
    }
 
-   /// Returns `self` clamped to the given partial range (through) limits.
+   /// Returns `self` clamped to the given partial range (through) limits. 
+   /// This method ensures that the value does not exceed a specified maximum.
+   ///
+   /// Example:
+   /// ```swift
+   /// let myNum = 7
+   /// let clampedNum = myNum.clamped(to: ...5) // => 5
+   /// ```
    ///
    /// - Parameter limits: The partial range (through) determining the maximum value.
    /// - Returns:
@@ -41,11 +64,15 @@ extension Comparable {
       limits.upperBound < self ? limits.upperBound : self
    }
 
-   /// Clamps `self` to the given closed range limits.
+   /// Clamps `self` to the given closed range limits. 
+   /// Modifies the original value to ensure it falls within a specific range, adjusting it to the nearest boundary if necessary.
    ///
-   /// - `self`, if it is inside the given limits.
-   /// - `lowerBound` of the given limits, if `self` is smaller than it.
-   /// - `upperBound` of the given limits, if `self` is greater than it.
+   /// Example:
+   /// ```swift
+   /// var myNum = 3
+   /// myNum.clamp(to: 0...2)
+   /// print(myNum) // => 2
+   /// ```
    ///
    /// - Parameter limits: The closed range determining minimum and maximum value.
    @inlinable
@@ -53,10 +80,15 @@ extension Comparable {
       self = clamped(to: limits)
    }
 
-   /// Clamps `self` to the given partial range (from) limits.
+   /// Clamps `self` to the given partial range (from) limits. 
+   /// Modifies the original value to ensure it does not fall below a specified minimum.
    ///
-   /// - `self`, if it is inside the given limits.
-   /// - `lowerBound` of the given limits, if `self` is smaller than it.
+   /// Example:
+   /// ```swift
+   /// var myNum = 3
+   /// myNum.clamp(to: 5...)
+   /// print(myNum) // => 5
+   /// ```
    ///
    /// - Parameter limits: The partial range (from) determining the minimum value.
    @inlinable
@@ -64,7 +96,15 @@ extension Comparable {
       self = clamped(to: limits)
    }
 
-   /// Clamps `self` to the given partial range (through) limits.
+   /// Clamps `self` to the given partial range (through) limits. 
+   /// Modifies the original value to ensure it does not exceed a specified maximum.
+   ///
+   /// Example:
+   /// ```swift
+   /// var myNum = 7
+   /// myNum.clamp(to: ...5)
+   /// print(myNum) // => 5
+   /// ```
    ///
    /// - `self`, if it is inside the given limits.
    /// - `upperBound` of the given limits, if `self` is greater than it.

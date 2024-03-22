@@ -3,6 +3,14 @@ import Foundation
 extension Sequence {
    /// Returns the elements of the sequence, sorted using the `Comparable` value of the given keypath.
    ///
+   /// Example:
+   /// ```swift
+   /// struct Person { let name: String; let age: Int }
+   /// let people = [Person(name: "Alice", age: 30), Person(name: "Bob", age: 25)]
+   /// let sortedByAge = people.sorted(byKeyPath: \.age)
+   /// // Results in [Person(name: "Bob", age: 25), Person(name: "Alice", age: 30)]
+   /// ```
+   ///
    /// - Parameter keyPath: A keypath that specifies the property to compare.
    /// - Returns: An array of elements sorted based on the value of the specified keypath.
    public func sorted(byKeyPath keyPath: KeyPath<Element, some Comparable>) -> [Self.Element] {
@@ -11,6 +19,14 @@ extension Sequence {
 
    /// Returns the maximum element in the sequence, sorted using the `Comparable` value of the given keypath.
    ///
+   /// Example:
+   /// ```swift
+   /// struct Person { let name: String; let age: Int }
+   /// let people = [Person(name: "Alice", age: 30), Person(name: "Bob", age: 25)]
+   /// let oldest = people.max(byKeyPath: \.age)
+   /// // Results in Person(name: "Alice", age: 30)
+   /// ```
+   ///
    /// - Parameter keyPath: A keypath that specifies the property to compare.
    /// - Returns: The maximum element in the sequence, or `nil` if the sequence is empty.
    public func max(byKeyPath keyPath: KeyPath<Element, some Comparable>) -> Self.Element? {
@@ -18,6 +34,14 @@ extension Sequence {
    }
 
    /// Returns the minimum element in the sequence, sorted using the `Comparable` value of the given keypath.
+   ///
+   /// Example:
+   /// ```swift
+   /// struct Person { let name: String; let age: Int }
+   /// let people = [Person(name: "Alice", age: 30), Person(name: "Bob", age: 25)]
+   /// let youngest = people.min(byKeyPath: \.age)
+   /// // Results in Person(name: "Bob", age: 25)
+   /// ```
    ///
    /// - Parameter keyPath: A keypath that specifies the property to compare.
    /// - Returns: The minimum element in the sequence, or `nil` if the sequence is empty.

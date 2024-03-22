@@ -1,6 +1,6 @@
 import Foundation
 
-// MARK: Migration
+// - MARK: Migration
 extension Array {
    @available(*, unavailable, renamed: "sort(by:)", message: "Since SE-0372 shipped in Swift 5.8 `sort(by:)` is officially stable. Just remove the `stable` parameter.")
    public mutating func sort(by areInIncreasingOrder: @escaping (Element, Element) -> Bool, stable: Bool) { fatalError() }
