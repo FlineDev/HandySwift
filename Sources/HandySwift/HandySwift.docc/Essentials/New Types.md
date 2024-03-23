@@ -4,7 +4,7 @@ Adding missing types and global functions.
 
 @Metadata {
    @PageImage(purpose: icon, source: "HandySwift")
-   @PageImage(purpose: card, source: "New Types")
+   @PageImage(purpose: card, source: "NewTypes")
 }
 
 ## Highlights

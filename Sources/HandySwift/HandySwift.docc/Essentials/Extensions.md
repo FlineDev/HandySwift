@@ -28,7 +28,20 @@ var nextEntry: ApplicationMusicPlayer.Queue.Entry? {
 
 You can use it on every type that conforms to ``Swift/Collection`` including `Array`, `Dictionary`, and `String`. Instead of calling the subscript `array[index]` which returns a non-Optional but crashes when the index is out of bounds, use the safer `array[safe: index]` which returns `nil` instead of crashing in those cases.
 
-#### Readable Time Intervals 
+### Blank Strings vs Empty Strings
+
+![](APIKeys)
+
+A common issue with text fields that are required to be non-empty is that users accidentally type a whitespace or newline character and don't recognize it. If the validation code just checks for `.isEmpty` the problem will go unnoticed. That's why in [String Catalog Translator][SCTranslator] when users enter an API key I make sure to first strip away any newlines and whitespaces from the beginning & end of the String before doing the `.isEmpty` check. And because this is something I do very often in many places, I wrote a helper:
+
+```Swift
+Image(systemName: self.deepLAuthKey.isBlank ? "xmark.circle" : "checkmark.circle")
+   .foregroundStyle(self.deepLAuthKey.isBlank ? .red : .green)
+```
+
+Just use ``Swift/String/isBlank`` instead of `isEmpty` to get the same behavior!
+
+#### Readable Time Intervals
 
 ![](PremiumPlanExpires)
 
