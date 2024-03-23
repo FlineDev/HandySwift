@@ -16,7 +16,7 @@ Learn how you can make the most of HandySwift by reading the guides inside the d
 [📖 Open HandySwift Documentation](https://swiftpackageindex.com/FlineDev/HandySwift/main/documentation/handyswift)
 
 <a href="https://swiftpackageindex.com/FlineDev/HandySwift/main/documentation/handyswift">
-  <img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Images/Documentation.webp" />
+  <img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Images/Docs.webp" />
 </a>
 
 
