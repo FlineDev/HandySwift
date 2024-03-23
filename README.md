@@ -11,12 +11,10 @@ Checkout [HandySwiftUI](https://github.com/FlineDev/HandySwitUI) for handy UI fe
 
 ## Documentation
 
-Learn how you can make the most of HandySwift with these guides:
+Learn how you can make the most of HandySwift by reading the guides inside the documentation:
 
-* [Extensions Overview]()
-* [New Types Overview]()
+[HandySwift Documentation](https://swiftpackageindex.com/FlineDev/HandySwift/main/documentation/handyswift)
 
-The full documentation is available [here](https://swiftpackageindex.com/FlineDev/HandySwift/main/documentation/handyswift).
 
 ## Showcase
 
