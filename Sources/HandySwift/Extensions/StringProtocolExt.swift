@@ -28,6 +28,6 @@ extension StringProtocol {
 
 // - MARK: Migration
 extension StringProtocol {
-   @available(*, unavailable, renamed: "firstUpperscased")
+   @available(*, unavailable, renamed: "firstUppercased")
    public var firstCapitalized: String { fatalError() }
 }

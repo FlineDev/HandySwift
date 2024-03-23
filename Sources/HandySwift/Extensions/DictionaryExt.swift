@@ -30,7 +30,7 @@ extension Dictionary {
 
 // - MARK: Migration
 extension Dictionary {
-   @available(*, unavailable, renamed: "merge(_:uniquingKeysWith:)", message: "Remove the `with:` label and append `{ $1 }` as a `uniquingKeysWith` trailing closure to migrate.")
+   @available(*, unavailable, renamed: "merge(_:uniquingKeysWith:)", message: "Append `{ $1 }` as a `uniquingKeysWith` trailing closure to migrate.")
    public mutating func merge(_ other: [Key: Value]) { fatalError() }
 
    @available(*, unavailable, renamed: "merging(_:uniquingKeysWith:)", message: "Remove the `with:` label and append `{ $1 }` as a `uniquingKeysWith` trailing closure to migrate.")

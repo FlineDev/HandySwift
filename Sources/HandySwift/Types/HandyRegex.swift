@@ -4,6 +4,87 @@
 import Foundation
 
 /// `HandyRegex` is a swifty regex engine built on top of the NSRegularExpression API.
+///
+/// > Warning: The HandyRegex type will be removed in a future version. Migrate to ``Swift.Regex`` if possible.
+///
+/// #### init(_:options:)
+///
+/// Initialize with pattern and, optionally, options.
+///
+/// ``` swift
+/// let regex = try Regex("(Phil|John), [\\d]{4}")
+///
+/// let options: Regex.Options = [.ignoreCase, .anchorsMatchLines, .dotMatchesLineSeparators, .ignoreMetacharacters]
+/// let regexWithOptions = try Regex("(Phil|John), [\\d]{4}", options: options)
+/// ```
+///
+/// #### regex.matches(_:)
+///
+/// Checks whether regex matches string
+///
+/// ``` swift
+/// regex.matches("Phil, 1991") // => true
+/// ````
+///
+/// #### regex.matches(in:)
+///
+/// Returns all matches
+///
+/// ``` swift
+/// regex.matches(in: "Phil, 1991 and John, 1985")
+/// // => [Match<"Phil, 1991">, Match<"John, 1985">]
+/// ```
+///
+/// #### regex.firstMatch(in:)
+///
+/// Returns first match if any
+///
+/// ``` swift
+/// regex.firstMatch(in: "Phil, 1991 and John, 1985")
+/// // => Match<"Phil, 1991">
+/// ```
+///
+/// #### regex.replacingMatches(in:with:count:)
+///
+/// Replaces all matches in a string with a template string, up to the a maximum of matches (count).
+///
+/// ``` swift
+/// regex.replacingMatches(in: "Phil, 1991 and John, 1985", with: "$1 was born in $2", count: 2)
+/// // => "Phil was born in 1991 and John was born in 1985"
+/// ```
+///
+/// #### match.string
+///
+/// Returns the captured string
+///
+/// ``` swift
+/// match.string // => "Phil, 1991"
+/// ```
+///
+/// #### match.range
+///
+/// Returns the range of the captured string within the base string
+///
+/// ``` swift
+/// match.range // => Range
+/// ```
+///
+/// #### match.captures
+///
+/// Returns the capture groups of a match
+///
+/// ``` swift
+/// match.captures // => ["Phil", "1991"]
+/// ```
+///
+/// #### match.string(applyingTemplate:)
+///
+/// Replaces the matched string with a template string
+///
+/// ``` swift
+/// match.string(applyingTemplate: "$1 was born in $2")
+/// // => "Phil was born in 1991"
+/// ```
 public struct HandyRegex {
    @usableFromInline 
    internal let regularExpression: NSRegularExpression

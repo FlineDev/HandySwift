@@ -6,7 +6,7 @@ Handy Swift features that didn't make it into the Swift standard library.
    @PageImage(purpose: icon, source: "HandySwift")
 }
 
-## Overview
+## Essentials
 
 Learn how you can make the most of HandySwift with these guides:
 
