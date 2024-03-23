@@ -309,8 +309,8 @@ func downloadPuzzle(from url: URL) async throws -> Puzzle {
 - ``Swift/Double/duration()``
 
 
-[SCTranslator]: https://apps.apple.com/app/apple-store/id6476773066?pt=549314&ct=github.com&mt=8
-[CrossCraft]: https://apps.apple.com/app/apple-store/id6472669260?pt=549314&ct=github.com&mt=8
-[FocusBeats]: https://apps.apple.com/app/apple-store/id6477829138?pt=549314&ct=github.com&mt=8
-[Guided Guest Mode]: https://apps.apple.com/app/apple-store/id6479207869?pt=549314&ct=github.com&mt=8
-[Posters]: https://apps.apple.com/app/apple-store/id6478062053?pt=549314&ct=github.com&mt=8
+[SCTranslator]: https://apps.apple.com/app/apple-store/id6476773066?pt=549314&ct=swiftpackageindex.com&mt=8
+[CrossCraft]: https://apps.apple.com/app/apple-store/id6472669260?pt=549314&ct=swiftpackageindex.com&mt=8
+[FocusBeats]: https://apps.apple.com/app/apple-store/id6477829138?pt=549314&ct=swiftpackageindex.com&mt=8
+[Guided Guest Mode]: https://apps.apple.com/app/apple-store/id6479207869?pt=549314&ct=swiftpackageindex.com&mt=8
+[Posters]: https://apps.apple.com/app/apple-store/id6478062053?pt=549314&ct=swiftpackageindex.com&mt=8

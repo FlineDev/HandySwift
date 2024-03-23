@@ -22,7 +22,7 @@ Learn how you can make the most of HandySwift by reading the guides inside the d
 
 ## Showcase
 
-I extracted this library from these Indie apps (rate them with 5 stars to support me!):
+I extracted most of this library from these Indie apps (rate them with 5 stars to support me!):
 
 <table>
   <tr>
