@@ -101,7 +101,7 @@ public struct GregorianDay {
    /// - Parameter timeZone: The time zone for which to calculate the middle of the day. Defaults to UTC.
    /// - Returns: A `Date` representing the middle of the day.
    ///
-   /// - Note: If you need to pass a `Date` to an API that only cares about the day (not the time), calling ``midOfDay()`` ensures you get the same day independent of timezones.
+   /// - Note: If you need to pass a `Date` to an API that only cares about the day (not the time), calling ``midOfDay(timeZone:)`` ensures you get the same day independent of timezones.
    ///
    /// Example:
    /// ```swift
