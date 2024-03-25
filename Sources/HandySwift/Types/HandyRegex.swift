@@ -5,7 +5,7 @@ import Foundation
 
 /// `HandyRegex` is a swifty regex engine built on top of the NSRegularExpression API.
 ///
-/// > Warning: The HandyRegex type will be removed in a future version. Migrate to ``Swift.Regex`` if possible.
+/// > Warning: The HandyRegex type will be removed in a future version. Migrate to `Swift.Regex` if possible.
 ///
 /// #### init(_:options:)
 ///

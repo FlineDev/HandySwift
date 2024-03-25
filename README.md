@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Images/HandySwift.webp" width="256" />
+<img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Images/HandySwift.png" width="256" />
 
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FFlineDev%2FHandySwift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/FlineDev/HandySwift)
 
@@ -6,7 +6,7 @@
 
 The goal of this library is to **provide handy features** that didn't make it into the Swift standard library (yet).
 
-Checkout [HandySwiftUI](https://github.com/FlineDev/HandySwitUI) for handy UI features that should have been part of SwiftUI in the first place.
+Checkout [HandySwiftUI](https://github.com/FlineDev/HandySwiftUI) for handy UI features that should have been part of SwiftUI in the first place.
 
 
 ## Documentation

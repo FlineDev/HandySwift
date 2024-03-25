@@ -28,7 +28,7 @@ var nextEntry: ApplicationMusicPlayer.Queue.Entry? {
 
 You can use it on every type that conforms to ``Swift/Collection`` including `Array`, `Dictionary`, and `String`. Instead of calling the subscript `array[index]` which returns a non-Optional but crashes when the index is out of bounds, use the safer `array[safe: index]` which returns `nil` instead of crashing in those cases.
 
-### Blank Strings vs Empty Strings
+#### Blank Strings vs Empty Strings
 
 ![](APIKeys)
 

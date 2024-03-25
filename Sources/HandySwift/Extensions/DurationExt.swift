@@ -88,8 +88,10 @@ extension Duration {
    /// - For a duration of 25 hours, the output will be `"1d 1h"`, scaling up to days and hours.
    /// - For a duration of 2 days and 0 hours, the output will be `"2d"` as it omits the zero hour part.
    ///
-   /// - Returns: A formatted string representing the duration. If the duration is less than a second, it returns `"???"`.
+   /// - Returns: A formatted string representing the duration. If the duration is less than a second, it returns `"???"`. For zero returns `"0s"`.
    public func autoscaleFormatted() -> String {
+      guard self != .zero else { return "0s" }
+
       var leftoverTimeInterval = self.timeInterval
       let fullDays = Int(leftoverTimeInterval.days)
 
