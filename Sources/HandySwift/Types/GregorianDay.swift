@@ -89,7 +89,7 @@ public struct GregorianDay {
    /// ```
    public func advanced(byMonths months: Int) -> Self {
       let (overflowingYears, newMonth) = (self.month + months - 1).quotientAndRemainder(dividingBy: 12)
-      return self.with { $0.year += overflowingYears; $0.month = newMonth }
+      return self.with { $0.year += overflowingYears; $0.month = newMonth + 1 }
    }
 
    /// Reverses the date by the specified number of months.
@@ -133,7 +133,7 @@ public struct GregorianDay {
    /// let yesterday = GregorianDay.today.reversed(byYears: 1)
    /// ```
    public func reversed(byYears years: Int) -> Self {
-      self.advanced(byMonths: -years)
+      self.advanced(byYears: -years)
    }
 
    /// Returns the start of the day represented by the date.
