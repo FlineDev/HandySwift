@@ -180,3 +180,5 @@ extension GregorianDay {
    /// The `GregorianDay` representing tomorrow's date.
    public static var tomorrow: Self { GregorianDay(date: Date()).advanced(by: 1) }
 }
+
+extension GregorianDay: Withable {}

@@ -141,3 +141,5 @@ extension GregorianTimeOfDay {
    /// The current time of day.
    public static var now: Self { GregorianTimeOfDay(date: Date()) }
 }
+
+extension GregorianTimeOfDay: Withable {}
