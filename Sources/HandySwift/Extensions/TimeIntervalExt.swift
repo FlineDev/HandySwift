@@ -150,10 +150,10 @@ extension TimeInterval {
    @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
    public func duration() -> Duration {
       let fullSeconds = Int64(self.seconds)
-      let remainingInterval = self - .seconds(Double(fullSeconds))
+      let remainingInterval = self - Double(fullSeconds)
 
       let attosecondsPerNanosecond = Double(1_000 * 1_000 * 1_000)
-      let fullAttoseconds = Int64(remainingInterval.nanoseconds / attosecondsPerNanosecond)
+      let fullAttoseconds = Int64(remainingInterval.nanoseconds * attosecondsPerNanosecond)
 
       return Duration(secondsComponent: fullSeconds, attosecondsComponent: fullAttoseconds)
    }

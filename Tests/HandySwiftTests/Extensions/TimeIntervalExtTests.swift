@@ -24,4 +24,10 @@ class TimeIntervalExtTests: XCTestCase {
       XCTAssertEqual(multipledTimeInterval.microseconds, 12 * 60 * 60 * 1_000_000, accuracy: 0.001)
       XCTAssertEqual(multipledTimeInterval.nanoseconds, 12 * 60 * 60 * 1_000_000_000, accuracy: 0.001)
    }
+
+   func testDurationConversion() {
+      XCTAssertEqual(TimeInterval.milliseconds(0.999).duration().timeInterval.milliseconds, 0.999, accuracy: 0.000001)
+      XCTAssertEqual(TimeInterval.seconds(2.5).duration().timeInterval.seconds, 2.5, accuracy: 0.001)
+      XCTAssertEqual(TimeInterval.days(5).duration().timeInterval.days, 5, accuracy: 0.001)
+   }
 }
