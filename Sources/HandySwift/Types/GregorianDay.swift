@@ -96,6 +96,46 @@ public struct GregorianDay {
       return components.date!
    }
 
+   /// Returns the start of the month represented by the date.
+   ///
+   /// - Parameter timeZone: The time zone for which to calculate the start of the month. Defaults to the users current timezone.
+   /// - Returns: A `Date` representing the start of the month.
+   ///
+   /// Example:
+   /// ```swift
+   /// let startOfThisMonth = GregorianDay.today.startOfMonth()
+   /// ```
+   public func startOfMonth(timeZone: TimeZone = .current) -> Date {
+      let components = DateComponents(
+         calendar: Calendar(identifier: .gregorian),
+         timeZone: timeZone,
+         year: self.year,
+         month: self.month,
+         day: 1
+      )
+      return components.date!
+   }
+
+   /// Returns the start of the year represented by the date.
+   ///
+   /// - Parameter timeZone: The time zone for which to calculate the start of the year. Defaults to the users current timezone.
+   /// - Returns: A `Date` representing the start of the year.
+   ///
+   /// Example:
+   /// ```swift
+   /// let startOfThisYear = GregorianDay.today.startOfYear()
+   /// ```
+   public func startOfYear(timeZone: TimeZone = .current) -> Date {
+      let components = DateComponents(
+         calendar: Calendar(identifier: .gregorian),
+         timeZone: timeZone,
+         year: self.year,
+         month: 1,
+         day: 1
+      )
+      return components.date!
+   }
+
    /// Returns the middle of the day represented by the date.
    ///
    /// - Parameter timeZone: The time zone for which to calculate the middle of the day. Defaults to UTC.
