@@ -76,6 +76,66 @@ public struct GregorianDay {
       self.advanced(by: -days)
    }
 
+   /// Advances the date by the specified number of months.
+   ///
+   /// - Parameter months: The number of months to advance the date by.
+   /// - Returns: A new `GregorianDay` instance advanced by the specified number of months.
+   ///
+   /// - Warning: This may return an invalid date such as February 31st. Only use in combination with a method like ``startOfMonth(timeZone:)`` that removes the day.
+   ///
+   /// Example:
+   /// ```swift
+   /// let tomorrow = GregorianDay.today.advanced(byMonths: 1)
+   /// ```
+   public func advanced(byMonths months: Int) -> Self {
+      let (overflowingYears, newMonth) = (self.month + months - 1).quotientAndRemainder(dividingBy: 12)
+      return self.with { $0.year += overflowingYears; $0.month = newMonth }
+   }
+
+   /// Reverses the date by the specified number of months.
+   ///
+   /// - Parameter months: The number of months to reverse the date by.
+   /// - Returns: A new `GregorianDay` instance reversed by the specified number of months.
+   ///
+   /// - Warning: This may return an invalid date such as February 31st. Only use in combination with a method like ``startOfMonth(timeZone:)`` that removes the day.
+   ///
+   /// Example:
+   /// ```swift
+   /// let yesterday = GregorianDay.today.reversed(byMonths: 1)
+   /// ```
+   public func reversed(byMonths months: Int) -> Self {
+      self.advanced(byMonths: -months)
+   }
+
+   /// Advances the date by the specified number of years.
+   ///
+   /// - Parameter years: The number of years to advance the date by.
+   /// - Returns: A new `GregorianDay` instance advanced by the specified number of years. The day and month stay the same.
+   ///
+   /// - Warning: This may return an invalid date such as February 31st. Only use in combination with a method like ``startOfMonth(timeZone:)`` that removes the day.
+   ///
+   /// Example:
+   /// ```swift
+   /// let tomorrow = GregorianDay.today.advanced(byYears: 1)
+   /// ```
+   public func advanced(byYears years: Int) -> Self {
+      self.with { $0.year += years }
+   }
+
+   /// Reverses the date by the specified number of years.
+   ///
+   /// - Parameter years: The number of years to reverse the date by.
+   /// - Returns: A new `GregorianDay` instance reversed by the specified number of years. The day and month stay the same.
+   ///
+   /// - Warning: This may return an invalid date such as February 31st. Only use in combination with a method like ``startOfMonth(timeZone:)`` that removes the day.
+   /// Example:
+   /// ```swift
+   /// let yesterday = GregorianDay.today.reversed(byYears: 1)
+   /// ```
+   public func reversed(byYears years: Int) -> Self {
+      self.advanced(byMonths: -years)
+   }
+
    /// Returns the start of the day represented by the date.
    ///
    /// - Parameter timeZone: The time zone for which to calculate the start of the day. Defaults to the users current timezone.
@@ -158,48 +218,6 @@ public struct GregorianDay {
       )
       return components.date!
    }
-
-   /// Returns the start of the next day from the date.
-   ///
-   /// - Parameter timeZone: The time zone for which to calculate the start of the next day. Defaults to the user's current timezone.
-   /// - Returns: A `Date` representing the start of the next day.
-   ///
-   /// Example:
-   /// ```swift
-   /// let startOfNextDay = GregorianDay.today.startOfNextDay()
-   /// ```
-   public func startOfNextDay(timeZone: TimeZone = .current) -> Date {
-      self.advanced(by: 1).startOfDay()
-   }
-
-
-   /// Returns the start of the next month from the date.
-   ///
-   /// - Parameter timeZone: The time zone for which to calculate the start of the next month. Defaults to the user's current timezone.
-   /// - Returns: A `Date` representing the start of the next month.
-   ///
-   /// Example:
-   /// ```swift
-   /// let startOfNextMonth = GregorianDay.today.startOfNextMonth()
-   /// ```
-   public func startOfNextMonth(timeZone: TimeZone = .current) -> Date {
-      guard self.month < 12 else { return self.startOfNextYear() }
-      return self.with { $0.month += 1; $0.day = 1 }.startOfDay()
-   }
-
-   /// Returns the start of the next year from the date.
-   ///
-   /// - Parameter timeZone: The time zone for which to calculate the start of the next year. Defaults to the user's current timezone.
-   /// - Returns: A `Date` representing the start of the next year.
-   ///
-   /// Example:
-   /// ```swift
-   /// let startOfNextYear = GregorianDay.today.startOfNextYear()
-   /// ```
-   public func startOfNextYear(timeZone: TimeZone = .current) -> Date {
-      self.with { $0.year += 1; $0.month = 1 }.startOfMonth()
-   }
-
 }
 
 extension GregorianDay: Codable {
