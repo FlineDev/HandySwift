@@ -6,7 +6,7 @@ import Foundation
 /// ```swift
 /// let yesterday = GregorianDay.yesterday
 /// print(yesterday.iso8601Formatted) // Prints the current date in ISO 8601 format, e.g. "2024-03-20"
-/// 
+///
 /// let tomorrow = yesterday.advanced(by: 2)
 /// let timCookBirthday = GregorianDay(year: 1960, month: 11, day: 01)
 ///
@@ -158,6 +158,48 @@ public struct GregorianDay {
       )
       return components.date!
    }
+
+   /// Returns the start of the next day from the date.
+   ///
+   /// - Parameter timeZone: The time zone for which to calculate the start of the next day. Defaults to the user's current timezone.
+   /// - Returns: A `Date` representing the start of the next day.
+   ///
+   /// Example:
+   /// ```swift
+   /// let startOfNextDay = GregorianDay.today.startOfNextDay()
+   /// ```
+   public func startOfNextDay(timeZone: TimeZone = .current) -> Date {
+      self.advanced(by: 1).startOfDay()
+   }
+
+
+   /// Returns the start of the next month from the date.
+   ///
+   /// - Parameter timeZone: The time zone for which to calculate the start of the next month. Defaults to the user's current timezone.
+   /// - Returns: A `Date` representing the start of the next month.
+   ///
+   /// Example:
+   /// ```swift
+   /// let startOfNextMonth = GregorianDay.today.startOfNextMonth()
+   /// ```
+   public func startOfNextMonth(timeZone: TimeZone = .current) -> Date {
+      guard self.month < 12 else { return self.startOfNextYear() }
+      return self.with { $0.month += 1 }.startOfDay()
+   }
+
+   /// Returns the start of the next year from the date.
+   ///
+   /// - Parameter timeZone: The time zone for which to calculate the start of the next year. Defaults to the user's current timezone.
+   /// - Returns: A `Date` representing the start of the next year.
+   ///
+   /// Example:
+   /// ```swift
+   /// let startOfNextYear = GregorianDay.today.startOfNextYear()
+   /// ```
+   public func startOfNextYear(timeZone: TimeZone = .current) -> Date {
+      self.with { $0.year += 1; $0.month = 1 }.startOfMonth()
+   }
+
 }
 
 extension GregorianDay: Codable {
