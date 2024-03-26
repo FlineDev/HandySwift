@@ -22,13 +22,13 @@ import Foundation
 /// ```
 public struct GregorianTimeOfDay {
    /// The number of days beyond the current day.
-   public let overflowingDays: Int
+   public var overflowingDays: Int
    /// The hour component of the time.
-   public let hour: Int
+   public var hour: Int
    /// The minute component of the time.
-   public let minute: Int
+   public var minute: Int
    /// The second component of the time.
-   public let second: Int
+   public var second: Int
 
    /// Initializes a `GregorianTimeOfDay` instance from a given date.
    ///

@@ -14,11 +14,11 @@ import Foundation
 /// ```
 public struct GregorianDay {
    /// The year component of the date.
-   public let year: Int
+   public var year: Int
    /// The month component of the date.
-   public let month: Int
+   public var month: Int
    /// The day component of the date.
-   public let day: Int
+   public var day: Int
 
    /// Returns an ISO 8601 formatted String representation of the date, e.g., `2024-02-24`.
    public var iso8601Formatted: String {
