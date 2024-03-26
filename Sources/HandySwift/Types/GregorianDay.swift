@@ -184,7 +184,7 @@ public struct GregorianDay {
    /// ```
    public func startOfNextMonth(timeZone: TimeZone = .current) -> Date {
       guard self.month < 12 else { return self.startOfNextYear() }
-      return self.with { $0.month += 1 }.startOfDay()
+      return self.with { $0.month += 1; $0.day = 1 }.startOfDay()
    }
 
    /// Returns the start of the next year from the date.
