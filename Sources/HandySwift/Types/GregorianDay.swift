@@ -6,7 +6,7 @@ import Foundation
 /// ```swift
 /// let yesterday = GregorianDay.yesterday
 /// print(yesterday.iso8601Formatted) // Prints the current date in ISO 8601 format, e.g. "2024-03-20"
-/// 
+///
 /// let tomorrow = yesterday.advanced(by: 2)
 /// let timCookBirthday = GregorianDay(year: 1960, month: 11, day: 01)
 ///
@@ -14,11 +14,11 @@ import Foundation
 /// ```
 public struct GregorianDay {
    /// The year component of the date.
-   public let year: Int
+   public var year: Int
    /// The month component of the date.
-   public let month: Int
+   public var month: Int
    /// The day component of the date.
-   public let day: Int
+   public var day: Int
 
    /// Returns an ISO 8601 formatted String representation of the date, e.g., `2024-02-24`.
    public var iso8601Formatted: String {
@@ -76,6 +76,66 @@ public struct GregorianDay {
       self.advanced(by: -days)
    }
 
+   /// Advances the date by the specified number of months.
+   ///
+   /// - Parameter months: The number of months to advance the date by.
+   /// - Returns: A new `GregorianDay` instance advanced by the specified number of months.
+   ///
+   /// - Warning: This may return an invalid date such as February 31st. Only use in combination with a method like ``startOfMonth(timeZone:)`` that removes the day.
+   ///
+   /// Example:
+   /// ```swift
+   /// let tomorrow = GregorianDay.today.advanced(byMonths: 1)
+   /// ```
+   public func advanced(byMonths months: Int) -> Self {
+      let (overflowingYears, newMonth) = (self.month + months - 1).quotientAndRemainder(dividingBy: 12)
+      return self.with { $0.year += overflowingYears; $0.month = newMonth + 1 }
+   }
+
+   /// Reverses the date by the specified number of months.
+   ///
+   /// - Parameter months: The number of months to reverse the date by.
+   /// - Returns: A new `GregorianDay` instance reversed by the specified number of months.
+   ///
+   /// - Warning: This may return an invalid date such as February 31st. Only use in combination with a method like ``startOfMonth(timeZone:)`` that removes the day.
+   ///
+   /// Example:
+   /// ```swift
+   /// let yesterday = GregorianDay.today.reversed(byMonths: 1)
+   /// ```
+   public func reversed(byMonths months: Int) -> Self {
+      self.advanced(byMonths: -months)
+   }
+
+   /// Advances the date by the specified number of years.
+   ///
+   /// - Parameter years: The number of years to advance the date by.
+   /// - Returns: A new `GregorianDay` instance advanced by the specified number of years. The day and month stay the same.
+   ///
+   /// - Warning: This may return an invalid date such as February 31st. Only use in combination with a method like ``startOfMonth(timeZone:)`` that removes the day.
+   ///
+   /// Example:
+   /// ```swift
+   /// let tomorrow = GregorianDay.today.advanced(byYears: 1)
+   /// ```
+   public func advanced(byYears years: Int) -> Self {
+      self.with { $0.year += years }
+   }
+
+   /// Reverses the date by the specified number of years.
+   ///
+   /// - Parameter years: The number of years to reverse the date by.
+   /// - Returns: A new `GregorianDay` instance reversed by the specified number of years. The day and month stay the same.
+   ///
+   /// - Warning: This may return an invalid date such as February 31st. Only use in combination with a method like ``startOfMonth(timeZone:)`` that removes the day.
+   /// Example:
+   /// ```swift
+   /// let yesterday = GregorianDay.today.reversed(byYears: 1)
+   /// ```
+   public func reversed(byYears years: Int) -> Self {
+      self.advanced(byYears: -years)
+   }
+
    /// Returns the start of the day represented by the date.
    ///
    /// - Parameter timeZone: The time zone for which to calculate the start of the day. Defaults to the users current timezone.
@@ -92,6 +152,46 @@ public struct GregorianDay {
          year: self.year,
          month: self.month,
          day: self.day
+      )
+      return components.date!
+   }
+
+   /// Returns the start of the month represented by the date.
+   ///
+   /// - Parameter timeZone: The time zone for which to calculate the start of the month. Defaults to the users current timezone.
+   /// - Returns: A `Date` representing the start of the month.
+   ///
+   /// Example:
+   /// ```swift
+   /// let startOfThisMonth = GregorianDay.today.startOfMonth()
+   /// ```
+   public func startOfMonth(timeZone: TimeZone = .current) -> Date {
+      let components = DateComponents(
+         calendar: Calendar(identifier: .gregorian),
+         timeZone: timeZone,
+         year: self.year,
+         month: self.month,
+         day: 1
+      )
+      return components.date!
+   }
+
+   /// Returns the start of the year represented by the date.
+   ///
+   /// - Parameter timeZone: The time zone for which to calculate the start of the year. Defaults to the users current timezone.
+   /// - Returns: A `Date` representing the start of the year.
+   ///
+   /// Example:
+   /// ```swift
+   /// let startOfThisYear = GregorianDay.today.startOfYear()
+   /// ```
+   public func startOfYear(timeZone: TimeZone = .current) -> Date {
+      let components = DateComponents(
+         calendar: Calendar(identifier: .gregorian),
+         timeZone: timeZone,
+         year: self.year,
+         month: 1,
+         day: 1
       )
       return components.date!
    }
@@ -180,3 +280,5 @@ extension GregorianDay {
    /// The `GregorianDay` representing tomorrow's date.
    public static var tomorrow: Self { GregorianDay(date: Date()).advanced(by: 1) }
 }
+
+extension GregorianDay: Withable {}
