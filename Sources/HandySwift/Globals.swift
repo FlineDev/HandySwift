@@ -17,6 +17,7 @@ public func delay(by timeInterval: TimeInterval, qosClass: DispatchQoS.QoSClass?
 ///   - duration: The duration of the delay. E.g., `.seconds(1)` or `.milliseconds(200)`.
 ///   - qosClass: The global QoS class to be used or `nil` to use the main thread. Defaults to `nil`.
 ///   - closure: The code to run with a delay.
+@_disfavoredOverload
 @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
 public func delay(by duration: Duration, qosClass: DispatchQoS.QoSClass? = nil, _ closure: @escaping () -> Void) {
    let dispatchQueue = qosClass != nil ? DispatchQueue.global(qos: qosClass!) : DispatchQueue.main
