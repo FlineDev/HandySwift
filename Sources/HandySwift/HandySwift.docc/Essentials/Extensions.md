@@ -292,6 +292,8 @@ func downloadPuzzle(from url: URL) async throws -> Puzzle {
 - ``Swift/String/randomElements(count:)``
 - ``Swift/String/encrypted(key:)``
 - ``Swift/String/decrypted(key:)``
+- ``Swift/String/tokenized(locale:)``
+- ``Swift/String/matchesTokenizedPrefixes(in:locale:)``
 
 ### StringProtocol
 
