@@ -217,8 +217,8 @@ extension String {
    /// print(searchResult) // Output: true
    /// ```
    public func matchesTokenizedPrefixes(in searchText: String, locale: Locale? = nil) -> Bool {
-      let tokens = self.tokenized()
-      return searchText.tokenized().allSatisfy { searchToken in
+      let tokens = self.tokenized(locale: locale)
+      return searchText.tokenized(locale: locale).allSatisfy { searchToken in
          tokens.contains { $0.hasPrefix(searchToken) }
       }
    }
