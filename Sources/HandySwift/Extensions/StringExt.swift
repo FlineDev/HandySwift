@@ -183,6 +183,45 @@ extension String {
 
       return plainString
    }
+
+   /// Splits the String into word tokens that are folded for case-insensitive, diacritics-insensitive, and width-insensitive operations such as search.
+   /// This is particularly useful for string normalization in search queries, where the goal is to match strings regardless of their case, diacritics, or full-width/half-width characters.
+   ///
+   /// - Parameter locale: Optional. The locale to use for the folding operation. If `nil`, the system's current locale is used. This affects the folding behavior, especially for diacritics.
+   /// - Returns: An array of normalized, tokenized strings.
+   ///
+   /// ## Example:
+   /// ```
+   /// let sentence = "Café au lait"
+   /// let tokens = sentence.tokenized()
+   /// print(tokens) // Output: ["cafe", "au", "lait"]
+   /// ```
+   public func tokenized(locale: Locale? = nil) -> [String] {
+      self.components(separatedBy: .whitespacesAndNewlines).map { word in
+         word.folding(options: [.caseInsensitive, .diacriticInsensitive, .widthInsensitive], locale: locale)
+      }
+   }
+
+   /// Splits both the current string and the search text into word tokens and performs a case-insensitive, diacritics-insensitive search.
+   /// It matches the start of each token in the search text with the tokens in the current string, making it suitable for prefix-based search queries.
+   ///
+   /// - Parameters:
+   ///   - searchText: The text to search for within this String.
+   ///   - locale: Optional. The locale to use for the insensitivity folding operation. If `nil`, the system's current locale is used. This can impact how characters are folded for comparison.
+   /// - Returns: `true` if all tokens from the search text are prefixes of any token in this String; otherwise, `false`.
+   ///
+   /// ## Example:
+   /// ```
+   /// let text = "Terms and Conditions"
+   /// let searchResult = text.matchesTokenizedPrefixes(in: "ter con")
+   /// print(searchResult) // Output: true
+   /// ```
+   public func matchesTokenizedPrefixes(in searchText: String, locale: Locale? = nil) -> Bool {
+      let tokens = self.tokenized()
+      return searchText.tokenized().allSatisfy { searchToken in
+         tokens.contains { $0.hasPrefix(searchToken) }
+      }
+   }
 }
 #endif
 
