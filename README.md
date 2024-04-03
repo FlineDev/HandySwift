@@ -38,7 +38,7 @@ I extracted most of this library from these Indie apps (rate them with 5 stars t
     </td>
     <td>
       <a href="https://apps.apple.com/app/apple-store/id6476773066?pt=549314&ct=github.com&mt=8">
-        <strong>String Catalog Translator</strong>
+        <strong>TranslateKit: App Localizer</strong>
       </a>
       <br />
       Simple drag & drop translation of String Catalog files with support for 4 machine translation services.
