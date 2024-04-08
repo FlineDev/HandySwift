@@ -47,6 +47,21 @@ I extracted most of this library from these Indie apps (rate them with 5 stars t
   </tr>
   <tr>
     <td>
+      <a href="https://apps.apple.com/app/apple-store/id6480134993?pt=549314&ct=github.com&mt=8">
+        <img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Images/FreelanceKit.webp" width="64" />
+      </a>
+    </td>
+    <td>
+      <a href="https://apps.apple.com/app/apple-store/id6480134993?pt=549314&ct=github.com&mt=8">
+        <strong>FreelanceKit: Time Tracking</strong>
+      </a>
+      <br />
+      Simple & affordable time tracking with a native experience for all  devices. iCloud sync & CSV export included.
+    </td>
+    <td>iPhone, iPad, Mac, Vision</td>
+  </tr>
+  <tr>
+    <td>
       <a href="https://apps.apple.com/app/apple-store/id6472669260?pt=549314&ct=github.com&mt=8">
         <img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Images/CrossCraft.webp" width="64" />
       </a>
