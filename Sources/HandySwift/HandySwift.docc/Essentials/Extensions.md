@@ -32,7 +32,7 @@ You can use it on every type that conforms to ``Swift/Collection`` including `Ar
 
 ![](APIKeys)
 
-A common issue with text fields that are required to be non-empty is that users accidentally type a whitespace or newline character and don't recognize it. If the validation code just checks for `.isEmpty` the problem will go unnoticed. That's why in [String Catalog Translator][SCTranslator] when users enter an API key I make sure to first strip away any newlines and whitespaces from the beginning & end of the String before doing the `.isEmpty` check. And because this is something I do very often in many places, I wrote a helper:
+A common issue with text fields that are required to be non-empty is that users accidentally type a whitespace or newline character and don't recognize it. If the validation code just checks for `.isEmpty` the problem will go unnoticed. That's why in [TranslateKit][TranslateKit] when users enter an API key I make sure to first strip away any newlines and whitespaces from the beginning & end of the String before doing the `.isEmpty` check. And because this is something I do very often in many places, I wrote a helper:
 
 ```Swift
 Image(systemName: self.deepLAuthKey.isBlank ? "xmark.circle" : "checkmark.circle")
@@ -47,7 +47,7 @@ Just use ``Swift/String/isBlank`` instead of `isEmpty` to get the same behavior!
 
 Whenever I used an API that expects a `TimeInterval` (which is just a typealias for `Double`), I missed the unit which lead to less readable code because you have to actively remember that the unit is "seconds". Also, when I needed a different unit like minutes or hours, I had to do the calculation manually. Not with HandySwift!
 
-Intead of passing a plain `Double` value like `60 * 5`, you can just pass `.minutes(5)`. For example in [String Catalog Translator][SCTranslator] to preview the view when a user unsubscribed I use this:
+Intead of passing a plain `Double` value like `60 * 5`, you can just pass `.minutes(5)`. For example in [TranslateKit][TranslateKit] to preview the view when a user unsubscribed I use this:
 
 ```swift
 #Preview("Expiring") {
@@ -324,7 +324,7 @@ func downloadPuzzle(from url: URL) async throws -> Puzzle {
 - ``Swift/Double/duration()``
 
 
-[SCTranslator]: https://apps.apple.com/app/apple-store/id6476773066?pt=549314&ct=swiftpackageindex.com&mt=8
+[TranslateKit]: https://apps.apple.com/app/apple-store/id6476773066?pt=549314&ct=swiftpackageindex.com&mt=8
 [CrossCraft]: https://apps.apple.com/app/apple-store/id6472669260?pt=549314&ct=swiftpackageindex.com&mt=8
 [FocusBeats]: https://apps.apple.com/app/apple-store/id6477829138?pt=549314&ct=swiftpackageindex.com&mt=8
 [Guided Guest Mode]: https://apps.apple.com/app/apple-store/id6479207869?pt=549314&ct=swiftpackageindex.com&mt=8

@@ -109,6 +109,7 @@ Note that the ``Debouncer`` was stored in a property so ``Debouncer/cancelAll()`
 
 > Note: If you need multiple debouncing operations in one view, you don't need multiple debouncers. Just pass an `id` to the delay function. 
 
+
 ## Topics
 
 ### Collections
