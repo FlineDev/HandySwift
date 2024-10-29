@@ -52,7 +52,7 @@ public final class Debouncer {
    /// }
    /// ```
    @available(iOS 16, macOS 13, tvOS 16, visionOS 1, watchOS 9, *)
-   public func delay(for duration: Duration, id: String = "default", operation: @escaping () -> Void) {
+   public func delay(for duration: Duration, id: String = "default", operation: @Sendable @escaping () -> Void) {
       self.cancel(id: id)
       self.timerByID[id] = Timer.scheduledTimer(withTimeInterval: duration.timeInterval, repeats: false) { _ in
          operation()
@@ -76,7 +76,7 @@ public final class Debouncer {
    ///     performOperation()
    /// }
    /// ```
-   public func delay(for interval: TimeInterval, id: String = "default", operation: @escaping () -> Void) {
+   public func delay(for interval: TimeInterval, id: String = "default", operation: @Sendable @escaping () -> Void) {
       self.cancel(id: id)
       self.timerByID[id] = Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { _ in
          operation()

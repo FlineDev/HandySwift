@@ -206,7 +206,7 @@ extension HandyRegex: Hashable {
 
 extension HandyRegex {
    /// `Options` defines alternate behaviours of regular expressions when matching.
-   public struct Options: OptionSet {
+   public struct Options: OptionSet, Sendable {
       /// Ignores the case of letters when matching.
       public static let ignoreCase = Options(rawValue: 1)
       
