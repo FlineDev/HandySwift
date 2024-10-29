@@ -180,6 +180,7 @@ func downloadPuzzle(from url: URL) async throws -> Puzzle {
 ### Dictionary
 
 - ``Swift/Dictionary/init(keys:values:)``
+- ``Swift/Dictionary/mapKeys(_:)``
 
 ### DispatchTimeInterval
 

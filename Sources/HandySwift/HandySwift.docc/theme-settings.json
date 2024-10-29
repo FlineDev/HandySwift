@@ -2,6 +2,8 @@
   "theme": {
     "color": {
       "header": "#002B7D",
+      "documentation-intro-title": "#FFFFFF",
+      "documentation-intro-figure": "#FFFFFF",
       "documentation-intro-fill": "radial-gradient(circle at top, var(--color-header) 30%, #000 100%)",
       "documentation-intro-accent": "var(--color-header)"
     }
