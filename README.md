@@ -13,9 +13,9 @@ Checkout [HandySwiftUI](https://github.com/FlineDev/HandySwiftUI) for handy UI f
 
 Learn how you can make the most of HandySwift by reading the guides inside the documentation:
 
-[📖 Open HandySwift Documentation](https://swiftpackageindex.com/FlineDev/HandySwift/main/documentation/handyswift)
+[📖 Open HandySwift Documentation](https://swiftpackageindex.com/FlineDev/HandySwift/documentation/handyswift)
 
-<a href="https://swiftpackageindex.com/FlineDev/HandySwift/main/documentation/handyswift">
+<a href="https://swiftpackageindex.com/FlineDev/HandySwift/documentation/handyswift">
   <img src="https://raw.githubusercontent.com/FlineDev/HandySwift/main/Images/Docs.webp" />
 </a>
 
