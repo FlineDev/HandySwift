@@ -113,6 +113,33 @@ Text(fractionCompleted.rounded(fractionDigits: 2).formatted(.percent))
 
 > Note: There's also a mutating ``Swift/Double/round(fractionDigits:rule:)`` functions if you want to change a variable in-place.
 
+#### JSON Snake Case Conversion
+
+Many APIs return responses using snake_case naming (e.g., `first_name`, `date_of_birth`), while Swift uses camelCase by convention (e.g., `firstName`, `dateOfBirth`). Converting between these naming conventions is a very common need when working with JSON APIs:
+
+```swift
+struct User: Codable {
+    let firstName: String
+    let lastName: String
+    let dateOfBirth: Date
+    let profileImageUrl: String?
+}
+
+func fetchUser(id: String) async throws -> User {
+    let (data, _) = try await URLSession.shared.data(from: apiURL)
+    
+    // Automatically converts snake_case JSON to camelCase Swift properties
+    return try JSONDecoder.snakeCase.decode(User.self, from: data)
+    
+    // Without this extension we'd need this every time:
+    // let decoder = JSONDecoder()
+    // decoder.keyDecodingStrategy = .convertFromSnakeCase
+    // return try decoder.decode(User.self, from: data)
+}
+```
+
+Just use ``JSONDecoder.snakeCase`` to decode and ``JSONEncoder.snakeCase`` to encode instead of configuring a new instance each time!
+
 #### Symmetric Data Cryptography
 
 ![](SharePuzzle)
@@ -214,6 +241,11 @@ func downloadPuzzle(from url: URL) async throws -> Puzzle {
 
 - ``Swift/Int/times(_:)``
 - ``Swift/Int/timesMake(_:)``
+
+### JSON Coding
+
+- ``Foundation/JSONDecoder/snakeCase``
+- ``Foundation/JSONEncoder/snakeCase``
 
 ### RandomAccessCollection
 

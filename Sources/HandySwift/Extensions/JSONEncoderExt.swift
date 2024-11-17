@@ -13,7 +13,7 @@ extension JSONEncoder {
    /// let jsonData = try JSONEncoder.snakeCase.encode(user)
    /// // Results in: {"first_name": "John", "last_name": "Doe"}
    /// ```
-   static var snakeCase: JSONEncoder {
+   public static var snakeCase: JSONEncoder {
       let encoder = JSONEncoder()
       encoder.keyEncodingStrategy = .convertToSnakeCase
       return encoder

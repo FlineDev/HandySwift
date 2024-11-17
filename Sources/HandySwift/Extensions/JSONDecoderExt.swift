@@ -18,7 +18,7 @@ extension JSONDecoder {
    /// let user = try JSONDecoder.snakeCase.decode(User.self, from: jsonData)
    /// // Results in: User(firstName: "John", lastName: "Doe")
    /// ```
-   static var snakeCase: JSONDecoder {
+   public static var snakeCase: JSONDecoder {
       let decoder = JSONDecoder()
       decoder.keyDecodingStrategy = .convertFromSnakeCase
       return decoder
