@@ -47,11 +47,11 @@ let todayNextWeek = GregorianDay.today.advanced(by: 7)
 
 > Note: `GregorianDay` conforms to all the protocols you would expect, such as `Codable`, `Hashable`, and `Comparable`. For encoding/decoding, it uses the ISO format as in "2014-07-13".
 
-``GregorianTimeOfDay`` is the counterpart:
+``GregorianTime`` is the counterpart:
 
 ```swift
-let iPhoneAnnounceTime = GregorianTimeOfDay(hour: 09, minute: 41)
-let anHourFromNow = GregorianTimeOfDay.now.advanced(by: .hours(1))
+let iPhoneAnnounceTime = GregorianTime(hour: 09, minute: 41)
+let anHourFromNow = GregorianTime.now.advanced(by: .hours(1))
 
 let date = iPhoneAnnounceTime.date(day: GregorianDay.today)  // => Date
 ```
@@ -120,7 +120,7 @@ Note that the ``Debouncer`` was stored in a property so ``Debouncer/cancelAll()`
 ### Date & Time
 
 - ``GregorianDay``
-- ``GregorianTimeOfDay``
+- ``GregorianTime``
 
 ### UI Helpers
 

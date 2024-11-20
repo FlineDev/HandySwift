@@ -218,6 +218,21 @@ public struct GregorianDay {
       )
       return components.date!
    }
+
+   /// Returns a `Date` representing this day at the specified time.
+   ///
+   /// - Parameters:
+   ///   - timeOfDay: The time of day to set for the resulting date.
+   ///   - timeZone: The time zone for which to calculate the date. Defaults to the users current timezone.
+   /// - Returns: A `Date` representing this day at the specified time.
+   ///
+   /// Example:
+   /// ```swift
+   /// let noonToday = GregorianDay.today.date(timeOfDay: .noon)  // today at 12:00
+   /// ```
+   public func date(timeOfDay: GregorianTime, timeZone: TimeZone = .current) -> Date {
+      timeOfDay.date(day: self, timeZone: timeZone)
+   }
 }
 
 extension GregorianDay: Codable {
