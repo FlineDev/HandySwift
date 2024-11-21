@@ -2,6 +2,7 @@
 import XCTest
 
 class GlobalsTests: XCTestCase {
+   @MainActor
    func testDelayed() {
       let expectation = self.expectation(description: "Wait for delay.")
       
