@@ -13,13 +13,13 @@ class SortedArrayTests: XCTestCase {
       let emptyArray: [Int] = []
       let sortedEmptyArray = SortedArray(emptyArray)
       
-      XCTAssertNil(sortedEmptyArray.index { _ in true })
+      XCTAssertNil(sortedEmptyArray.firstIndex { _ in true })
       
       let intArray: [Int] = [5, 6, 7, 8, 9, 0, 1, 2, 3, 4]
       let sortedIntArray = SortedArray(intArray)
       
       let expectedIndex = 3
-      let resultingIndex = sortedIntArray.index { $0 >= 3 }
+      let resultingIndex = sortedIntArray.firstIndex { $0 >= 3 }
       
       XCTAssertEqual(resultingIndex, expectedIndex)
    }
@@ -28,7 +28,7 @@ class SortedArrayTests: XCTestCase {
       let intArray: [Int] = [5, 6, 7, 8, 9, 0, 1, 2, 3, 4]
       let sortedIntArray = SortedArray(intArray)
       
-      let index = sortedIntArray.index { $0 > 5 }!
+      let index = sortedIntArray.firstIndex { $0 > 5 }!
       let sortedSubArray = sortedIntArray.prefix(upTo: index)
       
       XCTAssertEqual(sortedSubArray.array, [0, 1, 2, 3, 4, 5])
@@ -38,7 +38,7 @@ class SortedArrayTests: XCTestCase {
       let intArray: [Int] = [5, 6, 7, 8, 9, 0, 1, 2, 3, 4]
       let sortedIntArray = SortedArray(intArray)
       
-      let index = sortedIntArray.index { $0 > 5 }!
+      let index = sortedIntArray.firstIndex { $0 > 5 }!
       let sortedSubArray = sortedIntArray.suffix(from: index)
       
       XCTAssertEqual(sortedSubArray.array, [6, 7, 8, 9])
