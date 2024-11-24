@@ -79,13 +79,13 @@ public final class RESTClient: Sendable {
          }
       }
 
-      func httpData() throws -> Data {
+      func httpData(jsonEncoder: JSONEncoder) throws -> Data {
          switch self {
          case .binary(let data):
             return data
 
          case .json(let json):
-            return try JSONEncoder().encode(json)
+            return try jsonEncoder.encode(json)
 
          case .string(let string):
             return Data(string.utf8)
@@ -164,7 +164,7 @@ public final class RESTClient: Sendable {
 
       if let body {
          do {
-            request.httpBody = try body.httpData()
+            request.httpBody = try body.httpData(jsonEncoder: self.jsonEncoder)
          } catch {
             throw RequestError.failedToEncodeBody(error, self.errorContext(requestContext: errorContext))
          }
