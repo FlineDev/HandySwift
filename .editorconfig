@@ -1,0 +1,14 @@
+# EditorConfig is awesome: https://editorconfig.org
+root = true
+
+[*]
+
+indent_style = space
+tab_width = 6
+indent_size = 3
+
+end_of_line = lf
+insert_final_newline = true
+
+max_line_length = 160
+trim_trailing_whitespace = true
