@@ -18,6 +18,59 @@ extension Collection {
    public subscript(safe index: Index) -> Element? {
       self.indices.contains(index) ? self[index] : nil
    }
+
+   /// Splits the collection into smaller chunks of the specified size.
+   ///
+   /// This method is useful for processing large datasets in manageable pieces, such as logging data, sending network requests, or performing batch updates.
+   ///
+   /// - Parameter size: The size of each chunk. Must be greater than 0.
+   /// - Returns: An array of arrays, where each subarray represents a chunk of elements. The last chunk may contain fewer elements if the collection cannot be evenly divided.
+   ///
+   /// - Example:
+   /// ```swift
+   /// let numbers = Array(1...10)
+   /// let chunks = numbers.chunks(ofSize: 3)
+   /// print(chunks)
+   /// // Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]
+   /// ```
+   ///
+   /// - Example: Processing items in chunks
+   /// ```swift
+   /// let tasks = ["Task1", "Task2", "Task3", "Task4"]
+   /// for chunk in tasks.chunks(ofSize: 2) {
+   ///     for task in chunk {
+   ///         task.perform()
+   ///     }
+   ///
+   ///     print("Processed chunk of tasks: \(chunk)")
+   /// }
+   /// // Output:
+   /// // Processed chunk of tasks: ["Task1", "Task2"]
+   /// // Processed chunk of tasks: ["Task3", "Task4"]
+   /// ```
+   public func chunks(ofSize size: Int) -> [[Element]] {
+      guard size > 0 else { fatalError("Chunk size must be greater than 0.") }
+
+      var result: [[Element]] = []
+      var chunk: [Element] = []
+      var count = 0
+
+      for element in self {
+         chunk.append(element)
+         count += 1
+         if count == size {
+            result.append(chunk)
+            chunk.removeAll(keepingCapacity: true)
+            count = 0
+         }
+      }
+
+      if !chunk.isEmpty {
+         result.append(chunk)
+      }
+
+      return result
+   }
 }
 
 extension Collection where Element: DivisibleArithmetic {

@@ -26,17 +26,22 @@ class CollectionExtTests: XCTestCase {
       let intArray = [1, 2, 10]
       XCTAssertEqual(intArray.average(), 4.333, accuracy: 0.001)
       
-#if canImport(CoreGraphics)
+      #if canImport(CoreGraphics)
       let averageAsCGFloat: CGFloat = intArray.average()
       XCTAssertEqual(averageAsCGFloat, 4.333, accuracy: 0.001)
-#endif
+      #endif
       
       let doubleArray = [1.0, 2.0, 10.0]
       XCTAssertEqual(doubleArray.average(), 4.333, accuracy: 0.001)
       
-#if canImport(CoreGraphics)
+      #if canImport(CoreGraphics)
       let cgFloatArray: [CGFloat] = [1.0, 2.0, 10.0]
       XCTAssertEqual(cgFloatArray.average(), 4.333, accuracy: 0.001)
-#endif
+      #endif
+   }
+
+   func testChunks() {
+      XCTAssertEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].chunks(ofSize: 3), [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]])
+      XCTAssertEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10].chunks(ofSize: 5), [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
    }
 }
