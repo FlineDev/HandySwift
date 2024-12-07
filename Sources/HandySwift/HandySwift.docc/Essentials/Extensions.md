@@ -182,9 +182,10 @@ func downloadPuzzle(from url: URL) async throws -> Puzzle {
 
 ### Collection
 
-- ``Swift/Collection/subscript(safe:)``
 - ``Swift/Collection/average()-3g44u``
 - ``Swift/Collection/average()-rtqg``
+- ``Swift/Collection/chunks(ofSize:)``
+- ``Swift/Collection/subscript(safe:)``
 
 ### Comparable
 
