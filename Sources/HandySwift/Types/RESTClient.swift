@@ -125,7 +125,18 @@ public final class RESTClient: Sendable {
       self.errorBodyToMessage = errorBodyToMessage
    }
 
-   public func requestObject<ResponseBodyType: Decodable>(
+   public func send(
+      method: HTTPMethod,
+      path: String,
+      body: Body? = nil,
+      extraHeaders: [String: String] = [:],
+      extraQueryItems: [URLQueryItem] = [],
+      errorContext: String? = nil
+   ) async throws(RequestError) {
+      _ = try await self.fetchData(method: method, path: path, body: body, extraHeaders: extraHeaders, extraQueryItems: extraQueryItems)
+   }
+
+   public func fetchAndDecode<ResponseBodyType: Decodable>(
       method: HTTPMethod,
       path: String,
       body: Body? = nil,
@@ -133,7 +144,7 @@ public final class RESTClient: Sendable {
       extraQueryItems: [URLQueryItem] = [],
       errorContext: String? = nil
    ) async throws(RequestError) -> ResponseBodyType {
-      let responseData = try await self.requestData(method: method, path: path, body: body, extraHeaders: extraHeaders, extraQueryItems: extraQueryItems)
+      let responseData = try await self.fetchData(method: method, path: path, body: body, extraHeaders: extraHeaders, extraQueryItems: extraQueryItems)
 
       do {
          return try self.jsonDecoder.decode(ResponseBodyType.self, from: responseData)
@@ -142,8 +153,7 @@ public final class RESTClient: Sendable {
       }
    }
 
-   @discardableResult
-   public func requestData(
+   public func fetchData(
       method: HTTPMethod,
       path: String,
       body: Body? = nil,
