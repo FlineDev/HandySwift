@@ -6,7 +6,7 @@ import FoundationNetworking
 /// A client to consume a REST API. Uses JSON to encode/decode body data.
 @available(iOS 16, macOS 13, tvOS 16, watchOS 9, *)
 public final class RESTClient: Sendable {
-   public enum RESTClientError: Error, LocalizedError, Sendable {
+   public enum APIError: Error, LocalizedError, Sendable {
       public typealias Context = String
 
       case responsePluginFailed(Error, Context?)
@@ -149,7 +149,7 @@ public final class RESTClient: Sendable {
       extraHeaders: [String: String] = [:],
       extraQueryItems: [URLQueryItem] = [],
       errorContext: String? = nil
-   ) async throws(RESTClientError) {
+   ) async throws(APIError) {
       _ = try await self.fetchData(method: method, path: path, body: body, extraHeaders: extraHeaders, extraQueryItems: extraQueryItems)
    }
 
@@ -160,7 +160,7 @@ public final class RESTClient: Sendable {
       extraHeaders: [String: String] = [:],
       extraQueryItems: [URLQueryItem] = [],
       errorContext: String? = nil
-   ) async throws(RESTClientError) -> ResponseBodyType {
+   ) async throws(APIError) -> ResponseBodyType {
       let responseData = try await self.fetchData(method: method, path: path, body: body, extraHeaders: extraHeaders, extraQueryItems: extraQueryItems)
 
       do {
@@ -177,7 +177,7 @@ public final class RESTClient: Sendable {
       extraHeaders: [String: String] = [:],
       extraQueryItems: [URLQueryItem] = [],
       errorContext: String? = nil
-   ) async throws(RESTClientError) -> Data {
+   ) async throws(APIError) -> Data {
       let url = self.baseURL
          .appending(path: path)
          .appending(queryItems: self.baseQueryItems + extraQueryItems)
@@ -193,7 +193,7 @@ public final class RESTClient: Sendable {
          do {
             request.httpBody = try body.httpData(jsonEncoder: self.jsonEncoder)
          } catch {
-            throw RESTClientError.failedToEncodeBody(error, self.errorContext(requestContext: errorContext))
+            throw APIError.failedToEncodeBody(error, self.errorContext(requestContext: errorContext))
          }
 
          request.setValue(body.contentType, forHTTPHeaderField: "Content-Type")
@@ -215,7 +215,7 @@ public final class RESTClient: Sendable {
       return context
    }
 
-   private func performRequest(_ request: URLRequest, errorContext: String?) async throws(RESTClientError) -> (Data, URLResponse) {
+   private func performRequest(_ request: URLRequest, errorContext: String?) async throws(APIError) -> (Data, URLResponse) {
       self.logRequestIfDebug(request)
 
       let data: Data
@@ -223,14 +223,14 @@ public final class RESTClient: Sendable {
       do {
          (data, response) = try await URLSession.shared.data(for: request)
       } catch {
-         throw RESTClientError.failedToLoadData(error, self.errorContext(requestContext: errorContext))
+         throw APIError.failedToLoadData(error, self.errorContext(requestContext: errorContext))
       }
 
       self.logResponseIfDebug(response, data: data)
       return (data, response)
    }
 
-   private func handle(data: Data, response: URLResponse, for request: URLRequest, errorContext: String?, attempt: Int = 1) async throws(RESTClientError) -> Data {
+   private func handle(data: Data, response: URLResponse, for request: URLRequest, errorContext: String?, attempt: Int = 1) async throws(APIError) -> Data {
       guard var httpResponse = response as? HTTPURLResponse else {
          throw .unexpectedResponseType(response, self.errorContext(requestContext: errorContext))
       }
@@ -240,7 +240,7 @@ public final class RESTClient: Sendable {
          do {
             try responsePlugin.apply(to: &httpResponse, data: &data)
          } catch {
-            throw RESTClientError.responsePluginFailed(error, self.errorContext(requestContext: errorContext))
+            throw APIError.responsePluginFailed(error, self.errorContext(requestContext: errorContext))
          }
       }
 
