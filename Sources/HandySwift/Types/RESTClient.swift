@@ -249,13 +249,28 @@ public final class RESTClient: Sendable {
          return data
 
       case 429:
-         guard attempt < 5 else  { fallthrough }
+         guard attempt < 5 else { fallthrough }
+
+         var sleepSeconds: Double = Double(attempt)
+
+         // respect the server retry-after(-ms) value if it exists, allowing values betwen 0.5-5 seconds
+         if
+            let retryAfterMillisecondsString = httpResponse.value(forHTTPHeaderField: "retry-after-ms"),
+            let retryAfterMilliseconds = Double(retryAfterMillisecondsString)
+         {
+            sleepSeconds = max(0.5, min(retryAfterMilliseconds, 5))
+         } else if
+            let retryAfterString = httpResponse.value(forHTTPHeaderField: "retry-after"),
+            let retryAfter = Double(retryAfterString)
+         {
+            sleepSeconds = max(0.5, min(retryAfter, 5))
+         }
 
          #if DEBUG
-         print("Received Status Code 429 'Too Many Requests'. Retrying in \(attempt) second(s)...")
+         print("Received Status Code 429 'Too Many Requests'. Retrying in \(sleepSeconds) second(s)...")
          #endif
 
-         try? await Task.sleep(for: .seconds(attempt))
+         try? await Task.sleep(for: .seconds(sleepSeconds))
 
          let (newData, newResponse) = try await self.performRequest(request, errorContext: errorContext)
          return try await self.handle(data: newData, response: newResponse, for: request, errorContext: errorContext, attempt: attempt + 1)
