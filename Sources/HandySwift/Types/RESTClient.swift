@@ -114,6 +114,7 @@ public final class RESTClient: Sendable {
    let baseQueryItems: [URLQueryItem]
    let jsonEncoder: JSONEncoder
    let jsonDecoder: JSONDecoder
+   let urlSession: URLSession
    let requestPlugins: [any RequestPlugin]
    let responsePlugins: [any ResponsePlugin]
    let baseErrorContext: String?
@@ -126,6 +127,7 @@ public final class RESTClient: Sendable {
       baseQueryItems: [URLQueryItem] = [],
       jsonEncoder: JSONEncoder = .init(),
       jsonDecoder: JSONDecoder = .init(),
+      urlSession: URLSession = .shared,
       requestPlugins: [any RequestPlugin] = [],
       responsePlugins: [any ResponsePlugin] = [],
       baseErrorContext: String? = nil,
@@ -136,6 +138,7 @@ public final class RESTClient: Sendable {
       self.baseQueryItems = baseQueryItems
       self.jsonEncoder = jsonEncoder
       self.jsonDecoder = jsonDecoder
+      self.urlSession = urlSession
       self.requestPlugins = requestPlugins
       self.responsePlugins = responsePlugins
       self.baseErrorContext = baseErrorContext
@@ -221,7 +224,7 @@ public final class RESTClient: Sendable {
       let data: Data
       let response: URLResponse
       do {
-         (data, response) = try await URLSession.shared.data(for: request)
+         (data, response) = try await self.urlSession.data(for: request)
       } catch {
          throw APIError.failedToLoadData(error, self.errorContext(requestContext: errorContext))
       }
