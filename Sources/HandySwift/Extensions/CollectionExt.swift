@@ -1,7 +1,7 @@
 import Foundation
 
 extension Collection {
-   /// Returns the element at the specified index or `nil` if no element at the given index exists. 
+   /// Returns the element at the specified index or `nil` if no element at the given index exists.
    /// This is particularly useful when dealing with collections of elements where you're unsure if an index is within the collection's bounds.
    /// It helps prevent crashes due to accessing an index out of bounds.
    ///
@@ -74,7 +74,7 @@ extension Collection {
 }
 
 extension Collection where Element: DivisibleArithmetic {
-   /// Returns the average of all elements. It sums up all the elements and then divides by the count of the collection. 
+   /// Returns the average of all elements. It sums up all the elements and then divides by the count of the collection.
    /// This method requires that the element type conforms to `DivisibleArithmetic`, which includes numeric types such as `Int`, `Double`, etc.
    ///
    /// Example:
@@ -91,7 +91,7 @@ extension Collection where Element: DivisibleArithmetic {
 }
 
 extension Collection where Element == Int {
-   /// Returns the average of all elements as a Double value. 
+   /// Returns the average of all elements as a Double value.
    /// This is useful for `Int` collections where the precision of the average calculation is important and you prefer the result to be a `Double`.
    ///
    /// Example:

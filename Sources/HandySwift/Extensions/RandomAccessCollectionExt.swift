@@ -1,7 +1,7 @@
 import Foundation
 
 extension RandomAccessCollection where Index == Int {
-   /// Returns a given number of random elements from the collection. 
+   /// Returns a given number of random elements from the collection.
    /// This method is useful when you need a subset of elements for sampling, testing, or any other case where random selection from a collection is required.
    /// If the collection is empty, `nil` is returned instead.
    ///

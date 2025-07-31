@@ -1,7 +1,7 @@
 import Foundation
+import XCTest
 
 @testable import HandySwift
-import XCTest
 
 final class GregorianDayTests: XCTestCase {
    func testAdvancedByMonths() {

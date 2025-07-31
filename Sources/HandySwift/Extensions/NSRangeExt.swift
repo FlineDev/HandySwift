@@ -1,7 +1,7 @@
 import Foundation
 
 extension NSRange {
-   /// Initializes an NSRange from a Swift String.Range when the String is provided. 
+   /// Initializes an NSRange from a Swift String.Range when the String is provided.
    /// This is useful for operations that require NSRange, such as string manipulation with `NSRegularExpression`, or when working with UIKit components that deal with attributed strings.
    ///
    /// Example:

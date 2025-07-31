@@ -1,5 +1,5 @@
 extension Int {
-   /// Runs the code passed as a closure the specified number of times. 
+   /// Runs the code passed as a closure the specified number of times.
    /// This method is useful for repeating an action multiple times, such as logging a message or incrementing a value.
    /// It guards against negative values, ensuring the closure is only run for positive counts.
    ///
@@ -18,7 +18,7 @@ extension Int {
       for _ in 0..<self { try closure() }
    }
 
-   /// Runs the code passed as a closure the specified number of times and creates an array from the return values. 
+   /// Runs the code passed as a closure the specified number of times and creates an array from the return values.
    /// This method can be particularly useful for generating arrays with dynamic content, where each element is the result of a closure execution.
    ///
    /// Example:

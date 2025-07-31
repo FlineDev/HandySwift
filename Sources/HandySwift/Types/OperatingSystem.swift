@@ -4,7 +4,7 @@ import Foundation
 public typealias OS = OperatingSystem
 
 /// Represents the possible Operating Systems on which a Swift program might run.
-/// 
+///
 /// String example:
 /// ```swift
 /// let settingsAppName = OS.value(default: "Settings", macOS: "System Settings")
@@ -37,21 +37,21 @@ public enum OperatingSystem: AutoConforming {
    /// Returns the current operating system.
    public static var current: OperatingSystem {
       #if os(iOS)
-      return .iOS
+         return .iOS
       #elseif os(macOS)
-      return .macOS
+         return .macOS
       #elseif os(tvOS)
-      return .tvOS
+         return .tvOS
       #elseif os(visionOS)
-      return .visionOS
+         return .visionOS
       #elseif os(watchOS)
-      return .watchOS
+         return .watchOS
       #elseif os(Linux)
-      return .linux
+         return .linux
       #elseif os(Windows)
-      return .windows
+         return .windows
       #else
-      fatalError("Unsupported operating system")
+         fatalError("Unsupported operating system")
       #endif
    }
 

@@ -46,7 +46,7 @@ extension Comparable {
       limits.lowerBound > self ? limits.lowerBound : self
    }
 
-   /// Returns `self` clamped to the given partial range (through) limits. 
+   /// Returns `self` clamped to the given partial range (through) limits.
    /// This method ensures that the value does not exceed a specified maximum.
    ///
    /// Example:
@@ -64,7 +64,7 @@ extension Comparable {
       limits.upperBound < self ? limits.upperBound : self
    }
 
-   /// Clamps `self` to the given closed range limits. 
+   /// Clamps `self` to the given closed range limits.
    /// Modifies the original value to ensure it falls within a specific range, adjusting it to the nearest boundary if necessary.
    ///
    /// Example:
@@ -80,7 +80,7 @@ extension Comparable {
       self = clamped(to: limits)
    }
 
-   /// Clamps `self` to the given partial range (from) limits. 
+   /// Clamps `self` to the given partial range (from) limits.
    /// Modifies the original value to ensure it does not fall below a specified minimum.
    ///
    /// Example:
@@ -96,7 +96,7 @@ extension Comparable {
       self = clamped(to: limits)
    }
 
-   /// Clamps `self` to the given partial range (through) limits. 
+   /// Clamps `self` to the given partial range (through) limits.
    /// Modifies the original value to ensure it does not exceed a specified maximum.
    ///
    /// Example:

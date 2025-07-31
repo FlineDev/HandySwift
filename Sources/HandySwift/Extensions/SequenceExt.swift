@@ -210,7 +210,6 @@ extension Sequence {
    }
 }
 
-
 extension Sequence {
    /// Returns an array containing the elements of the sequence that have a keypath value equal to the provided value.
    ///
@@ -455,7 +454,6 @@ extension Sequence {
    public func first<Value: Comparable>(where keyPath: KeyPath<Element, Value>, lessThan otherValue: Value) -> Element? {
       self.first { $0[keyPath: keyPath] < otherValue }
    }
-
 
    /// Returns the first element in the sequence where the value of the specified keypath is less than or equal to the provided value.
    ///

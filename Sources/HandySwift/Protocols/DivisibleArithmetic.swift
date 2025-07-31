@@ -20,7 +20,7 @@ extension Double: DivisibleArithmetic {}
 extension Float: DivisibleArithmetic {}
 
 #if canImport(CoreGraphics)
-import CoreGraphics
+   import CoreGraphics
 
-extension CGFloat: DivisibleArithmetic {}
+   extension CGFloat: DivisibleArithmetic {}
 #endif

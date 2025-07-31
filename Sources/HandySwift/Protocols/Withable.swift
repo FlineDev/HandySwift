@@ -1,10 +1,10 @@
 import Foundation
 
 /// Simple protocol to facilitate modifying objects with multiple properties in a chainable and functional manner.
-public protocol Withable { /* no requirements */ }
+public protocol Withable { /* no requirements */  }
 
 extension Withable {
-   /// Returns a copy of the object (if a struct) or uses the same object (if a class), with modifications applied in a chainable manner. 
+   /// Returns a copy of the object (if a struct) or uses the same object (if a class), with modifications applied in a chainable manner.
    /// This is particularly useful for configuring objects upon initialization or making successive modifications.
    ///
    /// Example:
@@ -34,5 +34,5 @@ extension Withable {
 }
 
 #if !os(Linux)
-extension NSObject: Withable {}
+   extension NSObject: Withable {}
 #endif

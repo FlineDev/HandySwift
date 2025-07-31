@@ -158,5 +158,10 @@ extension GregorianTime: Withable {}
 /// // New code:
 /// let time = GregorianTime(hour: 14, minute: 30)
 /// ```
-@available(*, deprecated, renamed: "GregorianTime", message: "Use GregorianTime instead. This type has been renamed for better clarity and consistency.")
+@available(
+   *,
+   deprecated,
+   renamed: "GregorianTime",
+   message: "Use GregorianTime instead. This type has been renamed for better clarity and consistency."
+)
 public typealias GregorianTimeOfDay = GregorianTime

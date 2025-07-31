@@ -1,5 +1,6 @@
-@testable import HandySwift
 import XCTest
+
+@testable import HandySwift
 
 class TimeIntervalExtTests: XCTestCase {
    func testUnitInitialization() {
@@ -11,7 +12,7 @@ class TimeIntervalExtTests: XCTestCase {
       XCTAssertEqual(TimeInterval.microseconds(0.5), 0.5 / 1_000_000, accuracy: 0.001)
       XCTAssertEqual(TimeInterval.nanoseconds(0.5), 0.5 / 1_000_000_000, accuracy: 0.001)
    }
-   
+
    func testUnitConversion() {
       let timeInterval = TimeInterval.hours(4)
       let multipledTimeInterval = timeInterval * 3

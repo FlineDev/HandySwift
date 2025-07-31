@@ -86,7 +86,7 @@ import Foundation
 /// // => "Phil was born in 1991"
 /// ```
 public struct HandyRegex {
-   @usableFromInline 
+   @usableFromInline
    internal let regularExpression: NSRegularExpression
 
    /// Create a `Regex` based on a pattern string.
@@ -118,7 +118,7 @@ public struct HandyRegex {
    public func matches(_ string: String) -> Bool {
       firstMatch(in: string) != nil
    }
-   
+
    /// If the regex matches `string`, returns a `Match` describing the
    /// first matched string and any captures. If there are no matches, returns
    /// `nil`.
@@ -133,7 +133,7 @@ public struct HandyRegex {
          .firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
          .map { Match(result: $0, in: string) }
    }
-   
+
    /// If the regex matches `string`, returns an array of `Match`, describing
    /// every match inside `string`. If there are no matches, returns an empty
    /// array.
@@ -170,12 +170,12 @@ public struct HandyRegex {
    public func replacingMatches(in input: String, with template: String, count: Int? = nil) -> String {
       var output = input
       let matches = self.matches(in: input)
-      let rangedMatches = Array(matches[0 ..< min(matches.count, count ?? .max)])
+      let rangedMatches = Array(matches[0..<min(matches.count, count ?? .max)])
       for match in rangedMatches.reversed() {
          let replacement = match.string(applyingTemplate: template)
          output.replaceSubrange(match.range, with: replacement)
       }
-      
+
       return output
    }
 }
@@ -192,8 +192,7 @@ extension HandyRegex: Equatable {
    /// Two `Regex` are considered equal, if both the pattern string and the options
    /// passed on initialization are equal.
    public static func == (lhs: HandyRegex, rhs: HandyRegex) -> Bool {
-      lhs.regularExpression.pattern == rhs.regularExpression.pattern &&
-      lhs.regularExpression.options == rhs.regularExpression.options
+      lhs.regularExpression.pattern == rhs.regularExpression.pattern && lhs.regularExpression.options == rhs.regularExpression.options
    }
 }
 
@@ -209,23 +208,23 @@ extension HandyRegex {
    public struct Options: OptionSet, Sendable {
       /// Ignores the case of letters when matching.
       public static let ignoreCase = Options(rawValue: 1)
-      
+
       /// Ignore any metacharacters in the pattern, treating every character as
       /// a literal.
       public static let ignoreMetacharacters = Options(rawValue: 1 << 1)
-      
+
       /// By default, "^" matches the beginning of the string and "$" matches the
       /// end of the string, ignoring any newlines. With this option, "^" will
       /// the beginning of each line, and "$" will match the end of each line.
       public static let anchorsMatchLines = Options(rawValue: 1 << 2)
-      
+
       /// Usually, "." matches all characters except newlines (\n). Using this,
       /// options will allow "." to match newLines
       public static let dotMatchesLineSeparators = Options(rawValue: 1 << 3)
-      
+
       /// The raw value of the `OptionSet`
       public let rawValue: Int
-      
+
       /// Transform an instance of `Regex.Options` into the equivalent `NSRegularExpression.Options`.
       ///
       /// - returns: The equivalent `NSRegularExpression.Options`.
@@ -254,12 +253,12 @@ extension HandyRegex {
       public lazy var string: String = {
          String(describing: self.baseString[self.range])
       }()
-      
+
       /// The range of the matched string.
       public lazy var range: Range<String.Index> = {
          Range(self.result.range, in: self.baseString)!
       }()
-      
+
       /// The matching string for each capture group in the regular expression
       /// (if any).
       ///
@@ -281,15 +280,15 @@ extension HandyRegex {
             .map { [unowned self] in
                Range($0, in: self.baseString)
             }
-         
+
          return captureRanges.map { [unowned self] captureRange in
             guard let captureRange = captureRange else { return nil }
             return String(describing: self.baseString[captureRange])
          }
       }()
-      
+
       private let result: NSTextCheckingResult
-      
+
       private let baseString: String
 
       @usableFromInline
@@ -298,7 +297,7 @@ extension HandyRegex {
             result.regularExpression != nil,
             "NSTextCheckingResult must originate from regular expression parsing."
          )
-         
+
          self.result = result
          self.baseString = string
       }

@@ -1,5 +1,6 @@
-@testable import HandySwift
 import XCTest
+
+@testable import HandySwift
 
 private struct TextFile: Withable {
    var contents: String
@@ -11,8 +12,11 @@ class WithableTests: XCTestCase {
       let textFile = TextFile(contents: "", linesCount: 0)
       XCTAssertEqual(textFile.contents, "")
       XCTAssertEqual(textFile.linesCount, 0)
-      
-      let modifiedTextFile = textFile.with { $0.contents = "Text"; $0.linesCount = 5 }
+
+      let modifiedTextFile = textFile.with {
+         $0.contents = "Text"
+         $0.linesCount = 5
+      }
       XCTAssertEqual(textFile.contents, "")
       XCTAssertEqual(textFile.linesCount, 0)
       XCTAssertEqual(modifiedTextFile.contents, "Text")

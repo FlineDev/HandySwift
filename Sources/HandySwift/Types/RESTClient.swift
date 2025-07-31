@@ -1,6 +1,7 @@
 import Foundation
+
 #if canImport(FoundationNetworking)
-import FoundationNetworking
+   import FoundationNetworking
 #endif
 
 /// A client to consume a REST API. Uses JSON to encode/decode body data.
@@ -42,7 +43,7 @@ public final class RESTClient: Sendable {
       private var errorContext: String {
          switch self {
          case .responsePluginFailed(_, let context), .failedToEncodeBody(_, let context), .failedToLoadData(_, let context),
-               .failedToDecodeSuccessBody(_, let context), .failedToDecodeClientErrorBody(_, let context), .clientError(_, let context):
+            .failedToDecodeSuccessBody(_, let context), .failedToDecodeClientErrorBody(_, let context), .clientError(_, let context):
             if let context {
                return "[\(context): Client Error]"
             } else {
@@ -164,7 +165,13 @@ public final class RESTClient: Sendable {
       extraQueryItems: [URLQueryItem] = [],
       errorContext: String? = nil
    ) async throws(APIError) -> ResponseBodyType {
-      let responseData = try await self.fetchData(method: method, path: path, body: body, extraHeaders: extraHeaders, extraQueryItems: extraQueryItems)
+      let responseData = try await self.fetchData(
+         method: method,
+         path: path,
+         body: body,
+         extraHeaders: extraHeaders,
+         extraQueryItems: extraQueryItems
+      )
 
       do {
          return try self.jsonDecoder.decode(ResponseBodyType.self, from: responseData)
@@ -233,7 +240,9 @@ public final class RESTClient: Sendable {
       return (data, response)
    }
 
-   private func handle(data: Data, response: URLResponse, for request: URLRequest, errorContext: String?, attempt: Int = 1) async throws(APIError) -> Data {
+   private func handle(data: Data, response: URLResponse, for request: URLRequest, errorContext: String?, attempt: Int = 1) async throws(APIError)
+      -> Data
+   {
       guard var httpResponse = response as? HTTPURLResponse else {
          throw .unexpectedResponseType(response, self.errorContext(requestContext: errorContext))
       }
@@ -257,20 +266,18 @@ public final class RESTClient: Sendable {
          var sleepSeconds: Double = Double(attempt)
 
          // respect the server retry-after(-ms) value if it exists, allowing values betwen 0.5-5 seconds
-         if
-            let retryAfterMillisecondsString = httpResponse.value(forHTTPHeaderField: "retry-after-ms"),
+         if let retryAfterMillisecondsString = httpResponse.value(forHTTPHeaderField: "retry-after-ms"),
             let retryAfterMilliseconds = Double(retryAfterMillisecondsString)
          {
             sleepSeconds = max(0.5, min(retryAfterMilliseconds, 5))
-         } else if
-            let retryAfterString = httpResponse.value(forHTTPHeaderField: "retry-after"),
+         } else if let retryAfterString = httpResponse.value(forHTTPHeaderField: "retry-after"),
             let retryAfter = Double(retryAfterString)
          {
             sleepSeconds = max(0.5, min(retryAfter, 5))
          }
 
          #if DEBUG
-         print("Received Status Code 429 'Too Many Requests'. Retrying in \(sleepSeconds) second(s)...")
+            print("Received Status Code 429 'Too Many Requests'. Retrying in \(sleepSeconds) second(s)...")
          #endif
 
          try? await Task.sleep(for: .seconds(sleepSeconds))
@@ -280,7 +287,10 @@ public final class RESTClient: Sendable {
 
       case 400..<500:
          guard !data.isEmpty else {
-            throw .clientError("Unexpected status code \(httpResponse.statusCode) without a response body.", self.errorContext(requestContext: errorContext))
+            throw .clientError(
+               "Unexpected status code \(httpResponse.statusCode) without a response body.",
+               self.errorContext(requestContext: errorContext)
+            )
          }
 
          let clientErrorMessage: String
@@ -298,23 +308,27 @@ public final class RESTClient: Sendable {
 
    private func logRequestIfDebug(_ request: URLRequest) {
       #if DEBUG
-      var requestBodyString: String?
-      if let bodyData = request.httpBody {
-         requestBodyString = String(data: bodyData, encoding: .utf8)
-      }
+         var requestBodyString: String?
+         if let bodyData = request.httpBody {
+            requestBodyString = String(data: bodyData, encoding: .utf8)
+         }
 
-      print("[\(self)] Sending \(request.httpMethod!) request to '\(request.url!)': \(request)\n\nHeaders:\n\(request.allHTTPHeaderFields ?? [:])\n\nBody:\n\(requestBodyString ?? "No body")")
+         print(
+            "[\(self)] Sending \(request.httpMethod!) request to '\(request.url!)': \(request)\n\nHeaders:\n\(request.allHTTPHeaderFields ?? [:])\n\nBody:\n\(requestBodyString ?? "No body")"
+         )
       #endif
    }
 
    private func logResponseIfDebug(_ response: URLResponse, data: Data?) {
       #if DEBUG
-      var responseBodyString: String?
-      if let data = data {
-         responseBodyString = String(data: data, encoding: .utf8)
-      }
+         var responseBodyString: String?
+         if let data = data {
+            responseBodyString = String(data: data, encoding: .utf8)
+         }
 
-      print("[\(self)] Received response & body from '\(response.url!)': \(response)\n\nResponse headers:\n\((response as? HTTPURLResponse)?.allHeaderFields ?? [:])\n\nResponse body:\n\(responseBodyString ?? "No body")")
+         print(
+            "[\(self)] Received response & body from '\(response.url!)': \(response)\n\nResponse headers:\n\((response as? HTTPURLResponse)?.allHeaderFields ?? [:])\n\nResponse body:\n\(responseBodyString ?? "No body")"
+         )
       #endif
    }
 }

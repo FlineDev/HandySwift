@@ -1,7 +1,7 @@
 import Foundation
 
 extension Float {
-   /// Rounds the value to an integral value using the specified number of fraction digits and rounding rule. 
+   /// Rounds the value to an integral value using the specified number of fraction digits and rounding rule.
    /// This is useful for when you need precise control over the formatting of floating-point numbers,
    /// for example, when displaying currency or other numerical calculations that require a specific number of decimal places.
    ///
@@ -9,7 +9,7 @@ extension Float {
    /// ```swift
    /// var price: Float = 2.875
    /// price.round(fractionDigits: 2) // => 2.88
-   /// 
+   ///
    /// // Using a specific rounding rule:
    /// price.round(fractionDigits: 2, rule: .down) // => 2.87
    /// ```
@@ -24,7 +24,7 @@ extension Float {
       self = (self * divisor).rounded(rule) / divisor
    }
 
-   /// Returns this value rounded to an integral value using the specified number of fraction digits and rounding rule. 
+   /// Returns this value rounded to an integral value using the specified number of fraction digits and rounding rule.
    /// Similar to `round`, but this method does not modify the original value and instead returns a new `Float` with the rounded value.
    /// This is particularly handy in functional programming paradigms where immutability is preferred.
    ///
@@ -32,7 +32,7 @@ extension Float {
    /// ```swift
    /// let originalPrice: Float = 2.875
    /// let roundedPrice = originalPrice.rounded(fractionDigits: 2) // => 2.88
-   /// 
+   ///
    /// // With explicit rounding rule:
    /// let roundedDownPrice = originalPrice.rounded(fractionDigits: 2, rule: .down) // => 2.87
    /// ```

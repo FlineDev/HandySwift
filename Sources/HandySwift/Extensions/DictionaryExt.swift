@@ -1,7 +1,7 @@
 import Foundation
 
 extension Dictionary {
-   /// Initializes a new `Dictionary` and populates it with keys and values arrays. 
+   /// Initializes a new `Dictionary` and populates it with keys and values arrays.
    /// This method is particularly useful when you have separate arrays of keys and values and you need to combine them into a single dictionary.
    /// It ensures that each key is mapped to its corresponding value based on their order in the arrays.
    ///
@@ -56,6 +56,11 @@ extension Dictionary {
    @available(*, unavailable, renamed: "merge(_:uniquingKeysWith:)", message: "Append `{ $1 }` as a `uniquingKeysWith` trailing closure to migrate.")
    public mutating func merge(_ other: [Key: Value]) { fatalError() }
 
-   @available(*, unavailable, renamed: "merging(_:uniquingKeysWith:)", message: "Remove the `with:` label and append `{ $1 }` as a `uniquingKeysWith` trailing closure to migrate.")
+   @available(
+      *,
+      unavailable,
+      renamed: "merging(_:uniquingKeysWith:)",
+      message: "Remove the `with:` label and append `{ $1 }` as a `uniquingKeysWith` trailing closure to migrate."
+   )
    public func merged(with other: [Key: Value]) -> [Key: Value] { fatalError() }
 }
