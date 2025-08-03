@@ -42,7 +42,7 @@ extension String {
    ///
    /// - Returns: The NSRange representation of the full string range.
    public var fullNSRange: NSRange {
-      NSRange(fullRange, in: self)
+      NSRange(self.fullRange, in: self)
    }
 
    /// Creates a new instance with a random numeric/alphabetic/alphanumeric string of given length.

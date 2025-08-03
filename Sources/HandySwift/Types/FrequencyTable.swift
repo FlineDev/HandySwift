@@ -49,8 +49,8 @@ public struct FrequencyTable<T> {
    /// ```
    @inlinable
    public init(values: [T], frequencyClosure: (T) throws -> Int) rethrows {
-      valuesWithFrequencies = try values.map { ($0, try frequencyClosure($0)) }
-      frequentValues = valuesWithFrequencies.reduce(into: []) { memo, entry in
+      self.valuesWithFrequencies = try values.map { ($0, try frequencyClosure($0)) }
+      self.frequentValues = self.valuesWithFrequencies.reduce(into: []) { memo, entry in
          memo += Array(repeating: entry.value, count: entry.frequency)
       }
    }

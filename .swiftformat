@@ -1,0 +1,14 @@
+# Minimal SwiftFormat config for explicit self insertion only
+# Used in conjunction with Apple swift-format for comprehensive formatting
+# 
+# IMPORTANT: Only handles explicit self insertion - all other formatting 
+# is managed by Apple swift-format to avoid conflicts
+
+# Swift version
+--swift-version 6.1
+
+# Explicit self rule only
+--self insert
+
+# Use only the redundantSelf rule (exclusive list)
+--rules redundantSelf

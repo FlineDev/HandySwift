@@ -102,7 +102,7 @@ public struct HandyRegex {
    /// - throws: A value of `ErrorType` describing the invalid regular expression.
    @available(*, deprecated, message: "The HandyRegex type will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    public init(_ pattern: String, options: Options = []) throws {
-      regularExpression = try NSRegularExpression(
+      self.regularExpression = try NSRegularExpression(
          pattern: pattern,
          options: options.toNSRegularExpressionOptions
       )
@@ -116,7 +116,7 @@ public struct HandyRegex {
    @available(*, deprecated, message: "The HandyRegex type will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    @inlinable
    public func matches(_ string: String) -> Bool {
-      firstMatch(in: string) != nil
+      self.firstMatch(in: string) != nil
    }
 
    /// If the regex matches `string`, returns a `Match` describing the
@@ -129,7 +129,7 @@ public struct HandyRegex {
    @available(*, deprecated, message: "The HandyRegex type will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    @inlinable
    public func firstMatch(in string: String) -> Match? {
-      regularExpression
+      self.regularExpression
          .firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
          .map { Match(result: $0, in: string) }
    }
@@ -144,7 +144,7 @@ public struct HandyRegex {
    @available(*, deprecated, message: "The HandyRegex type will be removed in a future version. Migrate to Swift.Regex<Output> if possible.")
    @inlinable
    public func matches(in string: String) -> [Match] {
-      regularExpression
+      self.regularExpression
          .matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
          .map { Match(result: $0, in: string) }
    }
@@ -183,7 +183,7 @@ public struct HandyRegex {
 extension HandyRegex: CustomStringConvertible {
    /// Returns a string describing the regex using its pattern string.
    public var description: String {
-      "Regex<\"\(regularExpression.pattern)\">"
+      "Regex<\"\(self.regularExpression.pattern)\">"
    }
 }
 
@@ -199,7 +199,7 @@ extension HandyRegex: Equatable {
 extension HandyRegex: Hashable {
    /// Manages hashing of the `Regex` instance.
    public func hash(into hasher: inout Hasher) {
-      hasher.combine(regularExpression)
+      hasher.combine(self.regularExpression)
    }
 }
 
@@ -275,7 +275,7 @@ extension HandyRegex {
       ///     regex.matches(in: "b").first?.captures // [nil, Optional("b")]
       public lazy var captures: [String?] = {
          let captureRanges = stride(from: 0, to: result.numberOfRanges, by: 1)
-            .map(result.range)
+            .map(self.result.range)
             .dropFirst()
             .map { [unowned self] in
                Range($0, in: self.baseString)
@@ -316,9 +316,9 @@ extension HandyRegex {
       ///
       /// - returns: A string with `template` applied to the matched string.
       public func string(applyingTemplate template: String) -> String {
-         result.regularExpression!.replacementString(
-            for: result,
-            in: baseString,
+         self.result.regularExpression!.replacementString(
+            for: self.result,
+            in: self.baseString,
             offset: 0,
             template: template
          )
@@ -326,7 +326,7 @@ extension HandyRegex {
 
       /// Returns a string describing the match.
       public var description: String {
-         "Match<\"\(string)\">"
+         "Match<\"\(self.string)\">"
       }
    }
 }

@@ -87,7 +87,7 @@ extension TimeInterval {
    /// - Returns: The time interval in days.
    @inlinable
    public static func days(_ value: Double) -> TimeInterval {
-      value * secondsPerDay
+      value * self.secondsPerDay
    }
 
    /// Converts the provided value to `TimeInterval` representing hours.
@@ -96,7 +96,7 @@ extension TimeInterval {
    /// - Returns: The time interval in hours.
    @inlinable
    public static func hours(_ value: Double) -> TimeInterval {
-      value * secondsPerHour
+      value * self.secondsPerHour
    }
 
    /// Converts the provided value to `TimeInterval` representing minutes.
@@ -105,7 +105,7 @@ extension TimeInterval {
    /// - Returns: The time interval in minutes.
    @inlinable
    public static func minutes(_ value: Double) -> TimeInterval {
-      value * secondsPerMinute
+      value * self.secondsPerMinute
    }
 
    /// Converts the provided value to `TimeInterval` representing seconds.
@@ -123,7 +123,7 @@ extension TimeInterval {
    /// - Returns: The time interval in milliseconds.
    @inlinable
    public static func milliseconds(_ value: Double) -> TimeInterval {
-      value / millisecondsPerSecond
+      value / self.millisecondsPerSecond
    }
 
    /// Converts the provided value to `TimeInterval` representing microseconds.
@@ -132,7 +132,7 @@ extension TimeInterval {
    /// - Returns: The time interval in microseconds.
    @inlinable
    public static func microseconds(_ value: Double) -> TimeInterval {
-      value / microsecondsPerSecond
+      value / self.microsecondsPerSecond
    }
 
    /// Converts the provided value to `TimeInterval` representing nanoseconds.
@@ -141,7 +141,7 @@ extension TimeInterval {
    /// - Returns: The time interval in nanoseconds.
    @inlinable
    public static func nanoseconds(_ value: Double) -> TimeInterval {
-      value / nanosecondsPerSecond
+      value / self.nanosecondsPerSecond
    }
 
    /// Returns the `Duration` representation of the current time interval.

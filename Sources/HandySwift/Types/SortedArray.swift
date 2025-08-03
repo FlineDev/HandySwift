@@ -39,7 +39,7 @@ public struct SortedArray<Element: Comparable> {
    ///
    ///     var emptyArray = SortedArray<Int>()
    public init() {
-      internalArray = []
+      self.internalArray = []
    }
 
    /// Creates a new SortedArray with a given sequence of elements and sorts its elements.
@@ -54,7 +54,7 @@ public struct SortedArray<Element: Comparable> {
 
    @usableFromInline
    internal init<S: Sequence>(sequence: S, preSorted: Bool) where S.Iterator.Element == Element {
-      internalArray = preSorted ? Array(sequence) : Array(sequence).sorted()
+      self.internalArray = preSorted ? Array(sequence) : Array(sequence).sorted()
    }
 
    /// Returns the first index in which an element of the array satisfies the given predicate.
@@ -68,19 +68,19 @@ public struct SortedArray<Element: Comparable> {
    @inlinable
    public func firstIndex(where predicate: (Element) -> Bool) -> Int? {
       // cover trivial cases
-      guard !array.isEmpty else { return nil }
+      guard !self.array.isEmpty else { return nil }
 
-      if let first = array.first, predicate(first) { return array.startIndex }
+      if let first = array.first, predicate(first) { return self.array.startIndex }
       if let last = array.last, !predicate(last) { return nil }
 
       // binary search for first matching element
       var foundMatch = false
-      var lowerIndex = array.startIndex
-      var upperIndex = array.endIndex
+      var lowerIndex = self.array.startIndex
+      var upperIndex = self.array.endIndex
 
       while lowerIndex != upperIndex {
          let middleIndex = lowerIndex + (upperIndex - lowerIndex) / 2
-         guard predicate(array[middleIndex]) else {
+         guard predicate(self.array[middleIndex]) else {
             lowerIndex = middleIndex + 1
             continue
          }
@@ -140,8 +140,8 @@ public struct SortedArray<Element: Comparable> {
    ///   - newElement: The new element to be inserted into the array.
    @inlinable
    public mutating func insert(_ newElement: Element) {
-      let insertIndex = internalArray.firstIndex { $0 >= newElement } ?? internalArray.endIndex
-      internalArray.insert(newElement, at: insertIndex)
+      let insertIndex = self.internalArray.firstIndex { $0 >= newElement } ?? self.internalArray.endIndex
+      self.internalArray.insert(newElement, at: insertIndex)
    }
 
    /// Adds the contents of a sequence to the SortedArray.
@@ -152,7 +152,7 @@ public struct SortedArray<Element: Comparable> {
    ///   - sequence
    @inlinable
    public mutating func insert<S: Sequence>(contentsOf sequence: S) where S.Iterator.Element == Element {
-      sequence.forEach { insert($0) }
+      sequence.forEach { self.insert($0) }
    }
 
    /// Removes an item from the sorted array.
@@ -163,7 +163,7 @@ public struct SortedArray<Element: Comparable> {
    ///   - index: The index of the element to remove from the sorted array.
    @inlinable
    public mutating func remove(at index: Int) {
-      internalArray.remove(at: index)
+      self.internalArray.remove(at: index)
    }
 
    /// Removes an item from the sorted array.
@@ -171,7 +171,7 @@ public struct SortedArray<Element: Comparable> {
    /// - Complexity: O(*n*), where *n* is the length of the collection.
    @inlinable
    public mutating func removeAll(where condition: (Element) -> Bool) {
-      internalArray.removeAll(where: condition)
+      self.internalArray.removeAll(where: condition)
    }
 
    /// Accesses a contiguous subrange of the SortedArray's elements.
@@ -180,7 +180,7 @@ public struct SortedArray<Element: Comparable> {
    ///   - bounds: A range of the SortedArray's indices. The bounds of the range must be valid indices.
    @inlinable
    public subscript(bounds: Range<Int>) -> SortedArray {
-      SortedArray(sequence: array[bounds], preSorted: true)
+      SortedArray(sequence: self.array[bounds], preSorted: true)
    }
 }
 
@@ -194,14 +194,14 @@ extension SortedArray: BidirectionalCollection {
    ///
    /// If the collection is empty, `startIndex` is equal to `endIndex`.
    @inlinable public var startIndex: Int {
-      internalArray.startIndex
+      self.internalArray.startIndex
    }
 
    /// The collection's "past-the-end" position---that is, the position one greater than the last valid subscript argument.
    ///
    /// When you need a range that includes the last element of a collection, use the `..<` operator with `endIndex`.
    public var endIndex: Int {
-      internalArray.endIndex
+      self.internalArray.endIndex
    }
 
    /// Returns the elements of the collection in sorted order.
@@ -209,7 +209,7 @@ extension SortedArray: BidirectionalCollection {
    /// - Returns: An array containing the sorted elements of the collection.
    @inlinable
    public func sorted() -> [Element] {
-      internalArray
+      self.internalArray
    }
 
    /// Returns the position immediately after the given index.
@@ -217,7 +217,7 @@ extension SortedArray: BidirectionalCollection {
    /// - Parameter index: A valid index of the collection. `index` must be less than `endIndex`.
    /// - Returns: The index value immediately after `index`.
    public func index(after index: Int) -> Int {
-      internalArray.index(after: index)
+      self.internalArray.index(after: index)
    }
 
    /// Returns the position immediately before the given index.
@@ -225,7 +225,7 @@ extension SortedArray: BidirectionalCollection {
    /// - Parameter index: A valid index of the collection. `index` must be greater than `startIndex`.
    /// - Returns: The index value immediately before `index`.
    public func index(before index: Int) -> Int {
-      internalArray.index(before: index)
+      self.internalArray.index(before: index)
    }
 
    /// Accesses the element at the specified position.
@@ -233,7 +233,7 @@ extension SortedArray: BidirectionalCollection {
    /// - Parameter position: The position of the element to access. `position` must be a valid index of the collection.
    /// - Returns: The element at the specified index.
    public subscript(position: Int) -> Element {
-      internalArray[position]
+      self.internalArray[position]
    }
 }
 
