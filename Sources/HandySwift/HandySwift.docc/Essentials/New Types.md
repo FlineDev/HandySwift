@@ -109,6 +109,32 @@ Note that the ``Debouncer`` was stored in a property so ``Debouncer/cancelAll()`
 
 > Note: If you need multiple debouncing operations in one view, you don't need multiple debouncers. Just pass an `id` to the delay function. 
 
+### Networking & Debugging
+
+Building REST API clients is common in modern apps. HandySwift provides ``RESTClient`` to simplify this:
+
+```swift
+let client = RESTClient(
+    baseURL: URL(string: "https://api.example.com")!,
+    baseHeaders: ["Authorization": "Bearer \(token)"],
+    errorBodyToMessage: { _ in "Error" }
+)
+
+let user: User = try await client.fetchAndDecode(method: .get, path: "users/me")
+```
+
+When debugging API issues, add print plugins with the `debugOnly: true` parameter:
+
+```swift
+let client = RESTClient(
+    baseURL: URL(string: "https://api.example.com")!,
+    requestPlugins: [PrintRequestPlugin(debugOnly: true)],   // Debug requests
+    responsePlugins: [PrintResponsePlugin(debugOnly: true)], // Debug responses
+    errorBodyToMessage: { try JSONDecoder().decode(YourAPIErrorType.self, from: $0).message }
+)
+```
+
+These plugins are particularly helpful when adopting new APIs, providing detailed request/response information to help diagnose issues. The `debugOnly: true` parameter ensures they only operate in DEBUG builds, making them safe to leave in your code.
 
 ## Topics
 
@@ -126,6 +152,12 @@ Note that the ``Debouncer`` was stored in a property so ``Debouncer/cancelAll()`
 
 - ``Debouncer``
 - ``OperatingSystem`` (short: ``OS``)
+
+### Networking & Debugging
+
+- ``RESTClient``
+- ``PrintRequestPlugin``
+- ``PrintResponsePlugin``
 
 ### Other
 

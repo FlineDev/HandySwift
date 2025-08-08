@@ -188,9 +188,11 @@ public final class RESTClient: Sendable {
       extraQueryItems: [URLQueryItem] = [],
       errorContext: String? = nil
    ) async throws(APIError) -> Data {
-      let url = self.baseURL
-         .appending(path: path)
-         .appending(queryItems: self.baseQueryItems + extraQueryItems)
+      let allQueryItems = self.baseQueryItems + extraQueryItems
+      var url = self.baseURL.appending(path: path)
+      if !allQueryItems.isEmpty {
+         url = url.appending(queryItems: allQueryItems)
+      }
 
       var request = URLRequest(url: url)
       request.httpMethod = method.rawValue
@@ -226,8 +228,6 @@ public final class RESTClient: Sendable {
    }
 
    private func performRequest(_ request: URLRequest, errorContext: String?) async throws(APIError) -> (Data, URLResponse) {
-      self.logRequestIfDebug(request)
-
       let data: Data
       let response: URLResponse
       do {
@@ -236,7 +236,6 @@ public final class RESTClient: Sendable {
          throw APIError.failedToLoadData(error, self.errorContext(requestContext: errorContext))
       }
 
-      self.logResponseIfDebug(response, data: data)
       return (data, response)
    }
 
@@ -304,31 +303,5 @@ public final class RESTClient: Sendable {
       default:
          throw .unexpectedStatusCode(httpResponse.statusCode, self.errorContext(requestContext: errorContext))
       }
-   }
-
-   private func logRequestIfDebug(_ request: URLRequest) {
-      #if DEBUG
-         var requestBodyString: String?
-         if let bodyData = request.httpBody {
-            requestBodyString = String(data: bodyData, encoding: .utf8)
-         }
-
-         print(
-            "[\(self)] Sending \(request.httpMethod!) request to '\(request.url!)': \(request)\n\nHeaders:\n\(request.allHTTPHeaderFields ?? [:])\n\nBody:\n\(requestBodyString ?? "No body")"
-         )
-      #endif
-   }
-
-   private func logResponseIfDebug(_ response: URLResponse, data: Data?) {
-      #if DEBUG
-         var responseBodyString: String?
-         if let data = data {
-            responseBodyString = String(data: data, encoding: .utf8)
-         }
-
-         print(
-            "[\(self)] Received response & body from '\(response.url!)': \(response)\n\nResponse headers:\n\((response as? HTTPURLResponse)?.allHeaderFields ?? [:])\n\nResponse body:\n\(responseBodyString ?? "No body")"
-         )
-      #endif
    }
 }
