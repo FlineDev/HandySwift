@@ -124,7 +124,7 @@
 
          // Log with structured data
          self.logger.info(
-            "[RESTClient] Response \(statusCode, privacy: .public) from '\(url, privacy: .public)'"
+            "Response \(statusCode, privacy: .public) from '\(url, privacy: .public)'"
          )
          self.logger.debug("Headers: \(headers, privacy: .private)")
          self.logger.debug("Body: \(bodyString, privacy: .private)")
