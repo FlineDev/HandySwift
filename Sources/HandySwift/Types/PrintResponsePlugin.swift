@@ -16,22 +16,22 @@ import Foundation
 /// ```swift
 /// let client = RESTClient(
 ///     baseURL: URL(string: "https://api.example.com")!,
-///     responsePlugins: [PrintResponsePlugin()],  // debugOnly: true, redactAPIKey: true by default
+///     responsePlugins: [PrintResponsePlugin()],  // debugOnly: true, redactAuthHeaders: true by default
 ///     errorBodyToMessage: { _ in "Error" }
 /// )
 /// ```
 ///
-/// Both `debugOnly` and `redactAPIKey` default to `true` for security. You can disable these built-in protections if needed:
+/// Both `debugOnly` and `redactAuthHeaders` default to `true` for security. You can disable these built-in protections if needed:
 ///
 /// ```swift
 /// // Default behavior (recommended)
-/// PrintResponsePlugin()  // debugOnly: true, redactAPIKey: true
+/// PrintResponsePlugin()  // debugOnly: true, redactAuthHeaders: true
 ///
 /// // Disable debugOnly to log in production (discouraged)
 /// PrintResponsePlugin(debugOnly: false)
 ///
-/// // Disable redactAPIKey for debugging auth issues (use carefully)
-/// PrintResponsePlugin(redactAPIKey: false)
+/// // Disable redactAuthHeaders for debugging auth issues (use carefully)
+/// PrintResponsePlugin(redactAuthHeaders: false)
 /// ```
 ///
 /// ## Output Example
@@ -55,7 +55,7 @@ import Foundation
 /// }
 /// ```
 ///
-/// - Note: By default, logging only occurs in DEBUG builds and API keys are redacted for security.
+/// - Note: By default, logging only occurs in DEBUG builds and authentication headers are redacted for security.
 /// - Important: The plugin is safe to leave in your code with default settings thanks to `debugOnly` protection.
 @available(iOS 16, macOS 13, tvOS 16, watchOS 9, *)
 public struct PrintResponsePlugin: RESTClient.ResponsePlugin {
@@ -65,20 +65,20 @@ public struct PrintResponsePlugin: RESTClient.ResponsePlugin {
    /// When `false`, responses are logged in both DEBUG and release builds (not recommended for production).
    public let debugOnly: Bool
 
-   /// Whether to redact API keys from sensitive headers in output.
+   /// Whether to redact authentication headers in output.
    ///
-   /// When `true` (default), sensitive headers like Authorization and Set-Cookie are replaced with "[redacted]" for security.
+   /// When `true` (default), authentication headers like Authorization and Set-Cookie are replaced with "[redacted]" for security.
    /// When `false`, the full header value is shown (use carefully for debugging auth issues).
-   public let redactAPIKey: Bool
+   public let redactAuthHeaders: Bool
 
    /// Creates a new print response plugin.
    ///
    /// - Parameters:
    ///   - debugOnly: Whether logging should only occur in DEBUG builds. Defaults to `true`.
-   ///   - redactAPIKey: Whether to redact API keys from sensitive headers. Defaults to `true`.
-   public init(debugOnly: Bool = true, redactAPIKey: Bool = true) {
+   ///   - redactAuthHeaders: Whether to redact authentication headers. Defaults to `true`.
+   public init(debugOnly: Bool = true, redactAuthHeaders: Bool = true) {
       self.debugOnly = debugOnly
-      self.redactAPIKey = redactAPIKey
+      self.redactAuthHeaders = redactAuthHeaders
    }
 
    /// Applies the plugin to the response, printing response details if conditions are met.
@@ -128,9 +128,9 @@ public struct PrintResponsePlugin: RESTClient.ResponsePlugin {
    /// Determines whether a header should be redacted for security.
    ///
    /// - Parameter headerName: The header name to check.
-   /// - Returns: `true` if the header should be redacted when `redactAPIKey` is enabled.
+   /// - Returns: `true` if the header should be redacted when `redactAuthHeaders` is enabled.
    private func shouldRedactHeader(_ headerName: String) -> Bool {
-      guard self.redactAPIKey else { return false }
+      guard self.redactAuthHeaders else { return false }
 
       let lowercasedName = headerName.lowercased()
 

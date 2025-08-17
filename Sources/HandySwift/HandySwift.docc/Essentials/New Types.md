@@ -123,13 +123,32 @@ let client = RESTClient(
 let user: User = try await client.fetchAndDecode(method: .get, path: "users/me")
 ```
 
-When debugging API issues, add print plugins with the `debugOnly: true` parameter:
+When debugging API issues, choose the appropriate logging plugins based on your platform:
+
+#### For iOS/macOS/tvOS/watchOS Apps (Recommended)
+
+Use OSLog-based plugins for structured, searchable logging:
 
 ```swift
 let client = RESTClient(
     baseURL: URL(string: "https://api.example.com")!,
-    requestPlugins: [PrintRequestPlugin(debugOnly: true)],   // Debug requests
-    responsePlugins: [PrintResponsePlugin(debugOnly: true)], // Debug responses
+    requestPlugins: [LogRequestPlugin(debugOnly: true)],   // Structured request logging
+    responsePlugins: [LogResponsePlugin(debugOnly: true)], // Structured response logging
+    errorBodyToMessage: { try JSONDecoder().decode(YourAPIErrorType.self, from: $0).message }
+)
+```
+
+These plugins use the modern OSLog framework for structured logging that integrates with Console.app and Instruments for advanced debugging.
+
+#### For Server-Side Swift (Vapor/Linux)
+
+Use print-based plugins for console output where OSLog is not available:
+
+```swift
+let client = RESTClient(
+    baseURL: URL(string: "https://api.example.com")!,
+    requestPlugins: [PrintRequestPlugin(debugOnly: true)],   // Console request logging
+    responsePlugins: [PrintResponsePlugin(debugOnly: true)], // Console response logging
     errorBodyToMessage: { try JSONDecoder().decode(YourAPIErrorType.self, from: $0).message }
 )
 ```
@@ -156,8 +175,10 @@ These plugins are particularly helpful when adopting new APIs, providing detaile
 ### Networking & Debugging
 
 - ``RESTClient``
-- ``PrintRequestPlugin``
-- ``PrintResponsePlugin``
+- ``LogRequestPlugin`` (for iOS/macOS/tvOS/watchOS apps)
+- ``LogResponsePlugin`` (for iOS/macOS/tvOS/watchOS apps)
+- ``PrintRequestPlugin`` (for server-side Swift/Vapor)
+- ``PrintResponsePlugin`` (for server-side Swift/Vapor)
 
 ### Other
 
