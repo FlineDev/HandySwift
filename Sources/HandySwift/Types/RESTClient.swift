@@ -73,14 +73,21 @@ public final class RESTClient: Sendable {
       case json(Encodable & Sendable)
       case string(String)
       case form([URLQueryItem])
+      case multipart([MultipartItem], requestID: UUID)
 
       var contentType: String {
          switch self {
-         case .binary: return "application/octet-stream"
-         case .json: return "application/json"
-         case .string: return "text/plain"
-         case .form: return "application/x-www-form-urlencoded"
+         case .binary: "application/octet-stream"
+         case .json: "application/json"
+         case .string: "text/plain"
+         case .form: "application/x-www-form-urlencoded"
+         case .multipart(_, let requestID): "multipart/form-data; boundary=handy-swift-boundary-\(requestID.uuidString)"
          }
+      }
+
+      /// Creates a multipart body with a generated UUID for request identification.
+      public static func multipart(_ items: [MultipartItem]) -> Body {
+         .multipart(items, requestID: UUID())
       }
 
       func httpData(jsonEncoder: JSONEncoder) throws -> Data {
@@ -98,8 +105,96 @@ public final class RESTClient: Sendable {
             var urlComponents = URLComponents(string: "https://example.com")!
             urlComponents.queryItems = queryItems
             return Data(urlComponents.percentEncodedQuery!.utf8)
+
+         case .multipart(let items, let requestID):
+            let boundaryString = "handy-swift-boundary-\(requestID.uuidString)"
+            var body = Data()
+
+            for item in items {
+               // Add boundary separator
+               body.append(Data("--\(boundaryString)\r\n".utf8))
+
+               // Add Content-Disposition header
+               var contentDisposition = "Content-Disposition: form-data; name=\"\(item.name)\""
+
+               switch item.value {
+               case .text(let text):
+                  body.append(Data("\(contentDisposition)\r\n\r\n".utf8))
+                  body.append(Data(text.utf8))
+
+               case .data(let data, let fileName, let mimeType):
+                  if let fileName = fileName {
+                     contentDisposition += "; filename=\"\(fileName)\""
+                  }
+                  body.append(Data("\(contentDisposition)\r\n".utf8))
+
+                  if let mimeType = mimeType {
+                     body.append(Data("Content-Type: \(mimeType)\r\n".utf8))
+                  }
+
+                  body.append(Data("\r\n".utf8))
+                  body.append(data)
+
+               case .json(let json):
+                  body.append(Data("\(contentDisposition)\r\n".utf8))
+                  body.append(Data("Content-Type: application/json\r\n\r\n".utf8))
+                  let jsonData = try jsonEncoder.encode(json)
+                  body.append(jsonData)
+               }
+
+               body.append(Data("\r\n".utf8))
+            }
+
+            // Add final boundary
+            body.append(Data("--\(boundaryString)--\r\n".utf8))
+
+            return body
          }
       }
+   }
+
+   /// A name-value pair for multipart/form-data requests, following the URLQueryItem pattern.
+   /// Used to construct multipart request bodies in a type-safe, explorable way.
+   ///
+   /// Example usage:
+   /// ```swift
+   /// let multipartItems: [RESTClient.MultipartItem] = [
+   ///     .init(name: "model", value: .text("gpt-image-1")),
+   ///     .init(name: "prompt", value: .text("Generate a liquid glass icon")),
+   ///     .init(name: "image", value: .data(imageData, fileName: "input.png", mimeType: "image/png"))
+   /// ]
+   /// ```
+   public struct MultipartItem: Sendable {
+      /// The name of the form field.
+      public let name: String
+
+      /// The value of the form field, which can be text, binary data, or JSON.
+      public let value: MultipartValue
+
+      /// Creates a new multipart item with the specified name and value.
+      /// - Parameters:
+      ///   - name: The name of the form field
+      ///   - value: The value of the form field
+      public init(name: String, value: MultipartValue) {
+         self.name = name
+         self.value = value
+      }
+   }
+
+   /// The value types supported in multipart/form-data requests.
+   public enum MultipartValue: Sendable {
+      /// A plain text value.
+      case text(String)
+
+      /// Binary data with optional filename and MIME type.
+      /// - Parameters:
+      ///   - data: The binary data to include
+      ///   - fileName: Optional filename for the uploaded file
+      ///   - mimeType: Optional MIME type (e.g., "image/png", "application/json")
+      case data(Data, fileName: String?, mimeType: String?)
+
+      /// A JSON-encodable value that will be serialized to JSON.
+      case json(Encodable & Sendable)
    }
 
    public protocol RequestPlugin: Sendable {
